@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -37,62 +38,58 @@ class BottomContainer extends StatelessWidget {
       width: 375.w,
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
-        child: Expanded(
-          child: Stack(children: [
-            Column(
-              children: [
-                verticalSpacing(20),
-                AnimatedOpacity(
-                  duration: const Duration(milliseconds: 300),
-                  opacity: isOut ? 0 : 1,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 40.w),
-                    child: Text(
-                      "Lorem Ipsum is simply dummy text",
-                      style: TextStyles.font20Blackw700,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
+        child: Column(
+          children: [
+            verticalSpacing(20),
+            AnimatedOpacity(
+              duration: const Duration(milliseconds: 300),
+              opacity: isOut ? 0 : 1,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40.w),
+                child: Text(
+                  "Lorem Ipsum is simply dummy text",
+                  style: TextStyles.font20Blackw700,
+                  textAlign: TextAlign.center,
                 ),
-                verticalSpacing(20),
-                AnimatedOpacity(
-                  duration: const Duration(milliseconds: 300),
-                  opacity: isOut ? 0 : 1,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w),
-                    child: Text(
-                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                      style: TextStyles.font12Blackw400,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-                verticalSpacing(50),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                    3,
-                    (index) => OnboardingDot(done: index <= currentIndex),
-                  ),
-                ),
-                verticalSpacing(35),
-                CustomButton(
-                  text: currentIndex == 2 ? "Get Started" : "Continue",
-                  onTap: onTap,
-                ),
-                verticalSpacing(20),
-                Visibility(
-                  visible: currentIndex != 2,
-                  child: TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Skip",
-                        style: TextStyles.font14Blackw700,
-                      )),
-                )
-              ],
+              ),
             ),
-          ]),
+            verticalSpacing(20),
+            AnimatedOpacity(
+              duration: const Duration(milliseconds: 300),
+              opacity: isOut ? 0 : 1,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Text(
+                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+                  style: TextStyles.font12Blackw400,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            verticalSpacing(50),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(
+                3,
+                (index) => OnboardingDot(done: index <= currentIndex),
+              ),
+            ),
+            verticalSpacing(35),
+            CustomButton(
+              text: currentIndex == 2 ? "Get Started" : "Continue",
+              onTap: onTap,
+            ),
+            verticalSpacing(20),
+            Visibility(
+              visible: currentIndex != 2,
+              child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Skip",
+                    style: TextStyles.font14Blackw700,
+                  )),
+            )
+          ],
         ),
       ),
     );

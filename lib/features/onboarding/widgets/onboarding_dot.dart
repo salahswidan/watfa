@@ -12,7 +12,13 @@ class OnboardingDot extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 4.w),
-      child: done ? const DoneDot() : const NotDoneDot(),
+      child: AnimatedCrossFade(
+        duration: const Duration(milliseconds: 300),
+        firstChild: const NotDoneDot(),
+        secondChild: const DoneDot(),
+        crossFadeState:
+            done ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+      ),
     );
   }
 }
