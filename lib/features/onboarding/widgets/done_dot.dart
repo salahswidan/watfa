@@ -10,7 +10,7 @@ class DoneDot extends StatelessWidget {
     return Container(
       height: 12.h,
       width: 12.w,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: ColorsManagers.voliet,
         shape: BoxShape.circle,
       ),
