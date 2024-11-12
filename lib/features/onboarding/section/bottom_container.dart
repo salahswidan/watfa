@@ -77,16 +77,19 @@ class BottomContainer extends StatelessWidget {
                 ),
                 verticalSpacing(35),
                 CustomButton(
-                  text: "Continue",
+                  text: currentIndex == 2 ? "Get Started" : "Continue",
                   onTap: onTap,
                 ),
                 verticalSpacing(20),
-                TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Skip",
-                      style: TextStyles.font14Blackw700,
-                    ))
+                Visibility(
+                  visible: currentIndex != 2,
+                  child: TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Skip",
+                        style: TextStyles.font14Blackw700,
+                      )),
+                )
               ],
             ),
           ]),

@@ -46,6 +46,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 });
                 Timer(const Duration(milliseconds: 300), () {
                   currentIndex = currentIndex > 1 ? 0 : currentIndex + 1;
+                  
                   setState(() {
                     isOut = !isOut;
                   });
