@@ -10,6 +10,9 @@ class OnboardingDot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return done ? const DoneDot() : const NotDoneDot();
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 4.w),
+      child: done ? const DoneDot() : const NotDoneDot(),
+    );
   }
 }

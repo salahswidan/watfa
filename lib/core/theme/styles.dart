@@ -17,4 +17,15 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: Colors.black,
   );
+
+  static TextStyle font14Whitew700 = GoogleFonts.spaceGrotesk(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: Colors.white,
+  );
+  static TextStyle font14Blackw700 = GoogleFonts.spaceGrotesk(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: Colors.black,
+  );
 }

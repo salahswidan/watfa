@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theme/styles.dart';
+import '../widgets/custom_button.dart';
 import '../widgets/onboarding_dot.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -65,8 +66,22 @@ class OnBoardingScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         OnboardingDot(done: true),
+                        OnboardingDot(done: true),
+                        OnboardingDot(done: true),
                       ],
-                    )
+                    ),
+                    verticalSpacing(35),
+                    CustomButton(
+                      text: "Continue",
+                      onTap: () {},
+                    ),
+                    verticalSpacing(20),
+                    TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Skip",
+                          style: TextStyles.font14Blackw700,
+                        ))
                   ],
                 ),
               ),
