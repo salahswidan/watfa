@@ -47,7 +47,7 @@ class OnBoardingScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 40.w),
                       child: Text(
-                        "Lorem Ipsum is simply dummy text",
+                        "Lorem Ipsum is simply dummy text",
                         style: TextStyles.font20Blackw700,
                         textAlign: TextAlign.center,
                       ),
@@ -56,7 +56,7 @@ class OnBoardingScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20.w),
                       child: Text(
-                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
                         style: TextStyles.font12Blackw400,
                         textAlign: TextAlign.center,
                       ),
