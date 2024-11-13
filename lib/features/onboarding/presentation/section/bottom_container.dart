@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/styles.dart';
+import '../../logic/on_boarding_data.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/onboarding_dot.dart';
 
@@ -46,8 +47,8 @@ class BottomContainer extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 40.w),
                 child: Text(
-                  "Lorem Ipsum is simply dummy text",
-                  style: TextStyles.font20Blackw700,
+                  OnBoardingData.onBoardingBayer[currentIndex].title,
+                  style: TextStyles.font20Blackw700Roboto,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -59,8 +60,8 @@ class BottomContainer extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: Text(
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                  style: TextStyles.font12Blackw400,
+                  OnBoardingData.onBoardingBayer[currentIndex].description,
+                  style: TextStyles.font18Blackw400Roboto,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -75,7 +76,7 @@ class BottomContainer extends StatelessWidget {
             ),
             verticalSpacing(35),
             CustomButton(
-              text: currentIndex == 2 ? "Get Started" : "Continue",
+              text: currentIndex == 2 ? "Get Started" : "NEXT",
               onTap: onTap,
             ),
             verticalSpacing(20),
@@ -85,7 +86,9 @@ class BottomContainer extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     "Skip",
-                    style: TextStyles.font14Blackw700,
+                    style: TextStyles.font14Blackw700Roboto.copyWith(
+                      color: Colors.black.withOpacity(0.5),
+                    ),
                   )),
             )
           ],

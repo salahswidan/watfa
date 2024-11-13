@@ -6,26 +6,31 @@ import 'colors.dart';
 import 'font_weight_helper.dart';
 
 class TextStyles {
-  static TextStyle font20Blackw700 = GoogleFonts.spaceGrotesk(
+  static TextStyle font20Blackw700Roboto = GoogleFonts.roboto(
     fontSize: 20.sp,
     fontWeight: FontWeightHelper.bold,
     color: Colors.black,
   );
 
-  static TextStyle font12Blackw400 = GoogleFonts.spaceGrotesk(
+  static TextStyle font12Blackw400Roboto = GoogleFonts.roboto(
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.regular,
     color: Colors.black,
   );
-
-  static TextStyle font14Whitew700 = GoogleFonts.spaceGrotesk(
+  static TextStyle font14Whitew700Roboto = GoogleFonts.roboto(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.bold,
     color: Colors.white,
   );
-  static TextStyle font14Blackw700 = GoogleFonts.spaceGrotesk(
+  static TextStyle font14Blackw700Roboto = GoogleFonts.roboto(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.bold,
+    color: Colors.black,
+  );
+
+  static TextStyle font18Blackw400Roboto = GoogleFonts.roboto(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.regular,
     color: Colors.black,
   );
 }
