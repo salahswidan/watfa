@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/helpers/spacing.dart';
-import '../../../core/theme/styles.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theme/styles.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/onboarding_dot.dart';
 

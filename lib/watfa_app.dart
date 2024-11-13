@@ -20,7 +20,7 @@ class WatfaApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onBoardingBayerScreen,
+        initialRoute: Routes.onBoardingScreen,
         // initialRoute: CacheServices.instance.getOnBoarding()
         //     ? CacheServices.instance.getUserModel() != null
         //         ? Routes.homeScreen

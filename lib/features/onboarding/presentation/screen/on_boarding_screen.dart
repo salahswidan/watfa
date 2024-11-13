@@ -3,17 +3,17 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/helpers/spacing.dart';
+import '../../../../core/helpers/spacing.dart';
 import '../section/bottom_container.dart';
 
-class OnOnboardingBayerScreen extends StatefulWidget {
-  const OnOnboardingBayerScreen({super.key});
+class OnBoardingScreen extends StatefulWidget {
+  const OnBoardingScreen({super.key});
 
   @override
-  State<OnOnboardingBayerScreen> createState() => _OnOnboardingBayerScreen();
+  State<OnBoardingScreen> createState() => _OnBoardingScreen();
 }
 
-class _OnOnboardingBayerScreen extends State<OnOnboardingBayerScreen> {
+class _OnBoardingScreen extends State<OnBoardingScreen> {
   int currentIndex = 0;
   bool isOut = false;
   @override

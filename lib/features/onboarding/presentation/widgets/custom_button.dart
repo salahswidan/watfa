@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watfa/core/theme/styles.dart';
 
-import '../../../core/theme/colors.dart';
+import '../../../../core/theme/colors.dart';
 
 class CustomButton extends StatelessWidget {
   final void Function() onTap;
@@ -17,7 +17,7 @@ class CustomButton extends StatelessWidget {
           height: 50.h,
           width: 1.sw,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(28.r),
+            borderRadius: BorderRadius.circular(5.r),
             gradient: const LinearGradient(
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,

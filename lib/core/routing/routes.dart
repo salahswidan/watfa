@@ -1,3 +1,3 @@
 class Routes {
-  static const String onBoardingBayerScreen = '/onBoardingBayerScreen';
+  static const String onBoardingScreen = '/OnBoardingScreen';
 }

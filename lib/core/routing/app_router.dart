@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../../features/onboarding_bayer/screen/on_onboarding_bayer_screen.dart';
+import '../../features/onboarding/presentation/screen/on_boarding_screen.dart';
 import 'routes.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     final arguments = settings.arguments;
     switch (settings.name) {
-      case Routes.onBoardingBayerScreen:
+      case Routes.onBoardingScreen:
         return MaterialPageRoute(
-          builder: (_) => const OnOnboardingBayerScreen(),
+          builder: (_) => const OnBoardingScreen(),
         );
       // case Routes.loginScreen:
       //   return MaterialPageRoute(
@@ -55,7 +55,7 @@ class AppRouter {
 
       default:
         return MaterialPageRoute(
-          builder: (_) => const OnOnboardingBayerScreen(),
+          builder: (_) => const OnBoardingScreen(),
         );
     }
   }
