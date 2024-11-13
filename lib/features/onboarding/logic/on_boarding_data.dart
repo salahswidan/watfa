@@ -21,5 +21,24 @@ class OnBoardingData {
           'Explore a wide range of products, groceries, and dining options. Pay later, stress-free!',
     ),
   ];
-  static List<OnBoardingModel> onBoardingSeller = [];
+  static List<OnBoardingModel> onBoardingSeller = [
+    OnBoardingModel(
+      image: 'assets/images/onboarding_seller1.png',
+      title: 'Boost Your Sales with BNPL',
+      description:
+          'Join thousands of merchants growing their business by offering Buy Now, Pay Later options.',
+    ),
+    OnBoardingModel(
+      image: 'assets/images/onboarding_seller2.png',
+      title: 'Increase Customer Spend',
+      description:
+          'Attract more customers by allowing them to pay in easy installments. Watch your sales soar!',
+    ),
+    OnBoardingModel(
+      image: 'assets/images/onboarding_seller3.png',
+      title: 'Easy Order & Payment Management',
+      description:
+          'Manage your products, track orders, and receive payouts—all from a single dashboard.',
+    ),
+  ];
 }
