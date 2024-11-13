@@ -6,14 +6,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/helpers/spacing.dart';
 import '../section/bottom_container.dart';
 
-class OnBoardingScreen extends StatefulWidget {
-  const OnBoardingScreen({super.key});
+class OnOnboardingBayerScreen extends StatefulWidget {
+  const OnOnboardingBayerScreen({super.key});
 
   @override
-  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
+  State<OnOnboardingBayerScreen> createState() => _OnOnboardingBayerScreen();
 }
 
-class _OnBoardingScreenState extends State<OnBoardingScreen> {
+class _OnOnboardingBayerScreen extends State<OnOnboardingBayerScreen> {
   int currentIndex = 0;
   bool isOut = false;
   @override

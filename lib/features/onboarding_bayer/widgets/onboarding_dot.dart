@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:watfa/features/onboarding/widgets/not_done_dot.dart';
+import 'package:watfa/features/onboarding_bayer/widgets/not_done_dot.dart';
 
 import 'done_dot.dart';
 
