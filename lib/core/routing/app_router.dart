@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../features/auth/sign_up/presentation/screen/sign_up_screen.dart';
 import '../../features/onboarding/presentation/screen/on_boarding_screen.dart';
 import 'routes.dart';
 
@@ -18,12 +19,8 @@ class AppRouter {
       //             child: const LoginScreen(),
       //           ));
 
-      // case Routes.signUpScreen:
-      //   return MaterialPageRoute(
-      //       builder: (_) => BlocProvider(
-      //             create: (context) => getit<SignupCubit>(),
-      //             child: const SignupScreen(),
-      //           ));
+      case Routes.signUpScreen:
+        return MaterialPageRoute(builder: (_) => const SignUpScreen());
       // case Routes.homeScreen:
       //   return MaterialPageRoute(
       //       builder: (_) => BlocProvider(
@@ -55,7 +52,7 @@ class AppRouter {
 
       default:
         return MaterialPageRoute(
-          builder: (_) => const OnBoardingScreen(),
+          builder: (_) => const SignUpScreen(),
         );
     }
   }
