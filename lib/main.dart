@@ -6,7 +6,6 @@ import 'watfa_app.dart';
 
 void main() async {
   await preAppConfig();
-  
   runApp(WatfaApp(
     appRouter: AppRouter(),
   ));
