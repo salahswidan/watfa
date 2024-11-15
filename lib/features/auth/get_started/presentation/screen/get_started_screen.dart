@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 
 import '../../../../../core/theme/styles.dart';
+import '../widgets/custom_auth_button.dart';
 import '../widgets/custom_user_type_container.dart';
 
 class GetStartedScreen extends StatelessWidget {
@@ -63,7 +64,10 @@ class GetStartedScreen extends StatelessWidget {
                   isBuyer: false,
                 ),
                 verticalSpacing(90),
-                
+                CustomAuthButton(
+                  onTap: () {},
+                  text: 'Proceed',
+                )
               ],
             ),
           )

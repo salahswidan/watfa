@@ -28,6 +28,12 @@ class TextStyles {
     fontWeight: FontWeightHelper.bold,
     color: Colors.white,
   );
+
+  static TextStyle font16Whitew700Roboto = GoogleFonts.roboto(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: Colors.white,
+  ); 
   static TextStyle font14Grayw400Roboto = GoogleFonts.roboto(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.regular,
