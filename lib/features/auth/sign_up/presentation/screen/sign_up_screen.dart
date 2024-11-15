@@ -13,7 +13,8 @@ class SignUpScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Expanded(
+          SizedBox(
+            height: 110.h,
             child: Stack(
               children: [
                 Positioned(
@@ -37,13 +38,18 @@ class SignUpScreen extends StatelessWidget {
             ),
           ),
           verticalSpacing(30),
+          Image.asset(
+            'assets/images/Watfa_logo 4.png',
+            width: 170.w,
+            fit: BoxFit.fitWidth,
+          ),
           verticalSpacing(40),
           Text("Please select profile",
               style: TextStyles.font24Blackw700Roboto),
           verticalSpacing(10),
           Text("Create an account  to get all features",
               style: TextStyles.font14Grayw400Roboto),
-          verticalSpacing(50),
+          verticalSpacing(70),
         ],
       ),
     );
