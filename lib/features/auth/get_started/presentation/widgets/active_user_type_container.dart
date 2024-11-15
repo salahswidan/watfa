@@ -65,7 +65,7 @@ class ActiveUserTypeContainer extends StatelessWidget {
               ),
             ),
             subtitle: Text(getStartedModel.subTitle,
-                style: TextStyles.font10BlackW400Inter),
+                style: TextStyles.font9BlackW400Inter),
           ),
         ),
       ),

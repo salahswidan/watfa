@@ -36,7 +36,7 @@ class CustomAuthButton extends StatelessWidget {
           ),
           child: Center(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 90.w, vertical: 17.h),
+              padding: EdgeInsets.symmetric(horizontal: 90.w, vertical: 12.h),
               child: Text(text, style: TextStyles.font16Whitew700Roboto),
             ),
           )),

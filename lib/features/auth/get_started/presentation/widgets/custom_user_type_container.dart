@@ -5,28 +5,24 @@ import 'active_user_type_container.dart';
 import 'in_active_user_type_container.dart';
 
 class CustomUserTypeContainer extends StatelessWidget {
-  final bool isBuyer;
+  final bool isActive;
+  final GetStartedModel getStartedModel;
   const CustomUserTypeContainer({
     super.key,
-    required this.isBuyer,
+    required this.isActive,
+    required this.getStartedModel,
   });
 
   @override
   Widget build(BuildContext context) {
-    return isBuyer
-        ? ActiveUserTypeContainer(
-            getStartedModel: GetStartedModel(
-              title: 'Buyer',
-              subTitle: 'lorem ipsom lorem ipsom lorem ipsom',
-              icon: 'assets/icons/buyer_icon.svg',
-            ),
-          )
-        : InActiveUserTypeContainer(
-            getStartedModel: GetStartedModel(
-              title: 'Seller',
-              subTitle: 'lorem ipsom lorem ipsom lorem ipsom',
-              icon: 'assets/icons/seller_icon.svg',
-            ),
-          );
+    return AnimatedCrossFade(
+      firstChild: ActiveUserTypeContainer(
+        getStartedModel: getStartedModel,
+      ),
+      secondChild: InActiveUserTypeContainer(getStartedModel: getStartedModel),
+      crossFadeState:
+          isActive ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+      duration: const Duration(milliseconds: 300),
+    );
   }
 }

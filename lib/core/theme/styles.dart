@@ -33,7 +33,7 @@ class TextStyles {
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.bold,
     color: Colors.white,
-  ); 
+  );
   static TextStyle font14Grayw400Roboto = GoogleFonts.roboto(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.regular,
@@ -62,14 +62,14 @@ class TextStyles {
     color: ColorsManagers.taupeGray,
   );
 
-  static TextStyle font10BlackW400Inter = GoogleFonts.inter(
+  static TextStyle font9BlackW400Inter = GoogleFonts.inter(
     fontSize: 10.sp,
     fontWeight: FontWeightHelper.regular,
     color: Colors.black,
   );
 
   static TextStyle font10DarkLiver400Inter = GoogleFonts.inter(
-    fontSize: 10.sp,
+    fontSize: 9.sp,
     fontWeight: FontWeightHelper.regular,
     color: ColorsManagers.darkLiver,
   );

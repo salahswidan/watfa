@@ -3,8 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 
 import '../../../../../core/theme/styles.dart';
-import '../widgets/custom_auth_button.dart';
-import '../widgets/custom_user_type_container.dart';
+import '../section/get_started_form.dart';
 
 class GetStartedScreen extends StatelessWidget {
   const GetStartedScreen({super.key});
@@ -56,18 +55,7 @@ class GetStartedScreen extends StatelessWidget {
                 Text("Create an account  to get all features",
                     style: TextStyles.font14Grayw400Roboto),
                 verticalSpacing(70),
-                CustomUserTypeContainer(
-                  isBuyer: true,
-                ),
-                verticalSpacing(80),
-                CustomUserTypeContainer(
-                  isBuyer: false,
-                ),
-                verticalSpacing(90),
-                CustomAuthButton(
-                  onTap: () {},
-                  text: 'Proceed',
-                )
+                const GetStartedForm()
               ],
             ),
           )
