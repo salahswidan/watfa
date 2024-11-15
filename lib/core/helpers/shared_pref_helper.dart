@@ -75,6 +75,26 @@ class CacheServices {
       return isSeen;
     }
   }
+  Future<bool> setUserType(bool isBuyer) async {
+    try {
+      await prefs.setBool('isBuyer', isBuyer);
+      return true;
+    } catch (e) {
+      log(e.toString(), name: 'CacheService::isBuyer');
+      return false;
+    }
+  }
+
+  bool getUserType() {
+    bool isBuyer = false;
+    try {
+      isBuyer = prefs.getBool('isBuyer')!;
+      return isBuyer;
+    } catch (e) {
+      log(e.toString(), name: 'CacheService::isBuyer');
+      return isBuyer;
+    }
+  }
 
   Future<bool> removeUserModel() async {
     try {

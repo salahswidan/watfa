@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/routing/routes.dart';
 import '../../data/model/get_started_model.dart';
 import '../widgets/custom_auth_button.dart';
 import '../widgets/custom_user_type_container.dart';
@@ -53,7 +55,13 @@ class _GetStartedFormState extends State<GetStartedForm> {
         ),
         verticalSpacing(90),
         CustomAuthButton(
-          onTap: () {},
+          onTap: () {
+            Future.delayed(Duration.zero, () async {
+              await CacheServices.instance.setUserType(_selectedUserType == 0);
+            });
+
+            Navigator.pushNamed(context, Routes.onBoardingScreen);
+          },
           text: 'Proceed',
         ),
       ],
