@@ -85,10 +85,10 @@ class CacheServices {
     }
   }
 
-  bool getUserType() {
-    bool isBuyer = false;
+  bool? getUserType() {
+    bool? isBuyer = false;
     try {
-      isBuyer = prefs.getBool('isBuyer')!;
+      isBuyer = prefs.getBool('isBuyer') ;
       return isBuyer;
     } catch (e) {
       log(e.toString(), name: 'CacheService::isBuyer');

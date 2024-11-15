@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'core/helpers/shared_pref_helper.dart';
 import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
 
@@ -20,7 +21,9 @@ class WatfaApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.getStartedScreen,
+        initialRoute: CacheServices.instance.getUserType() != null
+            ? Routes.onBoardingScreen
+            : Routes.getStartedScreen,
         // initialRoute: CacheServices.instance.getOnBoarding()
         //     ? CacheServices.instance.getUserModel() != null
         //         ? Routes.homeScreen

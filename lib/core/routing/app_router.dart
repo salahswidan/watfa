@@ -14,7 +14,7 @@ class AppRouter {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(
           builder: (_) => OnBoardingScreen(
-            onBoardingData: CacheServices.instance.getUserType()
+            onBoardingData: CacheServices.instance.getUserType()!
                 ? OnBoardingData.onBoardingBayer
                 : OnBoardingData.onBoardingSeller,
           ),
