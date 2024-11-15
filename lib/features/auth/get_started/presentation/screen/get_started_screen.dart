@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 
-import '../../../../../core/theme/colors.dart';
 import '../../../../../core/theme/styles.dart';
+import '../widgets/custom_user_type_container.dart';
 
 class GetStartedScreen extends StatelessWidget {
   const GetStartedScreen({super.key});
@@ -56,36 +55,10 @@ class GetStartedScreen extends StatelessWidget {
                 Text("Create an account  to get all features",
                     style: TextStyles.font14Grayw400Roboto),
                 verticalSpacing(70),
-                Container(
-                  padding: const EdgeInsets.all(2),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.r),
-                    gradient: const LinearGradient(
-                        begin: Alignment.centerRight,
-                        end: Alignment.centerLeft,
-                        colors: [ColorsManagers.purple, ColorsManagers.voliet]),
-                  ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.r),
-                      color: Colors.white,
-                    ),
-                    child: ListTile(
-                      
-                      title: GradientText('BUYER',
-                          style: TextStyles.font12w600Inter,
-                          gradientDirection: GradientDirection.ttb,
-                          colors: const [
-                            ColorsManagers.voliet,
-                            ColorsManagers.purple,
-                          ]),
-                      trailing: const Icon(Icons.arrow_forward_ios,
-                          color: Colors.grey),
-                      subtitle: Text("I want to buy products",
-                          style: TextStyles.font12Blackw400Roboto),
-                    ),
-                  ),
-                ),
+                CustomUserTypeContainer(),
+                verticalSpacing(80),
+                CustomUserTypeContainer(),
+                verticalSpacing(90),
               ],
             ),
           )
