@@ -3,19 +3,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/styles.dart';
-import '../../logic/on_boarding_data.dart';
+import '../../logic/model/on_boarding_model.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/onboarding_dot.dart';
 
 class BottomContainer extends StatelessWidget {
   final int currentIndex;
   final void Function() onTap;
+  final List<OnBoardingModel> onBoardingData;
   final bool isOut;
   const BottomContainer({
     super.key,
     required this.currentIndex,
     required this.onTap,
     required this.isOut,
+    required this.onBoardingData,
   });
 
   @override
@@ -47,7 +49,7 @@ class BottomContainer extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 40.w),
                 child: Text(
-                  OnBoardingData.onBoardingBayer[currentIndex].title,
+                  onBoardingData[currentIndex].title,
                   style: TextStyles.font20Blackw700Roboto,
                   textAlign: TextAlign.center,
                 ),
@@ -60,7 +62,7 @@ class BottomContainer extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: Text(
-                  OnBoardingData.onBoardingBayer[currentIndex].description,
+                  onBoardingData[currentIndex].description,
                   style: TextStyles.font18Blackw400Roboto,
                   textAlign: TextAlign.center,
                 ),

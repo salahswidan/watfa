@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/helpers/spacing.dart';
-import '../../logic/on_boarding_data.dart';
+import '../../logic/model/on_boarding_model.dart';
 import '../section/bottom_container.dart';
 
 class OnBoardingScreen extends StatefulWidget {
-  const OnBoardingScreen({super.key});
+  final List<OnBoardingModel> onBoardingData;
+  const OnBoardingScreen({super.key, required this.onBoardingData});
 
   @override
   State<OnBoardingScreen> createState() => _OnBoardingScreen();
@@ -31,7 +32,7 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: Image.asset(
-                  OnBoardingData.onBoardingBayer[currentIndex].image,
+                  widget.onBoardingData[currentIndex].image,
                   height: 220.h,
                 ),
               ),
@@ -40,6 +41,7 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
             const Expanded(child: SizedBox()),
             BottomContainer(
               isOut: isOut,
+              onBoardingData: widget.onBoardingData,
               currentIndex: currentIndex,
               onTap: () {
                 setState(() {

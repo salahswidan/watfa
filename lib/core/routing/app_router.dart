@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../features/auth/get_started/presentation/screen/get_started_screen.dart';
+
+import '../../features/onboarding/logic/on_boarding_data.dart';
 import '../../features/onboarding/presentation/screen/on_boarding_screen.dart';
+import '../helpers/shared_pref_helper.dart';
 import 'routes.dart';
 
 class AppRouter {
@@ -10,7 +13,11 @@ class AppRouter {
     switch (settings.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(
-          builder: (_) => const OnBoardingScreen(),
+          builder: (_) => OnBoardingScreen(
+            onBoardingData: CacheServices.instance.getUserType()
+                ? OnBoardingData.onBoardingBayer
+                : OnBoardingData.onBoardingSeller,
+          ),
         );
       // case Routes.loginScreen:
       //   return MaterialPageRoute(
