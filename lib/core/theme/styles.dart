@@ -43,4 +43,9 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: Colors.black,
   );
+
+  static TextStyle font12w600Inter = GoogleFonts.inter(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.semiBold,
+  );
 }

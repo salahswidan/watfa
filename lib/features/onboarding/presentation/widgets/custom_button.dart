@@ -22,7 +22,7 @@ class CustomButton extends StatelessWidget {
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
                 colors: [
-                  ColorsManagers.lightViolet,
+                  ColorsManagers.purple,
                   ColorsManagers.voliet,
                 ]),
           ),
