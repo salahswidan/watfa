@@ -55,10 +55,15 @@ class GetStartedScreen extends StatelessWidget {
                 Text("Create an account  to get all features",
                     style: TextStyles.font14Grayw400Roboto),
                 verticalSpacing(70),
-                CustomUserTypeContainer(),
+                CustomUserTypeContainer(
+                  isBuyer: true,
+                ),
                 verticalSpacing(80),
-                CustomUserTypeContainer(),
+                CustomUserTypeContainer(
+                  isBuyer: false,
+                ),
                 verticalSpacing(90),
+                
               ],
             ),
           )
