@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 
 import '../../../../../core/theme/styles.dart';
+import '../../../../../core/widgets/stack_shape.dart';
 import '../section/get_started_form.dart';
 
 class GetStartedScreen extends StatelessWidget {
@@ -14,30 +15,7 @@ class GetStartedScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(
-            height: 110.h,
-            child: Stack(
-              children: [
-                Positioned(
-                    top: 0,
-                    left: 0,
-                    child: Image.asset(
-                      'assets/images/background_asset2.png',
-                      fit: BoxFit.fitHeight,
-                      height: 94.h,
-                    )),
-                Positioned(
-                  top: 0,
-                  left: 0,
-                  child: Image.asset(
-                    'assets/images/background_asset1.png',
-                    fit: BoxFit.fitHeight,
-                    height: 110.h,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          const StackShape(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Column(
