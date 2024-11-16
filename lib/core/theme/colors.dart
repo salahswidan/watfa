@@ -15,4 +15,6 @@ class ColorsManagers {
   static const Color antiFlashWhite = Color(0xffF2F2F2);
 
   static const Color charlestonGreen = Color(0xff282828);
+
+  static const Color richBlack = Color(0xff090D20);
 }

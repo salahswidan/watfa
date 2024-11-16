@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/features/auth/otp/presentation/screen/otp_screen.dart';
 
 import '../../features/auth/forget_password/presentation/screen/forget_password_screen.dart';
 import '../../features/auth/get_started/presentation/screen/get_started_screen.dart';
@@ -32,6 +33,10 @@ class AppRouter {
       case Routes.forgotPasswordScreen:
         return MaterialPageRoute(
           builder: (_) => const ForgetPasswordScreen(),
+        );
+      case Routes.otpScreen:
+        return MaterialPageRoute(
+          builder: (_) => const OtpScreen(),
         );
       // case Routes.homeScreen:
       //   return MaterialPageRoute(
