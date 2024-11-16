@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../../../../core/widgets/auth_text_form_field.dart';
 import '../../../../../core/widgets/stack_shape.dart';
@@ -49,7 +51,9 @@ class LoginScreen extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerRight,
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      context.pushNamed(Routes.forgotPasswordScreen);
+                    },
                     child: Text(
                       'Forgot password?',
                       style: TextStyles.font14VolietW500Roboto,

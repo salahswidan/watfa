@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../features/auth/forget_password/presentation/screen/forget_password_screen.dart';
 import '../../features/auth/get_started/presentation/screen/get_started_screen.dart';
 
 import '../../features/auth/login/presentation/screen/login_screen.dart';
@@ -27,6 +28,11 @@ class AppRouter {
 
       case Routes.getStartedScreen:
         return MaterialPageRoute(builder: (_) => const GetStartedScreen());
+
+      case Routes.forgotPasswordScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ForgetPasswordScreen(),
+        );
       // case Routes.homeScreen:
       //   return MaterialPageRoute(
       //       builder: (_) => BlocProvider(
