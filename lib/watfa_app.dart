@@ -15,7 +15,7 @@ class WatfaApp extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       child: MaterialApp(
-        title: 'Doctor App',
+        title: 'Watfa App',
         theme: ThemeData(
           // primaryColor: ColorsManagers.mainblue,
           scaffoldBackgroundColor: Colors.white,
