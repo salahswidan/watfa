@@ -79,4 +79,10 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: ColorsManagers.darkLiver,
   );
+
+  static TextStyle font14VolietW500Roboto = GoogleFonts.roboto(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManagers.voliet,
+  );
 }

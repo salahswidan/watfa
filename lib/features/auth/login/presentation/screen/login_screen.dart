@@ -42,6 +42,18 @@ class LoginScreen extends StatelessWidget {
                 hintText: 'Password',
                 controller: TextEditingController(),
               ),
+              verticalSpacing(8),
+              Align(
+                alignment: Alignment.centerRight,
+                child: InkWell(
+                  onTap: () {},
+                  child: Text(
+                    'Forgot password?',
+                    style: TextStyles.font14VolietW500Roboto,
+                  ),
+                ),
+              ),
+              verticalSpacing(50),
             ],
           ),
         )
