@@ -35,7 +35,7 @@ class LoginScreen extends StatelessWidget {
                     style: TextStyles.font14Grayw400Roboto),
                 verticalSpacing(40),
                 AuthTextFormField(
-                  prefixIcon: 'assets/svgs/email_text_field_icon.svg',
+                  prefixIcon: 'assets/svgs/username_text_field_icon.svg',
                   hintText: 'Username/Email',
                   controller: TextEditingController(),
                 ),
