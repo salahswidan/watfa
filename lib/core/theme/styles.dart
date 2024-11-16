@@ -73,4 +73,10 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: ColorsManagers.darkLiver,
   );
+
+  static TextStyle font14DarkLiverW400Roboto = GoogleFonts.roboto(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManagers.darkLiver,
+  );
 }

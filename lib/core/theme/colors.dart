@@ -11,4 +11,6 @@ class ColorsManagers {
   static const Color cultured = Color(0xffF6F6F6);
 
   static const Color taupeGray = Color(0xff888888);
+
+  static const Color antiFlashWhite = Color(0xffF2F2F2);
 }
