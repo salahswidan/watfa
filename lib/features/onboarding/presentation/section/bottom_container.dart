@@ -82,17 +82,23 @@ class BottomContainer extends StatelessWidget {
               onTap: onTap,
             ),
             verticalSpacing(20),
-            Visibility(
-              visible: currentIndex != 2,
-              child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Skip",
-                    style: TextStyles.font14Blackw700Roboto.copyWith(
-                      color: Colors.black.withOpacity(0.5),
-                    ),
-                  )),
-            )
+            SafeArea(
+              top: false,
+              right: false,
+              left: false,
+              bottom: true,
+              child: Visibility(
+                visible: currentIndex != 2,
+                child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Skip",
+                      style: TextStyles.font14Blackw700Roboto.copyWith(
+                        color: Colors.black.withOpacity(0.5),
+                      ),
+                    )),
+              ),
+            ),
           ],
         ),
       ),

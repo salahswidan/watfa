@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../features/auth/get_started/presentation/screen/get_started_screen.dart';
 
+import '../../features/auth/login/presentation/screen/login_screen.dart';
 import '../../features/onboarding/logic/on_boarding_data.dart';
 import '../../features/onboarding/presentation/screen/on_boarding_screen.dart';
 import '../helpers/shared_pref_helper.dart';
@@ -19,12 +20,10 @@ class AppRouter {
                 : OnBoardingData.onBoardingSeller,
           ),
         );
-      // case Routes.loginScreen:
-      //   return MaterialPageRoute(
-      //       builder: (_) => BlocProvider(
-      //             create: (context) => getit<LoginCubit>(),
-      //             child: const LoginScreen(),
-      //           ));
+      case Routes.loginScreen:
+        return MaterialPageRoute(
+          builder: (_) => const LoginScreen(),
+        );
 
       case Routes.getStartedScreen:
         return MaterialPageRoute(builder: (_) => const GetStartedScreen());
