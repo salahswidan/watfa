@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:watfa/core/helpers/extinsions.dart';
+import 'package:watfa/core/routing/routes.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../logic/model/on_boarding_model.dart';
@@ -48,7 +50,9 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
                   isOut = !isOut;
                 });
                 Timer(const Duration(milliseconds: 300), () {
-                  currentIndex = currentIndex > 1 ? 0 : currentIndex + 1;
+                  currentIndex > 1
+                      ? context.pushNamed(Routes.loginScreen)
+                      : currentIndex = currentIndex + 1;
 
                   setState(() {
                     isOut = !isOut;
