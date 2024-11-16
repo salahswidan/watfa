@@ -8,7 +8,6 @@ import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theme/colors.dart';
 import '../../../../../core/theme/styles.dart';
-import '../../../../../core/widgets/auth_text_form_field.dart';
 import '../../../../../core/widgets/stack_shape.dart';
 import '../../../get_started/presentation/widgets/custom_auth_button.dart';
 
@@ -49,6 +48,7 @@ class OtpScreen extends StatelessWidget {
                     defaultPinTheme: PinTheme(
                       height: 50.h,
                       width: 335.w,
+                      textStyle: TextStyles.font12RichBlackw500SpaceGrotesk,
                       decoration: BoxDecoration(
                         shape: BoxShape.rectangle,
                         color: Colors.white,

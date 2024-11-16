@@ -104,4 +104,10 @@ class TextStyles {
     color: ColorsManagers.voliet,
   );
 
+  static TextStyle font12RichBlackw500SpaceGrotesk = GoogleFonts.spaceGrotesk(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManagers.richBlack,
+  );
+
 }
