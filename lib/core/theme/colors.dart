@@ -13,4 +13,6 @@ class ColorsManagers {
   static const Color taupeGray = Color(0xff888888);
 
   static const Color antiFlashWhite = Color(0xffF2F2F2);
+
+  static const Color charlestonGreen = Color(0xff282828);
 }

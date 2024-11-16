@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,9 +9,12 @@ class AuthTextFormField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
   final String prefixIcon;
-  
+
   const AuthTextFormField({
-    super.key, required this.controller, required this.hintText, required this.prefixIcon,
+    super.key,
+    required this.controller,
+    required this.hintText,
+    required this.prefixIcon,
   });
 
   @override
