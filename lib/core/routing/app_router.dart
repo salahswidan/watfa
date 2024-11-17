@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:watfa/features/auth/otp/presentation/screen/otp_screen.dart';
+import 'package:watfa/features/auth/password_updated/presentation/password_updated_screen.dart';
 
 import '../../features/auth/forget_password/presentation/screen/forget_password_screen.dart';
 import '../../features/auth/get_started/presentation/screen/get_started_screen.dart';
@@ -42,6 +43,11 @@ class AppRouter {
       case Routes.resetPasswordScreen:
         return MaterialPageRoute(
           builder: (_) => const ResetPasswordScreen(),
+        );
+
+      case Routes.passwordUpdatedScreen:
+        return MaterialPageRoute(
+          builder: (_) => const PasswordUpdatedScreen(),
         );
       // case Routes.homeScreen:
       //   return MaterialPageRoute(

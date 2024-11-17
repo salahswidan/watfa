@@ -45,7 +45,7 @@ class OtpScreen extends StatelessWidget {
                   verticalSpacing(60),
                   CustomAuthButton(
                     onTap: () {
-                      context.pushNamed(Routes.otpScreen);
+                      context.pushNamed(Routes.resetPasswordScreen);
                     },
                     text: 'RESET PASSWORD',
                   ),

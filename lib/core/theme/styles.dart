@@ -110,4 +110,10 @@ class TextStyles {
     color: ColorsManagers.richBlack,
   );
 
+  static TextStyle font16Blackw700Roboto = GoogleFonts.roboto(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: Colors.black,
+  );
+
 }
