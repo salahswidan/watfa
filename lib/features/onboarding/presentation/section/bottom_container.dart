@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../core/helpers/spacing.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/styles.dart';
 import '../../logic/model/on_boarding_model.dart';
 import '../widgets/custom_button.dart';
@@ -90,7 +92,9 @@ class BottomContainer extends StatelessWidget {
               child: Visibility(
                 visible: currentIndex != 2,
                 child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.pushNamed(Routes.loginScreen);
+                    },
                     child: Text(
                       "Skip",
                       style: TextStyles.font14Blackw700Roboto.copyWith(

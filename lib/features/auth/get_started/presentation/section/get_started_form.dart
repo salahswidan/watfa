@@ -60,7 +60,7 @@ class _GetStartedFormState extends State<GetStartedForm> {
               await CacheServices.instance.setUserType(_selectedUserType == 0);
             });
 
-            Navigator.pushNamed(context, Routes.loginScreen);
+            Navigator.pushNamed(context, Routes.onBoardingScreen);
           },
           text: 'Proceed',
         ),
