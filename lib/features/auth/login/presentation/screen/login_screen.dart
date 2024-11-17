@@ -78,7 +78,9 @@ class LoginScreen extends StatelessWidget {
                         style: TextStyles.font16DarkLiverW400Roboto),
                     horizontalSpacing(5),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        context.pushNamed(Routes.signUpScreen);
+                      },
                       child: Text('Sign up',
                           style: TextStyles.font16VolietW700Roboto),
                     )

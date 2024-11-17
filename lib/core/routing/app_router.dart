@@ -7,6 +7,7 @@ import '../../features/auth/get_started/presentation/screen/get_started_screen.d
 
 import '../../features/auth/login/presentation/screen/login_screen.dart';
 import '../../features/auth/reset_password/presentation/screen/reset_password_screen.dart';
+import '../../features/auth/sign_up/presentation/screen/sign_up_screen.dart';
 import '../../features/onboarding/logic/on_boarding_data.dart';
 import '../../features/onboarding/presentation/screen/on_boarding_screen.dart';
 import '../helpers/shared_pref_helper.dart';
@@ -48,6 +49,11 @@ class AppRouter {
       case Routes.passwordUpdatedScreen:
         return MaterialPageRoute(
           builder: (_) => const PasswordUpdatedScreen(),
+        );
+
+      case Routes.signUpScreen:
+        return MaterialPageRoute(
+          builder: (_) => const SignUpScreen(),
         );
       // case Routes.homeScreen:
       //   return MaterialPageRoute(
