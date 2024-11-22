@@ -12,7 +12,7 @@ platform :android do
       debug: true,
       android_artifact_type: "APK",
       android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
-      testers: "mariamkhaled922003@gmail.com",
+      testers: "mariamkhaled922003@gmail.com, mariamfawzu@gmail.com",
       release_notes: "test",
     )
   end
