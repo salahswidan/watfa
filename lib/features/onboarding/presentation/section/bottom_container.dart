@@ -45,18 +45,7 @@ class BottomContainer extends StatelessWidget {
         child: Column(
           children: [
             verticalSpacing(20),
-            AnimatedOpacity(
-              duration: const Duration(milliseconds: 300),
-              opacity: isOut ? 0 : 1,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 40.w),
-                child: Text(
-                  onBoardingData[currentIndex].title,
-                  style: TextStyles.font20Blackw700Roboto,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
+
             verticalSpacing(20),
             AnimatedOpacity(
               duration: const Duration(milliseconds: 300),
@@ -71,18 +60,12 @@ class BottomContainer extends StatelessWidget {
               ),
             ),
             verticalSpacing(50),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                3,
-                (index) => OnboardingDot(done: index <= currentIndex),
-              ),
-            ),
+
             verticalSpacing(35),
-            CustomButton(
-              text: currentIndex == 2 ? "Get Started" : "NEXT",
-              onTap: onTap,
-            ),
+            // CustomButton(
+            //   text: currentIndex == 2 ? "Get Started" : "NEXT",
+            //   onTap: onTap,
+            // ),
             verticalSpacing(20),
             SafeArea(
               top: false,

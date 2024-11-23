@@ -6,6 +6,24 @@ import 'colors.dart';
 import 'font_weight_helper.dart';
 
 class TextStyles {
+  static TextStyle font27Blackw600Inter = GoogleFonts.inter(
+    fontSize: 27.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: Colors.black,
+  );
+
+   static TextStyle font27Purplew600Inter = GoogleFonts.inter(
+    fontSize: 27.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManagers.purple,
+   );
+
+   static TextStyle font18SpanishGrayw500Roboto = GoogleFonts.roboto(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManagers.spanishGray,
+  );
+
   static TextStyle font20Blackw700Roboto = GoogleFonts.roboto(
     fontSize: 20.sp,
     fontWeight: FontWeightHelper.bold,

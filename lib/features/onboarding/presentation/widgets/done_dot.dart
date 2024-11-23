@@ -8,10 +8,10 @@ class DoneDot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 12.h,
-      width: 12.w,
+      height: 13.h,
+      width: 13.w,
       decoration: const BoxDecoration(
-        color: ColorsManagers.voliet,
+        color: ColorsManagers.purple,
         shape: BoxShape.circle,
       ),
     );
