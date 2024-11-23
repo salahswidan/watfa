@@ -1,8 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../core/helpers/spacing.dart';
+import '../../../../core/routing/routes.dart';
 import '../../logic/model/on_boarding_model.dart';
 import '../section/images_section.dart';
 import '../section/title_and_description.dart';
@@ -52,7 +54,7 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
                 });
                 Timer(const Duration(milliseconds: 300), () {
                   currentIndex > 1
-                      ? currentIndex = 0
+                      ? context.pushNamed(Routes.loginScreen)
                       : currentIndex = currentIndex + 1;
 
                   setState(() {
