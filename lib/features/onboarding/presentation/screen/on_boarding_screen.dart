@@ -32,43 +32,45 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
           children: [
             SizedBox(
               height: 505.h,
-              child: Expanded(
-                child: Stack(
-                  children: [
-                    AnimatedPositioned(
-                      top: widget
-                          .onBoardingData[currentIndex].firstSmallImageTop.h,
-                      right: widget
-                          .onBoardingData[currentIndex].firstSmallImageRight.w,
+              child: Stack(
+                children: [
+                  AnimatedPositioned(
+                    top: widget
+                        .onBoardingData[currentIndex].firstSmallImageTop.h,
+                    right: isOut
+                        ? 0
+                        : widget.onBoardingData[currentIndex]
+                            .firstSmallImageRight.w,
+                    duration: const Duration(milliseconds: 300),
+                    child: Image.asset(
+                        widget.onBoardingData[currentIndex].firstSmallImage,
+                        height: widget.onBoardingData[currentIndex]
+                            .firstSmallImageHeight.h),
+                  ),
+                  Positioned(
+                    top: 165.h,
+                    child: AnimatedScale(
+                      scale: isOut ? 0 : 1,
                       duration: const Duration(milliseconds: 300),
                       child: Image.asset(
-                          widget.onBoardingData[currentIndex].firstSmallImage,
-                          height: widget
-                              .onBoardingData[currentIndex].firstSmallImageHeight.h),
+                          widget.onBoardingData[currentIndex].image,
+                          width: 412.w),
                     ),
-                    Positioned(
-                      top: 165.h,
-                      child: AnimatedScale(
-                        scale: isOut ? 0 : 1,
-                        duration: const Duration(milliseconds: 300),
-                        child: Image.asset(
-                            widget.onBoardingData[currentIndex].image,
-                            width: 412.w),
-                      ),
-                    ),
-                    AnimatedPositioned(
-                      top: widget
-                          .onBoardingData[currentIndex].secondSmallImageTop.h,
-                      right: widget
-                          .onBoardingData[currentIndex].secondSmallImageRight.w,
-                      duration: const Duration(milliseconds: 300),
-                      child: Image.asset(
-                          widget.onBoardingData[currentIndex].secondSmallImage,
-                          height: widget
-                              .onBoardingData[currentIndex].secondSmallImageHeight.h),
-                    ),
-                  ],
-                ),
+                  ),
+                  AnimatedPositioned(
+                    top: widget
+                        .onBoardingData[currentIndex].secondSmallImageTop.h,
+                    right: isOut
+                        ? 412.w
+                        : widget.onBoardingData[currentIndex]
+                            .secondSmallImageRight.w,
+                    duration: const Duration(milliseconds: 300),
+                    child: Image.asset(
+                        widget.onBoardingData[currentIndex].secondSmallImage,
+                        height: widget.onBoardingData[currentIndex]
+                            .secondSmallImageHeight.h),
+                  ),
+                ],
               ),
             ),
             verticalSpacing(5),
@@ -111,10 +113,14 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
                   verticalSpacing(10),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20.w),
-                    child: Text(
-                      widget.onBoardingData[currentIndex].description,
-                      style: TextStyles.font18SpanishGrayw500Roboto,
-                      textAlign: TextAlign.center,
+                    child: AnimatedOpacity(
+                      duration: const Duration(milliseconds: 300),
+                      opacity: isOut ? 0 : 1,
+                      child: Text(
+                        widget.onBoardingData[currentIndex].description,
+                        style: TextStyles.font18SpanishGrayw500Roboto,
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                 ],
@@ -122,7 +128,20 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
             ),
             verticalSpacing(45),
             CustomButton(
-              onTap: () {},
+              onTap: () {
+                setState(() {
+                  isOut = !isOut;
+                });
+                Timer(const Duration(milliseconds: 300), () {
+                  currentIndex > 1
+                      ? currentIndex = 0
+                      : currentIndex = currentIndex + 1;
+
+                  setState(() {
+                    isOut = !isOut;
+                  });
+                });
+              },
             )
 
             // AnimatedScale(

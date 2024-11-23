@@ -23,7 +23,7 @@ class WatfaApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: CacheServices.instance.getUserType() != null
             ? Routes.onBoardingScreen
-            : Routes.getStartedScreen,
+            : Routes.onBoardingScreen,
         // initialRoute: CacheServices.instance.getOnBoarding()
         //     ? CacheServices.instance.getUserModel() != null
         //         ? Routes.homeScreen
