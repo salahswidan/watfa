@@ -32,7 +32,7 @@ extension MediaQueryValues on BuildContext {
   double get screenWidth => MediaQuery.sizeOf(this).width;
 }
 
-extension SizeExtension on double {
+extension SizeExtension on num {
   static const double referenceHeight = 917;
   static const double referenceWidth = 412;
 

@@ -42,11 +42,13 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
               ),
             ),
             verticalSpacing(40),
-            TitleAndDescription(
-                isOut: isOut,
-                onBoardingData: widget.onBoardingData,
-                currentIndex: currentIndex),
-            verticalSpacing(45),
+            Expanded(
+              child: TitleAndDescription(
+                  isOut: isOut,
+                  onBoardingData: widget.onBoardingData,
+                  currentIndex: currentIndex),
+            ),
+            Expanded(child: verticalSpacing(45)),
             CustomButton(
               onTap: () {
                 setState(() {
@@ -62,7 +64,8 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
                   });
                 });
               },
-            )
+            ),
+            Flexible(child: verticalSpacing(100.h(context))),
           ],
         ),
       ),
