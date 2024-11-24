@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/theme/styles.dart';
 
 import '../../../../../core/theme/colors.dart';
@@ -13,28 +14,23 @@ class CustomAuthButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-          height: 50,
-          width: 1,
+          height: 58,
+          width: context.screenWidth,
           decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(.19),
-                blurRadius: 7,
-                spreadRadius: 0,
-                offset: const Offset(0, 5),
-              ),
-            ],
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(20),
             gradient: const LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
                 colors: [
-                  ColorsManagers.voliet,
                   ColorsManagers.purple,
+                  ColorsManagers.lavender,
                 ]),
           ),
           child: Center(
-            child: Text(text,),
+            child: Text(
+              text,
+              style: TextStyles.font20WhiteW600Roboto(context),
+            ),
           )),
     );
   }

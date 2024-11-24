@@ -13,7 +13,7 @@ platform :android do
       android_artifact_type: "APK",
       android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
       testers: "mariamkhaled922003@gmail.com, mariamfawzu@gmail.com",
-      release_notes: "Done Splash Screen (for android 12 and all) & OnBoarding",
+      release_notes: "Done Login",
     )
   end
 end

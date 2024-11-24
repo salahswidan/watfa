@@ -7,9 +7,14 @@ class ColorsManagers {
   static const Color paleLavender = Color(0xffE8C6FC);
   static const Color jet = Color(0xff353535);
   static const Color graniteGray = Color(0xff646464);
+  static const Color lavender= Color(0xffA667CA);
+  static const Color outerSpace = Color(0xff484848);
+  static const Color lavenderWeb= Color (0xffF3DEFF);
+  static const Color dimGray = Color(0xff696969);
+  static const Color charlestonGreen = Color(0xff282828);
+  static const Color darkLiver = Color(0xff515151);
 
   static const Color voliet = Color(0xffE071C0);
-  static const Color darkLiver = Color(0xff515151);
 
   static const Color lightGray = Color(0xffD3D3D3);
 
@@ -19,7 +24,6 @@ class ColorsManagers {
 
   static const Color antiFlashWhite = Color(0xffF2F2F2);
 
-  static const Color charlestonGreen = Color(0xff282828);
 
   static const Color richBlack = Color(0xff090D20);
 }

@@ -69,6 +69,62 @@ class TextStyles {
       color: Colors.grey,
     );
   }
+
+  static TextStyle font14Purplew500Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.purple,
+    );
+  }
+
+  static TextStyle font20WhiteW600Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.semiBold,
+      color: Colors.white,
+    );
+  }
+
+  static TextStyle font20OuterSpaceW600Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.semiBold,
+      color: ColorsManagers.outerSpace,
+    );
+  }
+
+  static TextStyle font20DimGrayw500Podkova(context) {
+    return GoogleFonts.podkova(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.dimGray,
+    );
+  }
+
+  static TextStyle font15CharlestonGreenw400Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 15),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.charlestonGreen,
+    );
+  }
+  
+  static TextStyle font16DarkLiverw400Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.darkLiver,
+    );
+  }
+
+  static TextStyle font16Purplew700Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeightHelper.bold,
+      color: ColorsManagers.purple,
+    );
+  }
 }
 
 double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
