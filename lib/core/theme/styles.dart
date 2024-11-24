@@ -125,6 +125,14 @@ class TextStyles {
       color: ColorsManagers.purple,
     );
   }
+
+  static TextStyle font10DaveGrayw300Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 10),
+      fontWeight: FontWeightHelper.light,
+      color: ColorsManagers.davysGray,
+    );
+  }
 }
 
 double getResponsiveFontSize(BuildContext context, {required double fontSize}) {

@@ -13,6 +13,7 @@ class ColorsManagers {
   static const Color dimGray = Color(0xff696969);
   static const Color charlestonGreen = Color(0xff282828);
   static const Color darkLiver = Color(0xff515151);
+  static const Color davysGray = Color(0xff5B5B5B);
 
   static const Color voliet = Color(0xffE071C0);
 

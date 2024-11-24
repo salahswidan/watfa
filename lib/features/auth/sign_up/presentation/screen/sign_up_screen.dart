@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/routing/routes.dart';
-import '../../../../../core/theme/colors.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../../../../core/widgets/auth_text_form_field.dart';
+import '../../../../../core/widgets/custom_divider.dart';
 import '../../../get_started/presentation/widgets/custom_auth_button.dart';
 import '../../../login/presentation/section/social_auth.dart';
-import '../../../login/presentation/widget/local_auth_container.dart';
 import '../../../login/presentation/widget/logo.dart';
+import '../section/already_have_an_account.dart';
+import '../section/biometric_auth.dart';
+import '../section/password_listener.dart';
+import '../section/use_biometric_access.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -88,76 +90,23 @@ class SignUpScreen extends StatelessWidget {
                           controller: TextEditingController(),
                         ),
                         verticalSpacing(10),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: InkWell(
-                            onTap: () {
-                              context.pushNamed(Routes.forgotPasswordScreen);
-                            },
-                            child: Text(
-                              'Forgot password?',
-                              style: TextStyles.font14Purplew500Poppins(context)
-                                  .copyWith(
-                                decoration: TextDecoration.underline,
-                              ),
-                            ),
-                          ),
-                        ),
-                        verticalSpacing(15),
+                       const PasswordListener(),
+                        verticalSpacing(25),
                         CustomAuthButton(
                           onTap: () {},
                           text: 'Sign Up',
                         ),
                         Flexible(child: verticalSpacing(40)),
-                        RichText(
-                          text: TextSpan(
-                              text: "Use",
-                              style: TextStyles.font20OuterSpaceW600Poppins(
-                                  context),
-                              children: [
-                                TextSpan(
-                                  text: " Biometric",
-                                  style: TextStyles.font20OuterSpaceW600Poppins(
-                                          context)
-                                      .copyWith(
-                                    color: ColorsManagers.purple,
-                                  ),
-                                ),
-                                TextSpan(
-                                  text: " Access",
-                                  style: TextStyles.font20OuterSpaceW600Poppins(
-                                      context),
-                                ),
-                              ]),
-                        ),
+                        const UseBiometricAccess(),
                         Flexible(
                           child: verticalSpacing(40),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            LocalAuthContainer(
-                              image: "assets/svgs/figner_print.svg",
-                              onTap: () {},
-                            ),
-                            Text("Or",
-                                style: TextStyles.font20DimGrayw500Podkova(
-                                    context)),
-                            LocalAuthContainer(
-                              image: "assets/svgs/face_id.svg",
-                              onTap: () {},
-                            ),
-                          ],
+                        BiometricAuth(
+                          onTapFaceId: () {},
+                          onTapFingerPrint: () {},
                         ),
                         verticalSpacing(20),
-                        Padding(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 80.h(context)),
-                          child: const Divider(
-                            color: ColorsManagers.philippineSilver,
-                            thickness: .5,
-                          ),
-                        ),
+                        const CustomDivider(),
                         verticalSpacing(15),
                         Text(
                           "sign up using",
@@ -167,30 +116,7 @@ class SignUpScreen extends StatelessWidget {
                         verticalSpacing(14),
                         const SocialAuth(),
                         verticalSpacing(10),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Already have an account?",
-                              style:
-                                  TextStyles.font16DarkLiverw400Roboto(context),
-                            ),
-                            horizontalSpacing(5),
-                            InkWell(
-                              onTap: () {
-                                context.pop();
-                              },
-                              child: Text(
-                                'Log In',
-                                style:
-                                    TextStyles.font16Purplew700Roboto(context)
-                                        .copyWith(
-                                  decoration: TextDecoration.underline,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
+                        const AlreadyHaveAnAccount(),
                       ],
                     ),
                   ),

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
-import 'package:watfa/core/theme/colors.dart';
+import 'package:watfa/core/widgets/custom_divider.dart';
 
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../../../../core/widgets/auth_text_form_field.dart';
 import '../../../get_started/presentation/widgets/custom_auth_button.dart';
+import '../../../sign_up/presentation/section/biometric_auth.dart';
+import '../section/dont_have_acc.dart';
 import '../section/social_auth.dart';
-import '../widget/local_auth_container.dart';
 import '../widget/logo.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -90,29 +91,12 @@ class LoginScreen extends StatelessWidget {
                   Flexible(
                     child: verticalSpacing(40),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      LocalAuthContainer(
-                        image: "assets/svgs/figner_print.svg",
-                        onTap: () {},
-                      ),
-                      Text("Or",
-                          style: TextStyles.font20DimGrayw500Podkova(context)),
-                      LocalAuthContainer(
-                        image: "assets/svgs/face_id.svg",
-                        onTap: () {},
-                      ),
-                    ],
+                  BiometricAuth(
+                    onTapFaceId: () {},
+                    onTapFingerPrint: () {},
                   ),
                   verticalSpacing(20),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 80.h(context)),
-                    child: const Divider(
-                      color: ColorsManagers.philippineSilver,
-                      thickness: .5,
-                    ),
-                  ),
+                  const CustomDivider(),
                   verticalSpacing(15),
                   Text(
                     "sign in using",
@@ -121,28 +105,7 @@ class LoginScreen extends StatelessWidget {
                   verticalSpacing(14),
                   const SocialAuth(),
                   verticalSpacing(10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Don't have an account?",
-                        style: TextStyles.font16DarkLiverw400Roboto(context),
-                      ),
-                      horizontalSpacing(5),
-                      InkWell(
-                        onTap: () {
-                          context.pushNamed(Routes.signUpScreen);
-                        },
-                        child: Text(
-                          'Sign up',
-                          style: TextStyles.font16Purplew700Roboto(context)
-                              .copyWith(
-                            decoration: TextDecoration.underline,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
+                  const DontHaveAcc(),
                   verticalSpacing(20),
                 ],
               ),
@@ -153,3 +116,4 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
+
