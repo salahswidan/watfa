@@ -38,7 +38,7 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
                 3,
-                (index) => OnboardingDot(done: index <= currentIndex),
+                (index) => OnboardingDot(done: index == currentIndex),
               ),
             ),
             verticalSpacing(40),

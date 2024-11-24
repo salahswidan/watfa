@@ -1,5 +1,5 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/helpers/shared_pref_helper.dart';
 import 'core/routing/app_router.dart';
@@ -11,28 +11,27 @@ class WatfaApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(412, 917),
-      minTextAdapt: true,
-      child: MaterialApp(
-        title: 'Watfa App',
-        theme: ThemeData(
-          // primaryColor: ColorsManagers.mainblue,
-          scaffoldBackgroundColor: Colors.white,
-        ),
-        debugShowCheckedModeBanner: false,
-        initialRoute:
-            // CacheServices.instance.getUserType() != null
-            //     ? Routes.onBoardingScreen
-            //     :
-            Routes.onBoardingScreen,
-        // initialRoute: CacheServices.instance.getOnBoarding()
-        //     ? CacheServices.instance.getUserModel() != null
-        //         ? Routes.homeScreen
-        //         : Routes.loginScreen
-        //     : Routes.onBoardingScreen,
-        onGenerateRoute: appRouter.generateRoute,
+    return MaterialApp(
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
+      title: 'Watfa App',
+      theme: ThemeData(
+        // primaryColor: ColorsManagers.mainblue,
+        scaffoldBackgroundColor: Colors.white,
       ),
+      debugShowCheckedModeBanner: false,
+      initialRoute:
+          // CacheServices.instance.getUserType() != null
+          //     ? Routes.onBoardingScreen
+          //     :
+          Routes.onBoardingScreen,
+      // initialRoute: CacheServices.instance.getOnBoarding()
+      //     ? CacheServices.instance.getUserModel() != null
+      //         ? Routes.homeScreen
+      //         : Routes.loginScreen
+      //     : Routes.onBoardingScreen,
+      onGenerateRoute: appRouter.generateRoute,
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theme/colors.dart';
 
@@ -12,7 +11,7 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-          height: 52.h,
+          height: 52,
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: ColorsManagers.purple,

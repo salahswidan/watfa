@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watfa/core/theme/styles.dart';
 
 import '../../../../../core/theme/colors.dart';
@@ -14,8 +13,8 @@ class CustomAuthButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-          height: 50.h,
-          width: 1.sw,
+          height: 50,
+          width: 1,
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
@@ -25,7 +24,7 @@ class CustomAuthButton extends StatelessWidget {
                 offset: const Offset(0, 5),
               ),
             ],
-            borderRadius: BorderRadius.circular(5.r),
+            borderRadius: BorderRadius.circular(5),
             gradient: const LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -35,7 +34,7 @@ class CustomAuthButton extends StatelessWidget {
                 ]),
           ),
           child: Center(
-            child: Text(text, style: TextStyles.font16Whitew700Roboto),
+            child: Text(text,),
           )),
     );
   }

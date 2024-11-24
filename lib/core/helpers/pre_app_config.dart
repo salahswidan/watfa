@@ -1,5 +1,4 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'shared_pref_helper.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,6 +10,5 @@ Future<void> preAppConfig() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheServices.instance.init();
   // setupGetIT();
-  await ScreenUtil.ensureScreenSize();
   // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 }

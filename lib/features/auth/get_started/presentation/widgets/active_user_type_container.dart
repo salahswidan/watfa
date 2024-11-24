@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
@@ -19,7 +18,7 @@ class ActiveUserTypeContainer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(2),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.r),
+        borderRadius: BorderRadius.circular(10),
         gradient: const LinearGradient(
             begin: Alignment.centerRight,
             end: Alignment.centerLeft,
@@ -27,15 +26,15 @@ class ActiveUserTypeContainer extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.r),
+          borderRadius: BorderRadius.circular(10),
           color: Colors.white,
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
           child: ListTile(
             contentPadding: EdgeInsets.zero,
             title: GradientText(getStartedModel.title,
-                style: TextStyles.font12w600Inter,
+                // style: TextStyles.font12w600Inter,
                 gradientDirection: GradientDirection.ttb,
                 colors: const [
                   ColorsManagers.voliet,
@@ -65,7 +64,7 @@ class ActiveUserTypeContainer extends StatelessWidget {
               ),
             ),
             subtitle: Text(getStartedModel.subTitle,
-                style: TextStyles.font9BlackW400Inter),
+          ),
           ),
         ),
       ),

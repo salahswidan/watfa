@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradient_borders/gradient_borders.dart';
 import 'package:pinput/pinput.dart';
 
@@ -16,13 +15,12 @@ class PinputField extends StatelessWidget {
     return Pinput(
       length: 6,
       defaultPinTheme: PinTheme(
-        height: 50.h,
-        width: 335.w,
-        textStyle: TextStyles.font12RichBlackw500SpaceGrotesk,
+        height: 50,
+        width: 335,
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
           color: Colors.white,
-          borderRadius: BorderRadius.circular(16.r),
+          borderRadius: BorderRadius.circular(16),
           border: const GradientBoxBorder(
             gradient: LinearGradient(
               colors: [

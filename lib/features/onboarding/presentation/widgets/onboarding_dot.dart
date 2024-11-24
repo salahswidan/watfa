@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watfa/features/onboarding/presentation/widgets/not_done_dot.dart';
 
 import 'done_dot.dart';
@@ -11,7 +10,7 @@ class OnboardingDot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 4.w),
+      padding: EdgeInsets.symmetric(horizontal: 4),
       child: AnimatedCrossFade(
         duration: const Duration(milliseconds: 300),
         firstChild: const NotDoneDot(),

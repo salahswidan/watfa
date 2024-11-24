@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../core/theme/colors.dart';
@@ -18,21 +17,21 @@ class InActiveUserTypeContainer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(.5),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.r),
+        borderRadius: BorderRadius.circular(10),
         color: ColorsManagers.lightGray,
       ),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.r),
+          borderRadius: BorderRadius.circular(10),
           color: ColorsManagers.cultured,
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
+          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
           child: ListTile(
             contentPadding: EdgeInsets.zero,
             title: Text(
               getStartedModel.title,
-              style: TextStyles.font12TaupeGrayw500Inter,
+   
             ),
             trailing: const Icon(
               Icons.arrow_forward_ios,
@@ -46,7 +45,7 @@ class InActiveUserTypeContainer extends StatelessWidget {
               ),
             ),
             subtitle: Text(getStartedModel.subTitle,
-                style: TextStyles.font10DarkLiver400Inter),
+               ),
           ),
         ),
       ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/styles.dart';
@@ -20,7 +19,7 @@ class TitleAndDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
           AnimatedOpacity(
@@ -29,19 +28,19 @@ class TitleAndDescription extends StatelessWidget {
             child: RichText(
               text: TextSpan(
                 text: onBoardingData[currentIndex].title1,
-                style: TextStyles.font27Blackw600Inter,
+                style: TextStyles.font27Blackw600Inter(context),
                 children: [
                   TextSpan(
                     text: onBoardingData[currentIndex].title2,
                     style: currentIndex == 1 || currentIndex == 0
-                        ? TextStyles.font27Purplew600Inter
-                        : TextStyles.font27Blackw600Inter,
+                        ? TextStyles.font27Purplew600Inter(context)
+                        : TextStyles.font27Blackw600Inter (context),
                   ),
                   TextSpan(
                     text: onBoardingData[currentIndex].title3,
                     style: currentIndex == 2
-                        ? TextStyles.font27Purplew600Inter
-                        : TextStyles.font27Blackw600Inter,
+                        ? TextStyles.font27Purplew600Inter (context)
+                        : TextStyles.font27Blackw600Inter (context),
                   ),
                 ],
               ),
@@ -49,13 +48,13 @@ class TitleAndDescription extends StatelessWidget {
           ),
           verticalSpacing(10),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 300),
               opacity: isOut ? 0 : 1,
               child: Text(
                 onBoardingData[currentIndex].description,
-                style: TextStyles.font18SpanishGrayw500Roboto,
+                style: TextStyles.font18SpanishGrayw500Roboto (context),
                 textAlign: TextAlign.center,
               ),
             ),

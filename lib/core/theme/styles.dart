@@ -1,137 +1,75 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'colors.dart';
 import 'font_weight_helper.dart';
+import 'size_config.dart';
 
 class TextStyles {
-  static TextStyle font27Blackw600Inter = GoogleFonts.inter(
-    fontSize: 27.sp,
-    fontWeight: FontWeightHelper.semiBold,
-    color: Colors.black,
-  );
+  static TextStyle font27Blackw600Inter(context) {
+    return GoogleFonts.inter(
+      fontSize: getResponsiveFontSize(context, fontSize: 27),
+      fontWeight: FontWeightHelper.semiBold,
+      color: Colors.black,
+    );
+  }
 
-   static TextStyle font27Purplew600Inter = GoogleFonts.inter(
-    fontSize: 27.sp,
-    fontWeight: FontWeightHelper.semiBold,
-    color: ColorsManagers.purple,
-   );
+  static TextStyle font27Purplew600Inter(context) {
+    return GoogleFonts.inter(
+      fontSize: getResponsiveFontSize(context, fontSize: 27),
+      fontWeight: FontWeightHelper.semiBold,
+      color: ColorsManagers.purple,
+    );
+  }
 
-   static TextStyle font18SpanishGrayw500Roboto = GoogleFonts.roboto(
-    fontSize: 18.sp,
-    fontWeight: FontWeightHelper.medium,
-    color: ColorsManagers.spanishGray,
-  );
+  static TextStyle font18SpanishGrayw500Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.spanishGray,
+    );
+  }
 
-  static TextStyle font20Blackw700Roboto = GoogleFonts.roboto(
-    fontSize: 20.sp,
-    fontWeight: FontWeightHelper.bold,
-    color: Colors.black,
-  );
-  static TextStyle font24Blackw700Roboto = GoogleFonts.roboto(
-    fontSize: 24.sp,
-    fontWeight: FontWeightHelper.bold,
-    color: Colors.black,
-  );
+  static TextStyle font20Blackw700Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.bold,
+      color: Colors.black,
+    );
+  }
 
-  static TextStyle font12Blackw400Roboto = GoogleFonts.roboto(
-    fontSize: 12.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: Colors.black,
-  );
+  static TextStyle font24Blackw700Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      fontWeight: FontWeightHelper.bold,
+      color: Colors.black,
+    );
+  }
 
-  static TextStyle font14Whitew700Roboto = GoogleFonts.roboto(
-    fontSize: 14.sp,
-    fontWeight: FontWeightHelper.bold,
-    color: Colors.white,
-  );
+  static TextStyle font14Greyw400Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.regular,
+      color: Colors.grey,
+    );
+  }
+}
 
-  static TextStyle font16Whitew700Roboto = GoogleFonts.roboto(
-    fontSize: 16.sp,
-    fontWeight: FontWeightHelper.bold,
-    color: Colors.white,
-  );
-  static TextStyle font14Grayw400Roboto = GoogleFonts.roboto(
-    fontSize: 14.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: ColorsManagers.darkLiver,
-  );
-  static TextStyle font14Blackw700Roboto = GoogleFonts.roboto(
-    fontSize: 14.sp,
-    fontWeight: FontWeightHelper.bold,
-    color: Colors.black,
-  );
+double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
+  double scaleFactor = getScaleFactor(context);
+  double responsiveFontSize = fontSize * scaleFactor;
+  double lowerLimit = fontSize * 0.8;
+  double upperLimit = fontSize * 1.2;
 
-  static TextStyle font18Blackw400Roboto = GoogleFonts.roboto(
-    fontSize: 18.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: Colors.black,
-  );
+  return responsiveFontSize.clamp(lowerLimit, upperLimit);
+}
 
-  static TextStyle font12w600Inter = GoogleFonts.inter(
-    fontSize: 12.sp,
-    fontWeight: FontWeightHelper.semiBold,
-  );
-
-  static TextStyle font12TaupeGrayw500Inter = GoogleFonts.inter(
-    fontSize: 12.sp,
-    fontWeight: FontWeightHelper.medium,
-    color: ColorsManagers.taupeGray,
-  );
-
-  static TextStyle font9BlackW400Inter = GoogleFonts.inter(
-    fontSize: 10.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: Colors.black,
-  );
-
-  static TextStyle font10DarkLiver400Inter = GoogleFonts.inter(
-    fontSize: 9.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: ColorsManagers.darkLiver,
-  );
-
-  static TextStyle font14DarkLiverW400Roboto = GoogleFonts.roboto(
-    fontSize: 14.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: ColorsManagers.darkLiver,
-  );
-
-  static TextStyle font14VolietW500Roboto = GoogleFonts.roboto(
-    fontSize: 14.sp,
-    fontWeight: FontWeightHelper.medium,
-    color: ColorsManagers.voliet,
-  );
-
-  static TextStyle font15CharlestonGreenW400Roboto = GoogleFonts.roboto(
-    fontSize: 15.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: ColorsManagers.charlestonGreen,
-  );
-
-  static TextStyle font16DarkLiverW400Roboto = GoogleFonts.roboto(
-    fontSize: 16.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: ColorsManagers.darkLiver,
-  );
-
-  static TextStyle font16VolietW700Roboto = GoogleFonts.roboto(
-    fontSize: 16.sp,
-    fontWeight: FontWeightHelper.bold,
-    color: ColorsManagers.voliet,
-  );
-
-  static TextStyle font12RichBlackw500SpaceGrotesk = GoogleFonts.spaceGrotesk(
-    fontSize: 12.sp,
-    fontWeight: FontWeightHelper.medium,
-    color: ColorsManagers.richBlack,
-  );
-
-  static TextStyle font16Blackw700Roboto = GoogleFonts.roboto(
-    fontSize: 16.sp,
-    fontWeight: FontWeightHelper.bold,
-    color: Colors.black,
-  );
-
+double getScaleFactor(BuildContext context) {
+  double width = MediaQuery.sizeOf(context).width;
+  if (width < SizeConfig.tablet) {
+    return width / 550;
+  } else if (width < SizeConfig.desktop) {
+    return width / 1000;
+  }
+  return width / 1500;
 }

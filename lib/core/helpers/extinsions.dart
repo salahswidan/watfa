@@ -16,7 +16,7 @@ extension Navigation on BuildContext {
         routeName, (route) => false,
         arguments: arguments);
   }
-  
+
   Future<dynamic> pushNamedAndRemoveUntilNamed(String routeName,
       {Object? arguments}) {
     return Navigator.of(this).pushNamedAndRemoveUntil(
@@ -24,8 +24,25 @@ extension Navigation on BuildContext {
         arguments: arguments);
   }
 
-
   void pop() => Navigator.of(this).pop();
 }
 
+extension MediaQueryValues on BuildContext {
+  double get screenHeight => MediaQuery.sizeOf(this).height;
+  double get screenWidth => MediaQuery.sizeOf(this).width;
+}
 
+extension SizeExtension on double {
+  static const double referenceHeight = 917;
+  static const double referenceWidth = 412;
+
+  double h(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+    return this * mediaQuery.size.height / referenceHeight;
+  }
+
+  double w(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+    return this * mediaQuery.size.width / referenceWidth;
+  }
+}

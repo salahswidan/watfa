@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../theme/colors.dart';
@@ -23,24 +22,24 @@ class AuthTextFormField extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
           border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5.r),
+              borderRadius: BorderRadius.circular(5),
               borderSide: BorderSide.none),
           enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5.r),
+              borderRadius: BorderRadius.circular(5),
               borderSide: BorderSide.none),
           focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5.r),
+              borderRadius: BorderRadius.circular(5),
               borderSide: BorderSide.none),
           filled: true,
           fillColor: ColorsManagers.antiFlashWhite,
           prefixIcon: SvgPicture.asset(
             prefixIcon,
             fit: BoxFit.scaleDown,
-            height: 15.h,
-            width: 15.w,
+            height: 15,
+            width: 15,
           ),
           hintText: hintText,
-          hintStyle: TextStyles.font14DarkLiverW400Roboto),
+        ),
     );
   }
 }

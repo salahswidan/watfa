@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watfa/core/theme/colors.dart';
 
 class NotDoneDot extends StatelessWidget {
@@ -10,8 +9,8 @@ class NotDoneDot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 13.h,
-      width: 13.w,
+      height: 13,
+      width: 13,
       decoration: const BoxDecoration(
         color: ColorsManagers.philippineSilver,
         shape: BoxShape.circle,
