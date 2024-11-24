@@ -30,13 +30,13 @@ class ResetPasswordScreen extends StatelessWidget {
                 verticalSpacing(10),
                 verticalSpacing(40),
                 AuthTextFormField(
-                  prefixIcon: 'assets/svgs/password_text_field_icon.svg',
+                  suffixIcon: 'assets/svgs/password_text_field_icon.svg',
                   hintText: 'Password',
                   controller: TextEditingController(),
                 ),
                 verticalSpacing(30),
                 AuthTextFormField(
-                  prefixIcon: 'assets/svgs/password_text_field_icon.svg',
+                  suffixIcon: 'assets/svgs/password_text_field_icon.svg',
                   hintText: 'Confirm Password',
                   controller: TextEditingController(),
                 ),

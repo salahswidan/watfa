@@ -4,42 +4,65 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../theme/colors.dart';
 import '../theme/styles.dart';
 
-class AuthTextFormField extends StatelessWidget {
+class AuthTextFormField extends StatefulWidget {
   final TextEditingController controller;
   final String hintText;
-  final String prefixIcon;
+  final String? suffixIcon;
+  final bool? isPassword;
 
   const AuthTextFormField({
     super.key,
     required this.controller,
     required this.hintText,
-    required this.prefixIcon,
+    this.suffixIcon,
+    this.isPassword,
   });
 
   @override
+  State<AuthTextFormField> createState() => _AuthTextFormFieldState();
+}
+
+class _AuthTextFormFieldState extends State<AuthTextFormField> {
+  bool isObscured = false;
+  @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: controller,
-      decoration: InputDecoration(
+    return Padding(
+      padding: const EdgeInsets.only(top: 8),
+      child: TextField(
+        obscuringCharacter: "*",
+         obscureText: widget.isPassword ?? false ? isObscured : false,
+        controller: widget.controller,
+        style: TextStyles.font14Greyw500Poppins(context),
+        decoration: InputDecoration(
           border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
-              borderSide: BorderSide.none),
-          enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
-              borderSide: BorderSide.none),
-          focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
-              borderSide: BorderSide.none),
-          filled: true,
-          fillColor: ColorsManagers.antiFlashWhite,
-          prefixIcon: SvgPicture.asset(
-            prefixIcon,
-            fit: BoxFit.scaleDown,
-            height: 15,
-            width: 15,
-          ),
-          hintText: hintText,
+              borderRadius: BorderRadius.circular(15),
+              borderSide: const BorderSide(
+                color: ColorsManagers.purple,
+              )),
+          suffixIcon: widget.isPassword ?? false
+              ? InkWell(
+                onTap: () {
+                  setState(() {
+                    isObscured = !isObscured;
+                  });
+                },
+                child: SvgPicture.asset(
+                    "assets/svgs/password_text_field_icon.svg",
+                    fit: BoxFit.scaleDown,
+                    height: 10,
+                    width: 25,
+                  ),
+              )
+              : SvgPicture.asset(
+                  widget.suffixIcon!,
+                  fit: BoxFit.scaleDown,
+                  height: 18,
+                  width: 18,
+                ),
+          hintStyle: TextStyles.font14Greyw500Poppins(context),
+          hintText: widget.hintText,
         ),
+      ),
     );
   }
 }

@@ -5,6 +5,8 @@ class ColorsManagers {
   static const Color philippineSilver = Color(0xffB2B2B2);
   static const Color spanishGray = Color(0xff979797);
   static const Color paleLavender = Color(0xffE8C6FC);
+  static const Color jet = Color(0xff353535);
+  static const Color graniteGray = Color(0xff646464);
 
   static const Color voliet = Color(0xffE071C0);
   static const Color darkLiver = Color(0xff515151);

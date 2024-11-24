@@ -53,6 +53,22 @@ class TextStyles {
       color: Colors.grey,
     );
   }
+
+  static TextStyle font14Jetw500Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.jet,
+    );
+  }
+
+  static TextStyle font14Greyw500Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.medium,
+      color: Colors.grey,
+    );
+  }
 }
 
 double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
