@@ -22,9 +22,9 @@ class TextStyles {
     );
   }
 
-  static TextStyle font20SpanishGrayw500Roboto(context) {
+  static TextStyle font18SpanishGrayw500Roboto(context) {
     return GoogleFonts.roboto(
-      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontWeight: FontWeightHelper.medium,
       color: ColorsManagers.spanishGray,
     );

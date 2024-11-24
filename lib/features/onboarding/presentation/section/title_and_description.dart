@@ -46,7 +46,9 @@ class TitleAndDescription extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(child: verticalSpacing(10)),
+          Expanded(
+            flex: 1,
+            child: verticalSpacing(10)),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: AnimatedOpacity(
@@ -54,7 +56,7 @@ class TitleAndDescription extends StatelessWidget {
               opacity: isOut ? 0 : 1,
               child: Text(
                 onBoardingData[currentIndex].description,
-                style: TextStyles.font20SpanishGrayw500Roboto(context),
+                style: TextStyles.font18SpanishGrayw500Roboto(context),
                 textAlign: TextAlign.center,
               ),
             ),

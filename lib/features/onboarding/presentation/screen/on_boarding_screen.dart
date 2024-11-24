@@ -41,14 +41,17 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
                 (index) => OnboardingDot(done: index == currentIndex),
               ),
             ),
-            verticalSpacing(40),
+            Flexible(child: verticalSpacing(40)),
             Expanded(
+              flex: 3,
               child: TitleAndDescription(
                   isOut: isOut,
                   onBoardingData: widget.onBoardingData,
                   currentIndex: currentIndex),
             ),
-            Expanded(child: verticalSpacing(45)),
+            Expanded(
+              flex: 1,
+              child: verticalSpacing(10)),
             CustomButton(
               onTap: () {
                 setState(() {
@@ -65,7 +68,9 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
                 });
               },
             ),
-            Flexible(child: verticalSpacing(100.h(context))),
+            Flexible(
+              flex: 2,
+              child: verticalSpacing(50.h(context))),
           ],
         ),
       ),
