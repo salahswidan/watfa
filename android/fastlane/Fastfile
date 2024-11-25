@@ -13,7 +13,7 @@ platform :android do
       android_artifact_type: "APK",
       android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
       testers: "mariamkhaled922003@gmail.com, mariamfawzu@gmail.com, ghazyeman360@gmail.com",
-      release_notes: "Done Login",
+      release_notes: "add get started screen and add first page of sign up for business owner",
     )
   end
 end

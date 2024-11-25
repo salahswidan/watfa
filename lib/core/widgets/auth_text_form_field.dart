@@ -31,14 +31,12 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
     return Padding(
       padding: const EdgeInsets.only(top: 8),
       child: TextField(
-        keyboardType:widget.keyboardType?? TextInputType.text,
+        keyboardType: widget.keyboardType ?? TextInputType.text,
         obscuringCharacter: "*",
         obscureText: widget.isPassword ?? false ? isObscured : false,
         controller: widget.controller,
         style: TextStyles.font14Greyw500Poppins(context),
         decoration: InputDecoration(
-          
-          
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
               borderSide: const BorderSide(
@@ -58,12 +56,14 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
                     width: 25,
                   ),
                 )
-              : SvgPicture.asset(
-                  widget.suffixIcon!,
-                  fit: BoxFit.scaleDown,
-                  height: 18,
-                  width: 18,
-                ),
+              : widget.suffixIcon == null
+                  ? null
+                  : SvgPicture.asset(
+                      widget.suffixIcon!,
+                      fit: BoxFit.scaleDown,
+                      height: 18,
+                      width: 18,
+                    ),
           hintStyle: TextStyles.font14Greyw500Poppins(context),
           hintText: widget.hintText,
         ),
