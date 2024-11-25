@@ -13,8 +13,8 @@ import '../section/biometric_auth.dart';
 import '../section/password_listener.dart';
 import '../section/use_biometric_access.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class SignUpBuyerScreen extends StatelessWidget {
+  const SignUpBuyerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,8 @@ class SignUpScreen extends StatelessWidget {
                             style: TextStyles.font24Blackw700Roboto(context)),
                         Flexible(child: verticalSpacing(18)),
                         Text("Create an account  to get all features",
-                            style: TextStyles.font14Greyw400Roboto(context)),
+                            style:
+                                TextStyles.font14DarkSilverw400Roboto(context)),
                         Flexible(child: verticalSpacing(30)),
                         Align(
                           alignment: Alignment.centerLeft,
@@ -90,7 +91,7 @@ class SignUpScreen extends StatelessWidget {
                           controller: TextEditingController(),
                         ),
                         verticalSpacing(10),
-                       const PasswordListener(),
+                        const PasswordListener(),
                         verticalSpacing(25),
                         CustomAuthButton(
                           onTap: () {},

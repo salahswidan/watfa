@@ -46,11 +46,11 @@ class TextStyles {
     );
   }
 
-  static TextStyle font14Greyw400Roboto(context) {
+  static TextStyle font14DarkSilverw400Roboto(context) {
     return GoogleFonts.roboto(
       fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontWeight: FontWeightHelper.regular,
-      color: Colors.grey,
+      color: ColorsManagers.darkSilver,
     );
   }
 
@@ -85,6 +85,13 @@ class TextStyles {
       color: Colors.white,
     );
   }
+  static TextStyle font20WhiteW600Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.semiBold,
+      color: Colors.white,
+    );
+  }
 
   static TextStyle font20OuterSpaceW600Poppins(context) {
     return GoogleFonts.poppins(
@@ -109,7 +116,7 @@ class TextStyles {
       color: ColorsManagers.charlestonGreen,
     );
   }
-  
+
   static TextStyle font16DarkLiverw400Roboto(context) {
     return GoogleFonts.roboto(
       fontSize: getResponsiveFontSize(context, fontSize: 16),
@@ -131,6 +138,21 @@ class TextStyles {
       fontSize: getResponsiveFontSize(context, fontSize: 10),
       fontWeight: FontWeightHelper.light,
       color: ColorsManagers.davysGray,
+    );
+  }
+  static TextStyle font12w600Inter(context) {
+    return GoogleFonts.inter(
+      fontSize: getResponsiveFontSize(context, fontSize: 12),
+      fontWeight: FontWeightHelper.semiBold,
+     
+    );
+  }
+
+  static TextStyle font12TaupeGrayw500Inter(context) {
+    return GoogleFonts.inter(
+      fontSize: getResponsiveFontSize(context, fontSize: 12),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.taupeGray,
     );
   }
 }

@@ -26,16 +26,17 @@ class InActiveUserTypeContainer extends StatelessWidget {
           color: ColorsManagers.cultured,
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 16),
           child: ListTile(
             contentPadding: EdgeInsets.zero,
             title: Text(
               getStartedModel.title,
+              style: TextStyles.font12TaupeGrayw500Inter(context),
    
             ),
-            trailing: const Icon(
+            trailing:  const Icon(
               Icons.arrow_forward_ios,
-              color: Colors.grey,
+              color: ColorsManagers.taupeGray,
             ),
             leading: SvgPicture.asset(
               getStartedModel.icon,
@@ -43,8 +44,7 @@ class InActiveUserTypeContainer extends StatelessWidget {
                 Colors.black.withOpacity(.25),
                 BlendMode.srcIn,
               ),
-            ),
-            subtitle: Text(getStartedModel.subTitle,
+            
                ),
           ),
         ),

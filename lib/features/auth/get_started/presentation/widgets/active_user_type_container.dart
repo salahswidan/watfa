@@ -22,7 +22,7 @@ class ActiveUserTypeContainer extends StatelessWidget {
         gradient: const LinearGradient(
             begin: Alignment.centerRight,
             end: Alignment.centerLeft,
-            colors: [ColorsManagers.purple, ColorsManagers.voliet]),
+            colors: [ColorsManagers.regalia, ColorsManagers.voliet]),
       ),
       child: Container(
         decoration: BoxDecoration(
@@ -30,15 +30,15 @@ class ActiveUserTypeContainer extends StatelessWidget {
           color: Colors.white,
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
           child: ListTile(
             contentPadding: EdgeInsets.zero,
             title: GradientText(getStartedModel.title,
-                // style: TextStyles.font12w600Inter,
+                 style: TextStyles.font12w600Inter(context),
                 gradientDirection: GradientDirection.ttb,
                 colors: const [
                   ColorsManagers.voliet,
-                  ColorsManagers.purple,
+                  ColorsManagers.regalia,
                 ]),
             trailing: ShaderMask(
               blendMode: BlendMode.srcIn,
@@ -47,7 +47,7 @@ class ActiveUserTypeContainer extends StatelessWidget {
                   begin: Alignment.topRight,
                   end: Alignment.bottomRight,
                   colors: [
-                    ColorsManagers.purple,
+                    ColorsManagers.regalia,
                     ColorsManagers.voliet,
                   ],
                 ).createShader(bounds);
@@ -58,14 +58,10 @@ class ActiveUserTypeContainer extends StatelessWidget {
             ),
             leading: SvgPicture.asset(
               getStartedModel.icon,
-              colorFilter: const ColorFilter.mode(
-                ColorsManagers.purple,
-                BlendMode.srcIn,
-              ),
+              
             ),
-            subtitle: Text(getStartedModel.subTitle,
           ),
-          ),
+          
         ),
       ),
     );

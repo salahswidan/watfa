@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 
 import '../../../../../core/theme/styles.dart';
+import '../../../login/presentation/widget/logo.dart';
 import '../section/get_started_form.dart';
 
 class GetStartedScreen extends StatelessWidget {
@@ -10,33 +11,26 @@ class GetStartedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: Column(
-      //   mainAxisAlignment: MainAxisAlignment.start,
-      //   children: [
-      //     const StackShape(),
-      //     Padding(
-      //       padding: EdgeInsets.symmetric(horizontal: 20.w),
-      //       child: Column(
-      //         children: [
-      //           verticalSpacing(30),
-      //           Image.asset(
-      //             'assets/images/Watfa_logo 4.png',
-      //             width: 170.w,
-      //             fit: BoxFit.fitWidth,
-      //           ),
-      //           verticalSpacing(40),
-      //           Text("Please select profile",
-      //               style: TextStyles.font24Blackw700Roboto),
-      //           verticalSpacing(10),
-      //           Text("Create an account  to get all features",
-      //               style: TextStyles.font14Grayw400Roboto),
-      //           verticalSpacing(70),
-      //           const GetStartedForm()
-      //         ],
-      //       ),
-      //     )
-      //   ],
-      // ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          children: [
+            Flexible(flex: 3, child: verticalSpacing(120)),
+            const Logo(),
+            Flexible(child: verticalSpacing(40)),
+            Text("Please select profile",
+                style: TextStyles.font24Blackw700Roboto(context)),
+            verticalSpacing(10),
+            Text(
+              "Create an account  to get all features",
+              style: TextStyles.font14DarkSilverw400Roboto(context),
+            ),
+            Flexible(flex: 2, child: verticalSpacing(70)),
+            const Expanded(flex: 10, child: GetStartedForm()),
+            Flexible(flex: 4, child: verticalSpacing(160)),
+          ],
+        ),
+      ),
     );
   }
 }

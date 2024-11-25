@@ -9,6 +9,7 @@ class AuthTextFormField extends StatefulWidget {
   final String hintText;
   final String? suffixIcon;
   final bool? isPassword;
+  final TextInputType? keyboardType;
 
   const AuthTextFormField({
     super.key,
@@ -16,6 +17,7 @@ class AuthTextFormField extends StatefulWidget {
     required this.hintText,
     this.suffixIcon,
     this.isPassword,
+    this.keyboardType,
   });
 
   @override
@@ -29,12 +31,13 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
     return Padding(
       padding: const EdgeInsets.only(top: 8),
       child: TextField(
-        
+        keyboardType:widget.keyboardType?? TextInputType.text,
         obscuringCharacter: "*",
         obscureText: widget.isPassword ?? false ? isObscured : false,
         controller: widget.controller,
         style: TextStyles.font14Greyw500Poppins(context),
         decoration: InputDecoration(
+          
           
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),

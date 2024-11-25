@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:watfa/features/auth/otp/presentation/screen/otp_screen.dart';
 import 'package:watfa/features/auth/password_updated/presentation/password_updated_screen.dart';
+import 'package:watfa/features/auth/sign_up_seller/presentation/screen/sign_up_seller_screen.dart';
 
 import '../../features/auth/account_created/presentation/account_created_screen.dart';
 import '../../features/auth/forget_password/presentation/screen/forget_password_screen.dart';
@@ -8,7 +9,7 @@ import '../../features/auth/get_started/presentation/screen/get_started_screen.d
 
 import '../../features/auth/login/presentation/screen/login_screen.dart';
 import '../../features/auth/reset_password/presentation/screen/reset_password_screen.dart';
-import '../../features/auth/sign_up/presentation/screen/sign_up_screen.dart';
+import '../../features/auth/sign_up_buyer/presentation/screen/sign_up_buyer_screen.dart';
 import '../../features/auth/verify/presentation/screens/verify_screen.dart';
 import '../../features/onboarding/logic/on_boarding_data.dart';
 import '../../features/onboarding/presentation/screen/on_boarding_screen.dart';
@@ -51,9 +52,9 @@ class AppRouter {
           builder: (_) => const PasswordUpdatedScreen(),
         );
 
-      case Routes.signUpScreen:
+      case Routes.signUpBuyerScreen:
         return MaterialPageRoute(
-          builder: (_) => const SignUpScreen(),
+          builder: (_) => const SignUpBuyerScreen(),
         );
       case Routes.verifyScreen:
         return MaterialPageRoute(
@@ -62,6 +63,10 @@ class AppRouter {
       case Routes.accountCreatedScreen:
         return MaterialPageRoute(
           builder: (_) => const AccountCreatedScreen(),
+        );
+      case Routes.signUpSellerScreen:
+        return MaterialPageRoute(
+          builder: (_) => const SignUpSellerScreen(),
         );
       // case Routes.homeScreen:
       //   return MaterialPageRoute(

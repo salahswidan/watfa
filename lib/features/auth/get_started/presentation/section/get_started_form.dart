@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../data/model/get_started_model.dart';
-import '../widgets/custom_auth_button.dart';
 import '../widgets/custom_user_type_container.dart';
+import '../widgets/get_started_button.dart';
 
 class GetStartedForm extends StatefulWidget {
   const GetStartedForm({
@@ -31,13 +32,12 @@ class _GetStartedFormState extends State<GetStartedForm> {
           child: CustomUserTypeContainer(
             isActive: _selectedUserType == 0,
             getStartedModel: GetStartedModel(
-              title: 'Buyer',
-              subTitle: 'lorem ipsom lorem ipsom lorem ipsom',
+              title: 'For Shoppers',
               icon: 'assets/svgs/buyer_icon.svg',
             ),
           ),
         ),
-        verticalSpacing(80),
+        Flexible(child: verticalSpacing(45)),
         InkWell(
           onTap: () {
             setState(() {
@@ -47,23 +47,22 @@ class _GetStartedFormState extends State<GetStartedForm> {
           child: CustomUserTypeContainer(
             isActive: _selectedUserType == 1,
             getStartedModel: GetStartedModel(
-              title: 'Seller',
-              subTitle: 'lorem ipsom lorem ipsom lorem ipsom',
+              title: 'For Business',
               icon: 'assets/svgs/seller_icon.svg',
             ),
           ),
         ),
-        verticalSpacing(90),
-        CustomAuthButton(
+        Flexible(flex: 2, child: verticalSpacing(100)),
+        GetStartedButton(
           onTap: () {
             Future.delayed(Duration.zero, () async {
               await CacheServices.instance.setUserType(_selectedUserType == 0);
             });
 
-            Navigator.pushNamed(context, Routes.onBoardingScreen);
+            context.pushNamed(Routes.loginScreen);
           },
           text: 'Proceed',
-        ),
+        )
       ],
     );
   }

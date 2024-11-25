@@ -59,7 +59,7 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
                 });
                 Timer(const Duration(milliseconds: 300), () {
                   currentIndex > 1
-                      ? context.pushNamed(Routes.loginScreen)
+                      ? context.pushNamed(Routes.getStartedScreen)
                       : currentIndex = currentIndex + 1;
 
                   setState(() {

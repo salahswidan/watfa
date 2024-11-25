@@ -7,7 +7,7 @@ import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../../../../core/widgets/auth_text_form_field.dart';
 import '../../../get_started/presentation/widgets/custom_auth_button.dart';
-import '../../../sign_up/presentation/section/biometric_auth.dart';
+import '../../../sign_up_buyer/presentation/section/biometric_auth.dart';
 import '../section/dont_have_acc.dart';
 import '../section/social_auth.dart';
 import '../widget/logo.dart';
@@ -35,7 +35,7 @@ class LoginScreen extends StatelessWidget {
                       style: TextStyles.font24Blackw700Roboto(context)),
                   Flexible(child: verticalSpacing(18)),
                   Text("Log in to existing watfa account",
-                      style: TextStyles.font14Greyw400Roboto(context)),
+                      style: TextStyles.font14DarkSilverw400Roboto(context)),
                   Flexible(child: verticalSpacing(50)),
                   Align(
                     alignment: Alignment.centerLeft,
@@ -67,6 +67,7 @@ class LoginScreen extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: InkWell(
                       onTap: () {
+                        
                         context.pushNamed(Routes.forgotPasswordScreen);
                       },
                       child: Text(
@@ -116,4 +117,3 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
-
