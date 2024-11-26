@@ -32,11 +32,14 @@ class SignUpSellerScreen extends StatelessWidget {
                         verticalSpacing(40.h(context)),
                         Column(
                           children: [
-                            Text("Take your company to the next level with",
-                            
-                              textAlign: TextAlign.center,
-                                style:
-                                    TextStyles.font24Blackw700Roboto(context)),
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                  "Take your company to the next level with",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyles.font24Blackw700Roboto(
+                                      context)),
+                            ),
                             verticalSpacing(12.h(context)),
                             Text(
                               "Let us start by getting to know one another better.",
