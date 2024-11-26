@@ -50,7 +50,9 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
                     });
                   },
                   child: SvgPicture.asset(
-                    "assets/svgs/password_text_field_icon.svg",
+                    isObscured
+                        ? "assets/svgs/password_text_field_icon.svg"
+                        : "assets/svgs/password_text_field_show_icon.svg",
                     fit: BoxFit.scaleDown,
                     height: 10,
                     width: 25,

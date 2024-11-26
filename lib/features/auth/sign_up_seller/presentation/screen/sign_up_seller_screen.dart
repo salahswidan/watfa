@@ -35,7 +35,7 @@ class SignUpSellerScreen extends StatelessWidget {
                             FittedBox(
                               fit: BoxFit.scaleDown,
                               child: Text(
-                                  "Take your company to the next level with",
+                                  "Take your company to the next level",
                                   textAlign: TextAlign.center,
                                   style: TextStyles.font24Blackw700Roboto(
                                       context)),
