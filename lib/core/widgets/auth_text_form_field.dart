@@ -43,7 +43,7 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
                 color: ColorsManagers.purple,
               )),
           suffixIcon: widget.isPassword ?? false
-              ? InkWell(
+              ? GestureDetector(
                   onTap: () {
                     setState(() {
                       isObscured = !isObscured;

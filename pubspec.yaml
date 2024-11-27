@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animate_do: ^3.3.4
   cupertino_icons: ^1.0.8
   device_preview: ^1.2.0
   firebase_core: ^3.8.0
@@ -54,7 +55,6 @@ flutter_launcher_icons:
   image_path: "assets/images/icon.png"
   adaptive_icon_background: "assets/images/background.png"
   adaptive_icon_foreground: "assets/images/icon.png"
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -23,21 +23,28 @@ class _SignUpSellerScreenState extends State<SignUpSellerScreen> {
       resizeToAvoidBottomInset: false,
       body: CustomGradientContainer(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: CustomScrollView(
-            slivers: [
-              SliverFillRemaining(
-                hasScrollBody: false,
-                child: Column(
-                  children: [
-                    verticalSpacing(90.h(context)),
-                    const Logo(),
-                    verticalSpacing(40.h(context)),
-                    SignUpSellerForm(
-                      currentIndex: currentIndex,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: Column(
+                    children: [
+                      verticalSpacing(90.h(context)),
+                      const Logo(),
+                      verticalSpacing(40.h(context)),
+                      SignUpSellerForm(
+                        currentIndex: currentIndex,
+                      ),
+                    ],
+                  ),
+                ),
+                SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20)
+                        .copyWith(bottom: 60),
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
                       child: GetStartedButton(
                         text: currentIndex == 0 ? 'Next' : 'Submit',
                         onTap: () {
@@ -49,13 +56,10 @@ class _SignUpSellerScreenState extends State<SignUpSellerScreen> {
                         },
                       ),
                     ),
-                    verticalSpacing(60.h(context)),
-                  ],
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ),
+              ],
+            )),
       ),
     );
   }
