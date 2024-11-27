@@ -61,12 +61,26 @@ class TextStyles {
       color: ColorsManagers.jet,
     );
   }
+  static TextStyle font14Blackw500Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.medium,
+      color: Colors.black,
+    );
+  }
 
   static TextStyle font14Greyw500Poppins(context) {
     return GoogleFonts.poppins(
       fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontWeight: FontWeightHelper.medium,
       color: Colors.grey,
+    );
+  }
+  static TextStyle font14RaisinBlackw500Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.raisinBlack,
     );
   }
 
@@ -153,6 +167,21 @@ class TextStyles {
       fontSize: getResponsiveFontSize(context, fontSize: 12),
       fontWeight: FontWeightHelper.medium,
       color: ColorsManagers.taupeGray,
+    );
+  }
+
+  static TextStyle font20PhilippineGrayw500Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.philippineGray,
+    );
+  }
+  static TextStyle font11Greyw500Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 11),
+      fontWeight: FontWeightHelper.medium,
+      color: Colors.grey,
     );
   }
 }

@@ -17,6 +17,9 @@ class ColorsManagers {
   static const Color darkSilver = Color(0xff6F6F6F);
   static const Color voliet = Color(0xffE071C0);
   static const Color regalia = Color(0xff5C2C80);
+  static const Color philippineGray = Color(0xff929292);
+  static const Color raisinBlack = Color(0xff252525);
+  static const Color lightSilver = Color(0xffD9D9D9);
 
   static const Color lightGray = Color(0xffD3D3D3);
 
