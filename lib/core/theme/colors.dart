@@ -7,7 +7,8 @@ class ColorsManagers {
   static const Color paleLavender = Color(0xffE8C6FC);
   static const Color jet = Color(0xff353535);
   static const Color graniteGray = Color(0xff646464);
-  static const Color lavender = Color(0xffA667CA);
+  static const Color richLavender = Color(0xffA667CA);
+  static const Color lavender = Color(0xffF5E4FF);
   static const Color outerSpace = Color(0xff484848);
   static const Color lavenderWeb = Color(0xffF3DEFF);
   static const Color dimGray = Color(0xff696969);

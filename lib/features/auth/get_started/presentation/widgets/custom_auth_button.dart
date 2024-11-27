@@ -23,7 +23,7 @@ class CustomAuthButton extends StatelessWidget {
                 end: Alignment.centerRight,
                 colors: [
                   ColorsManagers.purple,
-                  ColorsManagers.lavender,
+                  ColorsManagers.richLavender,
                 ]),
           ),
           child: Center(
