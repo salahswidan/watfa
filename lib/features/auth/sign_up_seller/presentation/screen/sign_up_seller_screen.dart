@@ -27,15 +27,17 @@ class _SignUpSellerScreenState extends State<SignUpSellerScreen> {
             child: CustomScrollView(
               slivers: [
                 SliverToBoxAdapter(
-                  child: Column(
-                    children: [
-                      verticalSpacing(90.h(context)),
-                      const Logo(),
-                      verticalSpacing(40.h(context)),
-                      SignUpSellerForm(
-                        currentIndex: currentIndex,
-                      ),
-                    ],
+                  child: SizedBox(
+                    child: Column(
+                      children: [
+                        verticalSpacing(90.h(context)),
+                        const Logo(),
+                        verticalSpacing(40.h(context)),
+                        SignUpSellerForm(
+                          currentIndex: currentIndex,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SliverFillRemaining(

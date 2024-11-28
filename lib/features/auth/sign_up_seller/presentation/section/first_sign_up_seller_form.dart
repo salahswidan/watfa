@@ -31,7 +31,7 @@ class FirstSignUpSellerForm extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         verticalSpacing(20),
-        Align(
+        Container(
           alignment: Alignment.centerLeft,
           child: Text(
             "Company name",
@@ -43,7 +43,7 @@ class FirstSignUpSellerForm extends StatelessWidget {
           controller: TextEditingController(),
         ),
         verticalSpacing(16.h(context)),
-        Align(
+        Container(
           alignment: Alignment.centerLeft,
           child: Text(
             "User name",
@@ -55,7 +55,7 @@ class FirstSignUpSellerForm extends StatelessWidget {
           controller: TextEditingController(),
         ),
         verticalSpacing(16.h(context)),
-        Align(
+        Container(
           alignment: Alignment.centerLeft,
           child: Text(
             "Email address",
@@ -67,7 +67,7 @@ class FirstSignUpSellerForm extends StatelessWidget {
           controller: TextEditingController(),
         ),
         verticalSpacing(16.h(context)),
-        Align(
+        Container(
           alignment: Alignment.centerLeft,
           child: Text(
             "Phone number",
@@ -80,7 +80,7 @@ class FirstSignUpSellerForm extends StatelessWidget {
           controller: TextEditingController(),
         ),
         verticalSpacing(16.h(context)),
-        Align(
+        Container(
           alignment: Alignment.centerLeft,
           child: Text(
             "Password",
