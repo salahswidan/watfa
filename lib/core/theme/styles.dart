@@ -91,6 +91,14 @@ class TextStyles {
     );
   }
 
+  static TextStyle font14SacramentoStateGreenw500Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.sacramentoStateGreen,
+    );
+  }
+
   static TextStyle font14Purplew500Poppins(context) {
     return GoogleFonts.poppins(
       fontSize: getResponsiveFontSize(context, fontSize: 14),
