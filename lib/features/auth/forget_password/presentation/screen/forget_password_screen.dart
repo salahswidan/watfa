@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
+import 'package:watfa/core/widgets/custom_gradient_container.dart';
 
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../../../../core/widgets/auth_text_form_field.dart';
-import '../../../get_started/presentation/widgets/custom_auth_button.dart';
+import '../../../get_started/presentation/widgets/get_started_button.dart';
+import '../../../login/presentation/widget/logo.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
   const ForgetPasswordScreen({super.key});
@@ -13,45 +15,35 @@ class ForgetPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: SingleChildScrollView(
-      //   child: Column(
-      //     children: [
-      //       const StackShape(),
-      //       Padding(
-      //         padding: EdgeInsets.symmetric(horizontal: 20.w),
-      //         child: Column(
-      //           children: [
-      //             verticalSpacing(30),
-      //             Image.asset(
-      //               'assets/images/Watfa_logo 4.png',
-      //               width: 170.w,
-      //               fit: BoxFit.fitWidth,
-      //             ),
-      //             verticalSpacing(40),
-      //             Text("Forgot Password",
-      //                 style: TextStyles.font24Blackw700Roboto),
-      //             verticalSpacing(10),
-      //             Text("Please enter your email to reset the password",
-      //                 style: TextStyles.font14Grayw400Roboto),
-      //             verticalSpacing(40),
-      //             AuthTextFormField(
-      //               prefixIcon: 'assets/svgs/email_text_field_icon.svg',
-      //               hintText: 'Email',
-      //               controller: TextEditingController(),
-      //             ),
-      //             verticalSpacing(60),
-      //             CustomAuthButton(
-      //               onTap: () {
-      //                 context.pushNamed(Routes.otpScreen);
-      //               },
-      //               text: 'Verify',
-      //             ),
-      //           ],
-      //         ),
-      //       )
-      //     ],
-      //   ),
-      // ),
+      body: CustomGradientContainer(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              Flexible(flex: 2, child: verticalSpacing(80)),
+              const Logo(),
+              Flexible(flex: 2, child: verticalSpacing(60)),
+              Text("Forgot Password",
+                  style: TextStyles.font24Blackw700Roboto(context)),
+              verticalSpacing(18),
+              Text("Please enter your email to reset the password",
+                  style: TextStyles.font14DarkSilverw400Roboto(context)),
+              Flexible(flex: 2, child: verticalSpacing(80)),
+              AuthTextFormField(
+                hintText: 'Mariam Fawzy@gmail.com',
+                controller: TextEditingController(),
+              ),
+              Flexible(flex: 3, child: verticalSpacing(120)),
+              GetStartedButton(
+                text: 'Verify',
+                onTap: () {
+                  context.pushNamed(Routes.verifyScreen);
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
