@@ -44,7 +44,7 @@ class _SignUpSellerScreenState extends State<SignUpSellerScreen> {
                   hasScrollBody: false,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20)
-                        .copyWith(bottom: 60),
+                        .copyWith(bottom: 50.h(context)),
                     child: Align(
                       alignment: Alignment.bottomCenter,
                       child: GetStartedButton(

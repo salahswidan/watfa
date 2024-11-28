@@ -38,13 +38,13 @@ class SecondSignUpSellerForm extends StatelessWidget {
           "Business type",
           style: TextStyles.font14Blackw500Poppins(context),
         ),
-        verticalSpacing(10.h(context)),
+        verticalSpacing(15.h(context)),
         RadioListTileForm(
           title: "Registered business",
           subtitle:
               "Your business is registered as a commercial entity under the relevant authority in the country you are based in.",
         ),
-        verticalSpacing(10.h(context)),
+        verticalSpacing(15.h(context)),
         RadioListTileForm(
           title: "Freelancer",
           subtitle:
@@ -55,12 +55,12 @@ class SecondSignUpSellerForm extends StatelessWidget {
           "In what ways do you offer your products or services to your customers?",
           style: TextStyles.font14Blackw500Poppins(context),
         ),
-        verticalSpacing(10.h(context)),
+        verticalSpacing(15.h(context)),
         RadioListTileForm(
           title: "In-store",
           subtitle: "Physical location sales",
         ),
-        verticalSpacing(10.h(context)),
+        verticalSpacing(15.h(context)),
         RadioListTileForm(
           title: "Online",
           subtitle: "E-commerce sales",
