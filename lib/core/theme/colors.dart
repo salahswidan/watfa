@@ -21,6 +21,7 @@ class ColorsManagers {
   static const Color philippineGray = Color(0xff929292);
   static const Color raisinBlack = Color(0xff252525);
   static const Color lightSilver = Color(0xffD9D9D9);
+  static const Color platinum = Color(0xffE7E7E7);
 
   static const Color lightGray = Color(0xffD3D3D3);
 

@@ -29,6 +29,13 @@ class TextStyles {
       color: ColorsManagers.spanishGray,
     );
   }
+  static TextStyle font18Purplew400Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.purple,
+    );
+  }
 
   static TextStyle font20Blackw700Roboto(context) {
     return GoogleFonts.roboto(
@@ -144,6 +151,15 @@ class TextStyles {
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontWeight: FontWeightHelper.bold,
       color: ColorsManagers.purple,
+    );
+  }
+
+
+  static TextStyle font16Purplew500Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      color: ColorsManagers.purple,
+      fontWeight: FontWeightHelper.medium,
     );
   }
 
