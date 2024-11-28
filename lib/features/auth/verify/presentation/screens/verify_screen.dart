@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theme/styles.dart';
-import '../../../get_started/presentation/widgets/custom_auth_button.dart';
+import '../../../../../core/widgets/custom_gradient_container.dart';
+import '../../../login/presentation/widget/logo.dart';
 import '../../../otp/presentation/widgets/pinput_field.dart';
 
 class VerifyScreen extends StatelessWidget {
@@ -13,39 +13,33 @@ class VerifyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+      body: CustomGradientContainer(
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
-                  verticalSpacing(30),
-                  Image.asset(
-                    'assets/images/Watfa_logo 4.png',
-                    // width: 170.w,
-                    fit: BoxFit.fitWidth,
+                  Flexible(flex: 2, child: verticalSpacing(80)),
+                  const Logo(),
+                  Flexible(flex: 2, child: verticalSpacing(60)),
+                  Text("Check Your Email",
+                      style: TextStyles.font24Blackw700Roboto(context)),
+                  verticalSpacing(18),
+                  Text(
+                    "We sent a reset link to mariamfawzy.com enter 4 digit code that mentioned in the email",
+                    style: TextStyles.font14DarkSilverw400Roboto(context),
+                    textAlign: TextAlign.center,
                   ),
-                  verticalSpacing(40),
-                  Text("Verify Your Account",
+                  Expanded(child: verticalSpacing(40)),
+                  Align(
+                    child: TextButton(onPressed: () {
+                      context.pop();
+                    }, child: Text("Change")),
                   ),
-                  verticalSpacing(10),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Text(
-                        textAlign: TextAlign.center,
-                        "We have send you 6 digits verification code to your email. Please kindly check",
-                      ),
-                  ),
-                  verticalSpacing(50),
+                  verticalSpacing(20),
                   const PinputField(),
                   verticalSpacing(60),
-                  CustomAuthButton(
-                    onTap: () {
-                      context.pushNamed(Routes.accountCreatedScreen);
-                    },
-                    text: 'VERIFY',
-                  ),
                 ],
               ),
             )
