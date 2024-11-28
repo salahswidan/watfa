@@ -43,7 +43,7 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
             ),
             Flexible(child: verticalSpacing(40)),
             Expanded(
-              flex: 3,
+              flex: 4,
               child: TitleAndDescription(
                   isOut: isOut,
                   onBoardingData: widget.onBoardingData,
@@ -51,7 +51,7 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
             ),
             Expanded(
               flex: 1,
-              child: verticalSpacing(10)),
+              child: verticalSpacing(5.h(context))),
             CustomButton(
               onTap: () {
                 setState(() {

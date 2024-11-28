@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/styles.dart';
@@ -46,9 +47,7 @@ class TitleAndDescription extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            flex: 1,
-            child: verticalSpacing(10)),
+          Expanded(flex: 1, child: verticalSpacing(10.h(context))),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: AnimatedOpacity(

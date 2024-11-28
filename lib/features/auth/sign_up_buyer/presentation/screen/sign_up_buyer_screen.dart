@@ -24,16 +24,15 @@ class SignUpBuyerScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: CustomScrollView(
             slivers: [
-              SliverFillRemaining(
-                hasScrollBody: false,
-                child: Column(
-                  children: [
-                    Flexible(flex: 2, child: verticalSpacing(60)),
+              SliverList(
+                delegate: SliverChildListDelegate(
+                  [
+                    verticalSpacing(60),
                     const Logo(),
-                    Flexible(child: verticalSpacing(28)),
+                    verticalSpacing(28),
                     Text("Let’s Get Started!",
                         style: TextStyles.font24Blackw700Roboto(context)),
-                    Flexible(child: verticalSpacing(18)),
+                    verticalSpacing(18),
                     Text("Create an account  to get all features",
                         style: TextStyles.font14DarkSilverw400Roboto(context)),
                     Flexible(child: verticalSpacing(30)),
@@ -90,11 +89,9 @@ class SignUpBuyerScreen extends StatelessWidget {
                       onTap: () {},
                       text: 'Sign Up',
                     ),
-                    Flexible(child: verticalSpacing(40)),
+                    verticalSpacing(40),
                     const UseBiometricAccess(),
-                    Flexible(
-                      child: verticalSpacing(40),
-                    ),
+                    verticalSpacing(40),
                     BiometricAuth(
                       onTapFaceId: () {},
                       onTapFingerPrint: () {},
@@ -111,6 +108,7 @@ class SignUpBuyerScreen extends StatelessWidget {
                     const SocialAuth(),
                     verticalSpacing(10),
                     const AlreadyHaveAnAccount(),
+                    verticalSpacing(30),
                   ],
                 ),
               ),
