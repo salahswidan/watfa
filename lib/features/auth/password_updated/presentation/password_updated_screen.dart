@@ -4,7 +4,9 @@ import 'package:watfa/core/helpers/extinsions.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/styles.dart';
-import '../../get_started/presentation/widgets/custom_auth_button.dart';
+import '../../../../core/widgets/custom_gradient_container.dart';
+import '../../get_started/presentation/widgets/get_started_button.dart';
+import '../../login/presentation/widget/logo.dart';
 
 class PasswordUpdatedScreen extends StatelessWidget {
   const PasswordUpdatedScreen({super.key});
@@ -12,45 +14,43 @@ class PasswordUpdatedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    //     body: SingleChildScrollView(
-    //   child: Column(
-    //     children: [
-    //       Padding(
-    //         padding: EdgeInsets.symmetric(horizontal: 20.w),
-    //         child: Column(
-    //           children: [
-    //             verticalSpacing(30),
-    //             Image.asset(
-    //               'assets/images/Watfa_logo 4.png',
-    //               width: 170.w,
-    //               fit: BoxFit.fitWidth,
-    //             ),
-    //             verticalSpacing(40),
-    //             Text("Password Updated",
-    //                 style: TextStyles.font24Blackw700Roboto),
-    //             verticalSpacing(60),
-    //             Image.asset(
-    //               'assets/images/password_updated.png',
-    //               height: 255.h,
-    //               fit: BoxFit.fitHeight,
-    //             ),
-    //             verticalSpacing(75),
-    //             Text("Password Updated Successfully.",
-    //                 textAlign: TextAlign.center,
-    //                 style: TextStyles.font16Blackw700Roboto),
-    //             verticalSpacing(35),
-    //             CustomAuthButton(
-    //               onTap: () {
-    //                 context.pushNamedAndRemoveUntilNamed(Routes.loginScreen);
-    //               },
-    //               text: 'SIGN IN',
-    //             ),
-    //           ],
-    //         ),
-    //       )
-    //     ],
-    //   ),
-    // )
-    );
+        body: CustomGradientContainer(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          children: [
+            Flexible(flex: 2, child: verticalSpacing(80)),
+            const Logo(),
+            Flexible(flex: 2, child: verticalSpacing(60)),
+            Text("Password Updated",
+                style: TextStyles.font24Blackw700Roboto(context)),
+            verticalSpacing(18),
+            Text(
+              "Password Updated Successfully.",
+              style: TextStyles.font14DarkSilverw400Roboto(context),
+              textAlign: TextAlign.center,
+            ),
+            Flexible(flex: 2, child: verticalSpacing(80)),
+            Expanded(
+              flex: 8,
+              child: AspectRatio(
+                  aspectRatio: 293 / 229,
+                  child: Image.asset("assets/images/password_updated.png")),
+            ),
+            Flexible(flex: 2, child: verticalSpacing(80)),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: GetStartedButton(
+                onTap: () {
+                  context.pushNamedAndRemoveUntil(Routes.loginScreen);
+                },
+                text: 'Sign in',
+              ),
+            ),
+            Flexible(flex: 4, child: verticalSpacing(180)),
+          ],
+        ),
+      ),
+    ));
   }
 }
