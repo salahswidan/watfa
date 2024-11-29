@@ -12,7 +12,7 @@ class PinputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 20.w(context)),
+      padding: EdgeInsets.symmetric(horizontal: 20.w(context)),
       child: Pinput(
         length: 4,
         defaultPinTheme: PinTheme(
@@ -20,9 +20,8 @@ class PinputField extends StatelessWidget {
           width: context.screenWidth - 120.w(context),
           decoration: BoxDecoration(
             shape: BoxShape.rectangle,
-            color: ColorsManagers.platinum,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(16),
-            
           ),
         ),
         focusedPinTheme: PinTheme(
@@ -30,7 +29,7 @@ class PinputField extends StatelessWidget {
           width: context.screenWidth - 120.w(context),
           decoration: BoxDecoration(
             shape: BoxShape.rectangle,
-            color: ColorsManagers.platinum,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
               color: ColorsManagers.purple,
@@ -42,7 +41,7 @@ class PinputField extends StatelessWidget {
           width: context.screenWidth - 120.w(context),
           decoration: BoxDecoration(
             shape: BoxShape.rectangle,
-            color: ColorsManagers.platinum,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(16),
           ),
         ),

@@ -35,7 +35,7 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
         obscuringCharacter: "*",
         obscureText: widget.isPassword ?? false ? isObscured : false,
         controller: widget.controller,
-        style: TextStyles.font14Greyw500Poppins(context),
+        style: TextStyles.font14Blackw500Poppins(context),
         decoration: InputDecoration(
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
