@@ -30,13 +30,18 @@ class SignUpBuyerScreen extends StatelessWidget {
                     verticalSpacing(60),
                     const Logo(),
                     verticalSpacing(28),
-                    Text("Let’s Get Started!",
-                        style: TextStyles.font24Blackw700Roboto(context)),
+                    Center(
+                      child: Text("Let’s Get Started!",
+                          style: TextStyles.font24Blackw700Roboto(context)),
+                    ),
                     verticalSpacing(18),
-                    Text("Create an account  to get all features",
-                        style: TextStyles.font14DarkSilverw400Roboto(context)),
-                    Flexible(child: verticalSpacing(30)),
-                    Align(
+                    Center(
+                      child: Text("Create an account  to get all features",
+                          style:
+                              TextStyles.font14DarkSilverw400Roboto(context)),
+                    ),
+                    verticalSpacing(30),
+                    Container(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Username or email",
@@ -49,7 +54,7 @@ class SignUpBuyerScreen extends StatelessWidget {
                       controller: TextEditingController(),
                     ),
                     verticalSpacing(16),
-                    Align(
+                    Container(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Phone number",
@@ -57,7 +62,7 @@ class SignUpBuyerScreen extends StatelessWidget {
                       ),
                     ),
                     verticalSpacing(16),
-                    Align(
+                    Container(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Password",
@@ -70,7 +75,7 @@ class SignUpBuyerScreen extends StatelessWidget {
                       controller: TextEditingController(),
                     ),
                     verticalSpacing(16),
-                    Align(
+                    Container(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Confirm Password",
@@ -90,7 +95,7 @@ class SignUpBuyerScreen extends StatelessWidget {
                       text: 'Sign Up',
                     ),
                     verticalSpacing(40),
-                    const UseBiometricAccess(),
+                    Center(child: const UseBiometricAccess()),
                     verticalSpacing(40),
                     BiometricAuth(
                       onTapFaceId: () {},
@@ -99,10 +104,12 @@ class SignUpBuyerScreen extends StatelessWidget {
                     verticalSpacing(20),
                     const CustomDivider(),
                     verticalSpacing(15),
-                    Text(
-                      "sign up using",
-                      style:
-                          TextStyles.font15CharlestonGreenw400Roboto(context),
+                    Center(
+                      child: Text(
+                        "sign up using",
+                        style:
+                            TextStyles.font15CharlestonGreenw400Roboto(context),
+                      ),
                     ),
                     verticalSpacing(14),
                     const SocialAuth(),
