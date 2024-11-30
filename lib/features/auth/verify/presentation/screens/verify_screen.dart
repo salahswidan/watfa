@@ -7,7 +7,7 @@ import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../../../../core/widgets/custom_gradient_container.dart';
 import '../../../login/presentation/widget/logo.dart';
-import '../../../otp/presentation/widgets/pinput_field.dart';
+import '../widgets/pinput_field.dart';
 import '../widgets/custom_verify_button.dart';
 
 class VerifyScreen extends StatelessWidget {

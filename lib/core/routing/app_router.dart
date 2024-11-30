@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:watfa/features/auth/otp/presentation/screen/otp_screen.dart';
 import 'package:watfa/features/auth/password_updated/presentation/password_updated_screen.dart';
 import 'package:watfa/features/auth/sign_up_seller/presentation/screen/sign_up_seller_screen.dart';
 
-import '../../features/auth/account_created/presentation/account_created_screen.dart';
 import '../../features/auth/forget_password/presentation/screen/forget_password_screen.dart';
 import '../../features/auth/get_started/presentation/screen/get_started_screen.dart';
 
@@ -38,10 +36,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const ForgetPasswordScreen(),
         );
-      case Routes.otpScreen:
-        return MaterialPageRoute(
-          builder: (_) => const OtpScreen(),
-        );
+      
       case Routes.resetPasswordScreen:
         return MaterialPageRoute(
           builder: (_) => const ResetPasswordScreen(),
@@ -60,10 +55,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const VerifyScreen(),
         );
-      case Routes.accountCreatedScreen:
-        return MaterialPageRoute(
-          builder: (_) => const AccountCreatedScreen(),
-        );
+      
       case Routes.signUpSellerScreen:
         return MaterialPageRoute(
           builder: (_) => const SignUpSellerScreen(),
