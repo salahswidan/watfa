@@ -2,6 +2,7 @@ class ApiConstants {
   static const String apiBaseUrl = "https://watfa-backend.vercel.app/";
 
   static const String register = "auth/register";
+  static const String login = "auth/login";
 }
 
 class ApiErrors {
