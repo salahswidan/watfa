@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/widgets/custom_divider.dart';
@@ -9,6 +11,7 @@ import '../../../../../core/widgets/auth_text_form_field.dart';
 import '../../../../../core/widgets/custom_gradient_container.dart';
 import '../../../get_started/presentation/widgets/custom_auth_button.dart';
 import '../../../sign_up_buyer/presentation/section/biometric_auth.dart';
+import '../../logic/biometric_auth.dart';
 import '../section/dont_have_acc.dart';
 import '../section/social_auth.dart';
 import '../widget/logo.dart';
@@ -88,8 +91,13 @@ class LoginScreen extends StatelessWidget {
                 child: verticalSpacing(40),
               ),
               BiometricAuth(
-                onTapFaceId: () {},
-                onTapFingerPrint: () {},
+                onTapFaceId: () {
+                  LocalAuthApi.checkAvailableBiometrics();
+                  LocalAuthApi.authenticateWithFaceID();
+                },
+                onTapFingerPrint: () {
+                  LocalAuthApi.authenticateWithFingerprint();
+                },
               ),
               verticalSpacing(20),
               const CustomDivider(),
