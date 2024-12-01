@@ -17,7 +17,7 @@ class ResetPasswordScreen extends StatelessWidget {
     return Scaffold(
         body: CustomGradientContainer(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
             Flexible(flex: 2, child: verticalSpacing(80)),
@@ -61,7 +61,7 @@ class ResetPasswordScreen extends StatelessWidget {
             ),
             Flexible(flex: 2, child: verticalSpacing(80)),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: GetStartedButton(
                 onTap: () {
                   context.pushNamed(Routes.passwordUpdatedScreen);
