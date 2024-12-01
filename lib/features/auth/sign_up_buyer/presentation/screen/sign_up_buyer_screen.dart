@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../core/di/dependency_injection.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../../../../core/widgets/auth_text_form_field.dart';
 import '../../../../../core/widgets/custom_divider.dart';
 import '../../../../../core/widgets/custom_gradient_container.dart';
+import '../../../countryPicker/logic/cubit/get_all_countries_cubit.dart';
+import '../../../countryPicker/ui/country_picker.dart';
 import '../../../get_started/presentation/widgets/custom_auth_button.dart';
 import '../../../login/presentation/section/social_auth.dart';
 import '../../../login/presentation/widget/logo.dart';
@@ -61,6 +65,18 @@ class SignUpBuyerScreen extends StatelessWidget {
                         style: TextStyles.font14Jetw500Poppins(context),
                       ),
                     ),
+                    IntrinsicHeight(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          BlocProvider(
+                            create: (context) => getit<GetAllCountriesCubit>()
+                              ..getAllCountries(),
+                            child: const CountryPicker(),
+                          ),
+                        ],
+                      ),
+                    ),
                     verticalSpacing(16),
                     Container(
                       alignment: Alignment.centerLeft,
@@ -95,7 +111,7 @@ class SignUpBuyerScreen extends StatelessWidget {
                       text: 'Sign Up',
                     ),
                     verticalSpacing(40),
-                    Center(child: const UseBiometricAccess()),
+                    const Center(child: UseBiometricAccess()),
                     verticalSpacing(40),
                     BiometricAuth(
                       onTapFaceId: () {},
