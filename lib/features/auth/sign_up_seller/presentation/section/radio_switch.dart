@@ -10,8 +10,8 @@ class RadioSwitch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedCrossFade(
-      firstChild: SelectedRadio(),
-      secondChild: UnSelectedRadio(),
+      firstChild: const SelectedRadio(),
+      secondChild: const UnSelectedRadio(),
       crossFadeState: isSelected
           ? CrossFadeState.showFirst
           : CrossFadeState.showSecond,
