@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/widgets/custom_divider.dart';
@@ -83,17 +82,13 @@ class LoginScreen extends StatelessWidget {
               ),
               Flexible(child: verticalSpacing(40)),
               Text(
-                "Fast and Secure login",
+                "Use fingerprint Access",
                 style: TextStyles.font20OuterSpaceW600Poppins(context),
               ),
               Flexible(
                 child: verticalSpacing(40),
               ),
               BiometricAuth(
-                onTapFaceId: () {
-                  LocalAuthApi.checkAvailableBiometrics();
-                  LocalAuthApi.authenticateWithFaceID();
-                },
                 onTapFingerPrint: () {
                   LocalAuthApi.authenticateWithFingerprint();
                 },

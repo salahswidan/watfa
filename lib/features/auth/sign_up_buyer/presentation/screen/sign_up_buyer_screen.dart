@@ -4,7 +4,6 @@ import '../../../../../core/di/dependency_injection.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../../../../core/widgets/auth_text_form_field.dart';
-import '../../../../../core/widgets/custom_divider.dart';
 import '../../../../../core/widgets/custom_gradient_container.dart';
 import '../../../countryPicker/logic/cubit/get_all_countries_cubit.dart';
 import '../../../countryPicker/ui/country_picker.dart';
@@ -12,9 +11,7 @@ import '../../../get_started/presentation/widgets/custom_auth_button.dart';
 import '../../../login/presentation/section/social_auth.dart';
 import '../../../login/presentation/widget/logo.dart';
 import '../section/already_have_an_account.dart';
-import '../section/biometric_auth.dart';
 import '../section/password_listener.dart';
-import '../section/use_biometric_access.dart';
 
 class SignUpBuyerScreen extends StatelessWidget {
   const SignUpBuyerScreen({super.key});
@@ -111,15 +108,6 @@ class SignUpBuyerScreen extends StatelessWidget {
                       text: 'Sign Up',
                     ),
                     verticalSpacing(40),
-                    const Center(child: UseBiometricAccess()),
-                    verticalSpacing(40),
-                    BiometricAuth(
-                      onTapFaceId: () {},
-                      onTapFingerPrint: () {},
-                    ),
-                    verticalSpacing(20),
-                    const CustomDivider(),
-                    verticalSpacing(15),
                     Center(
                       child: Text(
                         "sign up using",
