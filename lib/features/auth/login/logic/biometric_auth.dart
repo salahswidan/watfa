@@ -58,14 +58,14 @@ class LocalAuthApi {
       return await auth.authenticate(
         localizedReason: 'Scan your face to authenticate',
         authMessages: [
-          AndroidAuthMessages(
+          const AndroidAuthMessages(
             signInTitle: 'Sign in to watfa',
             biometricHint: 'Touch sensor',
             cancelButton: 'Cancel',
             goToSettingsButton: 'Settings',
             goToSettingsDescription: 'Please set up your fingerprint.',
           ),
-          IOSAuthMessages(
+          const IOSAuthMessages(
             cancelButton: 'Cancel',
             goToSettingsButton: 'Settings',
             goToSettingsDescription: 'Please set up your Face ID.',
@@ -97,14 +97,14 @@ class LocalAuthApi {
       return await auth.authenticate(
         localizedReason: 'Scan your face to authenticate',
         authMessages: [
-          AndroidAuthMessages(
+          const AndroidAuthMessages(
             signInTitle: 'Sign in to watfa',
             biometricHint: 'Scan your face',
             cancelButton: 'Cancel',
             goToSettingsButton: 'Settings',
             goToSettingsDescription: 'Please set up your Face ID.',
           ),
-          IOSAuthMessages(
+          const IOSAuthMessages(
             cancelButton: 'Cancel',
             goToSettingsButton: 'Settings',
             goToSettingsDescription: 'Please set up your Face ID.',
