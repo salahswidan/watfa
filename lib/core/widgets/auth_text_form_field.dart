@@ -10,6 +10,11 @@ class AuthTextFormField extends StatefulWidget {
   final String? suffixIcon;
   final bool? isPassword;
   final TextInputType? keyboardType;
+  final bool readOnly;
+  final bool needPrefixIcon;
+  final Widget? prefixIcon;
+  
+  final BoxConstraints? prefixIconConstraints;
 
   const AuthTextFormField({
     super.key,
@@ -18,6 +23,11 @@ class AuthTextFormField extends StatefulWidget {
     this.suffixIcon,
     this.isPassword,
     this.keyboardType,
+    this.readOnly = false,
+    this.needPrefixIcon = false,
+    this.prefixIcon,
+    this.prefixIconConstraints,
+    
   });
 
   @override
@@ -31,6 +41,8 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
     return Padding(
       padding: const EdgeInsets.only(top: 8),
       child: TextField(
+
+        readOnly: widget.readOnly,
         keyboardType: widget.keyboardType ?? TextInputType.text,
         obscuringCharacter: "*",
         obscureText: widget.isPassword ?? false ? isObscured : false,
@@ -42,6 +54,7 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
               borderSide: const BorderSide(
                 color: ColorsManagers.purple,
               )),
+            prefixIcon:widget.needPrefixIcon ? widget.prefixIcon : null,
           suffixIcon: widget.isPassword ?? false
               ? GestureDetector(
                   onTap: () {
