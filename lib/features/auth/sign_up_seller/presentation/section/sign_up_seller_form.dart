@@ -13,7 +13,7 @@ class SignUpSellerForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return currentIndex == 0
-        ? FirstSignUpSellerForm()
-        : SecondSignUpSellerForm();
+        ? const FirstSignUpSellerForm()
+        : const SecondSignUpSellerForm();
   }
 }
