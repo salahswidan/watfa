@@ -26,7 +26,7 @@ class InActiveUserTypeContainer extends StatelessWidget {
           color: ColorsManagers.cultured,
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
           child: ListTile(
             contentPadding: EdgeInsets.zero,
             title: Text(
