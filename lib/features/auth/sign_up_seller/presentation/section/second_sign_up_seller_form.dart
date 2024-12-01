@@ -39,13 +39,13 @@ class SecondSignUpSellerForm extends StatelessWidget {
           style: TextStyles.font14Blackw500Poppins(context),
         ),
         verticalSpacing(15.h(context)),
-        RadioListTileForm(
+        const RadioListTileForm(
           title: "Registered business",
           subtitle:
               "Your business is registered as a commercial entity under the relevant authority in the country you are based in.",
         ),
         verticalSpacing(15.h(context)),
-        RadioListTileForm(
+        const RadioListTileForm(
           title: "Freelancer",
           subtitle:
               "You are a self-employed individual working on a sole trader or freelancer license issued by the relevant authority in the country you are based in.",
@@ -56,12 +56,12 @@ class SecondSignUpSellerForm extends StatelessWidget {
           style: TextStyles.font14Blackw500Poppins(context),
         ),
         verticalSpacing(15.h(context)),
-        RadioListTileForm(
+        const RadioListTileForm(
           title: "In-store",
           subtitle: "Physical location sales",
         ),
         verticalSpacing(15.h(context)),
-        RadioListTileForm(
+        const RadioListTileForm(
           title: "Online",
           subtitle: "E-commerce sales",
         ),
