@@ -53,8 +53,7 @@ class _CountryPickerState extends State<CountryPicker> {
                                 countryValue = selectedCountry.flag;
                                 Constants.selectedCountryFlag =
                                     selectedCountry.flag;
-                                Constants.selectedPhone =
-                                    selectedCountry.phone;
+                                Constants.selectedPhone = selectedCountry.phone;
 
                                 Constants.selectedCountryname =
                                     selectedCountry.name;
@@ -191,11 +190,15 @@ Widget _countriesList({
                         ),
                   ),
                 ),
-                Text(
-                  countryData[index].name,
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontWeight: FontWeight.w400,
-                      ),
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    countryData[index].name,
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          fontWeight: FontWeight.w400,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                  ),
                 ),
               ],
             ),
