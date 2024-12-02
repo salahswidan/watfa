@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 
 import '../di/dependency_injection.dart';
+import 'app_links_initial.dart';
 import 'shared_pref_helper.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// Configuration that needs to be done before the Flutter app starts goes here.
 ///
@@ -10,6 +10,7 @@ import 'shared_pref_helper.dart';
 Future<void> preAppConfig() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheServices.instance.init();
-   setupGetIT();
+  setupGetIT();
+  await initDeepLinks();
   // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 }
