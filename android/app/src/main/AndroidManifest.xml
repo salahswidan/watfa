@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
     <application
         android:label="watfa"
         android:name="${applicationName}"
@@ -23,7 +23,7 @@
               android:resource="@style/NormalTheme"
               />
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <!-- <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
                                <action android:name="android.intent.action.VIEW" />
                <category android:name="android.intent.category.DEFAULT" />
@@ -34,7 +34,7 @@
                    android:scheme="https" />
                <data
                    android:host="example.watfa.app"
-                   android:scheme="http" />
+                   android:scheme="http" /> -->
             </intent-filter>
             
         </activity>
