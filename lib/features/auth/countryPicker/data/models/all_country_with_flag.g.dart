@@ -26,12 +26,14 @@ AllCountryWithFlag _$AllCountryWithFlagFromJson(Map<String, dynamic> json) =>
     AllCountryWithFlag(
       name: json['name'] as String,
       flag: json['flag'] as String,
-      phoneCode: json['phoneCode'] as String,
+      code: json['code'] as String,
+      phone: json['phone'] as String,
     );
 
 Map<String, dynamic> _$AllCountryWithFlagToJson(AllCountryWithFlag instance) =>
     <String, dynamic>{
       'name': instance.name,
       'flag': instance.flag,
-      'phoneCode': instance.phoneCode,
+      'code': instance.code,
+      'phone': instance.phone,
     };

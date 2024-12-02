@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/helpers/constants.dart';
 import '../../../../core/widgets/auth_text_form_field.dart';
 import '../data/models/all_country_with_flag.dart';
@@ -28,8 +27,7 @@ class _CountryPickerState extends State<CountryPicker> {
             context.read<GetAllCountriesCubit>().getAllCountries();
             return Container();
           },
-          loading: ()=> const Center(child: CircularProgressIndicator()),
-          
+          loading: () => const Center(child: CircularProgressIndicator()),
           success: (data) {
             List<AllCountryWithFlag> countryList = data.data;
             return Expanded(
@@ -55,8 +53,8 @@ class _CountryPickerState extends State<CountryPicker> {
                                 countryValue = selectedCountry.flag;
                                 Constants.selectedCountryFlag =
                                     selectedCountry.flag;
-                                Constants.selectedCountrycode =
-                                    selectedCountry.phoneCode;
+                                Constants.selectedPhone =
+                                    selectedCountry.phone;
 
                                 Constants.selectedCountryname =
                                     selectedCountry.name;
@@ -187,7 +185,7 @@ Widget _countriesList({
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Text(
-                    countryData[index].phoneCode,
+                    countryData[index].phone,
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontWeight: FontWeight.w400,
                         ),

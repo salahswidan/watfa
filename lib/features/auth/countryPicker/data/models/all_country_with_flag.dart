@@ -15,7 +15,6 @@ class AllCountryWithFlagResponese {
   factory AllCountryWithFlagResponese.fromJson(Map<String, dynamic> json) =>
       _$AllCountryWithFlagResponeseFromJson(json);
 
-
   Map<String, dynamic> toJson() => _$AllCountryWithFlagResponeseToJson(this);
 }
 
@@ -23,12 +22,14 @@ class AllCountryWithFlagResponese {
 class AllCountryWithFlag {
   final String name;
   final String flag;
-  final String phoneCode;
+  final String code;
+  final String phone;
 
   AllCountryWithFlag({
     required this.name,
     required this.flag,
-    required this.phoneCode,
+    required this.code,
+    required this.phone,
   });
 
   factory AllCountryWithFlag.fromJson(Map<String, dynamic> json) =>
