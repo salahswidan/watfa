@@ -5,25 +5,32 @@ import 'package:watfa/core/theme/styles.dart';
 import '../../../../../core/helpers/spacing.dart';
 
 class PasswordListener extends StatelessWidget {
-  const PasswordListener({super.key});
+  final bool hasAtLeast8Characters,
+      hasAtLeast1UpperCase,
+      hasAtLeast1NumberOrSymbol;
+  const PasswordListener(
+      {super.key,
+      required this.hasAtLeast8Characters,
+      required this.hasAtLeast1UpperCase,
+      required this.hasAtLeast1NumberOrSymbol});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const PasswordListnerItem(
+        PasswordListnerItem(
           text: "At least 8 characters",
-          value: true,
+          value: hasAtLeast8Characters,
         ),
         verticalSpacing(18),
-        const PasswordListnerItem(
+        PasswordListnerItem(
           text: "1 uppercase letter",
-          value: false,
+          value: hasAtLeast1UpperCase,
         ),
         verticalSpacing(18),
-        const PasswordListnerItem(
+        PasswordListnerItem(
           text: "1 number or symbol",
-          value: true,
+          value: hasAtLeast1NumberOrSymbol,
         ),
       ],
     );
@@ -49,12 +56,10 @@ class PasswordListnerItem extends StatelessWidget {
         horizontalSpacing(8),
         Text(
           text,
-          style: 
-          value? 
-          TextStyles.font10DaveGrayw300Poppins(context):
-          TextStyles.font10DaveGrayw300Poppins(context).copyWith(
-            color: Colors.red
-          ),
+          style: value
+              ? TextStyles.font10DaveGrayw300Poppins(context)
+              : TextStyles.font10DaveGrayw300Poppins(context)
+                  .copyWith(color: Colors.red),
         )
       ],
     );
