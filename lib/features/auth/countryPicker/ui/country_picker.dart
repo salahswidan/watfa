@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:watfa/features/auth/sign_up_buyer/logic/cubit/sign_up_buyer_cubit.dart';
 import '../../../../core/helpers/constants.dart';
 import '../../../../core/widgets/auth_text_form_field.dart';
 import '../data/models/all_country_with_flag.dart';
@@ -7,8 +8,10 @@ import '../logic/cubit/get_all_countries_cubit.dart';
 import '../logic/cubit/get_all_countries_state.dart';
 
 class CountryPicker extends StatefulWidget {
+  final Function(String?) validator;
   const CountryPicker({
     super.key,
+    required this.validator,
   });
 
   @override
@@ -34,8 +37,11 @@ class _CountryPickerState extends State<CountryPicker> {
               child: Column(
                 children: [
                   AuthTextFormField(
+                    validator: widget.validator,
                     readOnly: false,
-                    controller: TextEditingController(),
+                    keyboardType: TextInputType.number,
+                    controller:
+                        context.read<SignUpBuyerCubit>().phoneNumberController,
                     hintText: 'Your number',
                     needPrefixIcon: true,
                     prefixIconConstraints:
