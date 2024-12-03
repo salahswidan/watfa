@@ -43,6 +43,12 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               AuthTextFormField(
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Please enter your email';
+                  }
+                  return null;
+                },
                 suffixIcon: 'assets/svgs/username_text_field_icon.svg',
                 hintText: 'Mariam Fawzy',
                 controller: TextEditingController(),
@@ -56,6 +62,12 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               AuthTextFormField(
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Please enter your password';
+                  }
+                  return null;
+                },
                 isPassword: true,
                 hintText: 'Password',
                 controller: TextEditingController(),
