@@ -30,6 +30,12 @@ class SecondSignUpSellerForm extends StatelessWidget {
           style: TextStyles.font14RaisinBlackw500Poppins(context),
         ),
         AuthTextFormField(
+          validator: (value) {
+            if (value!.isEmpty) {
+              return 'Please enter your country';
+            }
+            return null;
+          },
           hintText: 'egypt',
           controller: TextEditingController(),
         ),

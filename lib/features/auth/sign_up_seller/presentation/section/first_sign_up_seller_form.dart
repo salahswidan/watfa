@@ -39,6 +39,12 @@ class FirstSignUpSellerForm extends StatelessWidget {
           ),
         ),
         AuthTextFormField(
+          validator: (value) {
+            if (value!.isEmpty) {
+              return 'Please enter your company name';
+            }
+            return null;
+          },
           hintText: 'Watfa',
           controller: TextEditingController(),
         ),
@@ -51,6 +57,12 @@ class FirstSignUpSellerForm extends StatelessWidget {
           ),
         ),
         AuthTextFormField(
+          validator: (value) {
+            if (value!.isEmpty) {
+              return 'Please enter your username';
+            }
+            return null;
+          },
           hintText: 'watfa',
           controller: TextEditingController(),
         ),
@@ -63,6 +75,12 @@ class FirstSignUpSellerForm extends StatelessWidget {
           ),
         ),
         AuthTextFormField(
+          validator: (value) {
+            if (value!.isEmpty) {
+              return 'Please enter your email';
+            }
+            return null;
+          },
           hintText: 'mariamfawzu@gmail.com',
           controller: TextEditingController(),
         ),
@@ -75,6 +93,12 @@ class FirstSignUpSellerForm extends StatelessWidget {
           ),
         ),
         AuthTextFormField(
+          validator: (value) {
+            if (value!.isEmpty) {
+              return 'Please enter your phone number';
+            }
+            return null;
+          },
           keyboardType: TextInputType.phone,
           hintText: '0122067667',
           controller: TextEditingController(),
@@ -88,6 +112,12 @@ class FirstSignUpSellerForm extends StatelessWidget {
           ),
         ),
         AuthTextFormField(
+          validator: (value) {
+            if (value!.isEmpty) {
+              return 'Please enter your password';
+            }
+            return null;
+          },
           isPassword: true,
           hintText: 'Password',
           controller: TextEditingController(),
@@ -101,6 +131,12 @@ class FirstSignUpSellerForm extends StatelessWidget {
           ),
         ),
         AuthTextFormField(
+          validator: (value) {
+            if (value!.isEmpty) {
+              return 'Please enter your password';
+            }
+            return null;
+          },
           isPassword: true,
           hintText: 'Confirm Password',
           controller: TextEditingController(),
