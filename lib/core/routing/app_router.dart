@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watfa/features/auth/password_updated/presentation/password_updated_screen.dart';
 import 'package:watfa/features/auth/sign_up_seller/presentation/screen/sign_up_seller_screen.dart';
 
@@ -7,10 +8,12 @@ import '../../features/auth/get_started/presentation/screen/get_started_screen.d
 
 import '../../features/auth/login/presentation/screen/login_screen.dart';
 import '../../features/auth/reset_password/presentation/screen/reset_password_screen.dart';
+import '../../features/auth/sign_up_buyer/logic/cubit/sign_up_buyer_cubit.dart';
 import '../../features/auth/sign_up_buyer/presentation/screen/sign_up_buyer_screen.dart';
 import '../../features/auth/verify/presentation/screens/verify_screen.dart';
 import '../../features/onboarding/logic/on_boarding_data.dart';
 import '../../features/onboarding/presentation/screen/on_boarding_screen.dart';
+import '../di/dependency_injection.dart';
 import '../helpers/shared_pref_helper.dart';
 import 'routes.dart';
 
@@ -36,7 +39,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const ForgetPasswordScreen(),
         );
-      
+
       case Routes.resetPasswordScreen:
         return MaterialPageRoute(
           builder: (_) => const ResetPasswordScreen(),
@@ -49,13 +52,16 @@ class AppRouter {
 
       case Routes.signUpBuyerScreen:
         return MaterialPageRoute(
-          builder: (_) => const SignUpBuyerScreen(),
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<SignUpBuyerCubit>(),
+            child: const SignUpBuyerScreen(),
+          ),
         );
       case Routes.verifyScreen:
         return MaterialPageRoute(
           builder: (_) => const VerifyScreen(),
         );
-      
+
       case Routes.signUpSellerScreen:
         return MaterialPageRoute(
           builder: (_) => const SignUpSellerScreen(),
