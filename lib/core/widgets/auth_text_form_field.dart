@@ -13,22 +13,21 @@ class AuthTextFormField extends StatefulWidget {
   final bool readOnly;
   final bool needPrefixIcon;
   final Widget? prefixIcon;
-  
-  final BoxConstraints? prefixIconConstraints;
 
-  const AuthTextFormField({
-    super.key,
-    required this.controller,
-    required this.hintText,
-    this.suffixIcon,
-    this.isPassword,
-    this.keyboardType,
-    this.readOnly = false,
-    this.needPrefixIcon = false,
-    this.prefixIcon,
-    this.prefixIconConstraints,
-    
-  });
+  final BoxConstraints? prefixIconConstraints;
+  final Function(String?) validator;
+  const AuthTextFormField(
+      {super.key,
+      required this.controller,
+      required this.hintText,
+      this.suffixIcon,
+      this.isPassword,
+      this.keyboardType,
+      this.readOnly = false,
+      this.needPrefixIcon = false,
+      this.prefixIcon,
+      this.prefixIconConstraints,
+      required this.validator});
 
   @override
   State<AuthTextFormField> createState() => _AuthTextFormFieldState();
@@ -40,8 +39,9 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 8),
-      child: TextField(
-
+      child: TextFormField(
+        
+        validator: (value) => widget.validator(value),
         readOnly: widget.readOnly,
         keyboardType: widget.keyboardType ?? TextInputType.text,
         obscuringCharacter: "*",
@@ -54,7 +54,7 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
               borderSide: const BorderSide(
                 color: ColorsManagers.purple,
               )),
-            prefixIcon:widget.needPrefixIcon ? widget.prefixIcon : null,
+          prefixIcon: widget.needPrefixIcon ? widget.prefixIcon : null,
           suffixIcon: widget.isPassword ?? false
               ? GestureDetector(
                   onTap: () {
