@@ -30,6 +30,12 @@ class ForgetPasswordScreen extends StatelessWidget {
                   style: TextStyles.font14DarkSilverw400Roboto(context)),
               Flexible(flex: 2, child: verticalSpacing(80)),
               AuthTextFormField(
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Please enter your email';
+                  }
+                  return null;
+                },
                 hintText: 'Mariam Fawzy@gmail.com',
                 controller: TextEditingController(),
               ),

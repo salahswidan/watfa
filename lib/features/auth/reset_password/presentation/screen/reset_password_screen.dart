@@ -41,6 +41,12 @@ class ResetPasswordScreen extends StatelessWidget {
               ),
             ),
             AuthTextFormField(
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please enter your password';
+                }
+                return null;
+              },
               isPassword: true,
               hintText: 'Password',
               controller: TextEditingController(),
@@ -55,6 +61,12 @@ class ResetPasswordScreen extends StatelessWidget {
               ),
             ),
             AuthTextFormField(
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please enter your password';
+                }
+                return null;
+              },
               isPassword: true,
               hintText: 'Confirm Password',
               controller: TextEditingController(),
