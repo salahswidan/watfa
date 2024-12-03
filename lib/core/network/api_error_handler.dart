@@ -35,7 +35,7 @@ class ApiErrorHandler {
   static ApiErrorModel _handleError(int? statusCode, dynamic error) {
     return ApiErrorModel(
       message: error['message'] ?? "Unknown error occurred",
-      code: statusCode,
+     
     );
   }
 }
