@@ -1,8 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
-
 import '../../features/auth/countryPicker/data/models/all_country_with_flag.dart';
+import '../../features/auth/sign_up_buyer/data/model/sign_up_buyer_request_body.dart';
+import '../../features/auth/sign_up_buyer/data/model/sign_up_buyer_response.dart';
 import 'api_constants.dart';
 
 part 'api_service.g.dart';
@@ -11,11 +12,10 @@ part 'api_service.g.dart';
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
-
-  // @POST(ApiConstants.register)
-  // Future<SignupResponse> signup(
-  //   @Body() SignupRequestBody signupRequestBody,
-  // );
+  @POST(ApiConstants.register)
+  Future<SignUpBuyerResponse> signup(
+    @Body() SignUpBuyerRequestBody signUpBuyerRequestBody,
+  );
 
   @GET(ApiConstants.allCountries)
   Future<AllCountryWithFlagResponese> getAllCountries();
