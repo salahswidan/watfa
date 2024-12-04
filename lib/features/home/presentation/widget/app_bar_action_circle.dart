@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -18,15 +17,17 @@ class AppBarActionCircle extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        width: 40,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(color: ColorsManagers.purple, width: 1),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(15),
-          child: SvgPicture.asset(
-            icon,
-            
+        child: Center(
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: SvgPicture.asset(
+              icon,
+            ),
           ),
         ),
       ),
