@@ -4,7 +4,8 @@ part 'sign_up_buyer_request_body.g.dart';
 
 @JsonSerializable()
 class SignUpBuyerRequestBody {
-  final String userNameOrEmail;
+  final String userName;
+  final String email;
   final String password;
   final String confirmPassword;
   final String role;
@@ -12,11 +13,12 @@ class SignUpBuyerRequestBody {
   final String country;
 
   SignUpBuyerRequestBody(
-      {required this.userNameOrEmail,
+      {required this.userName,
       required this.password,
       required this.confirmPassword,
       required this.role,
       required this.phoneNumber,
+      required this.email,
       required this.country});
 
   Map<String, dynamic> toJson() => _$SignUpBuyerRequestBodyToJson(this);
