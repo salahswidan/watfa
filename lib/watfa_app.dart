@@ -11,7 +11,6 @@ class WatfaApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return MaterialApp(
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
@@ -21,11 +20,11 @@ class WatfaApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute:
-          // CacheServices.instance.getUserType() != null
-          //     ? Routes.onBoardingScreen
-          //     :
-          Routes.onBoardingScreen,
+      initialRoute: setinitialRoute(),
+      // CacheServices.instance.getUserType() != null
+      //     ? Routes.onBoardingScreen
+      //     :
+
       // initialRoute: CacheServices.instance.getOnBoarding()
       //     ? CacheServices.instance.getUserModel() != null
       //         ? Routes.homeScreen
@@ -34,4 +33,14 @@ class WatfaApp extends StatelessWidget {
       onGenerateRoute: appRouter.generateRoute,
     );
   }
+}
+
+setinitialRoute() async {
+  await CacheServices.instance.getUserModel() != null
+      ? Routes.homeScreen
+      : CacheServices.instance.getUserType() != null
+          ? Routes.loginScreen
+          : CacheServices.instance.getOnBoarding()
+              ? Routes.getStartedScreen
+              : Routes.onBoardingScreen;
 }
