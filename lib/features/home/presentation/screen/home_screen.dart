@@ -7,7 +7,10 @@ import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 import '../widget/ad_banner_container.dart';
 import '../widget/app_bar_action_circle.dart';
+import '../widget/category_container.dart';
+import '../widget/default_product.dart';
 import '../widget/home_background_container.dart';
+import '../widget/special_offers_product.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,13 +20,21 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: HomeBackgroundContainer(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
+          ),
           child: CustomScrollView(
             slivers: [
+              SliverToBoxAdapter(
+                child: verticalSpacing(30.h(context)),
+              ),
               SliverAppBar(
                 automaticallyImplyLeading: false,
+                pinned: false,
+                elevation: 0,
+                centerTitle: true,
                 flexibleSpace: FlexibleSpaceBar(
-                  background: Padding(
+                  title: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Row(children: [
                       Container(
@@ -40,10 +51,13 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 3),
-                        child: Text(
-                            "Good Morning,${CacheServices.instance.getUserModel()?.userName ?? ""}",
-                            style:
-                                TextStyles.font20RaisinBlackw500Inter(context)),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                              "Good Morning,${CacheServices.instance.getUserModel()?.userName ?? ""}",
+                              style: TextStyles.font20RaisinBlackw500Inter(
+                                  context)),
+                        ),
                       ),
                       Expanded(child: SizedBox()),
                       Row(
@@ -69,7 +83,7 @@ class HomeScreen extends StatelessWidget {
               ),
               SliverList(
                   delegate: SliverChildListDelegate([
-                verticalSpacing(60),
+                verticalSpacing(40.h(context)),
               ])),
               SliverToBoxAdapter(
                 child: SingleChildScrollView(
@@ -79,38 +93,125 @@ class HomeScreen extends StatelessWidget {
                         10,
                         (index) => Padding(
                               padding: const EdgeInsets.only(right: 10),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: ColorsManagers.magnolia,
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Center(
-                                    child: Column(
-                                      children: [
-                                        Image.asset(
-                                          'assets/images/category_test.png',
-                                          width: 34,
-                                          fit: BoxFit.fitWidth,
-                                        ),
-                                        verticalSpacing(5),
-                                        Text("Fashion",
-                                            style: TextStyles
-                                                .font10Blackw500Podkova(
-                                                    context)),
-                                      ],
-                                    ),
-                                  ),
-                                ),
+                              child: CategoryContainer(),
+                            )),
+                  ),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: SeeMoreRow(
+                  text: "Special Offers",
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(
+                        10,
+                        (index) => Padding(
+                              padding: const EdgeInsets.only(right: 20),
+                              child: SpecialOffersProduct(),
+                            )),
+                  ),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: SeeMoreRow(
+                  text: "Fashion Offers",
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(
+                        10,
+                        (index) => Padding(
+                              padding: const EdgeInsets.only(right: 20),
+                              child: DefaultProduct(
+                                image: 'assets/images/fashion_image.png',
+                                text: "baby blue blouse",
                               ),
                             )),
                   ),
                 ),
-              )
+              ),
+              SliverToBoxAdapter(
+                child: SeeMoreRow(
+                  text: "Bags Offers",
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(
+                        10,
+                        (index) => Padding(
+                              padding: const EdgeInsets.only(right: 20),
+                              child: DefaultProduct(
+                                image: 'assets/images/bag_image.png',
+                                text: "White bag",
+                              ),
+                            )),
+                  ),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: SeeMoreRow(
+                  text: "SkinCare Offers",
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(
+                        10,
+                        (index) => Padding(
+                              padding: const EdgeInsets.only(right: 20),
+                              child: DefaultProduct(
+                                image: 'assets/images/skincare_image.png',
+                                text: "Oily skincare",
+                              ),
+                            )),
+                  ),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: verticalSpacing(30.h(context)),
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class SeeMoreRow extends StatelessWidget {
+  final String text;
+  const SeeMoreRow({
+    super.key,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 20.h(context)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(text, style: TextStyles.font24BlackOliveW700Manrope(context)),
+          Text(
+            "See More",
+            style: TextStyles.font14PurpleW700Manrope(context).copyWith(
+              decoration: TextDecoration.underline,
+            ),
+          ),
+        ],
       ),
     );
   }
