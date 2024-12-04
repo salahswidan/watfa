@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:app_links/app_links.dart';
 import 'package:flutter/material.dart';
-import 'package:watfa/core/helpers/extinsions.dart';
 
-import '../routing/routes.dart';
 
 late AppLinks _appLinks;
   StreamSubscription<Uri>? _linkSubscription;
