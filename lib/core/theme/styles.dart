@@ -14,6 +14,29 @@ class TextStyles {
     );
   }
 
+  static TextStyle font10Blackw500Podkova(context) {
+    return GoogleFonts.podkova(
+      fontSize: getResponsiveFontSize(context, fontSize: 10),
+      fontWeight: FontWeightHelper.medium,
+      color: Colors.black,
+    );
+  }
+  static TextStyle font24WhiteW700Manrope(context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      fontWeight: FontWeightHelper.bold,
+      color: Colors.white,
+    );
+  }
+
+  static TextStyle font11WhiteW400Manrope(context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 11),
+      fontWeight: FontWeightHelper.regular,
+      color: Colors.white,
+    );
+  }
+
   static TextStyle font27Purplew600Inter(context) {
     return GoogleFonts.inter(
       fontSize: getResponsiveFontSize(context, fontSize: 27),

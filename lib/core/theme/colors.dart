@@ -23,6 +23,7 @@ class ColorsManagers {
   static const Color lightSilver = Color(0xffD9D9D9);
   static const Color platinum = Color(0xffE7E7E7);
   static const Color sacramentoStateGreen = Color(0xff093030);
+  static const Color magnolia = Color(0xffF4E7FC);
 
   static const Color lightGray = Color(0xffD3D3D3);
 
