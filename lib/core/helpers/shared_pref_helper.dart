@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../features/auth/sign_up_buyer/data/model/sign_up_buyer_response.dart';
 
 class CacheServices {
   CacheServices._private();
@@ -28,32 +29,35 @@ class CacheServices {
 
   // Call this function from your StatefulWidget's initState()
 
-  // UserData? getUserModel() {
-  //   UserData? user;
-  //   try {
-  //     // String? json = prefs.getString('user');
-  //     String? json = prefs.getString('user');
-  //     if (json != null) {
-  //       var v = jsonDecode(json);
-  //       user = UserData.fromJson(v);
-  //     } else {
-  //       log('user not loaded', name: 'CacheService::getuser');
-  //     }
-  //   } catch (e) {
-  //     log(e.toString(), name: 'CacheService::getuser');
-  //   }
-  //   return user;
-  // }
+  Future<UserData?> getUserModel()async {
+    UserData? user;
+    try {
+      // String? json = prefs.getString('user');
+      String? json =await storage.read(
+        key: 'user'
+      );
+      if (json != null) {
+        
+        var v = jsonDecode(json);
+        user = UserData.fromJson(v);
+      } else {
+        log('user not loaded', name: 'CacheService::getuser');
+      }
+    } catch (e) {
+      log(e.toString(), name: 'CacheService::getuser');
+    }
+    return user;
+  }
 
-  // Future<bool> setUserModel(UserData user) async {
-  //   try {
-  //     await prefs.setString('user', jsonEncode(user.toJson()));
-  //     return true;
-  //   } catch (e) {
-  //     log(e.toString(), name: 'CacheService::setuser');
-  //     return false;
-  //   }
-  // }
+  Future<bool> setUserModel(UserData user) async {
+    try {
+      await storage.write(key: 'user', value: user.toString());
+      return true;
+    } catch (e) {
+      log(e.toString(), name: 'CacheService::setuser');
+      return false;
+    }
+  }
 
   Future<bool> setOnBoarding(bool isSeen) async {
     try {
@@ -75,6 +79,7 @@ class CacheServices {
       return isSeen;
     }
   }
+
   Future<bool> setUserType(bool isBuyer) async {
     try {
       await prefs.setBool('isBuyer', isBuyer);
@@ -88,7 +93,7 @@ class CacheServices {
   bool? getUserType() {
     bool? isBuyer = false;
     try {
-      isBuyer = prefs.getBool('isBuyer') ;
+      isBuyer = prefs.getBool('isBuyer');
       return isBuyer;
     } catch (e) {
       log(e.toString(), name: 'CacheService::isBuyer');
