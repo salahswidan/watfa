@@ -4,6 +4,7 @@ import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../../login/presentation/widget/logo.dart';
 
+
 class FixedData extends StatelessWidget {
   const FixedData({
     super.key,
@@ -23,8 +24,7 @@ class FixedData extends StatelessWidget {
         verticalSpacing(18),
         Center(
           child: Text("Create an account  to get all features",
-              style: TextStyles.font14DarkSilverw400Roboto(
-                  context)),
+              style: TextStyles.font14DarkSilverw400Roboto(context)),
         ),
         verticalSpacing(30),
       ],
