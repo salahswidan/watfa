@@ -5,7 +5,7 @@ import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/features/auth/sign_up_buyer/logic/cubit/sign_up_buyer_cubit.dart';
 import 'package:watfa/features/auth/sign_up_buyer/logic/cubit/sign_up_buyer_state.dart';
 
-
+import '../../../../../core/routing/routes.dart';
 import '../../../get_started/presentation/widgets/custom_auth_button.dart';
 
 class SignUpBuyerBlocListener extends StatelessWidget {
@@ -22,7 +22,7 @@ class SignUpBuyerBlocListener extends StatelessWidget {
           state.whenOrNull(
             loading: () {},
             success: (signupResponse) {
-              context.pop();
+              setUpSuccessState(context, signupResponse);
             },
             error: (error) {
               setupErrorState(context, error.message!);
@@ -34,8 +34,9 @@ class SignUpBuyerBlocListener extends StatelessWidget {
               duration: const Duration(milliseconds: 500),
               child: state is SignUpBuyerLoading
                   ? Center(
-                      child:
-                          Lottie.asset('assets/lottie/loading_navigate.json'),
+                      child: Lottie.asset(
+                        'assets/lottie/loading_navigate.json',
+                      ),
                     )
                   : CustomAuthButton(
                       onTap: () {
@@ -47,7 +48,6 @@ class SignUpBuyerBlocListener extends StatelessWidget {
   }
 
   void setupErrorState(BuildContext context, String error) {
-    context.pop();
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -77,5 +77,9 @@ class SignUpBuyerBlocListener extends StatelessWidget {
     if (context.read<SignUpBuyerCubit>().formKey.currentState!.validate()) {
       context.read<SignUpBuyerCubit>().emitSignUpBuyerState();
     }
+  }
+  
+  void setUpSuccessState(BuildContext context, signupResponse)async {
+    context.pushNamed(Routes.homeScreen);
   }
 }
