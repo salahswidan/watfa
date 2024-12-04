@@ -1,6 +1,7 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:watfa/features/auth/sign_up_buyer/logic/cubit/sign_up_buyer_cubit.dart';
+
 import '../../../../core/helpers/constants.dart';
 import '../../../../core/widgets/auth_text_form_field.dart';
 import '../data/models/all_country_with_flag.dart';
@@ -8,10 +9,12 @@ import '../logic/cubit/get_all_countries_cubit.dart';
 import '../logic/cubit/get_all_countries_state.dart';
 
 class CountryPicker extends StatefulWidget {
+  final TextEditingController controller;
   final Function(String?) validator;
   const CountryPicker({
     super.key,
     required this.validator,
+    required this.controller,
   });
 
   @override
@@ -30,7 +33,81 @@ class _CountryPickerState extends State<CountryPicker> {
             context.read<GetAllCountriesCubit>().getAllCountries();
             return Container();
           },
-          loading: () => const Center(child: CircularProgressIndicator()),
+          loading: () {
+            List<AllCountryWithFlag> countryList = [];
+            return Expanded(
+              child: Column(
+                children: [
+                  AuthTextFormField(
+                    validator: widget.validator,
+                    readOnly: false,
+                    keyboardType: TextInputType.number,
+                    controller: widget.controller,
+                    hintText: 'Your number',
+                    needPrefixIcon: true,
+                    prefixIconConstraints:
+                        const BoxConstraints(minHeight: 35, minWidth: 35),
+                    prefixIcon: Padding(
+                      padding: const EdgeInsetsDirectional.only(
+                          top: 6, bottom: 6, start: 6),
+                      child: IntrinsicHeight(
+                        child: InkWell(
+                          onTap: () => _showCountryBottomSheet(
+                            context: context,
+                            countryData: countryList,
+                            onTap: (selectedCountry) {
+                              setState(() {
+                                countryValue = selectedCountry.flag;
+                                Constants.selectedCountryFlag =
+                                    selectedCountry.flag;
+                                Constants.selectedPhone = selectedCountry.phone;
+
+                                Constants.selectedCountryname =
+                                    selectedCountry.name;
+                              });
+                              Navigator.pop(context);
+                            },
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              countryValue != ''
+                                  ? Padding(
+                                      padding: const EdgeInsetsDirectional.only(
+                                          start: 8),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                        child: Image(
+                                          image: NetworkImage(countryValue!),
+                                          width: 24,
+                                          height: 24,
+                                        ),
+                                      ),
+                                    )
+                                  : const SizedBox(),
+                              const Icon(
+                                Icons.keyboard_arrow_down_outlined,
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.only(
+                                    end: 16.0, start: 8.0),
+                                child: Container(
+                                  color: Colors.grey,
+                                  width: 1,
+                                  height: 15,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
           success: (data) {
             List<AllCountryWithFlag> countryList = data.data;
             return Expanded(
@@ -40,8 +117,7 @@ class _CountryPickerState extends State<CountryPicker> {
                     validator: widget.validator,
                     readOnly: false,
                     keyboardType: TextInputType.number,
-                    controller:
-                        context.read<SignUpBuyerCubit>().phoneNumberController,
+                    controller: widget.controller,
                     hintText: 'Your number',
                     needPrefixIcon: true,
                     prefixIconConstraints:
@@ -171,46 +247,63 @@ Widget _countriesList({
   required void Function(AllCountryWithFlag) onTap,
 }) {
   return Expanded(
-    child: ListView.builder(
-      itemCount: countryData.length,
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 8),
-          child: InkWell(
-            onTap: () {
-              onTap(countryData[index]);
+    child: countryData.isEmpty
+        ? const Center(
+            child: CircularProgressIndicator(),
+          )
+        : ListView.builder(
+            itemCount: countryData.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 8),
+                child: InkWell(
+                  onTap: () {
+                    onTap(countryData[index]);
+                  },
+                  child: Row(
+                    children: [
+                      FadeInLeft(
+                        delay: Duration(milliseconds: 5 * index),
+                        child: Row(
+                          children: [
+                            Image(
+                              image: NetworkImage(countryData[index].flag),
+                              width: 28,
+                              height: 28,
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Text(
+                                countryData[index].phone,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge!
+                                    .copyWith(
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      FadeInRight(
+                        delay: Duration(milliseconds: 5 * index),
+                        child: Text(
+                          countryData[index].name,
+                          style:
+                              Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                    fontWeight: FontWeight.w400,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
             },
-            child: Row(
-              children: [
-                Image(
-                  image: NetworkImage(countryData[index].flag),
-                  width: 28,
-                  height: 28,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Text(
-                    countryData[index].phone,
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontWeight: FontWeight.w400,
-                        ),
-                  ),
-                ),
-                FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    countryData[index].name,
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontWeight: FontWeight.w400,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                  ),
-                ),
-              ],
-            ),
           ),
-        );
-      },
-    ),
   );
 }
