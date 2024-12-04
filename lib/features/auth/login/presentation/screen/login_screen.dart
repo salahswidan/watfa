@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/helpers/app_regex.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/widgets/custom_divider.dart';
 
@@ -38,19 +39,19 @@ class LoginScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Username or email",
+                  "Email Address",
                   style: TextStyles.font14Jetw500Poppins(context),
                 ),
               ),
               AuthTextFormField(
                 validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please enter your email';
+                  if (value!.isEmpty || !AppRegex.isEmailValid(value)) {
+                    return 'Please enter a valid email';
                   }
                   return null;
                 },
                 suffixIcon: 'assets/svgs/username_text_field_icon.svg',
-                hintText: 'Mariam Fawzy',
+                hintText: 'Email',
                 controller: TextEditingController(),
               ),
               verticalSpacing(16),
