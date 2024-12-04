@@ -54,7 +54,7 @@ class _SignUpBuyerFormState extends State<SignUpBuyerForm> {
           Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "Username or email",
+              "User name",
               style: TextStyles.font14Jetw500Poppins(context),
             ),
           ),
@@ -62,16 +62,35 @@ class _SignUpBuyerFormState extends State<SignUpBuyerForm> {
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
-                  (!AppRegex.isEmailValid(value) &&
-                      !AppRegex.isUsernameValid(value))) {
-                return 'Please enter a valid email or username';
+                  !AppRegex.isUsernameValid(value)) {
+                return 'Please enter a valid username';
               }
               return null;
             },
             suffixIcon: 'assets/svgs/username_text_field_icon.svg',
-            hintText: 'Mariam Fawzy',
-            controller:
-                context.read<SignUpBuyerCubit>().userNameOrEmailController,
+            hintText: 'User name',
+            controller: context.read<SignUpBuyerCubit>().userNameController,
+          ),
+          verticalSpacing(16),
+          Container(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              "Email",
+              style: TextStyles.font14Jetw500Poppins(context),
+            ),
+          ),
+          AuthTextFormField(
+            validator: (value) {
+              if (value == null ||
+                  value.isEmpty ||
+                  !AppRegex.isEmailValid(value)) {
+                return 'Please enter a valid email';
+              }
+              return null;
+            },
+            suffixIcon: 'assets/svgs/username_text_field_icon.svg',
+            hintText: 'Email',
+            controller: context.read<SignUpBuyerCubit>().emailController,
           ),
           verticalSpacing(16),
           Container(
@@ -89,6 +108,8 @@ class _SignUpBuyerFormState extends State<SignUpBuyerForm> {
                   create: (context) =>
                       getIt<GetAllCountriesCubit>()..getAllCountries(),
                   child: CountryPicker(
+                    controller:
+                        context.read<SignUpBuyerCubit>().phoneNumberController,
                     validator: (value) {
                       if (value == null ||
                           value.isEmpty ||
@@ -115,7 +136,11 @@ class _SignUpBuyerFormState extends State<SignUpBuyerForm> {
             hintText: 'Password',
             controller: passwordController,
             validator: (value) {
-              if (value == null || value.isEmpty) {
+              if (value == null ||
+                  value.isEmpty ||
+                  !hasAtLeast8Characters ||
+                  !hasAtLeast1UpperCase ||
+                  !hasAtLeast1NumberOrSymbol) {
                 return 'Please enter a valid password';
               }
             },
@@ -130,10 +155,11 @@ class _SignUpBuyerFormState extends State<SignUpBuyerForm> {
           ),
           AuthTextFormField(
             validator: (value) {
-              if (value == null ||
-                  value.isEmpty ||
-                  value != passwordController.text) {
+              if (value == null || value.isEmpty) {
                 return 'Please enter a valid confirm password';
+              }
+              if (value != passwordController.text) {
+                return 'Passwords do not match';
               }
               return null;
             },
