@@ -84,7 +84,7 @@ class DioFactory {
         // String? errorMessage = response.data["message"] ??
         //     "Received invalid status code: ${response.statusCode}";
         String? errorMessage =
-            response.data['msgError'] ?? "something went wrong";
+            response.data['message'] ?? "something went wrong";
         handler.reject(DioException(
           requestOptions: response.requestOptions,
           response: response,
