@@ -29,15 +29,12 @@ class CacheServices {
 
   // Call this function from your StatefulWidget's initState()
 
-  Future<UserData?> getUserModel()async {
+  UserData? getUserModel()  {
     UserData? user;
     try {
-      // String? json = prefs.getString('user');
-      String? json =await storage.read(
-        key: 'user'
-      );
+      String? json = prefs.getString('user');
+
       if (json != null) {
-        
         var v = jsonDecode(json);
         user = UserData.fromJson(v);
       } else {
@@ -51,7 +48,7 @@ class CacheServices {
 
   Future<bool> setUserModel(UserData user) async {
     try {
-      await storage.write(key: 'user', value: user.toString());
+      await prefs.setString('user', jsonEncode(user));
       return true;
     } catch (e) {
       log(e.toString(), name: 'CacheService::setuser');

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:watfa/core/helpers/shared_pref_helper.dart';
 
 import '../../../../core/helpers/spacing.dart';
@@ -21,9 +20,7 @@ class HomeScreen extends StatelessWidget {
             slivers: [
               SliverAppBar(
                 title: Text(
-                    "Good Morning,${CacheServices.instance.getUserModel().then(
-                          (value) => value!.userName,
-                        )}",
+                    "Good Morning,${CacheServices.instance.getUserModel()?.userName ?? ""}",
                     style: TextStyles.font20RaisinBlackw500Inter(context)),
                 backgroundColor: Colors.transparent,
                 leading: Container(
@@ -44,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   horizontalSpacing(5),
                   AppBarActionCircle(
-                    icon: 'assets/svgs/settings.svg',
+                    icon: 'assets/svgs/setting.svg',
                     onTap: () {},
                   ),
                 ],

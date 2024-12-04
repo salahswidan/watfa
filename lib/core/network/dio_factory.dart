@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
+import '../../features/auth/sign_up_buyer/data/model/sign_up_buyer_response.dart';
 import '../helpers/shared_pref_helper.dart';
 import 'api_constants.dart';
 
@@ -61,15 +62,15 @@ class DioFactory {
         .add(InterceptorsWrapper(onRequest: (options, handler) async {
       //// refresh token work
 
-      // if (CacheServices.instance.getUserModel() != null) {
-      //   UserData? userModel = CacheServices.instance.getUserModel();
-      //   if (userModel != null) {
-      //     log(userModel.token!, name: 'Authorization token');
-      //     // options.headers['token'] = "${userModel.data.token}";
-      //     // headers['token'] = "${userModel.data.token}";
-      //     options.headers['token'] = userModel.token!;
-      //   }
-      // }
+      if ( await CacheServices.instance.getUserModel() != null) {
+        UserData? userModel =await CacheServices.instance.getUserModel();
+        if (userModel != null) {
+          log(userModel.token!, name: 'Authorization token');
+          // options.headers['token'] = "${userModel.data.token}";
+          // headers['token'] = "${userModel.data.token}";
+          options.headers['token'] = userModel.token!;
+        }
+      }
       dio.options =
           BaseOptions(baseUrl: ApiConstants.apiBaseUrl, headers: headers);
       // options.headers = headers;

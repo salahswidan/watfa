@@ -35,9 +35,9 @@ class WatfaApp extends StatelessWidget {
   }
 }
 
-setinitialRoute() async {
-  await CacheServices.instance.getUserModel() != null
-      ? Routes.homeScreen
+String setinitialRoute() {
+  return CacheServices.instance.getUserModel()!=null?
+       Routes.homeScreen
       : CacheServices.instance.getUserType() != null
           ? Routes.loginScreen
           : CacheServices.instance.getOnBoarding()
