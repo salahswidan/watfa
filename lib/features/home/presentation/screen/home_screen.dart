@@ -72,38 +72,39 @@ class HomeScreen extends StatelessWidget {
                 verticalSpacing(60),
               ])),
               SliverToBoxAdapter(
-                child: SizedBox(
-                  height: 80,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        decoration: BoxDecoration(
-                          color: ColorsManagers.magnolia,
-                          shape: BoxShape.circle,
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Center(
-                            child: Column(
-                              children: [
-                                Image.asset(
-                                  'assets/images/category_test.png',
-                                  width: 34,
-                                  fit: BoxFit.fitWidth,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(
+                        10,
+                        (index) => Padding(
+                              padding: const EdgeInsets.only(right: 10),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: ColorsManagers.magnolia,
+                                  shape: BoxShape.circle,
                                 ),
-                                verticalSpacing(5),
-                                Text("Fashion",
-                                    style: TextStyles.font10Blackw500Podkova(
-                                        context)),
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                    separatorBuilder: (context, index) => horizontalSpacing(10),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Center(
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
+                                          'assets/images/category_test.png',
+                                          width: 34,
+                                          fit: BoxFit.fitWidth,
+                                        ),
+                                        verticalSpacing(5),
+                                        Text("Fashion",
+                                            style: TextStyles
+                                                .font10Blackw500Podkova(
+                                                    context)),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )),
                   ),
                 ),
               )
