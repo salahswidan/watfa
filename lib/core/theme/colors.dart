@@ -24,6 +24,10 @@ class ColorsManagers {
   static const Color platinum = Color(0xffE7E7E7);
   static const Color sacramentoStateGreen = Color(0xff093030);
   static const Color magnolia = Color(0xffF4E7FC);
+  static const Color blackOlive = Color(0xff404040);
+  static const Color lavenderBlush = Color(0xffFCE7F3);
+  static const Color sunRay = Color(0xffEBB65B);
+  static const Color antiFlashWhite = Color(0xffF2F0F1);
 
   static const Color lightGray = Color(0xffD3D3D3);
 
@@ -31,7 +35,7 @@ class ColorsManagers {
 
   static const Color taupeGray = Color(0xff888888);
 
-  static const Color antiFlashWhite = Color(0xffF2F2F2);
+  
 
   static const Color richBlack = Color(0xff090D20);
 }
