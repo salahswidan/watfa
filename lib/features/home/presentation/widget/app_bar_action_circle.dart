@@ -18,16 +18,14 @@ class AppBarActionCircle extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: 40,
+        height: 40,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(color: ColorsManagers.purple, width: 1),
         ),
         child: Center(
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: SvgPicture.asset(
-              icon,
-            ),
+          child: SvgPicture.asset(
+            icon,
           ),
         ),
       ),

@@ -28,55 +28,49 @@ class HomeScreen extends StatelessWidget {
               SliverToBoxAdapter(
                 child: verticalSpacing(30.h(context)),
               ),
-              SliverAppBar(
-                automaticallyImplyLeading: false,
-                pinned: false,
-                elevation: 0,
-                centerTitle: true,
-                flexibleSpace: FlexibleSpaceBar(
-                  title: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Row(children: [
-                      Container(
-                        width: 56,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                              color: ColorsManagers.purple, width: 1),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(3),
-                          child: CircleAvatar(),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 3),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                              "Good Morning,${CacheServices.instance.getUserModel()?.userName ?? ""}",
-                              style: TextStyles.font20RaisinBlackw500Inter(
-                                  context)),
-                        ),
-                      ),
-                      Expanded(child: SizedBox()),
-                      Row(
-                        children: [
-                          AppBarActionCircle(
-                            icon: 'assets/svgs/notification.svg',
-                            onTap: () {},
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: 56,
+                          height: 56,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                                color: ColorsManagers.purple, width: 1),
                           ),
-                          horizontalSpacing(5),
-                          AppBarActionCircle(
-                            icon: 'assets/svgs/setting.svg',
-                            onTap: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.all(3),
+                            child: CircleAvatar(),
                           ),
-                        ],
-                      ),
-                    ]),
-                  ),
+                        ),
+                        horizontalSpacing(5),
+                        Expanded(
+                          child: FittedBox(
+                            alignment: Alignment.centerLeft,
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                                textAlign: TextAlign.start,
+                                "Good Morning,${CacheServices.instance.getUserModel()?.userName ?? ""}",
+                                style: TextStyles.font20RaisinBlackw500Inter(
+                                    context)),
+                          ),
+                        ),
+                        horizontalSpacing(5),
+                        AppBarActionCircle(
+                          icon: 'assets/svgs/notification.svg',
+                          onTap: () {},
+                        ),
+                        horizontalSpacing(5),
+                        AppBarActionCircle(
+                          icon: 'assets/svgs/setting.svg',
+                          onTap: () {},
+                        ),
+                      ]),
                 ),
-                backgroundColor: Colors.transparent,
               ),
               SliverToBoxAdapter(
                 child: AdBannerContainer(),
