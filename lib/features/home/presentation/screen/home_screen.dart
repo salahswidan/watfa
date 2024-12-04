@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:watfa/core/helpers/shared_pref_helper.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/colors.dart';
@@ -19,7 +20,10 @@ class HomeScreen extends StatelessWidget {
           child: CustomScrollView(
             slivers: [
               SliverAppBar(
-                title: Text("Good Morning,Mariem",
+                title: Text(
+                    "Good Morning,${CacheServices.instance.getUserModel().then(
+                          (value) => value!.userName,
+                        )}",
                     style: TextStyles.font20RaisinBlackw500Inter(context)),
                 backgroundColor: Colors.transparent,
                 leading: Container(
