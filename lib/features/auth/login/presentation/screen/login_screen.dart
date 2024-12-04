@@ -89,7 +89,9 @@ class LoginScreen extends StatelessWidget {
               ),
               verticalSpacing(15),
               CustomAuthButton(
-                onTap: () {},
+                onTap: () {
+                  context.pushNamed(Routes.homeScreen);
+                },
                 text: 'Log In',
               ),
               Flexible(child: verticalSpacing(40)),
