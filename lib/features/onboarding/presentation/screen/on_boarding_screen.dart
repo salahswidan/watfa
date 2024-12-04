@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
+import '../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/routing/routes.dart';
 import '../../logic/model/on_boarding_model.dart';
@@ -49,9 +50,7 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
                   onBoardingData: widget.onBoardingData,
                   currentIndex: currentIndex),
             ),
-            Expanded(
-              flex: 1,
-              child: verticalSpacing(5.h(context))),
+            Expanded(flex: 1, child: verticalSpacing(5.h(context))),
             CustomButton(
               onTap: () {
                 setState(() {
@@ -59,7 +58,10 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
                 });
                 Timer(const Duration(milliseconds: 300), () {
                   currentIndex > 1
-                      ? context.pushNamed(Routes.getStartedScreen)
+                      ? {
+                          saveOnBoardingState(),
+                          context.pushReplacementNamed(Routes.getStartedScreen),
+                        }
                       : currentIndex = currentIndex + 1;
 
                   setState(() {
@@ -68,12 +70,14 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
                 });
               },
             ),
-            Flexible(
-              flex: 2,
-              child: verticalSpacing(50.h(context))),
+            Flexible(flex: 2, child: verticalSpacing(50.h(context))),
           ],
         ),
       ),
     );
   }
+}
+
+saveOnBoardingState() async {
+  await CacheServices.instance.setOnBoarding(true);
 }
