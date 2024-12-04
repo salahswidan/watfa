@@ -21,6 +21,13 @@ class TextStyles {
       color: ColorsManagers.purple,
     );
   }
+  static TextStyle font20RaisinBlackw500Inter(context) {
+    return GoogleFonts.inter(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.raisinBlack,
+    );
+  }
 
   static TextStyle font18SpanishGrayw500Roboto(context) {
     return GoogleFonts.roboto(
