@@ -13,7 +13,7 @@ void main() async {
     statusBarIconBrightness: Brightness.dark,
   ));
   runApp(
-    DevicePreview(
+    DevicePreview(    
     enabled: false,
     builder: (context) => WatfaApp(
       appRouter: AppRouter(),
