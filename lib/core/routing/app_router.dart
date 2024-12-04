@@ -11,6 +11,7 @@ import '../../features/auth/reset_password/presentation/screen/reset_password_sc
 import '../../features/auth/sign_up_buyer/logic/cubit/sign_up_buyer_cubit.dart';
 import '../../features/auth/sign_up_buyer/presentation/screen/sign_up_buyer_screen.dart';
 import '../../features/auth/verify/presentation/screens/verify_screen.dart';
+import '../../features/home/presentation/screen/home_screen.dart';
 import '../../features/onboarding/logic/on_boarding_data.dart';
 import '../../features/onboarding/presentation/screen/on_boarding_screen.dart';
 import '../di/dependency_injection.dart';
@@ -65,6 +66,10 @@ class AppRouter {
       case Routes.signUpSellerScreen:
         return MaterialPageRoute(
           builder: (_) => const SignUpSellerScreen(),
+        );
+      case Routes.homeScreen:
+        return MaterialPageRoute(
+          builder: (_) => const HomeScreen(),
         );
       // case Routes.homeScreen:
       //   return MaterialPageRoute(
