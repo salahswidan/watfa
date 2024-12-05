@@ -13,28 +13,31 @@ class DontHaveAcc extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          "Don't have an account?",
-          style: TextStyles.font16DarkLiverw400Roboto(context),
-        ),
-        horizontalSpacing(5),
-        InkWell(
-          onTap: () {
-           CacheServices.instance.getUserType()!
-                            ? context.pushNamed(Routes.signUpBuyerScreen)
-                            : context.pushNamed(Routes.signUpSellerScreen);
-          },
-          child: Text(
-            'Sign up',
-            style: TextStyles.font16Purplew700Roboto(context).copyWith(
-              decoration: TextDecoration.underline,
-            ),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "Don't have an account?",
+            style: TextStyles.font16DarkLiverw400Roboto(context),
           ),
-        )
-      ],
+          horizontalSpacing(5),
+          InkWell(
+            onTap: () {
+              CacheServices.instance.getUserType()!
+                  ? context.pushNamed(Routes.signUpBuyerScreen)
+                  : context.pushNamed(Routes.signUpSellerScreen);
+            },
+            child: Text(
+              'Sign up',
+              style: TextStyles.font16Purplew700Roboto(context).copyWith(
+                decoration: TextDecoration.underline,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

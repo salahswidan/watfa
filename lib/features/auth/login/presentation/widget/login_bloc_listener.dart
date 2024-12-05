@@ -2,27 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
-import 'package:watfa/features/auth/sign_up_buyer/logic/cubit/sign_up_buyer_cubit.dart';
-import 'package:watfa/features/auth/sign_up_buyer/logic/cubit/sign_up_buyer_state.dart';
+import 'package:watfa/features/auth/login/logic/cubit/login_cubit.dart';
 
 import '../../../../../core/routing/routes.dart';
 import '../../../get_started/presentation/widgets/custom_auth_button.dart';
 
-class SignUpBuyerBlocListener extends StatelessWidget {
-  const SignUpBuyerBlocListener({super.key});
+class LoginBlocListener extends StatelessWidget {
+  const LoginBlocListener({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<SignUpBuyerCubit, SignUpBuyerState>(
+    return BlocConsumer<LoginCubit, LoginState>(
         listenWhen: (previous, current) =>
-            current is SignUpBuyerLoading ||
-            current is SignUpBuyerSuccess ||
-            current is SignUpBuyerError,
+            current is LoginLoading ||
+            current is LoginSuccess ||
+            current is LoginError,
         listener: (context, state) {
           state.whenOrNull(
             loading: () {},
-            success: (signupResponse) {
-              setUpSuccessState(context, signupResponse);
+            success: (loginResponse) {
+              setUpSuccessState(context, loginResponse);
             },
             error: (error) {
               setupErrorState(context, error.message!);
@@ -32,7 +31,7 @@ class SignUpBuyerBlocListener extends StatelessWidget {
         builder: (context, state) {
           return AnimatedSwitcher(
               duration: const Duration(milliseconds: 500),
-              child: state is SignUpBuyerLoading
+              child: state is LoginLoading
                   ? Center(
                       child: Lottie.asset(
                         'assets/lottie/loading_navigate.json',
@@ -40,9 +39,9 @@ class SignUpBuyerBlocListener extends StatelessWidget {
                     )
                   : CustomAuthButton(
                       onTap: () {
-                        validateThenDoSignup(context);
+                        validateThenDoLogin(context);
                       },
-                      text: 'Sign Up',
+                      text: 'Log In',
                     ));
         });
   }
@@ -73,13 +72,13 @@ class SignUpBuyerBlocListener extends StatelessWidget {
     );
   }
 
-  void validateThenDoSignup(BuildContext context) {
-    if (context.read<SignUpBuyerCubit>().formKey.currentState!.validate()) {
-      context.read<SignUpBuyerCubit>().emitSignUpBuyerState();
+  void validateThenDoLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginState();
     }
   }
-  
-  void setUpSuccessState(BuildContext context, signupResponse)async {
+
+  void setUpSuccessState(BuildContext context, signupResponse) async {
     context.pushNamedAndRemoveUntilNamed(Routes.homeScreen);
   }
 }

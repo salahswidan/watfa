@@ -26,7 +26,6 @@ class SignUpBuyerScreen extends StatelessWidget {
                     FixedData(),
                     SignUpBuyerForm(),
                     verticalSpacing(25),
-                    
                     SignUpBuyerBlocListener(),
                     verticalSpacing(40),
                     Center(
@@ -36,9 +35,17 @@ class SignUpBuyerScreen extends StatelessWidget {
                             TextStyles.font15CharlestonGreenw400Roboto(context),
                       ),
                     ),
-                    verticalSpacing(14),
-                    const SocialAuth(),
-                    verticalSpacing(10),
+                    SocialAuth(
+                      onTapGoogle: () {
+                        // context.read<LoginCubit>().loginWithGoogle();
+                      },
+                      onTapApple: () {
+                        // context.read<LoginCubit>().loginWithApple();
+                      },
+                      onTapFaceBook: () {
+                        // context.read<LoginCubit>().loginWithFacebook();
+                      },
+                    ),
                     const AlreadyHaveAnAccount(),
                     verticalSpacing(30),
                   ],
@@ -50,5 +57,4 @@ class SignUpBuyerScreen extends StatelessWidget {
       ),
     );
   }
-
 }
