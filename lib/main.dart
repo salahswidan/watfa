@@ -15,8 +15,7 @@ void main() async {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
-  runApp(
-    DevicePreview(    
+  runApp(DevicePreview(
     enabled: false,
     builder: (context) => WatfaApp(
       appRouter: AppRouter(),
