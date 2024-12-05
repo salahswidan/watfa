@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
-import 'package:watfa/core/helpers/spacing.dart';
-
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 
@@ -16,7 +14,7 @@ class DefaultProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250.h(context),
+      height: 265.h(context),
       width: 185.w(context),
       decoration: BoxDecoration(
         color: ColorsManagers.antiFlashWhite,
@@ -31,15 +29,21 @@ class DefaultProduct extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 6.w(context), vertical: 3.h(context)),
                   decoration: BoxDecoration(
                       color: ColorsManagers.purple,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(10),
                         bottomRight: Radius.circular(10),
                       )),
-                  child: Text("45% OFF",
-                      style: TextStyles.font10WhiteW600Manrope(context)),
+                  child: Center(
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text("45% OFF",
+                          style: TextStyles.font10WhiteW600Manrope(context)),
+                    ),
+                  ),
                 ),
                 Icon(
                   Icons.bookmark_border_outlined,
@@ -47,33 +51,35 @@ class DefaultProduct extends StatelessWidget {
                 ),
               ],
             ),
-            Flexible(child: verticalSpacing(5.h(context))),
+            Expanded(flex: 3, child: SizedBox()),
             Center(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
                   image,
-                  height: 105.h(context),
+                  height: 100.h(context),
                   width: 140.w(context),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            Flexible(child: verticalSpacing(5.h(context))),
+            Expanded(flex: 3, child: SizedBox()),
             Center(
                 child: Text(text,
                     style: TextStyles.font14BlackwOliveW400Manrope(context))),
-            Expanded(child: SizedBox()),
+            Expanded(flex: 3, child: SizedBox()),
             Text(
               "SAR 230.00",
               style: TextStyles.font20BlackOliveW700Manrope(context),
             ),
+            Expanded(child: SizedBox()),
             Text(
               "SAR 512.58",
               style: TextStyles.font12BlackOliveW400Manrope(context).copyWith(
                 decoration: TextDecoration.lineThrough,
               ),
             ),
+            Expanded(child: SizedBox()),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
