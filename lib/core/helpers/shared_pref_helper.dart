@@ -48,7 +48,7 @@ class CacheServices {
 
   Future<bool> setUserModel(UserData user) async {
     try {
-      await prefs.setString('user', jsonEncode(user));
+      await prefs.setString('user', jsonEncode(user.toJson()));
       return true;
     } catch (e) {
       log(e.toString(), name: 'CacheService::setuser');
