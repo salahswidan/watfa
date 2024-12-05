@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:watfa/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:watfa/features/auth/password_updated/presentation/password_updated_screen.dart';
 import 'package:watfa/features/auth/sign_up_seller/presentation/screen/sign_up_seller_screen.dart';
 
@@ -30,7 +31,10 @@ class AppRouter {
         );
       case Routes.loginScreen:
         return MaterialPageRoute(
-          builder: (_) => const LoginScreen(),
+          builder: (_) => BlocProvider(
+         create: (context) => getIt<LoginCubit>(),
+            child: const LoginScreen(),
+          ),
         );
 
       case Routes.getStartedScreen:
