@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:watfa/features/auth/login/data/model/login_request_body.dart';
 import 'package:watfa/features/auth/login/data/repo/login_repo.dart';
 
+import '../../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../../core/network/api_error_model.dart';
 
 part 'login_state.dart';
@@ -16,6 +17,7 @@ class LoginCubit extends Cubit<LoginState> {
   ) : super(LoginState.initial());
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
 
   void emitLoginState() async {
     emit(const LoginState.loading());
@@ -26,8 +28,11 @@ class LoginCubit extends Cubit<LoginState> {
       ),
     );
     response.when(
-      success: (data) {
-        emit(const LoginState.success());
+      success: (data) async {
+        await CacheServices.instance.setUserModel(data.userData!);
+        emit(LoginState.success(
+          data,
+        ));
       },
       failure: (apiErrorModel) {
         emit(LoginState.error(apiErrorModel));
