@@ -46,7 +46,7 @@ class LoginForm extends StatelessWidget {
           ),
           AuthTextFormField(
             validator: (value) {
-              if (value!.isEmpty || !AppRegex.isPasswordValid(value)) {
+              if (value!.isEmpty) {
                 return 'Please enter your password';
               }
               return null;
