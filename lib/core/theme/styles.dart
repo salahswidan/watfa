@@ -63,6 +63,14 @@ class TextStyles {
     );
   }
 
+  static TextStyle font20PurpleW500Manrope (context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.purple,
+    );
+  }
+
   static TextStyle font14BlackwOliveW400Manrope(context) {
     return GoogleFonts.manrope(
       fontSize: getResponsiveFontSize(context, fontSize: 14),
