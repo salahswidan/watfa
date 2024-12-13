@@ -14,7 +14,8 @@ class CategoryContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
         color: ColorsManagers.magnolia,
