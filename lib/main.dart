@@ -16,7 +16,7 @@ void main() async {
     DeviceOrientation.portraitUp,
   ]);
   runApp(DevicePreview(
-    enabled: true,
+    enabled: false,
     builder: (context) => WatfaApp(
       appRouter: AppRouter(),
     ),
