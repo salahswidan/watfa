@@ -5,11 +5,12 @@ import 'package:watfa/core/helpers/shared_pref_helper.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
+import '../section/category_home_section.dart';
 import '../widget/ad_banner_container.dart';
 import '../widget/app_bar_action_circle.dart';
-import '../widget/category_container.dart';
 import '../widget/default_product.dart';
 import '../widget/home_background_container.dart';
+import '../widget/see_more_row.dart';
 import '../widget/special_offers_product.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -59,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                                     context)),
                           ),
                         ),
-                        horizontalSpacing(5),
+                        horizontalSpacing(10),
                         AppBarActionCircle(
                           icon: 'assets/svgs/notification.svg',
                           onTap: () {},
@@ -80,17 +81,7 @@ class HomeScreen extends StatelessWidget {
                 verticalSpacing(40.h(context)),
               ])),
               SliverToBoxAdapter(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: List.generate(
-                        10,
-                        (index) => Padding(
-                              padding: const EdgeInsets.only(right: 10),
-                              child: CategoryContainer(),
-                            )),
-                  ),
-                ),
+                child: CategoryHomeSection(),
               ),
               SliverToBoxAdapter(
                 child: SeeMoreRow(
@@ -179,33 +170,6 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class SeeMoreRow extends StatelessWidget {
-  final String text;
-  const SeeMoreRow({
-    super.key,
-    required this.text,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 20.h(context)),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(text, style: TextStyles.font24BlackOliveW700Manrope(context)),
-          Text(
-            "See More",
-            style: TextStyles.font14PurpleW700Manrope(context).copyWith(
-              decoration: TextDecoration.underline,
-            ),
-          ),
-        ],
       ),
     );
   }

@@ -28,6 +28,7 @@ class ColorsManagers {
   static const Color lavenderBlush = Color(0xffFCE7F3);
   static const Color sunRay = Color(0xffEBB65B);
   static const Color antiFlashWhite = Color(0xffF2F0F1);
+  static const Color wisteria = Color(0xffC49DDA);
 
   static const Color lightGray = Color(0xffD3D3D3);
 

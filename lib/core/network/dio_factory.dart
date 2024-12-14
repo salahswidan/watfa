@@ -62,8 +62,8 @@ class DioFactory {
         .add(InterceptorsWrapper(onRequest: (options, handler) async {
       //// refresh token work
 
-      if ( await CacheServices.instance.getUserModel() != null) {
-        UserData? userModel =await CacheServices.instance.getUserModel();
+      if (  CacheServices.instance.getUserModel() != null) {
+        UserData? userModel = CacheServices.instance.getUserModel();
         if (userModel != null) {
           log(userModel.token!, name: 'Authorization token');
           // options.headers['token'] = "${userModel.data.token}";

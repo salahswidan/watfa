@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watfa/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:watfa/features/auth/password_updated/presentation/password_updated_screen.dart';
 import 'package:watfa/features/auth/sign_up_seller/presentation/screen/sign_up_seller_screen.dart';
+import 'package:watfa/features/home/presentation/screen/category_screen.dart';
 
 import '../../features/auth/forget_password/presentation/screen/forget_password_screen.dart';
 import '../../features/auth/get_started/presentation/screen/get_started_screen.dart';
@@ -16,12 +17,11 @@ import '../../features/home/presentation/screen/home_screen.dart';
 import '../../features/onboarding/logic/on_boarding_data.dart';
 import '../../features/onboarding/presentation/screen/on_boarding_screen.dart';
 import '../di/dependency_injection.dart';
-import '../helpers/shared_pref_helper.dart';
 import 'routes.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
-    // final arguments = settings.arguments;
+    final arguments = settings.arguments;
     switch (settings.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(
@@ -32,8 +32,14 @@ class AppRouter {
       case Routes.loginScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-         create: (context) => getIt<LoginCubit>(),
+            create: (context) => getIt<LoginCubit>(),
             child: const LoginScreen(),
+          ),
+        );
+      case Routes.categoryScreen:
+        return MaterialPageRoute(
+          builder: (_) => CategoryScreen(
+            selectedCategory: arguments as int,
           ),
         );
 

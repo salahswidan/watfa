@@ -21,6 +21,7 @@ class TextStyles {
       color: Colors.white,
     );
   }
+  
 
   static TextStyle font24BlackOliveW700Manrope(context) {
     return GoogleFonts.manrope(
@@ -29,6 +30,7 @@ class TextStyles {
       color: ColorsManagers.blackOlive,
     );
   }
+
 
   static TextStyle font20BlackOliveW700Manrope(context) {
     return GoogleFonts.manrope(
@@ -60,6 +62,14 @@ class TextStyles {
       fontSize: getResponsiveFontSize(context, fontSize: 10),
       fontWeight: FontWeightHelper.medium,
       color: Colors.black,
+    );
+  }
+
+  static TextStyle font20PurpleW500Manrope (context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.purple,
     );
   }
 
@@ -231,6 +241,13 @@ class TextStyles {
     );
   }
 
+  static TextStyle font15GraniteGrayw400Manrope(context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 15),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.graniteGray,
+    );
+  }
   static TextStyle font16DarkLiverw400Roboto(context) {
     return GoogleFonts.roboto(
       fontSize: getResponsiveFontSize(context, fontSize: 16),
