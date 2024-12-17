@@ -11,10 +11,12 @@ import '../logic/cubit/get_all_countries_state.dart';
 class CountryPicker extends StatefulWidget {
   final TextEditingController controller;
   final Function(String?) validator;
+  final String? countryflag;
   const CountryPicker({
     super.key,
     required this.validator,
     required this.controller,
+    this.countryflag,
   });
 
   @override
@@ -110,6 +112,22 @@ class _CountryPickerState extends State<CountryPicker> {
           },
           success: (data) {
             List<AllCountryWithFlag> countryList = data.data;
+            if (widget.countryflag != null && countryValue == '') {
+              try {
+                setState(() {
+                  countryValue = countryList
+                      .firstWhere(
+                        (element) => element.flag == widget.countryflag,
+                      )
+                      .flag;
+                });
+              } catch (e) {
+                print(widget.countryflag);
+                print(e);
+                // Handle the case where the element is not found
+                countryValue = ''; // or any default value
+              }
+            }
             return Expanded(
               child: Column(
                 children: [
