@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../core/routing/routes.dart';
-import '../widget/category_container.dart';
+import '../../../category/presentation/widget/category_container.dart';
 
 class CategoryHomeSection extends StatelessWidget {
   const CategoryHomeSection({
