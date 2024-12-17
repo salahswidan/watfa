@@ -17,6 +17,7 @@ import '../../features/auth/verify/presentation/screens/verify_screen.dart';
 import '../../features/home/presentation/screen/home_screen.dart';
 import '../../features/onboarding/logic/on_boarding_data.dart';
 import '../../features/onboarding/presentation/screen/on_boarding_screen.dart';
+import '../../features/settings/presentation/screen/settings_screen.dart';
 import '../di/dependency_injection.dart';
 import 'routes.dart';
 
@@ -85,6 +86,10 @@ class AppRouter {
       case Routes.profileScreen:
         return MaterialPageRoute(
           builder: (_) => const ProfileScreen(),
+        );
+      case Routes.settingsScreen:
+        return MaterialPageRoute(
+          builder: (_) => const SettingsScreen(),
         );
       // case Routes.homeScreen:
       //   return MaterialPageRoute(
