@@ -21,6 +21,23 @@ class TextStyles {
       color: Colors.white,
     );
   }
+
+  static TextStyle font16BlackOliverW700Manrope(context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeightHelper.bold,
+      color: ColorsManagers.blackOlive,
+    );
+  }
+
+  static TextStyle font16BlackOliverW400Manrope(context) {
+   
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.blackOlive,
+    );
+  }
   
 
   static TextStyle font24BlackOliveW700Manrope(context) {

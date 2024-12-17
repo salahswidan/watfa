@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watfa/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:watfa/features/auth/password_updated/presentation/password_updated_screen.dart';
 import 'package:watfa/features/auth/sign_up_seller/presentation/screen/sign_up_seller_screen.dart';
-import 'package:watfa/features/home/presentation/screen/category_screen.dart';
+import 'package:watfa/features/category/presentation/screen/category_screen.dart';
+import 'package:watfa/features/profile/presentation/screen/profile_screen.dart';
 
 import '../../features/auth/forget_password/presentation/screen/forget_password_screen.dart';
 import '../../features/auth/get_started/presentation/screen/get_started_screen.dart';
@@ -16,6 +17,7 @@ import '../../features/auth/verify/presentation/screens/verify_screen.dart';
 import '../../features/home/presentation/screen/home_screen.dart';
 import '../../features/onboarding/logic/on_boarding_data.dart';
 import '../../features/onboarding/presentation/screen/on_boarding_screen.dart';
+import '../../features/settings/presentation/screen/settings_screen.dart';
 import '../di/dependency_injection.dart';
 import 'routes.dart';
 
@@ -80,6 +82,14 @@ class AppRouter {
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => const HomeScreen(),
+        );
+      case Routes.profileScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ProfileScreen(),
+        );
+      case Routes.settingsScreen:
+        return MaterialPageRoute(
+          builder: (_) => const SettingsScreen(),
         );
       // case Routes.homeScreen:
       //   return MaterialPageRoute(

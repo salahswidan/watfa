@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
-import 'package:watfa/core/helpers/shared_pref_helper.dart';
 
 import '../../../../core/helpers/spacing.dart';
-import '../../../../core/theme/colors.dart';
-import '../../../../core/theme/styles.dart';
 import '../section/category_home_section.dart';
+import '../section/home_app_bar.dart';
 import '../widget/ad_banner_container.dart';
-import '../widget/app_bar_action_circle.dart';
 import '../widget/default_product.dart';
 import '../widget/home_background_container.dart';
 import '../widget/see_more_row.dart';
@@ -30,48 +27,7 @@ class HomeScreen extends StatelessWidget {
                 child: verticalSpacing(30.h(context)),
               ),
               SliverToBoxAdapter(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          width: 56,
-                          height: 56,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                                color: ColorsManagers.purple, width: 1),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(3),
-                            child: CircleAvatar(),
-                          ),
-                        ),
-                        horizontalSpacing(5),
-                        Expanded(
-                          child: FittedBox(
-                            alignment: Alignment.centerLeft,
-                            fit: BoxFit.scaleDown,
-                            child: Text(
-                                textAlign: TextAlign.start,
-                                "Good Morning,${CacheServices.instance.getUserModel()?.userName ?? ""}",
-                                style: TextStyles.font20RaisinBlackw500Inter(
-                                    context)),
-                          ),
-                        ),
-                        horizontalSpacing(10),
-                        AppBarActionCircle(
-                          icon: 'assets/svgs/notification.svg',
-                          onTap: () {},
-                        ),
-                        horizontalSpacing(5),
-                        AppBarActionCircle(
-                          icon: 'assets/svgs/setting.svg',
-                          onTap: () {},
-                        ),
-                      ]),
-                ),
+                child: HomeAppBar(),
               ),
               SliverToBoxAdapter(
                 child: AdBannerContainer(),
