@@ -3,7 +3,6 @@ import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/shared_pref_helper.dart';
 
 import '../../../../core/helpers/spacing.dart';
-import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 import '../section/category_home_section.dart';
 import '../widget/ad_banner_container.dart';
@@ -12,6 +11,7 @@ import '../widget/default_product.dart';
 import '../widget/home_background_container.dart';
 import '../widget/see_more_row.dart';
 import '../widget/special_offers_product.dart';
+import '../widget/user_image.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -35,19 +35,7 @@ class HomeScreen extends StatelessWidget {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Container(
-                          width: 56,
-                          height: 56,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                                color: ColorsManagers.purple, width: 1),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(3),
-                            child: CircleAvatar(),
-                          ),
-                        ),
+                        UserImage(),
                         horizontalSpacing(5),
                         Expanded(
                           child: FittedBox(
