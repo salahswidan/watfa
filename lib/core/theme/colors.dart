@@ -29,6 +29,8 @@ class ColorsManagers {
   static const Color sunRay = Color(0xffEBB65B);
   static const Color antiFlashWhite = Color(0xffF2F0F1);
   static const Color wisteria = Color(0xffC49DDA);
+  static const Color russianViolet=Color(0xff351547);
+  static const Color sonicSilver=Color(0xff757575);
 
   static const Color lightGray = Color(0xffD3D3D3);
 
