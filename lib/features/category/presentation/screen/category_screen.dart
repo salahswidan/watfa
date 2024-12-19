@@ -1,9 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
-import 'package:watfa/core/theme/styles.dart';
 
-import '../../../../core/widgets/default_back_arrow.dart';
+import '../../../../core/widgets/default_app_bar.dart';
 import '../section/store_row.dart';
 import '../widget/category_container.dart';
 import '../widget/category_divider.dart';
@@ -28,18 +27,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(45),
-        child: AppBar(
-          elevation: 0,
-          title: FadeInDown(
-            child: Text(
-              "Browse by category",
-              style: TextStyles.font20PurpleW500Manrope(context),
-            ),
-          ),
-          leading: FadeInLeft(child: DefaultBackArrow()),
-        ),
+      appBar: DefaultAppBar(
+        title: "Browse by category",
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
