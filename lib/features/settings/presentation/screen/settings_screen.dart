@@ -5,7 +5,7 @@ import 'package:watfa/core/helpers/spacing.dart';
 import '../../../../core/helpers/globals.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
-import '../../../../core/widgets/default_back_arrow.dart';
+import '../../../../core/widgets/default_app_bar.dart';
 import '../widget/settings_card.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -14,18 +14,8 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(45),
-        child: AppBar(
-          elevation: 0,
-          title: FadeInDown(
-            child: Text(
-              "Settings",
-              style: TextStyles.font20PurpleW500Manrope(context),
-            ),
-          ),
-          leading: FadeInLeft(child: DefaultBackArrow()),
-        ),
+      appBar: DefaultAppBar(
+        title: "Settings",
       ),
       backgroundColor: ColorsManagers.cultured,
       body: Padding(
@@ -41,12 +31,12 @@ class SettingsScreen extends StatelessWidget {
                 separatorBuilder: (context, index) => verticalSpacing(20),
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: settingsCardList.length,
+                itemCount: settingsCardList(context).length,
                 itemBuilder: (context, index) {
                   return FadeInRight(
                     delay: Duration(milliseconds: index * 150),
                     child: SettingsCard(
-                      cardModel: settingsCardList[index],
+                      cardModel: settingsCardList(context)[index],
                     ),
                   );
                 }),
@@ -73,4 +63,5 @@ class SettingsScreen extends StatelessWidget {
       ),
     );
   }
+
 }
