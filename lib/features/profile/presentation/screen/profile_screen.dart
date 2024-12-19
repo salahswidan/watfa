@@ -1,10 +1,10 @@
-import 'package:animate_do/animate_do.dart';
+
 import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/theme/colors.dart';
 
-import '../../../../core/widgets/default_back_arrow.dart';
+import '../../../../core/widgets/default_app_bar.dart';
 import '../../../auth/get_started/presentation/widgets/get_started_button.dart';
 import '../section/profile_form.dart';
 import '../widgets/user_profile_image.dart';
@@ -15,13 +15,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(45),
-        child: AppBar(
-          elevation: 0,
-          leading: FadeInLeft(child: DefaultBackArrow()),
-        ),
-      ),
+      appBar: DefaultAppBar(),
       backgroundColor: ColorsManagers.cultured,
       body: SafeArea(
         child: Padding(
