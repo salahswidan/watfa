@@ -14,4 +14,5 @@ class Routes {
   static const String settingsScreen = '/SettingsScreen';
   static const String walletScreen = '/WalletScreen';
   static const String notificationsScreen = '/NotificationsScreen';
+  static const String savedItemsScreen = '/SavedItemsScreen';
 }
