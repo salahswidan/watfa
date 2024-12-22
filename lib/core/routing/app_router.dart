@@ -6,6 +6,7 @@ import 'package:watfa/features/auth/sign_up_seller/presentation/screen/sign_up_s
 import 'package:watfa/features/category/presentation/screen/category_screen.dart';
 import 'package:watfa/features/notifications/presentation/screen/notifications_screen.dart';
 import 'package:watfa/features/profile/presentation/screen/profile_screen.dart';
+import 'package:watfa/features/saved_items/presentation/screens/saved_items_screen.dart';
 
 import '../../features/auth/forget_password/presentation/screen/forget_password_screen.dart';
 import '../../features/auth/get_started/presentation/screen/get_started_screen.dart';
@@ -100,6 +101,10 @@ class AppRouter {
       case Routes.notificationsScreen:
         return MaterialPageRoute(
           builder: (_) => const NotificationsScreen(),
+        );
+      case Routes.savedItemsScreen:
+        return MaterialPageRoute(
+          builder: (_) => const SavedItemsScreen(),
         );
       // case Routes.homeScreen:
       //   return MaterialPageRoute(
