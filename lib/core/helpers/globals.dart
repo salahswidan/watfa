@@ -25,7 +25,9 @@ List<CardModel> settingsCardList(BuildContext context) => [
       CardModel(
         title: 'Saved items',
         image: 'assets/images/Bookmark.png',
-        onTap: () {},
+        onTap: () {
+          context.pushNamed(Routes.savedItemsScreen);
+        },
       ),
       CardModel(
         title: 'Notification',
