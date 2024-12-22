@@ -1,11 +1,14 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
+import 'package:watfa/core/helpers/shared_pref_helper.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import '../../../../core/helpers/globals.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 import '../../../../core/widgets/default_app_bar.dart';
+import '../widget/logut_elevated_button.dart';
 import '../widget/settings_card.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -46,16 +49,22 @@ class SettingsScreen extends StatelessWidget {
             verticalSpacing(30.h(context)),
             FadeInRight(
               delay: Duration(milliseconds: 5 * 150),
-              child: Row(
-                children: [
-                  Image.asset(
-                    "assets/images/Logout Rounded Left.png",
-                    width: 36,
-                  ),
-                  horizontalSpacing(10),
-                  Text("Log Out",
-                      style: TextStyles.font16BlackOliverW400Manrope(context)),
-                ],
+              child: GestureDetector(
+                onTap: () {
+                  showLogOutDialog(context);
+                },
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/Logout Rounded Left.png",
+                      width: 36,
+                    ),
+                    horizontalSpacing(10),
+                    Text("Log Out",
+                        style:
+                            TextStyles.font16BlackOliverW400Manrope(context)),
+                  ],
+                ),
               ),
             )
           ],
@@ -64,4 +73,49 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
+  Future<dynamic> showLogOutDialog(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return Dialog(
+              child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    "Are you sure you want to log out?",
+                    style: TextStyles.font20Blackw500Poppins(context),
+                    textAlign: TextAlign.center,
+                  ),
+                  verticalSpacing(50.h(context)),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: LogutElevatedButton(
+                          text: "Confirm",
+                          onTap: () {
+                            CacheServices.instance.removeUserModel();
+                            context.pop();
+                            context.pushNamedAndRemoveUntilNamed(
+                                Routes.loginScreen);
+                          },
+                        ),
+                      ),
+                      horizontalSpacing(30),
+                      Expanded(
+                        child: LogutElevatedButton(
+                          text: "Cancel",
+                          onTap: () {
+                            context.pop();
+                          },
+                        ),
+                      ),
+                    ],
+                  )
+                ]),
+          ));
+        });
+  }
 }
