@@ -31,14 +31,14 @@ class ColorsManagers {
   static const Color wisteria = Color(0xffC49DDA);
   static const Color russianViolet=Color(0xff351547);
   static const Color sonicSilver=Color(0xff757575);
-
+  static const Color gray=Color(0xff808080);
+  static const Color africanViolet=Color(0xffB289C9);
+  static const Color chineseSilver=Color(0xffCFCACD);
   static const Color lightGray = Color(0xffD3D3D3);
-
   static const Color cultured = Color(0xffF8F8F6);
-
   static const Color taupeGray = Color(0xff888888);
+  static const Color darkCharcoal = Color(0xff2E2E2E);
 
   
 
-  static const Color richBlack = Color(0xff090D20);
 }
