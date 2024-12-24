@@ -4,7 +4,7 @@ import 'package:watfa/core/helpers/extinsions.dart';
 import '../../../../core/theme/colors.dart';
 
 class HomeBackgroundContainer extends StatelessWidget {
-   final Widget child;
+  final Widget child;
   const HomeBackgroundContainer({super.key, required this.child});
 
   @override
@@ -14,7 +14,8 @@ class HomeBackgroundContainer extends StatelessWidget {
         gradient: LinearGradient(
           colors: [
             ColorsManagers.lavender,
-             Colors.white, Colors.white,
+            Colors.white,
+            Colors.white,
             Colors.white,
           ],
           begin: Alignment.topCenter,
@@ -23,7 +24,7 @@ class HomeBackgroundContainer extends StatelessWidget {
       ),
       height: context.screenHeight,
       width: context.screenWidth,
-      child: child,
+      child: SafeArea(child: child),
     );
   }
 }
