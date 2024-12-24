@@ -15,4 +15,6 @@ class Routes {
   static const String walletScreen = '/WalletScreen';
   static const String notificationsScreen = '/NotificationsScreen';
   static const String savedItemsScreen = '/SavedItemsScreen';
+  static const String mainScreen = '/MainScreen';
+  static const String paymentScreen = '/PaymentScreen';
 }
