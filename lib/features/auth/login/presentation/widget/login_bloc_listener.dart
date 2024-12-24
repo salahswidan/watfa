@@ -79,6 +79,6 @@ class LoginBlocListener extends StatelessWidget {
   }
 
   void setUpSuccessState(BuildContext context, signupResponse) async {
-    context.pushNamedAndRemoveUntilNamed(Routes.homeScreen);
+    context.pushNamedAndRemoveUntilNamed(Routes.mainScreen);
   }
 }
