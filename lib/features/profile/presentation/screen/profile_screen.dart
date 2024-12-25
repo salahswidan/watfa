@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
@@ -10,12 +9,13 @@ import '../section/profile_form.dart';
 import '../widgets/user_profile_image.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  final bool? hasAppBar;
+  const ProfileScreen({super.key, this.hasAppBar = true});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DefaultAppBar(),
+      appBar: hasAppBar! ? DefaultAppBar() : null,
       backgroundColor: ColorsManagers.cultured,
       body: SafeArea(
         child: Padding(
@@ -29,7 +29,7 @@ class ProfileScreen extends StatelessWidget {
               verticalSpacing(70.h(context)),
               GetStartedButton(
                 onTap: () {
-                  context.pop();
+                  hasAppBar! ? context.pop() : null;
                 },
                 text: 'Save Changes',
               )

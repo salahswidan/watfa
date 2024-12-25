@@ -21,7 +21,10 @@ import '../../features/home/presentation/screen/home_screen.dart';
 import '../../features/onboarding/logic/on_boarding_data.dart';
 import '../../features/onboarding/presentation/screen/on_boarding_screen.dart';
 import '../../features/profile/presentation/screen/profile_screen.dart';
+import '../../features/purchases/presentation/screen/purchases_screen.dart';
+import '../../features/select_plan/presentation/screen/select_plan_screen.dart';
 import '../../features/settings/presentation/screen/settings_screen.dart';
+import '../../features/shipping_address/presentation/screen/shipping_address_screen.dart';
 import '../../features/wallet/presentation/screen/wallet_screen.dart';
 import '../di/dependency_injection.dart';
 import 'routes.dart';
@@ -77,7 +80,9 @@ class AppRouter {
         );
       case Routes.verifyScreen:
         return MaterialPageRoute(
-          builder: (_) => const VerifyScreen(),
+          builder: (_) =>  VerifyScreen(
+            comeFromPayment: arguments as bool,
+          ),
         );
 
       case Routes.signUpSellerScreen:
@@ -115,6 +120,18 @@ class AppRouter {
       case Routes.paymentScreen:
         return MaterialPageRoute(
           builder: (_) => const PaymentScreen(),
+        );
+      case Routes.purchaseScreen:
+        return MaterialPageRoute(
+          builder: (_) => const PurchasesScreen(),
+        );
+      case Routes.shippingAddressScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ShippingAddressScreen(),
+        );
+      case Routes.selectPlanScreen:
+        return MaterialPageRoute(
+          builder: (_) => const SelectPlanScreen(),
         );
       // case Routes.homeScreen:
       //   return MaterialPageRoute(

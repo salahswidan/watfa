@@ -11,7 +11,8 @@ import '../widgets/pinput_field.dart';
 import '../widgets/custom_verify_button.dart';
 
 class VerifyScreen extends StatelessWidget {
-  const VerifyScreen({super.key});
+  final bool comeFromPayment;
+  const VerifyScreen({super.key, this.comeFromPayment = false});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +48,9 @@ class VerifyScreen extends StatelessWidget {
               Flexible(flex: 2, child: verticalSpacing(100)),
               GetStartedButton(
                   onTap: () {
-                    context.pushNamed(Routes.resetPasswordScreen);
+                    comeFromPayment
+                        ? context.pushNamed(Routes.shippingAddressScreen)
+                        : context.pushNamed(Routes.resetPasswordScreen);
                   },
                   text: "Reset"),
               verticalSpacing(20),

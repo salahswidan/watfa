@@ -17,4 +17,7 @@ class Routes {
   static const String savedItemsScreen = '/SavedItemsScreen';
   static const String mainScreen = '/MainScreen';
   static const String paymentScreen = '/PaymentScreen';
+  static const String purchaseScreen = '/PurchaseScreen';
+  static const String shippingAddressScreen = '/ShippingAddressScreen';
+  static const String selectPlanScreen = '/SelectPlanScreen';
 }

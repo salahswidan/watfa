@@ -14,6 +14,30 @@ class TextStyles {
     );
   }
 
+  static TextStyle font18BlackW600Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontWeight: FontWeightHelper.semiBold,
+      color: Colors.black,
+    );
+  }
+
+  static TextStyle font14OuterSpaceW500Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.outerSpace,
+    );
+  }
+
+  static TextStyle font10OuterSpaceW400Poppins (context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 10),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.outerSpace,
+    );
+  }
+
   static TextStyle font20DarkCharcoalw700Manrope(context) {
     return GoogleFonts.manrope(
       fontSize: getResponsiveFontSize(context, fontSize: 20),
@@ -34,6 +58,21 @@ class TextStyles {
       fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontWeight: FontWeightHelper.semiBold,
       color: Colors.black,
+    );
+  }
+
+  static TextStyle font14BlackW700Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.bold,
+      color: Colors.black,
+    );
+  }
+  static TextStyle font14PurpleW700Poppins (context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.bold,
+      color: ColorsManagers.purple,
     );
   }
 
@@ -354,6 +393,13 @@ class TextStyles {
       fontSize: getResponsiveFontSize(context, fontSize: 20),
       fontWeight: FontWeightHelper.semiBold,
       color: Colors.white,
+    );
+  }
+  static TextStyle font20BlackW500Outfit(context) {
+    return GoogleFonts.outfit(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.medium,
+      color: Colors.black,
     );
   }
   static TextStyle font16WhiteW500Poppins (context) {

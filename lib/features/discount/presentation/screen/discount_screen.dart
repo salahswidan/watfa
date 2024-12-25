@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
+import 'package:watfa/core/helpers/spacing.dart';
 import '../../../../core/theme/colors.dart';
 import '../section/category_discount_section.dart';
 import '../widget/animated_lottie.dart';
@@ -33,6 +33,7 @@ class DiscountScreen extends StatelessWidget {
                   DiscountAppBar(),
                   AnimatedLottie(),
                   CategoryDiscountSection(),
+                  verticalSpacing(20)
                 ],
               ),
             ),

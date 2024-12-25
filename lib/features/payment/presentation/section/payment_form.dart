@@ -11,8 +11,8 @@ import '../../../../../core/widgets/auth_text_form_field.dart';
 import '../../../auth/countryPicker/logic/cubit/get_all_countries_cubit.dart';
 import '../../../auth/countryPicker/ui/country_picker.dart';
 
-class ProfileForm extends StatelessWidget {
-  const ProfileForm({
+class PaymentForm extends StatelessWidget {
+  const PaymentForm({
     super.key,
   });
 
@@ -24,7 +24,7 @@ class ProfileForm extends StatelessWidget {
           child: Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "User name",
+              "Your Name",
               style: TextStyles.font14Jetw500Poppins(context),
             ),
           ),
@@ -47,40 +47,13 @@ class ProfileForm extends StatelessWidget {
           ),
         ),
         verticalSpacing(16),
-        FadeInRight(
-          delay: const Duration(milliseconds: 300),
-          child: Container(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              "email address",
-              style: TextStyles.font14Jetw500Poppins(context),
-            ),
-          ),
-        ),
-        FadeInRight(
-          delay: const Duration(milliseconds: 450),
-          child: AuthTextFormField(
-            validator: (value) {
-              if (value == null ||
-                  value.isEmpty ||
-                  !AppRegex.isEmailValid(value)) {
-                return 'Please enter a valid email';
-              }
-              return null;
-            },
-            suffixIcon: 'assets/svgs/username_text_field_icon.svg',
-            hintText: 'Email',
-            controller: TextEditingController(
-                text: CacheServices.instance.getUserModel()?.email ?? ""),
-          ),
-        ),
-        verticalSpacing(16),
+       
         FadeInRight(
           delay: const Duration(milliseconds: 600),
           child: Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "Mobile Number",
+              "Phone number",
               style: TextStyles.font14Jetw500Poppins(context),
             ),
           ),
@@ -114,6 +87,61 @@ class ProfileForm extends StatelessWidget {
           ),
         ),
         verticalSpacing(16),
+         FadeInRight(
+          delay: const Duration(milliseconds: 300),
+          child: Container(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              "National ID number",
+              style: TextStyles.font14Jetw500Poppins(context),
+            ),
+          ),
+        ),
+        FadeInRight(
+          delay: const Duration(milliseconds: 450),
+          child: AuthTextFormField(
+            validator: (value) {
+              if (value == null ||
+                  value.isEmpty ) {
+                return 'Please enter a valid National ID number';
+              }
+              return null;
+            },
+            suffixIcon: 'assets/svgs/username_text_field_icon.svg',
+            hintText: 'National ID number',
+            keyboardType: TextInputType.number,
+            controller: TextEditingController(
+            ),
+          ),
+        ),
+        verticalSpacing(16),
+         FadeInRight(
+          delay: const Duration(milliseconds: 300),
+          child: Container(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              "email address",
+              style: TextStyles.font14Jetw500Poppins(context),
+            ),
+          ),
+        ),
+        FadeInRight(
+          delay: const Duration(milliseconds: 450),
+          child: AuthTextFormField(
+            validator: (value) {
+              if (value == null ||
+                  value.isEmpty ||
+                  !AppRegex.isEmailValid(value)) {
+                return 'Please enter a valid email';
+              }
+              return null;
+            },
+            suffixIcon: 'assets/svgs/username_text_field_icon.svg',
+            hintText: 'Email',
+            controller: TextEditingController(
+                text: CacheServices.instance.getUserModel()?.email ?? ""),
+          ),
+        ),
       ],
     );
   }
