@@ -71,6 +71,22 @@ class SecondSignUpSellerForm extends StatelessWidget {
           title: "Online",
           subtitle: "E-commerce sales",
         ),
+        verticalSpacing(40.h(context)),
+        Text(
+          "Store link",
+          style: TextStyles.font14RaisinBlackw500Poppins(context),
+        ),
+        AuthTextFormField(
+          validator: (value) {
+            if (value!.isEmpty) {
+              return 'Please enter your store link';
+            }
+            return null;
+          },
+          hintText: 'https://watfa.com',
+          controller: TextEditingController(),
+        ),
+        verticalSpacing(40.h(context))
       ],
     );
   }

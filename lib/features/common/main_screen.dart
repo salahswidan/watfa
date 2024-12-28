@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../discount/presentation/screen/discount_screen.dart';
 import '../home/presentation/screen/home_screen.dart';
-import '../payment/presentation/screen/payment_screen.dart';
+import '../payment_home/presentation/screen/payment_home_screen.dart';
 import '../profile/presentation/screen/profile_screen.dart';
 import '../purchases/presentation/screen/purchases_screen.dart';
 import 'widgets/active_bottom_navigation_bar_item.dart';
@@ -21,7 +21,7 @@ class _MainScreenState extends State<MainScreen> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    PaymentScreen(),
+    PaymentHomeScreen(),
     DiscountScreen(),
     PurchasesScreen(),
     ProfileScreen(

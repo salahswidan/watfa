@@ -48,9 +48,13 @@ class _SignUpSellerScreenState extends State<SignUpSellerScreen> {
                     child: Align(
                       alignment: Alignment.bottomCenter,
                       child: GetStartedButton(
-                        text: currentIndex == 0 ? 'Next' : 'Submit',
+                        text: currentIndex == 0
+                            ? 'Next'
+                            : currentIndex == 1
+                                ? 'Continue'
+                                : "Send",
                         onTap: () {
-                          currentIndex == 0
+                          currentIndex != 2
                               ? setState(() {
                                   currentIndex++;
                                 })

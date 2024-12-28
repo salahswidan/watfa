@@ -13,6 +13,7 @@ class AuthTextFormField extends StatefulWidget {
   final bool readOnly;
   final bool needPrefixIcon;
   final Widget? prefixIcon;
+  final Widget? suffixIconWidget;
 
   final BoxConstraints? prefixIconConstraints;
   final Function(String?) validator;
@@ -26,6 +27,7 @@ class AuthTextFormField extends StatefulWidget {
       this.readOnly = false,
       this.needPrefixIcon = false,
       this.prefixIcon,
+      this.suffixIconWidget,
       this.prefixIconConstraints,
       required this.validator});
 
@@ -72,7 +74,7 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
                   ),
                 )
               : widget.suffixIcon == null
-                  ? null
+                  ? widget.suffixIconWidget
                   : SvgPicture.asset(
                       widget.suffixIcon!,
                       fit: BoxFit.scaleDown,

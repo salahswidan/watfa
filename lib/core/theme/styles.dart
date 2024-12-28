@@ -14,6 +14,68 @@ class TextStyles {
     );
   }
 
+  static TextStyle font16DavyGrayW400Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.davysGray,
+    );
+  }
+  static TextStyle font14IndigoW700Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.bold,
+      color: ColorsManagers.indigo,
+    );
+  }
+  static TextStyle font24PurpleW700Manropes(context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      fontWeight: FontWeightHelper.bold,
+      color: ColorsManagers.purple,
+    );
+  }
+  static TextStyle font14PhilippineGrayW400Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.philippineGray,
+    );
+  }
+  static TextStyle font16Purplew600Roboto (context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeightHelper.semiBold,
+      color: ColorsManagers.purple,
+    );
+  }
+  static TextStyle font14BlackW400Ralway(context) {
+    return GoogleFonts.raleway(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.regular,
+      color: Colors.black,
+    );
+  }
+
+
+  static TextStyle font18RaisinBlackw600Ralway  (context) {
+    return GoogleFonts.raleway(
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontWeight: FontWeightHelper.semiBold,
+      color: ColorsManagers.raisinBlack,
+    );
+  }
+  static TextStyle font18OuterSpaceW400Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.outerSpace,
+    );
+  }
+  
+
+
+
   static TextStyle font18BlackW600Roboto(context) {
     return GoogleFonts.roboto(
       fontSize: getResponsiveFontSize(context, fontSize: 18),
@@ -51,6 +113,13 @@ class TextStyles {
       fontSize: getResponsiveFontSize(context, fontSize: 10),
       fontWeight: FontWeightHelper.semiBold,
       color: ColorsManagers.gray,
+    );
+  }
+  static TextStyle font13PurpleW500Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 13),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.purple,
     );
   }
   static TextStyle font14Blackw600Roboto(context) {
@@ -139,6 +208,13 @@ class TextStyles {
       color: Colors.white,
     );
   }
+  static TextStyle font10WhiteW600Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 10),
+      fontWeight: FontWeightHelper.semiBold,
+      color: Colors.white,
+    );
+  }
 
   static TextStyle font16BlackOliverW700Manrope(context) {
     return GoogleFonts.manrope(
@@ -179,6 +255,7 @@ class TextStyles {
       color: Colors.black,
     );
   }
+
 
   static TextStyle font16SonicSilverW400Outfit(context) {
     return GoogleFonts.outfit(
@@ -369,6 +446,20 @@ class TextStyles {
       fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontWeight: FontWeightHelper.medium,
       color: ColorsManagers.sacramentoStateGreen,
+    );
+  }
+  static TextStyle font14SonicSilverW400Inter(context) {
+    return GoogleFonts.inter(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.sonicSilver,
+    );
+  }
+  static TextStyle font16OnyxW400Manrope(context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.onyx,
     );
   }
 

@@ -3,12 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watfa/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:watfa/features/auth/password_updated/presentation/password_updated_screen.dart';
 import 'package:watfa/features/auth/sign_up_seller/presentation/screen/sign_up_seller_screen.dart';
+import 'package:watfa/features/bank_account/presentation/screen/bank_account_screen.dart';
 import 'package:watfa/features/category/presentation/screen/category_screen.dart';
 import 'package:watfa/features/common/main_screen.dart';
 import 'package:watfa/features/notifications/presentation/screen/notifications_screen.dart';
 import 'package:watfa/features/payment/presentation/screen/payment_screen.dart';
 import 'package:watfa/features/saved_items/presentation/screens/saved_items_screen.dart';
 
+import '../../features/add_new_card/presentation/screen/add_new_card_screen.dart';
 import '../../features/auth/forget_password/presentation/screen/forget_password_screen.dart';
 import '../../features/auth/get_started/presentation/screen/get_started_screen.dart';
 
@@ -20,6 +22,7 @@ import '../../features/auth/verify/presentation/screens/verify_screen.dart';
 import '../../features/home/presentation/screen/home_screen.dart';
 import '../../features/onboarding/logic/on_boarding_data.dart';
 import '../../features/onboarding/presentation/screen/on_boarding_screen.dart';
+import '../../features/payment_home/presentation/screen/payment_home_screen.dart';
 import '../../features/profile/presentation/screen/profile_screen.dart';
 import '../../features/purchases/presentation/screen/purchases_screen.dart';
 import '../../features/select_plan/presentation/screen/select_plan_screen.dart';
@@ -132,6 +135,18 @@ class AppRouter {
       case Routes.selectPlanScreen:
         return MaterialPageRoute(
           builder: (_) => const SelectPlanScreen(),
+        );
+      case Routes.paymentHomeScreen:
+        return MaterialPageRoute(
+          builder: (_) => const PaymentHomeScreen(),
+        );
+      case Routes.addNewCardScreen:
+        return MaterialPageRoute(
+          builder: (_) => const AddNewCardScreen(),
+        );
+      case Routes.bankAccountScreen:
+        return MaterialPageRoute(
+          builder: (_) => const BankAccountScreen(),
         );
       // case Routes.homeScreen:
       //   return MaterialPageRoute(

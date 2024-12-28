@@ -38,6 +38,11 @@ class ColorsManagers {
   static const Color cultured = Color(0xffF8F8F6);
   static const Color taupeGray = Color(0xff888888);
   static const Color darkCharcoal = Color(0xff2E2E2E);
+  static const Color silverSand = Color(0xffC4C4C4);
+  static const Color pinkLace = Color(0xffF5E3FF);
+  static const Color indigo = Color(0xff223263);
+  static const Color aliceBlue = Color (0xffF0F5FA);
+  static const Color onyx = Color(0xff32343E);
 
   
 

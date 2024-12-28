@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
+import 'package:watfa/core/routing/routes.dart';
 import 'package:watfa/core/theme/colors.dart';
 import 'package:watfa/core/widgets/default_app_bar.dart';
 
@@ -23,7 +25,11 @@ class ShippingAddressScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             ShippingAddressForm(),
-            GetStartedButton(onTap: () {}, text: "Next"),
+            GetStartedButton(
+                onTap: () {
+                  context.pushNamed(Routes.selectPlanScreen);
+                },
+                text: "Next"),
             verticalSpacing(1),
           ],
         ),

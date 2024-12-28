@@ -20,4 +20,7 @@ class Routes {
   static const String purchaseScreen = '/PurchaseScreen';
   static const String shippingAddressScreen = '/ShippingAddressScreen';
   static const String selectPlanScreen = '/SelectPlanScreen';
+  static const String paymentHomeScreen = '/PaymentHomeScreen';
+  static const String addNewCardScreen = '/AddNewCardScreen';
+  static const String bankAccountScreen = '/BankAccountScreen';
 }
