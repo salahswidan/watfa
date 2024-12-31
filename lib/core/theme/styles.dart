@@ -14,6 +14,14 @@ class TextStyles {
     );
   }
 
+  static TextStyle font18Blackw400Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontWeight: FontWeightHelper.regular,
+      color: Colors.black,
+    );
+  }
+
   static TextStyle font16DavyGrayW400Poppins(context) {
     return GoogleFonts.poppins(
       fontSize: getResponsiveFontSize(context, fontSize: 16),

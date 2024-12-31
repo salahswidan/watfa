@@ -12,7 +12,7 @@ class DiscountButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap:onTap ,
+      onTap: onTap,
       borderRadius: BorderRadius.circular(20),
       child: Container(
         height: 35,
@@ -22,9 +22,12 @@ class DiscountButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(11),
         ),
         child: Center(
-          child: Text(
-            text,
-            style: TextStyles.font16WhiteW500Poppins(context),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              text,
+              style: TextStyles.font16WhiteW500Poppins(context),
+            ),
           ),
         ),
       ),

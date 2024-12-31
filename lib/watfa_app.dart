@@ -36,7 +36,7 @@ class WatfaApp extends StatelessWidget {
 }
 
 String setinitialRoute() {
-  return 
+  return Routes.mainScreen;
 
   CacheServices.instance.getUserModel() != null
       ? Routes.mainScreen

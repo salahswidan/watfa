@@ -16,6 +16,7 @@ class AuthTextFormField extends StatefulWidget {
   final Widget? suffixIconWidget;
 
   final BoxConstraints? prefixIconConstraints;
+  final BoxConstraints? suffixIconConstraints;
   final Function(String?) validator;
   const AuthTextFormField(
       {super.key,
@@ -29,6 +30,7 @@ class AuthTextFormField extends StatefulWidget {
       this.prefixIcon,
       this.suffixIconWidget,
       this.prefixIconConstraints,
+      this.suffixIconConstraints,
       required this.validator});
 
   @override
@@ -49,6 +51,7 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
         obscuringCharacter: "*",
         obscureText: widget.isPassword ?? false ? isObscured : false,
         controller: widget.controller,
+        
         style: TextStyles.font14Blackw500Poppins(context),
         decoration: InputDecoration(
           border: OutlineInputBorder(
@@ -81,6 +84,7 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
                       height: 18,
                       width: 18,
                     ),
+                    suffixIconConstraints: widget.suffixIconConstraints,
           hintStyle: TextStyles.font14Greyw500Poppins(context),
           hintText: widget.hintText,
         ),
