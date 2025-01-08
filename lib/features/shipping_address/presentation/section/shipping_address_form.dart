@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theme/styles.dart';
@@ -18,7 +19,7 @@ class ShippingAddressForm extends StatelessWidget {
           child: Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "Country",
+              "Country".tr(context),
               style: TextStyles.font14Jetw500Poppins(context),
             ),
           ),
@@ -29,12 +30,12 @@ class ShippingAddressForm extends StatelessWidget {
             validator: (value) {
               if (value == null ||
                   value.isEmpty ) {
-                return 'Please enter a valid country';
+                return 'Please enter a valid country'.tr(context);
               }
               return null;
             },
             
-            hintText: 'Country',
+            hintText: 'Country'.tr(context),
             controller: TextEditingController(),
           ),
         ),
@@ -45,7 +46,7 @@ class ShippingAddressForm extends StatelessWidget {
           child: Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "Address",
+              "Address".tr(context),
               style: TextStyles.font14Jetw500Poppins(context),
             ),
           ),
@@ -57,11 +58,11 @@ class ShippingAddressForm extends StatelessWidget {
             validator: (value) {
               if (value == null ||
                   value.isEmpty ) {
-                return 'Please enter a valid address';
+                return 'Please enter a valid address'.tr(context);
               }
               return null;
             },
-            hintText: 'Address',
+            hintText: 'Address'.tr(context),
             controller: TextEditingController(
             ),
           ),
@@ -72,7 +73,7 @@ class ShippingAddressForm extends StatelessWidget {
           child: Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "Town/city",
+              "Town/city".tr(context),
               style: TextStyles.font14Jetw500Poppins(context),
             ),
           ),
@@ -83,11 +84,11 @@ class ShippingAddressForm extends StatelessWidget {
             validator: (value) {
               if (value == null ||
                   value.isEmpty ) {
-                return 'Please enter a valid town/city';
+                return 'Please enter a valid town/city'.tr(context);
               }
               return null;
             },
-            hintText: 'Town/city',
+            hintText: 'Town/city'.tr(context),
             controller: TextEditingController(),
           ),
         ),

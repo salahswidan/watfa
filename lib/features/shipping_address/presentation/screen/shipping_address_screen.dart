@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/routing/routes.dart';
@@ -16,7 +17,7 @@ class ShippingAddressScreen extends StatelessWidget {
     return Scaffold(
       appBar: DefaultAppBar(
         hasBackArrow: true,
-        title: "Shipping Address",
+        title: "Shipping Address".tr(context),
       ),
       backgroundColor: ColorsManagers.cultured,
       body: Padding(
@@ -29,7 +30,7 @@ class ShippingAddressScreen extends StatelessWidget {
                 onTap: () {
                   context.pushNamed(Routes.selectPlanScreen);
                 },
-                text: "Next"),
+                text: "Next".tr(context)),
             verticalSpacing(1),
           ],
         ),

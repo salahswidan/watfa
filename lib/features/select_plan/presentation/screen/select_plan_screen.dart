@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/theme/styles.dart';
@@ -24,7 +25,7 @@ class _SelectPlanScreenState extends State<SelectPlanScreen> {
     return Scaffold(
       appBar: DefaultAppBar(
         hasBackArrow: true,
-        title: "Payment by Watfa",
+        title: "Payment by Watfa".tr(context),
       ),
       backgroundColor: ColorsManagers.cultured,
       body: Padding(
@@ -34,7 +35,7 @@ class _SelectPlanScreenState extends State<SelectPlanScreen> {
           children: [
             Flexible(child: verticalSpacing(40)),
             Text(
-              "Equal Installment Over 3 Months",
+              "Equal Installment Over 3 Months".tr(context),
               style: TextStyles.font18BlackW600Roboto(context),
             ),
             Flexible(flex: 2, child: verticalSpacing(40)),
@@ -45,12 +46,12 @@ class _SelectPlanScreenState extends State<SelectPlanScreen> {
             UnSelectedInstallmentContainer(),
             Flexible(child: verticalSpacing(20)),
             Text(
-              "Payment Method",
+              "Payment Methods".tr(context),
               style: TextStyles.font18RaisinBlackw600Ralway(context),
             ),
             Flexible(child: verticalSpacing(20)),
             PaymentContainer(
-              text: "debit/credit cards",
+              text: "debit/credit cards".tr(context),
               isSelected: selectedPayment == 0,
               onTap: () {
                 setState(() {
@@ -60,7 +61,7 @@ class _SelectPlanScreenState extends State<SelectPlanScreen> {
             ),
             Flexible(child: verticalSpacing(15)),
             PaymentContainer(
-              text: "bank account",
+              text: "Bank account".tr(context),
               isSelected: selectedPayment == 1,
               onTap: () {
                 setState(() {
@@ -70,7 +71,7 @@ class _SelectPlanScreenState extends State<SelectPlanScreen> {
             ),
             Flexible(child: verticalSpacing(15)),
             PaymentContainer(
-              text: "Add New Card",
+              text: "Add New Card".tr(context),
               isSelected: selectedPayment == 2,
               onTap: () {
                 setState(() {
@@ -83,7 +84,7 @@ class _SelectPlanScreenState extends State<SelectPlanScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Total Price",
+                  "Total Price".tr(context),
                   style: TextStyles.font18RaisinBlackw600Ralway(context),
                 ),
                 Text(
@@ -114,7 +115,7 @@ class _SelectPlanScreenState extends State<SelectPlanScreen> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text("Choose Payment Method",
+                                  Text("Choose Payment Method".tr(context),
                                       style:
                                           TextStyles.font18OuterSpaceW400Roboto(
                                               context)),
@@ -126,7 +127,7 @@ class _SelectPlanScreenState extends State<SelectPlanScreen> {
                                           color: ColorsManagers.outerSpace)),
                                 ]),
                             verticalSpacing(35),
-                            Text("Existing Card",
+                            Text("Existing Card".tr(context),
                                 style:
                                     TextStyles.font14PhilippineGrayW400Roboto(
                                         context)),
@@ -137,7 +138,7 @@ class _SelectPlanScreenState extends State<SelectPlanScreen> {
                       );
                     });
               },
-              text: "Pay First Installment",
+              text: "Pay First Installment".tr(context),
             )
           ],
         ),

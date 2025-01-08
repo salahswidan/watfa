@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theme/styles.dart';
@@ -21,7 +22,7 @@ class InActiveBottomNavigationBarItem extends StatelessWidget {
         Image.asset(image, width: 24),
         verticalSpacing(5),
         Text(
-          text,
+          text.tr(context),
           style: TextStyles.font12OuterSpaceW400Poppins(context),
         ),
       ],

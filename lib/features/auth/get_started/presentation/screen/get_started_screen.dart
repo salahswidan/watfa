@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 
 import '../../../../../core/theme/styles.dart';
@@ -18,11 +19,11 @@ class GetStartedScreen extends StatelessWidget {
             Flexible(flex: 3, child: verticalSpacing(120)),
             const Logo(),
             Flexible(child: verticalSpacing(40)),
-            Text("Please select profile",
+            Text("Please select profile".tr(context),
                 style: TextStyles.font24Blackw700Roboto(context)),
             verticalSpacing(10),
             Text(
-              "Create an account  to get all features",
+              "Create an account  to get all features".tr(context),
               style: TextStyles.font14DarkSilverw400Roboto(context),
             ),
             Flexible(flex: 2, child: verticalSpacing(70)),

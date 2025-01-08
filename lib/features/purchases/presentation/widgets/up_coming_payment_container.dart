@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/colors.dart';
@@ -48,7 +49,7 @@ class UpComingPaymentContainer extends StatelessWidget {
                           context)),
                 ],
               ),
-              Text("Due in 30 dayes",
+              Text("Due in 30 days".tr(context),
                   style:
                       TextStyles.font10OuterSpaceW400Poppins(context)),
             ],
@@ -57,10 +58,10 @@ class UpComingPaymentContainer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text("SAR 150",
+              Text("${"SAR".tr(context)} 150",
                   style: TextStyles.font14BlackW700Poppins(context)),
               Container(),
-              Text("Pay",
+              Text("Pay".tr(context),
                   style: TextStyles.font14PurpleW700Poppins(context)),
             ],
           )

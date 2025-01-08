@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/widgets/default_app_bar.dart';
 
@@ -15,7 +16,7 @@ class BankAccountScreen extends StatelessWidget {
     return Scaffold(
       appBar: DefaultAppBar(
         hasBackArrow: true,
-        title: "Bank Account",
+        title: "Bank Account".tr(context),
       ),
       backgroundColor: ColorsManagers.cultured,
       body: Padding(
@@ -27,7 +28,7 @@ class BankAccountScreen extends StatelessWidget {
             BankAccountForm(),
             Expanded(child: verticalSpacing(20)),
             GetStartedButton(
-              text: "Add Bank information",
+              text: "Add Bank information".tr(context),
               onTap: () {},
             ),
           ],

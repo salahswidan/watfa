@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../../core/helpers/shared_pref_helper.dart';
@@ -19,7 +20,7 @@ class DontHaveAcc extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "Don't have an account?",
+            "Don't have an account?".tr(context),
             style: TextStyles.font16DarkLiverw400Roboto(context),
           ),
           horizontalSpacing(5),
@@ -30,7 +31,7 @@ class DontHaveAcc extends StatelessWidget {
                   : context.pushNamed(Routes.signUpSellerScreen);
             },
             child: Text(
-              'Sign up',
+              'Sign up'.tr(context),
               style: TextStyles.font16Purplew700Roboto(context).copyWith(
                 decoration: TextDecoration.underline,
               ),

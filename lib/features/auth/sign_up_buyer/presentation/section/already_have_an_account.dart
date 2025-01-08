@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../../core/helpers/spacing.dart';
@@ -15,7 +16,7 @@ class AlreadyHaveAnAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "Already have an account?",
+          "Already have an account?".tr(context),
           style:
               TextStyles.font16DarkLiverw400Roboto(context),
         ),
@@ -25,7 +26,7 @@ class AlreadyHaveAnAccount extends StatelessWidget {
             context.pop();
           },
           child: Text(
-            'Log In',
+            'Log In'.tr(context),
             style:
                 TextStyles.font16Purplew700Roboto(context)
                     .copyWith(

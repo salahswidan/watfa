@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 
 import '../../../../core/theme/styles.dart';
@@ -27,7 +28,7 @@ class _CategoryDiscountSectionState extends State<CategoryDiscountSection> {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 20),
             child: Text(
-              "All discounts",
+              "All discounts".tr(context),
               style: TextStyles.font20BlackOliveW700Manrope(context),
             ),
           ),

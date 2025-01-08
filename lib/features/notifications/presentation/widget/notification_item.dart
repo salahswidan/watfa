@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../core/helpers/spacing.dart';
@@ -37,7 +38,7 @@ class NotificationItem extends StatelessWidget {
                       FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text(
-                          "Flipcart Shopping Offer",
+                          "Flipcart Shopping Offer".tr(context),
                           style:
                               TextStyles.font16GraniteGrayW600Nunito(context),
                         ),
@@ -45,14 +46,14 @@ class NotificationItem extends StatelessWidget {
                       Expanded(child: SizedBox()),
                       FittedBox(
                         fit: BoxFit.scaleDown,
-                        child: Text("1 min ago",
+                        child: Text("1 min ago".tr(context),
                             style: TextStyles.font10Blackw400Roboto(context)),
                       ),
                     ],
                   ),
                   verticalSpacing(5),
                   Text(
-                    "Shop on Flipcart using our payment system to get upto 50% cashback . T&C appply",
+                    "Shop on Flipcart using our payment system to get upto 50% cashback . T&C appply".tr(context),
                     style: TextStyles.font10GraniteGrayW600Nunito(context),
                     softWrap: true,
                   )

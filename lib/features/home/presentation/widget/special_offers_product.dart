@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../core/theme/colors.dart';
@@ -37,7 +38,7 @@ class SpecialOffersProduct extends StatelessWidget {
                             topLeft: Radius.circular(10),
                             bottomRight: Radius.circular(10),
                           )),
-                      child: Text("45% OFF",
+                      child: Text("45% OFF".tr(context),
                           style: TextStyles.font10WhiteW600Manrope(context)),
                     ),
                     Icon(
@@ -48,11 +49,11 @@ class SpecialOffersProduct extends StatelessWidget {
                 ),
                 Spacer(),
                 Text(
-                  "SAR 230.00",
+                  "${"SAR".tr(context)} 230.00",
                   style: TextStyles.font20BlackOliveW700Manrope(context),
                 ),
                 Text(
-                  "SAR 512.58",
+                  "${"SAR".tr(context)} 460.00",
                   style:
                       TextStyles.font12BlackOliveW400Manrope(context).copyWith(
                     decoration: TextDecoration.lineThrough,
@@ -81,7 +82,7 @@ class SpecialOffersProduct extends StatelessWidget {
                   "assets/images/product.png",
                   width: 140.w(context),
                 ),
-                Text("lip gloss",
+                Text("lip gloss".tr(context),
                     style: TextStyles.font14BlackwOliveW400Manrope(context)),
               ],
             ),

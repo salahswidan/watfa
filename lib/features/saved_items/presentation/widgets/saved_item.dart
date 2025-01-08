@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/theme/colors.dart';
 
@@ -45,11 +46,11 @@ class SavedItem extends StatelessWidget {
                 ),
                 Expanded(child: SizedBox()),
                 Text(
-                  "SAR 230.00",
+                  "${"SAR".tr(context)} 230.00",
                   style: TextStyles.font20BlackOliveW700Manrope(context),
                 ),
                 Text(
-                  "SAR 512.58",
+                  "${"SAR".tr(context)} 300.00",
                   style: TextStyles.font12BlackOliveW400Manrope(context)
                       .copyWith(decoration: TextDecoration.lineThrough),
                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theme/colors.dart';
@@ -26,7 +27,7 @@ class ActiveBottomNavigationBarItem extends StatelessWidget {
         ),
         verticalSpacing(5),
         Text(
-          text,
+          text.tr(context),
           style: TextStyles.font12PurpleW500Poppins(context),
         ),
       ],

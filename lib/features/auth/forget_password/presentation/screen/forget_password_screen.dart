@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/widgets/custom_gradient_container.dart';
 
@@ -23,16 +24,16 @@ class ForgetPasswordScreen extends StatelessWidget {
               Flexible(flex: 2, child: verticalSpacing(80)),
               const Logo(),
               Flexible(flex: 2, child: verticalSpacing(60)),
-              Text("Forgot Password",
+              Text("Forgot Password".tr(context),
                   style: TextStyles.font24Blackw700Roboto(context)),
               verticalSpacing(18),
-              Text("Please enter your email to reset the password",
+              Text("Please enter your email to reset the password".tr(context),
                   style: TextStyles.font14DarkSilverw400Roboto(context)),
               Flexible(flex: 2, child: verticalSpacing(80)),
               AuthTextFormField(
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return 'Please enter your email';
+                    return 'Please enter your email'.tr(context);
                   }
                   return null;
                 },
@@ -41,7 +42,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               ),
               Flexible(flex: 3, child: verticalSpacing(120)),
               GetStartedButton(
-                text: 'Verify',
+                text: 'Verify'.tr(context),
                 onTap: () {
                   context.pushNamed(Routes.verifyScreen);
                 },

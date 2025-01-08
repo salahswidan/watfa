@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../../core/helpers/spacing.dart';
@@ -18,14 +19,14 @@ class FirstSignUpSellerForm extends StatelessWidget {
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-              "Take your company to the next level",
+              "Take your company to the next level".tr(context),
               textAlign: TextAlign.center,
               style: TextStyles.font24Blackw700Roboto(
                   context)),
         ),
         verticalSpacing(12.h(context)),
         Text(
-          "Let us start by getting to know one another better.",
+          "Let us start by getting to know one another better.".tr(context),
           style: TextStyles.font14DarkSilverw400Roboto(
               context),
           textAlign: TextAlign.center,
@@ -34,14 +35,14 @@ class FirstSignUpSellerForm extends StatelessWidget {
         Container(
           alignment: Alignment.centerLeft,
           child: Text(
-            "Company name",
+            "Company name".tr(context),
             style: TextStyles.font14Jetw500Poppins(context),
           ),
         ),
         AuthTextFormField(
           validator: (value) {
             if (value!.isEmpty) {
-              return 'Please enter your company name';
+              return 'Please enter your company name'.tr(context);
             }
             return null;
           },
@@ -52,14 +53,14 @@ class FirstSignUpSellerForm extends StatelessWidget {
         Container(
           alignment: Alignment.centerLeft,
           child: Text(
-            "User name",
+            "User name".tr(context),
             style: TextStyles.font14Jetw500Poppins(context),
           ),
         ),
         AuthTextFormField(
           validator: (value) {
             if (value!.isEmpty) {
-              return 'Please enter your username';
+              return 'Please enter your username'.tr(context);
             }
             return null;
           },
@@ -70,14 +71,14 @@ class FirstSignUpSellerForm extends StatelessWidget {
         Container(
           alignment: Alignment.centerLeft,
           child: Text(
-            "Email address",
+            "Email address".tr(context),
             style: TextStyles.font14Jetw500Poppins(context),
           ),
         ),
         AuthTextFormField(
           validator: (value) {
             if (value!.isEmpty) {
-              return 'Please enter your email';
+              return 'Please enter your email'.tr(context);
             }
             return null;
           },
@@ -88,14 +89,14 @@ class FirstSignUpSellerForm extends StatelessWidget {
         Container(
           alignment: Alignment.centerLeft,
           child: Text(
-            "Phone number",
+            "Phone number".tr(context),
             style: TextStyles.font14Jetw500Poppins(context),
           ),
         ),
         AuthTextFormField(
           validator: (value) {
             if (value!.isEmpty) {
-              return 'Please enter your phone number';
+              return 'Please enter your phone number'.tr(context);
             }
             return null;
           },
@@ -107,38 +108,38 @@ class FirstSignUpSellerForm extends StatelessWidget {
         Container(
           alignment: Alignment.centerLeft,
           child: Text(
-            "Password",
+            "Password".tr(context),
             style: TextStyles.font14Jetw500Poppins(context),
           ),
         ),
         AuthTextFormField(
           validator: (value) {
             if (value!.isEmpty) {
-              return 'Please enter your password';
+              return 'Please enter your password'.tr(context);
             }
             return null;
           },
           isPassword: true,
-          hintText: 'Password',
+          hintText: 'Password'.tr(context),
           controller: TextEditingController(),
         ),
         verticalSpacing(16.h(context)),
         Align(
           alignment: Alignment.centerLeft,
           child: Text(
-            "Confirm Password",
+            "Confirm Password".tr(context),
             style: TextStyles.font14Jetw500Poppins(context),
           ),
         ),
         AuthTextFormField(
           validator: (value) {
             if (value!.isEmpty) {
-              return 'Please enter your password';
+              return 'Please enter your password'.tr(context);
             }
             return null;
           },
           isPassword: true,
-          hintText: 'Confirm Password',
+          hintText: 'Confirm Password'.tr(context),
           controller: TextEditingController(),
         ),
         verticalSpacing(60.h(context)),

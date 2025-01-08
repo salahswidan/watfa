@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 
 import '../../../../core/theme/colors.dart';
@@ -13,7 +14,7 @@ class NotificationsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DefaultAppBar(
-        title: "Notification",
+        title: "Notifications".tr(context),
       ),
       backgroundColor: ColorsManagers.cultured,
       body: Padding(

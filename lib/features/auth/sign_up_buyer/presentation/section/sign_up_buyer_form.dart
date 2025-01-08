@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/app_regex.dart';
 import 'package:watfa/features/auth/sign_up_buyer/logic/cubit/sign_up_buyer_cubit.dart';
 
@@ -54,7 +55,7 @@ class _SignUpBuyerFormState extends State<SignUpBuyerForm> {
           Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "User name",
+              "User name".tr(context),
               style: TextStyles.font14Jetw500Poppins(context),
             ),
           ),
@@ -63,19 +64,19 @@ class _SignUpBuyerFormState extends State<SignUpBuyerForm> {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isUsernameValid(value)) {
-                return 'Please enter a valid username';
+                return 'Please enter a valid username'.tr(context);
               }
               return null;
             },
             suffixIcon: 'assets/svgs/username_text_field_icon.svg',
-            hintText: 'User name',
+            hintText: 'User name'.tr(context),
             controller: context.read<SignUpBuyerCubit>().userNameController,
           ),
           verticalSpacing(16),
           Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "Email",
+              "Email".tr(context),
               style: TextStyles.font14Jetw500Poppins(context),
             ),
           ),
@@ -84,19 +85,19 @@ class _SignUpBuyerFormState extends State<SignUpBuyerForm> {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isEmailValid(value)) {
-                return 'Please enter a valid email';
+                return 'Please enter a valid email address'.tr(context);
               }
               return null;
             },
             suffixIcon: 'assets/svgs/username_text_field_icon.svg',
-            hintText: 'Email',
+            hintText: 'Email'.tr(context),
             controller: context.read<SignUpBuyerCubit>().emailController,
           ),
           verticalSpacing(16),
           Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "Phone number",
+              "Phone number".tr(context),
               style: TextStyles.font14Jetw500Poppins(context),
             ),
           ),
@@ -114,7 +115,7 @@ class _SignUpBuyerFormState extends State<SignUpBuyerForm> {
                       if (value == null ||
                           value.isEmpty ||
                           !AppRegex.isPhoneNumberValid(value)) {
-                        return 'Please type a valid phone number';
+                        return 'Please type a valid phone number'.tr(context);
                       }
                       return null;
                     },
@@ -127,13 +128,13 @@ class _SignUpBuyerFormState extends State<SignUpBuyerForm> {
           Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "Password",
+              "Password".tr(context),
               style: TextStyles.font14Jetw500Poppins(context),
             ),
           ),
           AuthTextFormField(
             isPassword: true,
-            hintText: 'Password',
+            hintText: 'Password'.tr(context),
             controller: passwordController,
             validator: (value) {
               if (value == null ||
@@ -141,7 +142,7 @@ class _SignUpBuyerFormState extends State<SignUpBuyerForm> {
                   !hasAtLeast8Characters ||
                   !hasAtLeast1UpperCase ||
                   !hasAtLeast1NumberOrSymbol) {
-                return 'Please enter a valid password';
+                return 'Please enter a valid password'.tr(context);
               }
             },
           ),
@@ -149,22 +150,22 @@ class _SignUpBuyerFormState extends State<SignUpBuyerForm> {
           Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "Confirm Password",
+              "Confirm Password".tr(context),
               style: TextStyles.font14Jetw500Poppins(context),
             ),
           ),
           AuthTextFormField(
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter a valid confirm password';
+                return 'Please enter a valid confirm password'.tr(context);
               }
               if (value != passwordController.text) {
-                return 'Passwords do not match';
+                return 'Passwords do not match'.tr(context);
               }
               return null;
             },
             isPassword: true,
-            hintText: 'Confirm Password',
+            hintText: 'Confirm Password'.tr(context),
             controller:
                 context.read<SignUpBuyerCubit>().confirmPasswordController,
           ),

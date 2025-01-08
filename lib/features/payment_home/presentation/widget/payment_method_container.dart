@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../core/helpers/spacing.dart';
@@ -70,7 +71,7 @@ class PaymentMethodContainer extends StatelessWidget {
                     color: Colors.white,
                   ),
                   Text(
-                    "Add",
+                    "Add".tr(context),
                     style: TextStyles.font10WhiteW600Roboto(context),
                   )
                 ],

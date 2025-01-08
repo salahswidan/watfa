@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 
 import '../../../../core/helpers/constants.dart';
 import '../../../../core/widgets/auth_text_form_field.dart';
@@ -45,7 +46,7 @@ class _CountryPickerState extends State<CountryPicker> {
                     readOnly: false,
                     keyboardType: TextInputType.number,
                     controller: widget.controller,
-                    hintText: 'Your number',
+                    hintText: 'Your number'.tr(context),
                     needPrefixIcon: true,
                     prefixIconConstraints:
                         const BoxConstraints(minHeight: 35, minWidth: 35),
@@ -136,7 +137,7 @@ class _CountryPickerState extends State<CountryPicker> {
                     readOnly: false,
                     keyboardType: TextInputType.number,
                     controller: widget.controller,
-                    hintText: 'Your number',
+                    hintText: 'Your number'.tr(context),
                     needPrefixIcon: true,
                     prefixIconConstraints:
                         const BoxConstraints(minHeight: 35, minWidth: 35),
@@ -232,7 +233,7 @@ void _showCountryBottomSheet({
             height: 10,
           ),
           Text(
-            "chooseYourCountry",
+            "chooseYourCountry".tr(context),
             style: Theme.of(context).textTheme.labelSmall!.copyWith(
                   fontSize: 16,
                 ),

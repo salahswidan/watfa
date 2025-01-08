@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../core/theme/colors.dart';
@@ -43,22 +44,22 @@ class AdBannerContainer extends StatelessWidget {
                           horizontal: 14,
                           vertical: 5,
                         ),
-                        child: Text("Ad",
+                        child: Text("Ad".tr(context),
                             style: TextStyles.font11WhiteW400Manrope(
                                 context)),
                       ),
                     ),
                   ),
                   Expanded(child: SizedBox()),
-                  Text("Offers to 70 %",
+                  Text("Offers to 70 %".tr(context),
                       style:
                           TextStyles.font24WhiteW700Manrope(context)),
                   Expanded(child: SizedBox()),
                 ],
               ),
             ),
-            Positioned(
-                right: 0,
+            PositionedDirectional(
+                end: 0,
                 bottom: -19.h(context),
                 child: Image.asset(
                   'assets/images/home_ad_offer.png',

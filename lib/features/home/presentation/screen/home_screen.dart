@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../core/helpers/spacing.dart';
@@ -37,7 +38,7 @@ class HomeScreen extends StatelessWidget {
             ),
             SliverToBoxAdapter(
               child: SeeMoreRow(
-                text: "Special Offers",
+                text: "Special Offers".tr(context),
               ),
             ),
             SliverToBoxAdapter(
@@ -55,7 +56,7 @@ class HomeScreen extends StatelessWidget {
             ),
             SliverToBoxAdapter(
               child: SeeMoreRow(
-                text: "Fashion Offers",
+                text: "Fashion Offers".tr(context),
               ),
             ),
             SliverToBoxAdapter(
@@ -68,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                             padding: const EdgeInsets.only(right: 20),
                             child: DefaultProduct(
                               image: 'assets/images/fashion_image.png',
-                              text: "baby blue blouse",
+                              text: "baby blue blouse".tr(context),
                             ),
                           )),
                 ),
@@ -76,7 +77,7 @@ class HomeScreen extends StatelessWidget {
             ),
             SliverToBoxAdapter(
               child: SeeMoreRow(
-                text: "Bags Offers",
+                text: "Bags Offers".tr(context),
               ),
             ),
             SliverToBoxAdapter(
@@ -89,7 +90,7 @@ class HomeScreen extends StatelessWidget {
                             padding: const EdgeInsets.only(right: 20),
                             child: DefaultProduct(
                               image: 'assets/images/bag_image.png',
-                              text: "White bag",
+                              text: "White bag".tr(context),
                             ),
                           )),
                 ),
@@ -97,7 +98,7 @@ class HomeScreen extends StatelessWidget {
             ),
             SliverToBoxAdapter(
               child: SeeMoreRow(
-                text: "SkinCare Offers",
+                text: "SkinCare Offers".tr(context),
               ),
             ),
             SliverToBoxAdapter(
@@ -110,7 +111,7 @@ class HomeScreen extends StatelessWidget {
                             padding: const EdgeInsets.only(right: 20),
                             child: DefaultProduct(
                               image: 'assets/images/skincare_image.png',
-                              text: "Oily skincare",
+                              text: "Oily skincare".tr(context),
                             ),
                           )),
                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../../core/helpers/spacing.dart';
@@ -23,11 +24,11 @@ class ResetPasswordScreen extends StatelessWidget {
             Flexible(flex: 2, child: verticalSpacing(80)),
             const Logo(),
             Flexible(flex: 2, child: verticalSpacing(60)),
-            Text("Reset Password",
+            Text("Reset Password".tr(context),
                 style: TextStyles.font24Blackw700Roboto(context)),
             verticalSpacing(18),
             Text(
-              "Reset Your Password",
+              "Reset Your Password".tr(context),
               style: TextStyles.font14DarkSilverw400Roboto(context),
               textAlign: TextAlign.center,
             ),
@@ -35,7 +36,7 @@ class ResetPasswordScreen extends StatelessWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                "Password",
+                "Password".tr(context),
                 style:
                     TextStyles.font14SacramentoStateGreenw500Poppins(context),
               ),
@@ -43,19 +44,19 @@ class ResetPasswordScreen extends StatelessWidget {
             AuthTextFormField(
               validator: (value) {
                 if (value!.isEmpty) {
-                  return 'Please enter your password';
+                  return 'Please enter your password'.tr(context);
                 }
                 return null;
               },
               isPassword: true,
-              hintText: 'Password',
+              hintText: 'Password'.tr(context),
               controller: TextEditingController(),
             ),
             verticalSpacing(20),
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                "Confirm Password",
+                "Confirm Password".tr(context),
                 style:
                     TextStyles.font14SacramentoStateGreenw500Poppins(context),
               ),
@@ -63,12 +64,12 @@ class ResetPasswordScreen extends StatelessWidget {
             AuthTextFormField(
               validator: (value) {
                 if (value!.isEmpty) {
-                  return 'Please enter your password';
+                  return 'Please enter your password'.tr(context);
                 }
                 return null;
               },
               isPassword: true,
-              hintText: 'Confirm Password',
+              hintText: 'Confirm Password'.tr(context),
               controller: TextEditingController(),
             ),
             Flexible(flex: 2, child: verticalSpacing(80)),
@@ -78,7 +79,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 onTap: () {
                   context.pushNamed(Routes.passwordUpdatedScreen);
                 },
-                text: 'UPDATE',
+                text: 'UPDATE'.tr(context),
               ),
             ),
           ],

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../../core/routing/routes.dart';
@@ -21,7 +22,7 @@ class ForgetPassword extends StatelessWidget {
             context.pushNamed(Routes.forgotPasswordScreen);
           },
           child: Text(
-            'Forgot password?',
+            'Forgot password?'.tr(context),
             style:
                 TextStyles.font14Purplew500Poppins(context).copyWith(
               decoration: TextDecoration.underline,

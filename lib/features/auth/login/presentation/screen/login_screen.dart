@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 
 import 'package:watfa/core/widgets/custom_divider.dart';
 
@@ -39,7 +40,7 @@ class LoginScreen extends StatelessWidget {
               ),
               const CustomDivider(),
               Text(
-                "sign in using",
+                "sign in using".tr(context),
                 style: TextStyles.font15CharlestonGreenw400Roboto(context),
               ),
               SocialAuth(

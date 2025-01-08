@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../core/helpers/spacing.dart';
@@ -22,11 +23,11 @@ class PasswordUpdatedScreen extends StatelessWidget {
             Flexible(flex: 2, child: verticalSpacing(80)),
             const Logo(),
             Flexible(flex: 2, child: verticalSpacing(60)),
-            Text("Password Updated",
+            Text("Password Updated".tr(context),
                 style: TextStyles.font24Blackw700Roboto(context)),
             verticalSpacing(18),
             Text(
-              "Password Updated Successfully.",
+              "Password Updated Successfully.".tr(context),
               style: TextStyles.font14DarkSilverw400Roboto(context),
               textAlign: TextAlign.center,
             ),
@@ -44,7 +45,7 @@ class PasswordUpdatedScreen extends StatelessWidget {
                 onTap: () {
                   context.pushNamedAndRemoveUntil(Routes.loginScreen);
                 },
-                text: 'Sign in',
+                text: 'Sign in'.tr(context),
               ),
             ),
             Flexible(flex: 4, child: verticalSpacing(180)),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/routing/routes.dart';
 import 'package:watfa/features/auth/get_started/presentation/widgets/get_started_button.dart';
@@ -25,7 +26,7 @@ class VerifyScreen extends StatelessWidget {
               Flexible(flex: 2, child: verticalSpacing(80)),
               const Logo(),
               Flexible(flex: 2, child: verticalSpacing(60)),
-              Text("Check Your Email",
+              Text("Check Your Email".tr(context),
                   style: TextStyles.font24Blackw700Roboto(context)),
               verticalSpacing(18),
               Text(

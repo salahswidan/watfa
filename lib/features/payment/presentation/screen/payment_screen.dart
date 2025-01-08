@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/theme/colors.dart';
@@ -12,20 +13,6 @@ import '../section/payment_form.dart';
 import '../widgets/payment_container.dart';
 
 class PaymentScreen extends StatefulWidget {
-  static final List<ContainerModel> data = [
-    ContainerModel(
-        title: "Equal Installments Over 2 Months",
-        description:
-            "The total amount of \$336 is divided into two equal payments of \$84 each."),
-    ContainerModel(
-        title: "Equal Installments Over 3 Months",
-        description:
-            "The total amount of \$336 is divided into two equal payments of \$84 each."),
-    ContainerModel(
-        title: "Equal Installments Over 6 Months",
-        description:
-            "The total amount of \$336 is divided into two equal payments of \$84 each."),
-  ];
   const PaymentScreen({super.key});
 
   @override
@@ -37,9 +24,26 @@ class _PaymentScreenState extends State<PaymentScreen> {
   int selectedIndexSection = 0;
   @override
   Widget build(BuildContext context) {
+    final List<ContainerModel> data = [
+      ContainerModel(
+          title: "Equal Installments Over 2 Months".tr(context),
+          description: "${"The total amount of".tr(context)}${"\$336"
+                  "is divided into two equal payments of".tr(context)} ${"\$84 "
+                  "each.".tr(context)}"),
+      ContainerModel(
+          title: "Equal Installments Over 3 Months".tr(context),
+          description: "${"The total amount of".tr(context)}${"\$336"
+                  "is divided into two equal payments of".tr(context)} ${"\$84 "
+                  "each.".tr(context)}"),
+      ContainerModel(
+          title: "Equal Installments Over 6 Months".tr(context),
+          description: "${"The total amount of".tr(context)}${"\$336"
+                  "is divided into two equal payments of".tr(context)} ${"\$84 "
+                  "each.".tr(context)}"),
+    ];
     return Scaffold(
       appBar: DefaultAppBar(
-        title: "Payment by Watfa",
+        title: "Payment by Watfa".tr(context),
         hasBackArrow: false,
       ),
       backgroundColor: ColorsManagers.cultured,
@@ -62,7 +66,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             child: FadeInRight(
                               delay: Duration(milliseconds: index * 150),
                               child: PaymentContainer(
-                                model: PaymentScreen.data[index],
+                                model: data[index],
                                 isSelected: selected == index,
                               ),
                             ),
@@ -71,7 +75,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         separatorBuilder: (context, index) {
                           return verticalSpacing(25);
                         },
-                        itemCount: PaymentScreen.data.length)
+                        itemCount: data.length)
                     : PaymentForm(),
                 GetStartedButton(
                     onTap: () {
@@ -79,7 +83,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           ? setState(() {
                               selectedIndexSection = 1;
                             })
-                          : context.pushNamed(Routes.verifyScreen,arguments: true);
+                          : context.pushNamed(Routes.verifyScreen,
+                              arguments: true);
                     },
                     text: selectedIndexSection == 0
                         ? "Continue"

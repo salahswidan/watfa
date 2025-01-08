@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../core/helpers/spacing.dart';
@@ -28,17 +29,17 @@ class TitleAndDescription extends StatelessWidget {
             opacity: isOut ? 0 : 1,
             child: RichText(
               text: TextSpan(
-                text: onBoardingData[currentIndex].title1,
+                text: onBoardingData[currentIndex].title1.tr(context),
                 style: TextStyles.font27Blackw600Inter(context),
                 children: [
                   TextSpan(
-                    text: onBoardingData[currentIndex].title2,
+                    text: onBoardingData[currentIndex].title2.tr(context),
                     style: currentIndex == 1 || currentIndex == 0
                         ? TextStyles.font27Purplew600Inter(context)
                         : TextStyles.font27Blackw600Inter(context),
                   ),
                   TextSpan(
-                    text: onBoardingData[currentIndex].title3,
+                    text: onBoardingData[currentIndex].title3.tr(context),
                     style: currentIndex == 2
                         ? TextStyles.font27Purplew600Inter(context)
                         : TextStyles.font27Blackw600Inter(context),
@@ -54,7 +55,7 @@ class TitleAndDescription extends StatelessWidget {
               duration: const Duration(milliseconds: 300),
               opacity: isOut ? 0 : 1,
               child: Text(
-                onBoardingData[currentIndex].description,
+                onBoardingData[currentIndex].description.tr(context),
                 style: TextStyles.font18SpanishGrayw500Roboto(context),
                 textAlign: TextAlign.center,
               ),

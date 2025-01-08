@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../features/settings/logic/models/card_model.dart';
@@ -6,31 +7,31 @@ import '../routing/routes.dart';
 
 List<CardModel> settingsCardList(BuildContext context) => [
       CardModel(
-        title: 'Wallet',
+        title: 'Wallet'.tr(context),
         image: 'assets/images/Wallet.png',
         onTap: () {
           context.pushNamed(Routes.walletScreen);
         },
       ),
       CardModel(
-        title: 'Payment Methods',
+        title: 'Payment Methods'.tr(context),
         image: 'assets/images/Bank Cards.png',
         onTap: () {},
       ),
       CardModel(
-        title: 'Bank account',
+        title: 'Bank account'.tr(context),
         image: 'assets/images/Merchant Account.png',
         onTap: () {},
       ),
       CardModel(
-        title: 'Saved items',
+        title: 'Saved items'.tr(context),
         image: 'assets/images/Bookmark.png',
         onTap: () {
           context.pushNamed(Routes.savedItemsScreen);
         },
       ),
       CardModel(
-        title: 'Notification',
+        title: 'Notifications'.tr(context),
         image: 'assets/images/Alarm.png',
         onTap: () {
           context.pushNamed(Routes.notificationsScreen);

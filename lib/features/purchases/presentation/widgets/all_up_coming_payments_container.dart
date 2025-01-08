@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/colors.dart';
@@ -24,12 +25,12 @@ class AllUpComingPaymentsContainer extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                "All upcoming payments",
+                "All upcoming payments".tr(context),
                 style: TextStyles.font15RussianVioletW600Manrope(context),
               ),
               verticalSpacing(15),
               Text(
-                "SAR 300",
+                "${"SAR".tr(context)} 300",
                 style: TextStyles.font32GraniteGrayW700Manrope(context),
               ),
             ],

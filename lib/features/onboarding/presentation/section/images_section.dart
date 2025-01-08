@@ -20,9 +20,9 @@ class ImagesSection extends StatelessWidget {
       height: 505.h(context),
       child: Stack(
         children: [
-          AnimatedPositioned(
+          AnimatedPositionedDirectional(
             top: onBoardingData[currentIndex].firstSmallImageTop.h(context),
-            right: isOut
+            end: isOut
                 ? 0
                 : onBoardingData[currentIndex].firstSmallImageRight.w(context),
             duration: const Duration(milliseconds: 300),
@@ -55,9 +55,9 @@ class ImagesSection extends StatelessWidget {
               ),
             ),
           ),
-          AnimatedPositioned(
+          AnimatedPositionedDirectional(
             top: onBoardingData[currentIndex].secondSmallImageTop.h(context),
-            right: isOut
+            end: isOut
                 ? 412.w(context)
                 : onBoardingData[currentIndex].secondSmallImageRight.w(context),
             duration: const Duration(milliseconds: 300),

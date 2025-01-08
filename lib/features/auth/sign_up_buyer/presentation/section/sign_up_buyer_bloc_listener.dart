@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/features/auth/sign_up_buyer/logic/cubit/sign_up_buyer_cubit.dart';
 import 'package:watfa/features/auth/sign_up_buyer/logic/cubit/sign_up_buyer_state.dart';
@@ -42,7 +43,7 @@ class SignUpBuyerBlocListener extends StatelessWidget {
                       onTap: () {
                         validateThenDoSignup(context);
                       },
-                      text: 'Sign Up',
+                      text: 'Sign Up'.tr(context),
                     ));
         });
   }
@@ -65,7 +66,7 @@ class SignUpBuyerBlocListener extends StatelessWidget {
               context.pop();
             },
             child: Text(
-              'Got it',
+              'Got it'.tr(context),
             ),
           ),
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../../../../core/widgets/custom_gradient_container.dart';
@@ -30,7 +31,7 @@ class SignUpBuyerScreen extends StatelessWidget {
                     verticalSpacing(40),
                     Center(
                       child: Text(
-                        "sign up using",
+                        "sign up using".tr(context),
                         style:
                             TextStyles.font15CharlestonGreenw400Roboto(context),
                       ),

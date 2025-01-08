@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/shared_pref_helper.dart';
 import 'package:watfa/core/helpers/spacing.dart';
@@ -18,7 +19,7 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DefaultAppBar(
-        title: "Settings",
+        title: "Settings".tr(context),
       ),
       backgroundColor: ColorsManagers.cultured,
       body: Padding(
@@ -27,7 +28,7 @@ class SettingsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             verticalSpacing(50.h(context)),
-            Text("General",
+            Text("General".tr(context),
                 style: TextStyles.font16BlackOliverW700Manrope(context)),
             verticalSpacing(30.h(context)),
             ListView.separated(
@@ -44,7 +45,7 @@ class SettingsScreen extends StatelessWidget {
                   );
                 }),
             verticalSpacing(35.h(context)),
-            Text("Settings",
+            Text("Settings".tr(context),
                 style: TextStyles.font16BlackOliverW700Manrope(context)),
             verticalSpacing(30.h(context)),
             FadeInRight(
@@ -60,7 +61,7 @@ class SettingsScreen extends StatelessWidget {
                       width: 36,
                     ),
                     horizontalSpacing(10),
-                    Text("Log Out",
+                    Text("Log Out".tr(context),
                         style:
                             TextStyles.font16BlackOliverW400Manrope(context)),
                   ],

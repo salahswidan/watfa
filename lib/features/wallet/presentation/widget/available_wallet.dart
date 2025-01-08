@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/colors.dart';
@@ -28,13 +29,13 @@ class AvailableWallet extends StatelessWidget {
               ),
               verticalSpacing(30),
               Text(
-                "Available to use",
+                "Available to use".tr(context),
                 style:
                     TextStyles.font15RussianVioletW600Manrope(context),
               ),
               verticalSpacing(15),
               Text(
-                "AED 0.00",
+                "${"AED".tr(context)} 0.00",
                 style: TextStyles.font32GraniteGrayW700Manrope(context),
               ),
               verticalSpacing(20),

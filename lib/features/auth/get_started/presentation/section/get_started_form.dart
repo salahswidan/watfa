@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../../core/helpers/shared_pref_helper.dart';
@@ -32,7 +33,7 @@ class _GetStartedFormState extends State<GetStartedForm> {
           child: CustomUserTypeContainer(
             isActive: _selectedUserType == 0,
             getStartedModel: GetStartedModel(
-              title: 'For Shoppers',
+              title: 'For Shoppers'.tr(context),
               icon: 'assets/svgs/buyer_icon.svg',
             ),
           ),
@@ -47,7 +48,7 @@ class _GetStartedFormState extends State<GetStartedForm> {
           child: CustomUserTypeContainer(
             isActive: _selectedUserType == 1,
             getStartedModel: GetStartedModel(
-              title: 'For Business',
+              title: 'For Business'.tr(context),
               icon: 'assets/svgs/seller_icon.svg',
             ),
           ),
@@ -61,7 +62,7 @@ class _GetStartedFormState extends State<GetStartedForm> {
 
             context.pushNamed(Routes.loginScreen);
           },
-          text: 'Proceed',
+          text: 'Proceed'.tr(context),
         )
       ],
     );

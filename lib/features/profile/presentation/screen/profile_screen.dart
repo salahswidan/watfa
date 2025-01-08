@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/theme/colors.dart';
@@ -31,7 +32,7 @@ class ProfileScreen extends StatelessWidget {
                 onTap: () {
                   hasAppBar! ? context.pop() : null;
                 },
-                text: 'Save Changes',
+                text: 'Save Changes'.tr(context),
               )
             ],
           ),

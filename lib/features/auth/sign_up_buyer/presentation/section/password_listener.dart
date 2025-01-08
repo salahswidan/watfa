@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/theme/styles.dart';
 
 import '../../../../../core/helpers/spacing.dart';
@@ -19,17 +20,17 @@ class PasswordListener extends StatelessWidget {
     return Column(
       children: [
         PasswordListnerItem(
-          text: "At least 8 characters",
+          text: "At least 8 characters".tr(context),
           value: hasAtLeast8Characters,
         ),
         verticalSpacing(18),
         PasswordListnerItem(
-          text: "1 uppercase letter",
+          text: "1 uppercase letter".tr(context),
           value: hasAtLeast1UpperCase,
         ),
         verticalSpacing(18),
         PasswordListnerItem(
-          text: "1 number or symbol",
+          text: "1 number or symbol".tr(context),
           value: hasAtLeast1NumberOrSymbol,
         ),
       ],

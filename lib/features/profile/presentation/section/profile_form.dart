@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/app_regex.dart';
 import 'package:watfa/core/helpers/shared_pref_helper.dart';
 
@@ -24,7 +25,7 @@ class ProfileForm extends StatelessWidget {
           child: Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "User name",
+              "User name".tr(context),
               style: TextStyles.font14Jetw500Poppins(context),
             ),
           ),
@@ -36,12 +37,12 @@ class ProfileForm extends StatelessWidget {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isUsernameValid(value)) {
-                return 'Please enter a valid username';
+                return 'Please enter a valid username'.tr(context);
               }
               return null;
             },
             suffixIcon: 'assets/svgs/username_text_field_icon.svg',
-            hintText: 'User name',
+            hintText: 'User name'.tr(context),
             controller: TextEditingController(
                 text: CacheServices.instance.getUserModel()?.userName ?? ""),
           ),
@@ -52,7 +53,7 @@ class ProfileForm extends StatelessWidget {
           child: Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "email address",
+              "email address".tr(context),
               style: TextStyles.font14Jetw500Poppins(context),
             ),
           ),
@@ -64,12 +65,12 @@ class ProfileForm extends StatelessWidget {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isEmailValid(value)) {
-                return 'Please enter a valid email';
+                return 'Please enter a valid email address'.tr(context);
               }
               return null;
             },
             suffixIcon: 'assets/svgs/username_text_field_icon.svg',
-            hintText: 'Email',
+            hintText: 'Email'.tr(context),
             controller: TextEditingController(
                 text: CacheServices.instance.getUserModel()?.email ?? ""),
           ),
@@ -80,7 +81,7 @@ class ProfileForm extends StatelessWidget {
           child: Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "Mobile Number",
+              "Mobile Number".tr(context),
               style: TextStyles.font14Jetw500Poppins(context),
             ),
           ),
@@ -103,7 +104,7 @@ class ProfileForm extends StatelessWidget {
                       if (value == null ||
                           value.isEmpty ||
                           !AppRegex.isPhoneNumberValid(value)) {
-                        return 'Please type a valid phone number';
+                        return 'Please type a valid phone number'.tr(context);
                       }
                       return null;
                     },

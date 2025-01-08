@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../core/helpers/spacing.dart';
@@ -30,12 +31,12 @@ class DiscountContainer extends StatelessWidget {
               ),
             ),
             verticalSpacing(15),
-            Text("10 % off at lizl Beauty",
+            Text("10 % off at lizl Beauty".tr(context),
                 style: TextStyles.font20DarkCharcoalw700Manrope(context)),
             verticalSpacing(25),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
-              child: DiscountButton(onTap: () {}, text: "use discount"),
+              child: DiscountButton(onTap: () {}, text: "use discount".tr(context)),
             )
           ],
         ));

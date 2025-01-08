@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 
@@ -16,7 +17,7 @@ class WalletScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DefaultAppBar(
-        title: "Wallet",
+        title: "Wallet".tr(context),
       ),
       backgroundColor: ColorsManagers.cultured,
       body: Padding(
@@ -27,10 +28,10 @@ class WalletScreen extends StatelessWidget {
             AvailableWallet(),
             Column(
               children: [
-                Text("No transactions",
+                Text("No transactions".tr(context),
                     style: TextStyles.font24BlackW500Outfit(context)),
                 verticalSpacing(20),
-                Text("Explore more offers and earn cashback",
+                Text("Explore more offers and earn cashback".tr(context),
                     style: TextStyles.font16SonicSilverW400Outfit(context)),
               ],
             ),

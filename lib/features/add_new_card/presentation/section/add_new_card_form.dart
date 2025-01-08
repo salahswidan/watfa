@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 
 import '../../../../core/theme/styles.dart';
@@ -14,12 +15,12 @@ class AddNewCardForm extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Card Holder Name",
+        Text("Card Holder Name".tr(context),
             style: TextStyles.font14SonicSilverW400Inter(context)),
         verticalSpacing(5),
         AddNewCardTextField(),
         verticalSpacing(20),
-        Text("Card Number",
+        Text("Card Number".tr(context),
             style: TextStyles.font14SonicSilverW400Inter(context)),
         verticalSpacing(5),
         AddNewCardTextField(
@@ -32,7 +33,7 @@ class AddNewCardForm extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Expire Date",
+                  Text("Expire Date".tr(context),
                       style: TextStyles.font14SonicSilverW400Inter(context)),
                   verticalSpacing(5),
                   AddNewCardTextField(

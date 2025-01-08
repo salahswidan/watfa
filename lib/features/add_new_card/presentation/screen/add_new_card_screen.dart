@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/theme/styles.dart';
@@ -17,7 +18,7 @@ class AddNewCardScreen extends StatelessWidget {
     return Scaffold(
       appBar: DefaultAppBar(
         hasBackArrow: true,
-        title: "Add New Card",
+        title: "Add New Card".tr(context),
       ),
       backgroundColor: ColorsManagers.cultured,
       body: Padding(
@@ -29,7 +30,7 @@ class AddNewCardScreen extends StatelessWidget {
               children: [
                 FadeInLeft(
                   child: Text(
-                    "Accepted Methods",
+                    "Accepted Methods".tr(context),
                     style: TextStyles.font16DavyGrayW400Poppins(context),
                   ),
                 ),
@@ -54,7 +55,7 @@ class AddNewCardScreen extends StatelessWidget {
             AddNewCardForm(),
             Expanded(child: verticalSpacing(20)),
             GetStartedButton(
-              text: "Add Card",
+              text: "Add Card".tr(context),
               onTap: () {},
             ),
           ],

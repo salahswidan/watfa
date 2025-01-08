@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/theme/colors.dart';
 import 'package:watfa/core/widgets/default_app_bar.dart';
@@ -15,7 +16,7 @@ class PurchasesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DefaultAppBar(
-        title: "Purchases",
+        title: "Purchases".tr(context),
         hasBackArrow: true,
       ),
       backgroundColor: ColorsManagers.cultured,
@@ -31,7 +32,7 @@ class PurchasesScreen extends StatelessWidget {
                 child: FadeInRight(
                   delay: const Duration(milliseconds: 150),
                   child: Text(
-                    "upcoming payments",
+                    "upcoming payments".tr(context),
                     style: TextStyles.font20BlackW500Outfit(context),
                   ),
                 ),

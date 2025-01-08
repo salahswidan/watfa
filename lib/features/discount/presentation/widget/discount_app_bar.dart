@@ -1,6 +1,7 @@
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/styles.dart';
@@ -24,7 +25,7 @@ class DiscountAppBar extends StatelessWidget {
             ),
             horizontalSpacing(5),
             Text(
-              "Watfa discounts",
+              "Watfa discounts".tr(context),
               style: TextStyles.font20PurpleW700Manrope(context),
             ),
           ],

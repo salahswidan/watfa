@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../core/widgets/default_app_bar.dart';
@@ -28,7 +29,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DefaultAppBar(
-        title: "Browse by category",
+        title: "Browse by category".tr(context),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/colors.dart';
@@ -26,7 +27,7 @@ class UnSelectedInstallmentContainer extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "1” Installment",
+                 "1” ${"Installment".tr(context)}",
                 style: TextStyles.font14Blackw600Roboto(context),
               ),
               verticalSpacing(3),

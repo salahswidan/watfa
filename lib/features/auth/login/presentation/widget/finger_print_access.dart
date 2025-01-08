@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theme/styles.dart';
@@ -17,7 +18,7 @@ class FingerPrintAccess extends StatelessWidget {
         children: [
           Flexible(child: verticalSpacing(40)),
           Text(
-            "Use Fingerprint Access",
+            "Use Biometric Access".tr(context),
             style: TextStyles.font20OuterSpaceW600Poppins(context),
           ),
           Flexible(

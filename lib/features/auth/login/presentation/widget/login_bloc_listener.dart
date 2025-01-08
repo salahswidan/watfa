@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/features/auth/login/logic/cubit/login_cubit.dart';
 
@@ -41,7 +42,7 @@ class LoginBlocListener extends StatelessWidget {
                       onTap: () {
                         validateThenDoLogin(context);
                       },
-                      text: 'Log In',
+                      text: 'Log In'.tr(context),
                     ));
         });
   }
@@ -64,7 +65,7 @@ class LoginBlocListener extends StatelessWidget {
               context.pop();
             },
             child: Text(
-              'Got it',
+              'Got it'.tr(context),
             ),
           ),
         ],

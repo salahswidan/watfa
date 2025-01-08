@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 
 import '../../../../core/theme/styles.dart';
@@ -15,12 +16,12 @@ class BankAccountForm extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Holder Name",
+        Text("Holder Name".tr(context),
             style: TextStyles.font14SonicSilverW400Inter(context)),
         verticalSpacing(5),
         AddNewCardTextField(),
         verticalSpacing(20),
-        Text("Bank Name",
+        Text("Bank Name".tr(context),
             style: TextStyles.font14SonicSilverW400Inter(context)),
         verticalSpacing(5),
         AddNewCardTextField(),
@@ -29,7 +30,7 @@ class BankAccountForm extends StatelessWidget {
         verticalSpacing(5),
         AddNewCardTextField(),
         verticalSpacing(20),
-        Text("Email address",
+        Text("email address".tr(context),
             style: TextStyles.font14SonicSilverW400Inter(context)),
         verticalSpacing(5),
         AddNewCardTextField(
