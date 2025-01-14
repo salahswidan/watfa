@@ -1,9 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../helpers/shared_pref_helper.dart';
-
 part 'local_state.dart';
 
 class LocalCubit extends Cubit<LocalState> {

@@ -23,4 +23,11 @@ class Routes {
   static const String paymentHomeScreen = '/PaymentHomeScreen';
   static const String addNewCardScreen = '/AddNewCardScreen';
   static const String bankAccountScreen = '/BankAccountScreen';
+  static const String legalScreen = '/legalScreen';
+  static const String bankInformationScreen = '/bankInformationScreen';
+  static const String sellerHomeScreen = '/sellerHomeScreen';
+  static const String doneSellerHomeScreen = '/doneSellerHomeScreen';
+  static const String orderListPage = '/orderListPage';
+  static const String payoutsScreen = '/payoutsScreen';
+
 }

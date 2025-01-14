@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'colors.dart';
 import 'font_weight_helper.dart';
 import 'size_config.dart';
@@ -14,11 +13,59 @@ class TextStyles {
     );
   }
 
+  static TextStyle font20Blackw700Inter(context) {
+    return GoogleFonts.inter(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.bold,
+      color: Colors.black,
+    );
+  }
+
+  static TextStyle font14Blackw500Inter(context) {
+    return GoogleFonts.inter(
+      fontSize: 14,
+      color: Colors.black,
+      fontWeight: FontWeight.w500,
+    );
+  }
+
+  static TextStyle font14grey1w400Inter(context) {
+    return GoogleFonts.inter(
+      fontSize: 14,
+      color: ColorsManagers.grey1,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  static TextStyle font29Blackw800Inter(context) {
+    return GoogleFonts.inter(
+      fontSize: getResponsiveFontSize(context, fontSize: 29),
+      fontWeight: FontWeightHelper.extraBold,
+      color: Colors.black,
+    );
+  }
+
+  static TextStyle font18darkGrayw400Inter(context) {
+    return GoogleFonts.inter(
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.darkGray,
+    );
+  }
+
   static TextStyle font18Blackw400Poppins(context) {
     return GoogleFonts.poppins(
       fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontWeight: FontWeightHelper.regular,
       color: Colors.black,
+    );
+  }
+
+  static TextStyle font16greyLightw400aDLaMDisplay(context) {
+    return GoogleFonts.aDLaMDisplay(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.greyLight,
     );
   }
 
@@ -29,6 +76,7 @@ class TextStyles {
       color: ColorsManagers.davysGray,
     );
   }
+
   static TextStyle font14IndigoW700Roboto(context) {
     return GoogleFonts.roboto(
       fontSize: getResponsiveFontSize(context, fontSize: 14),
@@ -36,6 +84,15 @@ class TextStyles {
       color: ColorsManagers.indigo,
     );
   }
+
+  static TextStyle font16purpleW400Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.purple,
+    );
+  }
+
   static TextStyle font24PurpleW700Manropes(context) {
     return GoogleFonts.manrope(
       fontSize: getResponsiveFontSize(context, fontSize: 24),
@@ -43,6 +100,23 @@ class TextStyles {
       color: ColorsManagers.purple,
     );
   }
+
+  static TextStyle font18PurpleW400Manropes(context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.blackOlive,
+    );
+  }
+
+  static TextStyle font20BlackW700Manropes(context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.bold,
+      color: Colors.black,
+    );
+  }
+
   static TextStyle font14PhilippineGrayW400Roboto(context) {
     return GoogleFonts.roboto(
       fontSize: getResponsiveFontSize(context, fontSize: 14),
@@ -50,13 +124,15 @@ class TextStyles {
       color: ColorsManagers.philippineGray,
     );
   }
-  static TextStyle font16Purplew600Roboto (context) {
+
+  static TextStyle font16Purplew600Roboto(context) {
     return GoogleFonts.roboto(
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontWeight: FontWeightHelper.semiBold,
       color: ColorsManagers.purple,
     );
   }
+
   static TextStyle font14BlackW400Ralway(context) {
     return GoogleFonts.raleway(
       fontSize: getResponsiveFontSize(context, fontSize: 14),
@@ -65,14 +141,14 @@ class TextStyles {
     );
   }
 
-
-  static TextStyle font18RaisinBlackw600Ralway  (context) {
+  static TextStyle font18RaisinBlackw600Ralway(context) {
     return GoogleFonts.raleway(
       fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontWeight: FontWeightHelper.semiBold,
       color: ColorsManagers.raisinBlack,
     );
   }
+
   static TextStyle font18OuterSpaceW400Roboto(context) {
     return GoogleFonts.roboto(
       fontSize: getResponsiveFontSize(context, fontSize: 18),
@@ -80,9 +156,6 @@ class TextStyles {
       color: ColorsManagers.outerSpace,
     );
   }
-  
-
-
 
   static TextStyle font18BlackW600Roboto(context) {
     return GoogleFonts.roboto(
@@ -100,7 +173,7 @@ class TextStyles {
     );
   }
 
-  static TextStyle font10OuterSpaceW400Poppins (context) {
+  static TextStyle font10OuterSpaceW400Poppins(context) {
     return GoogleFonts.poppins(
       fontSize: getResponsiveFontSize(context, fontSize: 10),
       fontWeight: FontWeightHelper.regular,
@@ -115,7 +188,7 @@ class TextStyles {
       color: ColorsManagers.darkCharcoal,
     );
   }
-  
+
   static TextStyle font10GrayW600Roboto(context) {
     return GoogleFonts.roboto(
       fontSize: getResponsiveFontSize(context, fontSize: 10),
@@ -123,6 +196,7 @@ class TextStyles {
       color: ColorsManagers.gray,
     );
   }
+
   static TextStyle font13PurpleW500Roboto(context) {
     return GoogleFonts.roboto(
       fontSize: getResponsiveFontSize(context, fontSize: 13),
@@ -130,6 +204,16 @@ class TextStyles {
       color: ColorsManagers.purple,
     );
   }
+
+  static TextStyle font13darkSilverW600Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 13),
+      fontWeight: FontWeightHelper.semiBold,
+      color: ColorsManagers.darkSilver,
+      height: 2,
+    );
+  }
+
   static TextStyle font14Blackw600Roboto(context) {
     return GoogleFonts.roboto(
       fontSize: getResponsiveFontSize(context, fontSize: 14),
@@ -145,7 +229,8 @@ class TextStyles {
       color: Colors.black,
     );
   }
-  static TextStyle font14PurpleW700Poppins (context) {
+
+  static TextStyle font14PurpleW700Poppins(context) {
     return GoogleFonts.poppins(
       fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontWeight: FontWeightHelper.bold,
@@ -156,11 +241,11 @@ class TextStyles {
   static TextStyle font13WhiteW600Inter(context) {
     return GoogleFonts.inter(
       fontSize: getResponsiveFontSize(context, fontSize: 13),
-  
       color: Colors.white,
       fontWeight: FontWeightHelper.semiBold,
     );
   }
+
   static TextStyle font12OuterSpaceW400Poppins(context) {
     return GoogleFonts.poppins(
       fontSize: getResponsiveFontSize(context, fontSize: 12),
@@ -169,11 +254,19 @@ class TextStyles {
     );
   }
 
-  static TextStyle font12PurpleW500Poppins (context) {
+  static TextStyle font12PurpleW500Poppins(context) {
     return GoogleFonts.poppins(
       fontSize: getResponsiveFontSize(context, fontSize: 12),
       fontWeight: FontWeightHelper.medium,
       color: ColorsManagers.purple,
+    );
+  }
+
+  static TextStyle font14raisinBlackW700Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.bold,
+      color: ColorsManagers.raisinBlack,
     );
   }
 
@@ -216,6 +309,7 @@ class TextStyles {
       color: Colors.white,
     );
   }
+
   static TextStyle font10WhiteW600Roboto(context) {
     return GoogleFonts.roboto(
       fontSize: getResponsiveFontSize(context, fontSize: 10),
@@ -263,7 +357,6 @@ class TextStyles {
       color: Colors.black,
     );
   }
-
 
   static TextStyle font16SonicSilverW400Outfit(context) {
     return GoogleFonts.outfit(
@@ -377,6 +470,14 @@ class TextStyles {
     );
   }
 
+  static TextStyle font20RaisinBlackw600Inter(context) {
+    return GoogleFonts.inter(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.bold,
+      color: ColorsManagers.raisinBlack,
+    );
+  }
+
   static TextStyle font18SpanishGrayw500Roboto(context) {
     return GoogleFonts.roboto(
       fontSize: getResponsiveFontSize(context, fontSize: 18),
@@ -424,6 +525,13 @@ class TextStyles {
       color: ColorsManagers.jet,
     );
   }
+  static TextStyle font14Jetw700Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.bold,
+      color: ColorsManagers.jet,
+    );
+  }
 
   static TextStyle font14Blackw500Poppins(context) {
     return GoogleFonts.poppins(
@@ -438,6 +546,14 @@ class TextStyles {
       fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontWeight: FontWeightHelper.medium,
       color: Colors.grey,
+    );
+  }
+
+  static TextStyle font14DarkGrayW500Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.graniteGray,
     );
   }
 
@@ -456,6 +572,7 @@ class TextStyles {
       color: ColorsManagers.sacramentoStateGreen,
     );
   }
+
   static TextStyle font14SonicSilverW400Inter(context) {
     return GoogleFonts.inter(
       fontSize: getResponsiveFontSize(context, fontSize: 14),
@@ -463,6 +580,7 @@ class TextStyles {
       color: ColorsManagers.sonicSilver,
     );
   }
+
   static TextStyle font16OnyxW400Manrope(context) {
     return GoogleFonts.manrope(
       fontSize: getResponsiveFontSize(context, fontSize: 16),
@@ -487,6 +605,14 @@ class TextStyles {
     );
   }
 
+  static TextStyle font24BlackW800Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      fontWeight: FontWeightHelper.extraBold,
+      color: Colors.black,
+    );
+  }
+
   static TextStyle font20WhiteW600Poppins(context) {
     return GoogleFonts.poppins(
       fontSize: getResponsiveFontSize(context, fontSize: 20),
@@ -494,6 +620,7 @@ class TextStyles {
       color: Colors.white,
     );
   }
+
   static TextStyle font20BlackW500Outfit(context) {
     return GoogleFonts.outfit(
       fontSize: getResponsiveFontSize(context, fontSize: 20),
@@ -501,7 +628,8 @@ class TextStyles {
       color: Colors.black,
     );
   }
-  static TextStyle font16WhiteW500Poppins (context) {
+
+  static TextStyle font16WhiteW500Poppins(context) {
     return GoogleFonts.poppins(
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontWeight: FontWeightHelper.medium,

@@ -6,16 +6,17 @@ import 'package:watfa/core/theme/styles.dart';
 class GetStartedButton extends StatelessWidget {
   final void Function() onTap;
   final String text;
-  const GetStartedButton({super.key ,required this.onTap, required this.text});
+  final bool? isSeller;
+  const GetStartedButton({super.key, required this.onTap, required this.text,this.isSeller});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap:onTap ,
+      onTap: onTap,
       borderRadius: BorderRadius.circular(20),
       child: Container(
         height: 50,
-        width: context.screenWidth,
+        width:isSeller==true? 311 : context.screenWidth,
         decoration: BoxDecoration(
           color: ColorsManagers.purple,
           borderRadius: BorderRadius.circular(20),

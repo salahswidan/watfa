@@ -100,7 +100,7 @@ class SettingsScreen extends StatelessWidget {
                             CacheServices.instance.removeUserModel();
                             context.pop();
                             context.pushNamedAndRemoveUntilNamed(
-                                Routes.loginScreen);
+                                Routes.getStartedScreen);
                           },
                         ),
                       ),

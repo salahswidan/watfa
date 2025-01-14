@@ -1,8 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
-
 import '../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/routing/routes.dart';
@@ -34,7 +32,7 @@ class _OnBoardingScreen extends State<OnBoardingScreen> {
                 onBoardingData: widget.onBoardingData,
                 currentIndex: currentIndex,
                 isOut: isOut),
-            verticalSpacing(5),
+            verticalSpacing(5.h(context)),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(

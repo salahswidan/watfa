@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
-
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/widgets/custom_gradient_container.dart';
@@ -48,7 +47,7 @@ class _SignUpSellerScreenState extends State<SignUpSellerScreen> {
                         .copyWith(bottom: 50.h(context)),
                     child: Align(
                       alignment: Alignment.bottomCenter,
-                      child: GetStartedButton(
+                      child: currentIndex == 2 ? const SizedBox() : GetStartedButton(
                         text: currentIndex == 0
                             ? 'Next'.tr(context)
                             : currentIndex == 1

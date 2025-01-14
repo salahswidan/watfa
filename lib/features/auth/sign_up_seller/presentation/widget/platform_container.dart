@@ -6,17 +6,18 @@ import '../../../../../core/theme/colors.dart';
 import '../../../../../core/theme/styles.dart';
 import '../section/radio_switch.dart';
 
-
 class PlatformContainer extends StatelessWidget {
   final String image, title;
   final bool isSelected;
   final void Function() onTap;
+  final String subTitle;
   const PlatformContainer({
     super.key,
     required this.image,
     required this.title,
     required this.onTap,
     required this.isSelected,
+    required this.subTitle,
   });
 
   @override
@@ -30,7 +31,10 @@ class PlatformContainer extends StatelessWidget {
             borderRadius: BorderRadius.circular(15)),
         child: Row(
           children: [
-            Image.asset(image,height: 25.h(context),),
+            Image.asset(
+              image,
+              height: 25.h(context),
+            ),
             horizontalSpacing(10.w(context)),
             Text(title, style: TextStyles.font18Blackw400Poppins(context)),
             Expanded(child: SizedBox()),

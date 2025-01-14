@@ -3,7 +3,6 @@ import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/theme/colors.dart';
-
 import '../../../../core/widgets/default_app_bar.dart';
 import '../../../auth/get_started/presentation/widgets/get_started_button.dart';
 import '../section/profile_form.dart';

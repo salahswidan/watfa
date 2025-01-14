@@ -37,6 +37,7 @@ class WatfaApp extends StatelessWidget {
               GlobalCupertinoLocalizations.delegate
             ],
             debugShowCheckedModeBanner: false,
+            //! here
             initialRoute: setinitialRoute(),
             // CacheServices.instance.getUserType() != null
             //     ? Routes.onBoardingScreen

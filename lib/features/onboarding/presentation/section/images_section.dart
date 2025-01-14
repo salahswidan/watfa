@@ -19,6 +19,7 @@ class ImagesSection extends StatelessWidget {
     return SizedBox(
       height: 505.h(context),
       child: Stack(
+        clipBehavior: Clip.none,
         children: [
           AnimatedPositionedDirectional(
             top: onBoardingData[currentIndex].firstSmallImageTop.h(context),
@@ -32,23 +33,28 @@ class ImagesSection extends StatelessWidget {
                     .h(context)),
           ),
           Positioned(
-            top: 165.h(context),
+            top: currentIndex == 2 ? 190.h(context) : 155.h(context),
             child: AnimatedScale(
               scale: isOut ? 0 : 1,
               duration: const Duration(milliseconds: 300),
               child: Stack(
-                alignment: Alignment.center,
+                clipBehavior: Clip.none,
+                alignment: Alignment.bottomCenter,
                 children: [
                   Image.asset(
                     "assets/images/purple_circle.png",
-                    width: 192.w(context),
-                    height: 192.h(context),
+                    width: currentIndex == 2 ? 180.w(context) : 220.w(context),
+                    height: currentIndex == 2 ? 200.w(context) : 220.h(context),
                     fit: BoxFit.contain,
                   ),
                   Image.asset(
                     onBoardingData[currentIndex].image,
-                    width: 412.w(context),
-                    height: 313.h(context),
+                    width: currentIndex == 2 ? 430.w(context) : 412.w(context),
+                    height: currentIndex == 0
+                        ? 270.h(context)
+                        : currentIndex == 1
+                            ? 300.h(context)
+                            : 230.h(context),
                     fit: BoxFit.contain,
                   ),
                 ],

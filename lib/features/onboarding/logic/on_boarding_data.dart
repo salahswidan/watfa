@@ -12,7 +12,7 @@ class OnBoardingData {
       firstSmallImageTop: 78,
       firstSmallImageRight: 67,
       firstSmallImageHeight: 87,
-      secondSmallImageTop: 447,
+      secondSmallImageTop: 444,
       secondSmallImageRight: 28,
       secondSmallImageHeight: 56,
       description:

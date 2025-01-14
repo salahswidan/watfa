@@ -7,10 +7,12 @@ import '../section/radio_switch.dart';
 
 class RadioListTileForm extends StatefulWidget {
   final String title, subtitle;
+ // final bool? isHorzantal;
   const RadioListTileForm({
     super.key,
     required this.title,
     required this.subtitle,
+ //   this.isHorzantal
   });
 
   @override

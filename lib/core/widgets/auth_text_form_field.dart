@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../theme/colors.dart';
 import '../theme/styles.dart';
 
 class AuthTextFormField extends StatefulWidget {
   final TextEditingController controller;
-  final String hintText;
+  final String? hintText;
   final String? suffixIcon;
   final bool? isPassword;
+  final bool? isUploaded;
   final TextInputType? keyboardType;
   final bool readOnly;
+  final bool? hintIsDark;
   final bool needPrefixIcon;
   final Widget? prefixIcon;
   final Widget? suffixIconWidget;
@@ -20,14 +21,16 @@ class AuthTextFormField extends StatefulWidget {
   final Function(String?) validator;
   const AuthTextFormField(
       {super.key,
+      this.isUploaded,
       required this.controller,
-      required this.hintText,
+       this.hintText,
       this.suffixIcon,
       this.isPassword,
       this.keyboardType,
       this.readOnly = false,
       this.needPrefixIcon = false,
       this.prefixIcon,
+      this.hintIsDark,
       this.suffixIconWidget,
       this.prefixIconConstraints,
       this.suffixIconConstraints,
@@ -59,8 +62,15 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
               borderSide: const BorderSide(
                 color: ColorsManagers.purple,
               )),
-          prefixIcon: widget.needPrefixIcon ? widget.prefixIcon : null,
-          suffixIcon: widget.isPassword ?? false
+prefixIcon: widget.isUploaded == true
+    ? InkWell(
+      onTap: () {
+        
+      },
+      child: Center(child: Image.asset("assets/images/upload_icon.png")))
+    : widget.needPrefixIcon
+        ? widget.prefixIcon
+        : null,          suffixIcon: widget.isPassword ?? false
               ? GestureDetector(
                   onTap: () {
                     setState(() {
@@ -85,7 +95,7 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
                       width: 18,
                     ),
                     suffixIconConstraints: widget.suffixIconConstraints,
-          hintStyle: TextStyles.font14Greyw500Poppins(context),
+hintStyle: widget.hintIsDark == true ? TextStyles.font14DarkGrayW500Poppins(context) : TextStyles.font14Greyw500Poppins(context),
           hintText: widget.hintText,
         ),
       ),

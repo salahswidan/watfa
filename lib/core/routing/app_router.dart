@@ -9,19 +9,25 @@ import 'package:watfa/features/common/main_screen.dart';
 import 'package:watfa/features/notifications/presentation/screen/notifications_screen.dart';
 import 'package:watfa/features/payment/presentation/screen/payment_screen.dart';
 import 'package:watfa/features/saved_items/presentation/screens/saved_items_screen.dart';
-
+import 'package:watfa/features/legal/screen/legal_screen.dart';
+import 'package:watfa/features/seller_done_home/screens/done_seller_home_screen.dart';
+import 'package:watfa/features/seller_home/screens/seller_home_screen.dart';
+import 'package:watfa/watfa_app.dart';
 import '../../features/add_new_card/presentation/screen/add_new_card_screen.dart';
 import '../../features/auth/forget_password/presentation/screen/forget_password_screen.dart';
 import '../../features/auth/get_started/presentation/screen/get_started_screen.dart';
-
 import '../../features/auth/login/presentation/screen/login_screen.dart';
 import '../../features/auth/reset_password/presentation/screen/reset_password_screen.dart';
 import '../../features/auth/sign_up_buyer/logic/cubit/sign_up_buyer_cubit.dart';
 import '../../features/auth/sign_up_buyer/presentation/screen/sign_up_buyer_screen.dart';
+import '../../features/auth/sign_up_seller/presentation/section/third_sign_up_seller_form.dart';
 import '../../features/auth/verify/presentation/screens/verify_screen.dart';
+import '../../features/bank_information/screen/bank_information_screen.dart';
 import '../../features/home/presentation/screen/home_screen.dart';
 import '../../features/onboarding/logic/on_boarding_data.dart';
 import '../../features/onboarding/presentation/screen/on_boarding_screen.dart';
+import '../../features/orders_and_payouts/screens/order_screen.dart';
+import '../../features/orders_and_payouts/section/payouts_screen.dart';
 import '../../features/payment_home/presentation/screen/payment_home_screen.dart';
 import '../../features/profile/presentation/screen/profile_screen.dart';
 import '../../features/purchases/presentation/screen/purchases_screen.dart';
@@ -83,7 +89,7 @@ class AppRouter {
         );
       case Routes.verifyScreen:
         return MaterialPageRoute(
-          builder: (_) =>  VerifyScreen(
+          builder: (_) => VerifyScreen(
             comeFromPayment: arguments as bool,
           ),
         );
@@ -148,7 +154,47 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const BankAccountScreen(),
         );
-      // case Routes.homeScreen:
+      case Routes.legalScreen:
+        return MaterialPageRoute(
+          builder: (_) => const LegalScreen(),
+        );
+      case Routes.bankInformationScreen:
+        return MaterialPageRoute(
+          builder: (_) => const BankInformationScreen(),
+        );
+      case Routes.sellerHomeScreen:
+        return MaterialPageRoute(
+          builder: (_) => SellerHomeScreen(),
+        );
+
+      case Routes.doneSellerHomeScreen:
+        return MaterialPageRoute(
+          builder: (_) => DoneSellerHomeScreen(),
+        );
+      case Routes.orderListPage:
+        return MaterialPageRoute(
+          builder: (_) => OrderScreen(),
+        );
+      case Routes.payoutsScreen:
+        return MaterialPageRoute(
+          builder: (_) => PayoutsScreen(),
+        );
+
+      //!
+      // default:
+      //   return MaterialPageRoute(
+      //     builder: (_) => const GetStartedScreen(),
+      //   );
+      default:
+        return MaterialPageRoute(
+          builder: (_) => DoneSellerHomeScreen(),
+        );
+    }
+  }
+}
+
+
+// case Routes.homeScreen:
       //   return MaterialPageRoute(
       //       builder: (_) => BlocProvider(
       //             create: (context) => getit<HomeCubit>()
@@ -176,11 +222,3 @@ class AppRouter {
       //   return MaterialPageRoute(
       //     builder: (_) => const ForgetPasswordScreen(),
       //   );
-
-      default:
-        return MaterialPageRoute(
-          builder: (_) => const GetStartedScreen(),
-        );
-    }
-  }
-}

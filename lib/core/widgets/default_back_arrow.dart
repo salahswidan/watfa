@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
-
 import '../theme/colors.dart';
 
 class DefaultBackArrow extends StatelessWidget {
