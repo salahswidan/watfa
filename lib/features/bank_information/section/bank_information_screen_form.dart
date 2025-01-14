@@ -1,8 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:watfa/core/Local/AppLocalizations.dart';
-import 'package:watfa/core/helpers/extinsions.dart';
-import 'package:watfa/features/legal/screen/legal_screen.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../../../../core/widgets/auth_text_form_field.dart';
@@ -10,11 +8,18 @@ import '../../../../../core/widgets/auth_text_form_field.dart';
 class BankInformationScreenForm extends StatelessWidget {
   const BankInformationScreenForm({super.key});
 
+  // Method to check if the current direction is RTL
+  bool _isRtl(BuildContext context) {
+    return Directionality.of(context) == TextDirection.rtl;
+  }
+
+  // Helper method to build label with alignment based on RTL or LTR
   Widget _buildLabel(BuildContext context, String text, {Duration? delay}) {
     return FadeInRight(
-      delay: delay ?? const Duration(milliseconds: 0),
+      delay: delay ?? Duration.zero,
       child: Container(
-        alignment: Alignment.centerLeft,
+        alignment:
+            _isRtl(context) ? Alignment.centerRight : Alignment.centerLeft,
         child: Text(
           text.tr(context),
           style: TextStyles.font14raisinBlackW700Poppins(context),
@@ -23,6 +28,7 @@ class BankInformationScreenForm extends StatelessWidget {
     );
   }
 
+  // Helper method to build text fields with animation and other properties
   Widget _buildTextField({
     required BuildContext context,
     required String validatorText,
@@ -43,7 +49,7 @@ class BankInformationScreenForm extends StatelessWidget {
           }
           return null;
         },
-        hintText: hintText?.tr(context) ?? ''.tr(context),
+        hintText: hintText?.tr(context) ?? '',
         controller: controller,
         readOnly: readOnly,
         isUploaded: isUploaded,
@@ -55,67 +61,65 @@ class BankInformationScreenForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController ibanController = TextEditingController();
-    final TextEditingController beneficiaryNameController =
-        TextEditingController();
-    final TextEditingController emailForSettlementDetailsController =
-        TextEditingController();
-    final TextEditingController bankSWIFTCodeController =
-        TextEditingController();
-    final TextEditingController iBANLetterController = TextEditingController();
+    // Controllers for form fields
+    final ibanController = TextEditingController();
+    final beneficiaryNameController = TextEditingController();
+    final emailForSettlementDetailsController = TextEditingController();
+    final bankSWIFTCodeController = TextEditingController();
+    final iBANLetterController = TextEditingController();
 
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          _buildLabel(context, "IBAN"),
-          _buildTextField(
-            context: context,
-            validatorText: "Please enter a valid IBAN",
-            controller: ibanController,
-            delay: const Duration(milliseconds: 300),
-          ),
-          verticalSpacing(11),
-          _buildLabel(context, "Beneficiary Name",
-              delay: const Duration(milliseconds: 300)),
-          _buildTextField(
-            context: context,
-            validatorText: "Please enter a valid Beneficiary name",
-            controller: beneficiaryNameController,
-            delay: const Duration(milliseconds: 300),
-          ),
-          verticalSpacing(11),
-          _buildLabel(context, "Bank SWIFT Code"),
-          _buildTextField(
-            context: context,
-            validatorText: "Please enter a valid Bank SWIFT Code",
-            controller: bankSWIFTCodeController,
-            needPrefixIcon: true,
-            delay: const Duration(milliseconds: 300),
-          ),
-          verticalSpacing(11),
-          _buildLabel(context, "Email For Settlement Details",
-              delay: const Duration(milliseconds: 300)),
-          _buildTextField(
-            context: context,
-            validatorText: "Please enter a valid Website",
-            controller: emailForSettlementDetailsController,
-            hintText: "Mariamfawzu@gmail.com",
-            hintIsDark: true,
-            delay: const Duration(milliseconds: 300),
-          ),
-          verticalSpacing(11),
-          _buildLabel(context, "Upload Your IBAN Letter"),
-          _buildTextField(
-            context: context,
-            validatorText: "Please enter a valid IBAN Letter",
-            controller: iBANLetterController,
-            // readOnly: true,
-            // isUploaded: true,
-            needPrefixIcon: true,
-            delay: const Duration(milliseconds: 300),
-          ),
-          //  verticalSpacing(137.h(context)),
-        ],
+    return Directionality(
+      textDirection: _isRtl(context) ? TextDirection.rtl : TextDirection.ltr,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            _buildLabel(context, "IBAN"),
+            _buildTextField(
+              context: context,
+              validatorText: "Please enter a valid IBAN",
+              controller: ibanController,
+              delay: const Duration(milliseconds: 300),
+            ),
+            verticalSpacing(11),
+            _buildLabel(context, "Beneficiary Name",
+                delay: const Duration(milliseconds: 300)),
+            _buildTextField(
+              context: context,
+              validatorText: "Please enter a valid Beneficiary Name",
+              controller: beneficiaryNameController,
+              delay: const Duration(milliseconds: 300),
+            ),
+            verticalSpacing(11),
+            _buildLabel(context, "Bank SWIFT Code"),
+            _buildTextField(
+              context: context,
+              validatorText: "Please enter a valid Bank SWIFT Code",
+              controller: bankSWIFTCodeController,
+              needPrefixIcon: true,
+              delay: const Duration(milliseconds: 300),
+            ),
+            verticalSpacing(11),
+            _buildLabel(context, "Email for Settlement Details",
+                delay: const Duration(milliseconds: 300)),
+            _buildTextField(
+              context: context,
+              validatorText: "Please enter a valid Email",
+              controller: emailForSettlementDetailsController,
+              hintText: "example@domain.com",
+              hintIsDark: true,
+              delay: const Duration(milliseconds: 300),
+            ),
+            verticalSpacing(11),
+            _buildLabel(context, "Upload Your IBAN Letter"),
+            _buildTextField(
+              context: context,
+              validatorText: "Please upload a valid IBAN Letter",
+              controller: iBANLetterController,
+              needPrefixIcon: true,
+              delay: const Duration(milliseconds: 300),
+            ),
+          ],
+        ),
       ),
     );
   }

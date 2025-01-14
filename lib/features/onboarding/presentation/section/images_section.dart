@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../logic/model/on_boarding_model.dart';
@@ -47,7 +48,7 @@ class ImagesSection extends StatelessWidget {
                     height: currentIndex == 2 ? 200.w(context) : 220.h(context),
                     fit: BoxFit.contain,
                   ),
-                  Image.asset(
+                  SvgPicture.asset(
                     onBoardingData[currentIndex].image,
                     width: currentIndex == 2 ? 430.w(context) : 412.w(context),
                     height: currentIndex == 0

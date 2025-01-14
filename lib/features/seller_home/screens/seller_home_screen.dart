@@ -20,7 +20,7 @@ class SellerHomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            verticalSpacing(11.h(context)),
+            verticalSpacing(30.h(context)),
             StepProgressWidget(
               steps: [
                 StepData(title: "Business".tr(context), isActive: true),

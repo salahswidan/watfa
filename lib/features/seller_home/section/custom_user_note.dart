@@ -44,8 +44,7 @@ class CustomUserMassege extends StatelessWidget {
                   ),
                   verticalSpacing(8.h(context)),
                   Text(
-                    "Your Request Is Currently Awaiting Finalization.\nWe kindly Seek Your Cooperation In Furnishing\nYour Legal And Bank Information For The Purpose\nOf Verification."
-                        .tr(context),
+                    "Your Request Is Currently Awaiting Finalization.We kindly Seek Your Cooperation In Furnishing Your Legal And Bank Information For The Purpose Of Verification.".tr(context),
                     textAlign: TextAlign.start,
                     style: TextStyle(
                         color: Colors.black54,

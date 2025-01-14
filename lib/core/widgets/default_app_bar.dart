@@ -38,7 +38,14 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
                 : null,
         leading: hasBackArrow ?? true
             ? Padding(
-                padding: const EdgeInsets.only(left: 20),
+                padding: EdgeInsets.only(
+                  left: Localizations.localeOf(context).languageCode == 'ar'
+                      ? 0
+                      : 20,
+                  right: Localizations.localeOf(context).languageCode == 'ar'
+                      ? 20
+                      : 0,
+                ),
                 child: FadeInLeft(child: DefaultBackArrow()),
               )
             : null,

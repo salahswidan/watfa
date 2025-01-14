@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:watfa/core/helpers/extinsions.dart';
 import '../../../core/theme/colors.dart';
 import '../../../core/helpers/spacing.dart';
 
@@ -14,24 +15,32 @@ class StepProgressWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: List.generate(steps.length * 2 - 1, (index) {
-        if (index.isEven) {
-          final stepIndex = index ~/ 2;
-          final step = steps[stepIndex];
-          return _buildStepIndicator(
-            step.title,
-            isActive: step.isActive,
-            stepNumber: step.stepNumber,
-            onTapNav: step.onTapNav,
-          );
-        } else {
-          final isActive = steps[(index - 1) ~/ 2].isActive;
-          return _buildStepConnector(isActive: isActive);
-        }
-      }),
+    return Container(
+      width: 250.w(context),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: List.generate(steps.length * 2 - 1, (index) {
+          if (index.isEven) {
+            final stepIndex = index ~/ 2;
+            final step = steps[stepIndex];
+            return _buildStepIndicator(
+              step.title,
+              isActive: step.isActive,
+              stepNumber: step.stepNumber,
+              onTapNav: step.onTapNav,
+            );
+          } else {
+            final isActive = steps[(index - 1) ~/ 2].isActive;
+            return Column(children: [
+              SizedBox(
+                height: 20.h(context),
+              ),
+              _buildStepConnector(isActive: isActive)
+            ]);
+          }
+        }),
+      ),
     );
   }
 
@@ -82,8 +91,8 @@ class StepProgressWidget extends StatelessWidget {
     return FadeInRight(
       delay: const Duration(milliseconds: 150),
       child: Container(
-        width: 40,
-        height: 6,
+        width: 60,
+        height: 5,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: isActive
@@ -110,3 +119,58 @@ class StepData {
     this.onTapNav,
   });
 }
+
+// //!
+// import 'package:flutter/material.dart';
+
+// class CustomStepper extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: Row(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           // First Step
+//           buildStepCircle(context, "1", true),
+//           buildStepLine(),
+//           // Second Step
+//           buildStepCircle(context, "2", false),
+//           buildStepLine(),
+//           // Third Step
+//           buildStepCircle(context, "3", false),
+//         ],
+//       ),
+//     );
+//   }
+
+//   // Circle for step
+//   Widget buildStepCircle(BuildContext context, String text, bool isActive) {
+//     return Container(
+//       width: 40,
+//       height: 40,
+//       decoration: BoxDecoration(
+//         color: isActive ? Colors.deepPurple : Colors.white,
+//         border: Border.all(color: Colors.deepPurple, width: 2),
+//         borderRadius: BorderRadius.circular(20),
+//       ),
+//       alignment: Alignment.center,
+//       child: Text(
+//         text,
+//         style: TextStyle(
+//           color: isActive ? Colors.white : Colors.deepPurple,
+//           fontWeight: FontWeight.bold,
+//         ),
+//       ),
+//     );
+//   }
+
+//   // Connecting line between steps
+//   Widget buildStepLine() {
+//     return Container(
+//       width: 60,
+//       height: 4,
+//       color: Colors.deepPurple,
+//     );
+//   }
+// }
+

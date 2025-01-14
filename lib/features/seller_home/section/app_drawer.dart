@@ -212,7 +212,7 @@ Future<dynamic> showLogOutDialog(BuildContext context) {
                     horizontalSpacing(30),
                     Expanded(
                       child: LogutElevatedButton(
-                        text: "Cancel",
+                        text: "Cancel".tr(context),
                         onTap: () {
                           context.pop();
                         },

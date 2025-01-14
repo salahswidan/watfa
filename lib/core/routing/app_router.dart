@@ -187,7 +187,7 @@ class AppRouter {
       //   );
       default:
         return MaterialPageRoute(
-          builder: (_) => DoneSellerHomeScreen(),
+          builder: (_) => SellerHomeScreen(),
         );
     }
   }

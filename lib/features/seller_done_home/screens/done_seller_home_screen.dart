@@ -21,9 +21,9 @@ class DoneSellerHomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            verticalSpacing(11.h(context)),
+            verticalSpacing(30.h(context)),
             FadeInRight(
               delay: const Duration(milliseconds: 300),
               child: StepProgressWidget(

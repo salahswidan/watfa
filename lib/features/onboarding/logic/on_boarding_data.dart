@@ -3,7 +3,7 @@ import 'package:watfa/features/onboarding/logic/model/on_boarding_model.dart';
 class OnBoardingData {
   static List<OnBoardingModel> onBoardingBayer = [
     OnBoardingModel(
-      image: "assets/images/onboarding1.png",
+      image: "assets/svgs/onboarding1.svg",
       title1: "Shop ",
       title2: "Now",
       title3: ", Pay Later!",
@@ -19,7 +19,7 @@ class OnBoardingData {
           "Discover the freedom to buy what you love and pay in easy installments with no hidden fees.",
     ),
     OnBoardingModel(
-      image: "assets/images/onboarding2.png",
+      image: "assets/svgs/onboarding2.svg",
       title1: "Flexible ",
       title2: "Payment",
       title3: " Options",
@@ -35,7 +35,7 @@ class OnBoardingData {
           "Choose from multiple BNPL plans to suit your budget. Pay in 3, 6, or 12 easy installments.",
     ),
     OnBoardingModel(
-      image: "assets/images/onboarding3.png",
+      image: "assets/svgs/onboarding3.svg",
       title1: "Shop ",
       title2: "Across",
       title3: " Categories",
