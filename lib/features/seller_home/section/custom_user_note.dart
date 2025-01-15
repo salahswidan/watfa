@@ -14,46 +14,52 @@ class CustomUserMassege extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double responsiveFontSize = MediaQuery.of(context).size.width * 0.035;
+    double responsiveContainerHeight = MediaQuery.of(context).size.height * 0.2;
+
     return FadeInRight(
-        delay: const Duration(milliseconds: 300),
-        child: Container(
-            width: 362.w(context),
-            height: 170.h(context),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: ColorsManagers.pink,
-            ),
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
+      delay: const Duration(milliseconds: 300),
+      child: Container(
+        width: 362.w(context),
+        height: 190.h(context),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          color: ColorsManagers.pink,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
                 children: [
-                  Row(
-                    children: [
-                      Text(
-                        "The Request is Process".tr(context),
-                        style: TextStyles.font20BlackW700Manropes(context),
-                      ),
-                      Spacer(),
-                      UserImage(
-                        isUploaded: true,
-                      ),
-                    ],
-                  ),
-                  verticalSpacing(8.h(context)),
                   Text(
-                    "Your Request Is Currently Awaiting Finalization.We kindly Seek Your Cooperation In Furnishing Your Legal And Bank Information For The Purpose Of Verification.".tr(context),
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 13,
-                        fontFamily: "Arabic",
-                        fontWeight: FontWeight.w400),
+                    "The Request is Process".tr(context),
+                    style: TextStyles.font20BlackW700Manropes(context),
+                  ),
+                  Spacer(),
+                  UserImage(
+                    isUploaded: true,
                   ),
                 ],
               ),
-            )));
+              verticalSpacing(8.h(context)),
+              Text(
+                "Your Request Is Currently Awaiting Finalization.We kindly Seek Your Cooperation In Furnishing Your Legal And Bank Information For The Purpose Of Verification."
+                    .tr(context),
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 11,
+                  fontFamily: "Arabic",
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

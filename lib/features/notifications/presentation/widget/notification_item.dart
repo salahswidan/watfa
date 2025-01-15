@@ -43,7 +43,7 @@ class NotificationItem extends StatelessWidget {
                         ),
                       ),
                       //    Expanded(child: SizedBox()),
-                      horizontalSpacing(45.w(context)),
+                      horizontalSpacing(30.w(context)),
                       FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text("1 min ago".tr(context),

@@ -106,8 +106,8 @@ class CacheServices {
     final cachedLangCode = prefs.getString("LOCALE");
     if (cachedLangCode != null) {
       return cachedLangCode;
-    } else {
-      return "en";
+    } else {//!
+      return "ar";
     }
   }
 

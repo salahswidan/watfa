@@ -42,7 +42,7 @@ class SellerHomeScreen extends StatelessWidget {
                     }),
               ],
             ),
-            verticalSpacing(41.h(context)),
+            verticalSpacing(35.h(context)),
             CustomUserMassege(),
           ],
         ),

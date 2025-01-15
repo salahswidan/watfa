@@ -34,7 +34,10 @@ class HomeAppBar extends StatelessWidget {
         horizontalSpacing(10),
         AppBarActionCircle(
           icon: 'assets/svgs/notification.svg',
-          onTap: () {},
+          onTap: () {
+                        context.pushNamed(Routes.notificationsScreen);
+
+          },
         ),
         horizontalSpacing(5),
         AppBarActionCircle(

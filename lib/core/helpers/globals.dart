@@ -3,6 +3,7 @@ import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../features/settings/logic/models/card_model.dart';
+import '../Local/local_cubit.dart';
 import '../routing/routes.dart';
 
 List<CardModel> settingsCardList(BuildContext context) => [

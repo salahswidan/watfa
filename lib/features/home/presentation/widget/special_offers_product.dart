@@ -49,7 +49,7 @@ class SpecialOffersProduct extends StatelessWidget {
                   ],
                 ),
                 // Spacer(),
-                verticalSpacing(160.h(context)),
+                verticalSpacing(150.h(context)),
                 Text(
                   "${"SAR".tr(context)} 230.00",
                   style: TextStyles.font20BlackOliveW700Manrope(context),

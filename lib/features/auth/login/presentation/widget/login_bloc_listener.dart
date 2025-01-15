@@ -36,7 +36,7 @@ class LoginBlocListener extends StatelessWidget {
                   ? Center(
                       child: SizedBox(
                         height: MediaQuery.of(context).size.height *
-                            0.15, 
+                            0.1, // Adjust height based on screen height
                         child: Lottie.asset(
                           'assets/lottie/loading_navigate.json',
                         ),

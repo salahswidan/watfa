@@ -4,11 +4,13 @@ import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/shared_pref_helper.dart';
 import 'package:watfa/core/helpers/spacing.dart';
+import '../../../../core/Local/local_cubit.dart';
 import '../../../../core/helpers/globals.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 import '../../../../core/widgets/default_app_bar.dart';
+import '../../logic/models/card_model.dart';
 import '../widget/logut_elevated_button.dart';
 import '../widget/settings_card.dart';
 
@@ -27,7 +29,7 @@ class SettingsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            verticalSpacing(50.h(context)),
+            verticalSpacing(30.h(context)),
             Text("General".tr(context),
                 style: TextStyles.font16BlackOliverW700Manrope(context)),
             verticalSpacing(30.h(context)),
@@ -48,6 +50,27 @@ class SettingsScreen extends StatelessWidget {
             Text("Settings".tr(context),
                 style: TextStyles.font16BlackOliverW700Manrope(context)),
             verticalSpacing(30.h(context)),
+            FadeInRight(
+              delay: Duration(milliseconds: 5 * 150),
+              child: SettingsCard(
+                cardModel: CardModel(
+                  title: 'Language'.tr(context),
+                  image: 'assets/images/lanage.png',
+                  onTap: () {
+                    final currentLocale = LocalCubit.get(context).state
+                            is ChangeLocaleState
+                        ? (LocalCubit.get(context).state as ChangeLocaleState)
+                            .local
+                            .languageCode
+                        : 'en';
+                    String newLocale = currentLocale == 'ar' ? 'en' : 'ar';
+
+                    LocalCubit.get(context).changeLanguage(newLocale);
+                  },
+                ),
+              ),
+            ),
+            verticalSpacing(50.h(context)),
             FadeInRight(
               delay: Duration(milliseconds: 5 * 150),
               child: GestureDetector(
@@ -86,7 +109,7 @@ class SettingsScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    "Are you sure you want to log out?",
+                    "Are you sure you want to log out?".tr(context),
                     style: TextStyles.font20Blackw500Poppins(context),
                     textAlign: TextAlign.center,
                   ),
@@ -95,7 +118,7 @@ class SettingsScreen extends StatelessWidget {
                     children: [
                       Expanded(
                         child: LogutElevatedButton(
-                          text: "Confirm",
+                          text: "Confirm".tr(context),
                           onTap: () {
                             CacheServices.instance.removeUserModel();
                             context.pop();
@@ -107,7 +130,7 @@ class SettingsScreen extends StatelessWidget {
                       horizontalSpacing(30),
                       Expanded(
                         child: LogutElevatedButton(
-                          text: "Cancel",
+                          text: "Cancel".tr(context),
                           onTap: () {
                             context.pop();
                           },
