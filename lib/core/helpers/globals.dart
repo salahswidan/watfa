@@ -16,12 +16,16 @@ List<CardModel> settingsCardList(BuildContext context) => [
       CardModel(
         title: 'Payment Methods'.tr(context),
         image: 'assets/images/Bank Cards.png',
-        onTap: () {},
+        onTap: () {
+          context.pushNamed(Routes.paymentHomeScreen);
+        },
       ),
       CardModel(
         title: 'Bank account'.tr(context),
         image: 'assets/images/Merchant Account.png',
-        onTap: () {},
+        onTap: () {
+          context.pushNamed(Routes.bankAccountScreen);
+        },
       ),
       CardModel(
         title: 'Saved items'.tr(context),

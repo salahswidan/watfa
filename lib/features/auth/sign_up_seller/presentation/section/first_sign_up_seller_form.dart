@@ -1,151 +1,130 @@
+import 'package:flutter/material.dart';
 import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
-import 'package:flutter/material.dart';
-
-import '../../../../../core/Local/AppLocalizations.dart';
-import '../../../../../core/helpers/extinsions.dart';
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/theme/styles.dart';
-import '../../../../../core/widgets/auth_text_form_field.dart';
+import 'package:watfa/core/helpers/spacing.dart';
+import 'package:watfa/core/theme/styles.dart';
+import 'package:watfa/core/widgets/auth_text_form_field.dart';
 
 class FirstSignUpSellerForm extends StatelessWidget {
+  const FirstSignUpSellerForm({super.key});
 
-  const FirstSignUpSellerForm({
-    super.key,
-  });
+  bool _isRtl(BuildContext context) {
+    return Directionality.of(context) == TextDirection.rtl;
+  }
+
+  Widget _buildLabel(BuildContext context, String text) {
+    return Align(
+      alignment: _isRtl(context) ? Alignment.centerRight : Alignment.centerLeft,
+      child: Text(
+        text.tr(context),
+        style: TextStyles.font14Jetw500Poppins(context),
+      ),
+    );
+  }
+
+  Widget _buildTextField({
+    required BuildContext context,
+    required String validatorText,
+    required TextEditingController controller,
+    String? hintText,
+    bool isPassword = false,
+    TextInputType keyboardType = TextInputType.text,
+  }) {
+    return AuthTextFormField(
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return validatorText.tr(context);
+        }
+        return null;
+      },
+      hintText: hintText?.tr(context) ?? '',
+      controller: controller,
+      isPassword: isPassword,
+      keyboardType: keyboardType,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
+    final companyController = TextEditingController();
+    final userController = TextEditingController();
+    final emailController = TextEditingController();
+    final phoneController = TextEditingController();
+    final passwordController = TextEditingController();
+    final confirmPasswordController = TextEditingController();
+
+    return Directionality(
+      textDirection: _isRtl(context) ? TextDirection.rtl : TextDirection.ltr,
+      child: Column(
+        children: [
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
               "Take your company to the next level".tr(context),
               textAlign: TextAlign.center,
-              style: TextStyles.font24Blackw700Roboto(
-                  context)),
-        ),
-        verticalSpacing(12.h(context)),
-        Text(
-          "Let us start by getting to know one another better.".tr(context),
-          style: TextStyles.font14DarkSilverw400Roboto(
-              context),
-          textAlign: TextAlign.center,
-        ),
-        verticalSpacing(20),
-        Container(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            "Company name".tr(context),
-            style: TextStyles.font14Jetw500Poppins(context),
+              style: TextStyles.font24Blackw700Roboto(context),
+            ),
           ),
-        ),
-        AuthTextFormField(
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'Please enter your company name'.tr(context);
-            }
-            return null;
-          },
-          hintText: 'Watfa',
-          controller: TextEditingController(),
-        ),
-        verticalSpacing(16.h(context)),
-        Container(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            "User name".tr(context),
-            style: TextStyles.font14Jetw500Poppins(context),
+          verticalSpacing(12.h(context)),
+          Text(
+            "Let us start by getting to know one another better.".tr(context),
+            style: TextStyles.font14DarkSilverw400Roboto(context),
+            textAlign: TextAlign.center,
           ),
-        ),
-        AuthTextFormField(
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'Please enter your username'.tr(context);
-            }
-            return null;
-          },
-          hintText: 'watfa',
-          controller: TextEditingController(),
-        ),
-        verticalSpacing(16.h(context)),
-        Container(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            "Email address".tr(context),
-            style: TextStyles.font14Jetw500Poppins(context),
+          verticalSpacing(20),
+          _buildLabel(context, "Company name"),
+          _buildTextField(
+            context: context,
+            validatorText: "Please enter your company name",
+            controller: companyController,
+            hintText: "Watfa",
           ),
-        ),
-        AuthTextFormField(
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'Please enter your email'.tr(context);
-            }
-            return null;
-          },
-          hintText: 'mariamfawzu@gmail.com',
-          controller: TextEditingController(),
-        ),
-        verticalSpacing(16.h(context)),
-        Container(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            "Phone number".tr(context),
-            style: TextStyles.font14Jetw500Poppins(context),
+          verticalSpacing(16.h(context)),
+          _buildLabel(context, "User name"),
+          _buildTextField(
+            context: context,
+            validatorText: "Please enter your username",
+            controller: userController,
+            hintText: "watfa",
           ),
-        ),
-        AuthTextFormField(
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'Please enter your phone number'.tr(context);
-            }
-            return null;
-          },
-          keyboardType: TextInputType.phone,
-          hintText: '0122067667',
-          controller: TextEditingController(),
-        ),
-        verticalSpacing(16.h(context)),
-        Container(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            "Password".tr(context),
-            style: TextStyles.font14Jetw500Poppins(context),
+          verticalSpacing(16.h(context)),
+          _buildLabel(context, "Email address"),
+          _buildTextField(
+            context: context,
+            validatorText: "Please enter your email",
+            controller: emailController,
+            hintText: "example@domain.com",
           ),
-        ),
-        AuthTextFormField(
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'Please enter your password'.tr(context);
-            }
-            return null;
-          },
-          isPassword: true,
-          hintText: 'Password'.tr(context),
-          controller: TextEditingController(),
-        ),
-        verticalSpacing(16.h(context)),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            "Confirm Password".tr(context),
-            style: TextStyles.font14Jetw500Poppins(context),
+          verticalSpacing(16.h(context)),
+          _buildLabel(context, "Phone number"),
+          _buildTextField(
+            context: context,
+            validatorText: "Please enter your phone number",
+            controller: phoneController,
+            hintText: "0122067667",
+            keyboardType: TextInputType.phone,
           ),
-        ),
-        AuthTextFormField(
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'Please enter your password'.tr(context);
-            }
-            return null;
-          },
-          isPassword: true,
-          hintText: 'Confirm Password'.tr(context),
-          controller: TextEditingController(),
-        ),
-        verticalSpacing(60.h(context)),
-      ],
+          verticalSpacing(16.h(context)),
+          _buildLabel(context, "Password"),
+          _buildTextField(
+            context: context,
+            validatorText: "Please enter your password",
+            controller: passwordController,
+            isPassword: true,
+            hintText: "Password",
+          ),
+          verticalSpacing(16.h(context)),
+          _buildLabel(context, "Confirm Password"),
+          _buildTextField(
+            context: context,
+            validatorText: "Please enter your password",
+            controller: confirmPasswordController,
+            isPassword: true,
+            hintText: "Confirm Password",
+          ),
+          verticalSpacing(60.h(context)),
+        ],
+      ),
     );
   }
 }

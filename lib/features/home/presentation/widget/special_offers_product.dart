@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
+import 'package:watfa/core/helpers/spacing.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
@@ -13,7 +14,7 @@ class SpecialOffersProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-       height: 265.h(context),
+      height: 265.h(context),
       width: 185.w(context),
       decoration: BoxDecoration(
         color: ColorsManagers.lavenderBlush,
@@ -47,7 +48,8 @@ class SpecialOffersProduct extends StatelessWidget {
                     ),
                   ],
                 ),
-                Spacer(),
+                // Spacer(),
+                verticalSpacing(160.h(context)),
                 Text(
                   "${"SAR".tr(context)} 230.00",
                   style: TextStyles.font20BlackOliveW700Manrope(context),

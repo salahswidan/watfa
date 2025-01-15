@@ -7,6 +7,7 @@ import 'package:watfa/core/routing/routes.dart';
 import 'package:watfa/core/theme/styles.dart';
 
 import '../../../../core/theme/colors.dart';
+import '../../../../core/widgets/default_app_bar.dart';
 import '../widget/payment_home_image.dart';
 import '../widget/payment_method_container.dart';
 
@@ -16,20 +17,24 @@ class PaymentHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: DefaultAppBar(
+        hasBackArrow: true,
+        title: "Payment Method".tr(context),
+      ),
       backgroundColor: ColorsManagers.cultured,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              FadeInDown(
-                child: Center(
-                  child: Text(
-                    "Payment Method".tr(context),
-                    style: TextStyles.font24PurpleW700Manropes(context),
-                  ),
-                ),
-              ),
+              // FadeInDown(
+              //   child: Center(
+              //     child: Text(
+              //       "Payment Method".tr(context),
+              //       style: TextStyles.font24PurpleW700Manropes(context),
+              //     ),
+              //   ),
+              // ),
               Flexible(child: verticalSpacing(60)),
               PaymentHomeImage(),
               Flexible(child: verticalSpacing(80)),

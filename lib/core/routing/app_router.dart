@@ -36,11 +36,14 @@ import '../../features/settings/presentation/screen/settings_screen.dart';
 import '../../features/shipping_address/presentation/screen/shipping_address_screen.dart';
 import '../../features/wallet/presentation/screen/wallet_screen.dart';
 import '../di/dependency_injection.dart';
+import '../helpers/shared_pref_helper.dart';
 import 'routes.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     final arguments = settings.arguments;
+    CacheServices.instance.setCurrentRoute(settings.name); 
+    debugPrint('Navigating to: ${settings.name}'); 
     switch (settings.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(
@@ -187,7 +190,7 @@ class AppRouter {
       //   );
       default:
         return MaterialPageRoute(
-          builder: (_) => SellerHomeScreen(),
+          builder: (_) => GetStartedScreen(),
         );
     }
   }

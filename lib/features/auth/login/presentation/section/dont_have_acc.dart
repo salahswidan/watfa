@@ -28,7 +28,8 @@ class DontHaveAcc extends StatelessWidget {
             onTap: () {
               CacheServices.instance.getUserType()!
                   ? context.pushNamed(Routes.signUpBuyerScreen)
-                  : context.pushNamed(Routes.signUpSellerScreen);
+                  : context
+                      .pushNamed(Routes.signUpSellerScreen);
             },
             child: Text(
               'Sign up'.tr(context),

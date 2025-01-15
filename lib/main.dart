@@ -7,6 +7,7 @@ import 'core/routing/app_router.dart';
 import 'watfa_app.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await preAppConfig();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
@@ -20,6 +21,6 @@ void main() async {
     builder: (context) => WatfaApp(
       appRouter: AppRouter(),
     ),
-  ));
+   ));
 }
 

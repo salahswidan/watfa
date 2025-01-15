@@ -16,18 +16,12 @@ class CacheServices {
 
   static final CacheServices _instance = CacheServices._private();
 
-  // CacheServices() {
-  //   init();
-  // }
-
   Future<void> init() async {
     AndroidOptions getAndroidOptions() =>
         const AndroidOptions(encryptedSharedPreferences: true);
     storage = FlutterSecureStorage(aOptions: getAndroidOptions());
     await SharedPreferences.getInstance().then((value) async => prefs = value);
   }
-
-  // Call this function from your StatefulWidget's initState()
 
   UserData? getUserModel()  {
     UserData? user;
@@ -130,7 +124,6 @@ class CacheServices {
   Map<String, dynamic>? getCredintials() {
     Map<String, dynamic>? token;
     try {
-      // String? json = prefs.getString('token');
       String? json = prefs.getString('credintials');
       if (json != null) {
         token = jsonDecode(json);
@@ -156,7 +149,6 @@ class CacheServices {
   Future<String?> getToken() async {
     String? token;
     try {
-      // String? json = prefs.getString('token');
       String? json = await storage.read(key: 'token');
       if (json != null) {
         token = json;
@@ -178,7 +170,6 @@ class CacheServices {
       return false;
     }
   }
-///// device token /////
 
   Future<bool> setDeviceToken(String deviceToken) async {
     try {
@@ -193,7 +184,6 @@ class CacheServices {
   String? getDeviceToken() {
     String? dToken;
     try {
-      // String? json = prefs.getString('token');
       String? json = prefs.getString('deviceToken');
       if (json != null) {
         dToken = json;
@@ -206,14 +196,9 @@ class CacheServices {
     return dToken;
   }
 
-////
-  ///     remember me   /////
-  ///
-
   bool? getrememberMe() {
     bool? rememberMe;
     try {
-      // String? json = prefs.getString('rememberMe');
       bool? json = prefs.getBool('rememberMe');
       if (json != null) {
         rememberMe = json;
@@ -239,7 +224,6 @@ class CacheServices {
   bool? getIsPatient() {
     bool? isPatient;
     try {
-      // String? json = prefs.getString('rememberMe');
       bool? json = prefs.getBool('isPatient');
       if (json != null) {
         isPatient = json;
@@ -262,11 +246,9 @@ class CacheServices {
     }
   }
 
-///////
   bool isAuthenticated() {
     try {
       String? patient = prefs.getString('patient');
-      // UserModel tempUser = UserModel.fromJson(jsonDecode(user ?? ''));
       if (patient != null) {
         return true;
       }
@@ -277,12 +259,9 @@ class CacheServices {
     }
   }
 
-  //set isImageUploadScreenShown
-
   bool? getisImageUploadScreenShown() {
     bool? isImageUploadScreenShown;
     try {
-      // String? json = prefs.getString('isImageUploadScreenShown');
       bool? json = prefs.getBool('isImageUploadScreenShown');
       if (json != null) {
         isImageUploadScreenShown = json;
@@ -319,7 +298,6 @@ class CacheServices {
   bool? getIsFitAuth() {
     bool? fit;
     try {
-      // String? json = prefs.getString('rememberMe');
       bool? json = prefs.getBool('fit');
       if (json != null) {
         fit = json;
@@ -349,7 +327,6 @@ class CacheServices {
   DateTime? getLastDateOpened() {
     DateTime? lastDate;
     try {
-      // String? json = prefs.getString('rememberMe');
       String? json = prefs.getString('lastDate');
       if (json != null) {
         lastDate = DateTime.parse(json);
@@ -362,5 +339,27 @@ class CacheServices {
       log(e.toString(), name: 'CacheService::getLastDateOpened');
     }
     return lastDate;
+  }
+
+  Future<bool> setCurrentRoute(String? route) async {
+    try {
+      await prefs.setString('currentRoute', route ?? '');
+      log('Current route set to: $route', name: 'CacheService::setCurrentRoute');
+      return true;
+    } catch (e) {
+      log(e.toString(), name: 'CacheService::setCurrentRoute');
+      return false;
+    }
+  }
+
+  String? getCurrentRoute() {
+    try {
+      final route = prefs.getString('currentRoute');
+      log('Current route retrieved: $route', name: 'CacheService::getCurrentRoute');
+      return route;
+    } catch (e) {
+      log(e.toString(), name: 'CacheService::getCurrentRoute');
+      return null;
+    }
   }
 }

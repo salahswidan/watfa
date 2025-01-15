@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/spacing.dart';
@@ -23,8 +22,6 @@ class BankAccountScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
         child: Column(
           children: [
-            
-            
             BankAccountForm(),
             Expanded(child: verticalSpacing(20)),
             GetStartedButton(

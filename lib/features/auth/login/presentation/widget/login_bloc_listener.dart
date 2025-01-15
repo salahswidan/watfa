@@ -34,8 +34,12 @@ class LoginBlocListener extends StatelessWidget {
               duration: const Duration(milliseconds: 500),
               child: state is LoginLoading
                   ? Center(
-                      child: Lottie.asset(
-                        'assets/lottie/loading_navigate.json',
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height *
+                            0.15, 
+                        child: Lottie.asset(
+                          'assets/lottie/loading_navigate.json',
+                        ),
                       ),
                     )
                   : CustomAuthButton(

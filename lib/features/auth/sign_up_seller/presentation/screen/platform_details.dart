@@ -95,9 +95,9 @@ class _PlatformDetailScreenState extends State<PlatformDetailScreen> {
                 Spacer(),
                 GetStartedButton(
                   isSeller: true,
-                  onTap: () {
+                  onTap: () {//!
                     if (_formKey.currentState!.validate()) {
-                      context.pushNamedAndRemoveUntil(Routes.sellerHomeScreen);
+                      Navigator.pushNamedAndRemoveUntil(context, Routes.sellerHomeScreen, (route) => false);
                     }
                   },
                   text: "Send".tr(context),
