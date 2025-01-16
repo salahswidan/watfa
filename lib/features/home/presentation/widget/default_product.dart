@@ -14,7 +14,7 @@ class DefaultProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 265.h(context),
+      height: 280.h(context),
       width: 185.w(context),
       decoration: BoxDecoration(
         color: ColorsManagers.antiFlashWhite,

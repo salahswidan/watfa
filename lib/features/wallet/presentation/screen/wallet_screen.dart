@@ -39,10 +39,11 @@ class WalletScreen extends StatelessWidget {
             FadeInUp(
               child: GetStartedButton(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (builder) => HomeScreen()));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                  );
                 },
-                text: 'Start Shopping',
+                text: 'Start Shopping'.tr(context),
               ),
             )
           ],

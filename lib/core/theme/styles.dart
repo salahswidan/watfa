@@ -61,9 +61,9 @@ class TextStyles {
     );
   }
 
-  static TextStyle font16greyLightw400aDLaMDisplay(context) {
+  static TextStyle font14greyLightw400aDLaMDisplay(context) {
     return GoogleFonts.aDLaMDisplay(
-      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontWeight: FontWeightHelper.regular,
       color: ColorsManagers.greyLight,
     );
@@ -525,6 +525,7 @@ class TextStyles {
       color: ColorsManagers.jet,
     );
   }
+
   static TextStyle font14Jetw700Poppins(context) {
     return GoogleFonts.poppins(
       fontSize: getResponsiveFontSize(context, fontSize: 14),

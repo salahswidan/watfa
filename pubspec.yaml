@@ -28,7 +28,6 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  flutter_screenutil: ^5.9.3
   animate_do: ^3.3.4
   app_links: ^6.3.2
   cached_network_image: ^3.4.1
@@ -42,7 +41,9 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: ^2.4.2
+  flutter_screenutil: ^5.9.3
   flutter_secure_storage: ^9.2.2
+  flutter_stepindicator: ^0.1.7
   flutter_svg: ^2.0.14
   freezed: ^2.5.7
   freezed_annotation: ^2.4.4
@@ -95,7 +96,7 @@ flutter:
     - assets/langs/
     - assets/images/campany_name.png
     - assets/svgs/onboarding1.svg
-    
+
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

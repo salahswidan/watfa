@@ -73,11 +73,11 @@ class _ThirdSignUpSellerFormState extends State<ThirdSignUpSellerForm> {
             return null;
           },
           suffixIconConstraints: const BoxConstraints(
-            maxWidth: 50,
-            maxHeight: 23,
+            maxWidth: 60,
+            maxHeight: 30,
           ),
           suffixIconWidget: Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: InkWell(
               onTap: () => buildShowModalBottomSheet(context),
               child: Image.asset("assets/images/Double Down.png"),
@@ -94,7 +94,7 @@ class _ThirdSignUpSellerFormState extends State<ThirdSignUpSellerForm> {
         verticalSpacing(15.h(context)),
         PlatformContainer(
           image: "assets/images/salla.png",
-          title: "Salla",
+          title: "Salla".tr(context),
           subTitle:
               "You can obtain the bearer token from the developer settings in your Salla Dashboard."
                   .tr(context),
@@ -121,7 +121,7 @@ class _ThirdSignUpSellerFormState extends State<ThirdSignUpSellerForm> {
         verticalSpacing(15),
         PlatformContainer(
           image: "assets/images/Zid.png",
-          title: "Zid",
+          title: "Zid".tr(context),
           subTitle:
               "You can find the API key in the API settings of your Zid Account."
                   .tr(context),
@@ -148,7 +148,7 @@ class _ThirdSignUpSellerFormState extends State<ThirdSignUpSellerForm> {
         verticalSpacing(15),
         PlatformContainer(
           image: "assets/images/woocommerce.png",
-          title: "WooCommerce",
+          title: "WooCommerce".tr(context),
           subTitle:
               "You can generate the Consumer key and secret in the REST API section of WooCommerce settings."
                   .tr(context),
@@ -175,7 +175,7 @@ class _ThirdSignUpSellerFormState extends State<ThirdSignUpSellerForm> {
         verticalSpacing(15),
         PlatformContainer(
           image: "assets/images/shopify.png",
-          title: "Shopify",
+          title: "Shopify".tr(context),
           subTitle:
               "You can get the access token from the API settings in your Shopify Admin by creating a custom app."
                   .tr(context),
@@ -202,7 +202,7 @@ class _ThirdSignUpSellerFormState extends State<ThirdSignUpSellerForm> {
         verticalSpacing(15),
         PlatformContainer(
           image: "assets/images/Direct integration.png",
-          title: "Direct integration",
+          title: "Direct integration".tr(context),
           subTitle:
               "Use this option if the platform requires both an API Key and a Secret Key for integration"
                   .tr(context),
@@ -229,7 +229,7 @@ class _ThirdSignUpSellerFormState extends State<ThirdSignUpSellerForm> {
         verticalSpacing(15),
         PlatformContainer(
           image: "assets/images/other.png",
-          title: "Other",
+          title: "Other".tr(context),
           subTitle:
               "Use this option if your platform requires only a Token for integration"
                   .tr(context),
@@ -275,9 +275,9 @@ class _ThirdSignUpSellerFormState extends State<ThirdSignUpSellerForm> {
                   ),
                   onTap: () {
                     setState(() {
-                      productsOrServicesController.text =
-                          ThirdSignUpSellerForm.productsOrServices[index]
-                              .tr(context);
+                      productsOrServicesController.text = ThirdSignUpSellerForm
+                          .productsOrServices[index]
+                          .tr(context);
                     });
                     Navigator.pop(context);
                   },

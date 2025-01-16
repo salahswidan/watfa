@@ -40,7 +40,7 @@ class SellerHomeScreen extends StatelessWidget {
                       // Navigator.of(context)
                       //     .pushNamed(Routes.bankInformationScreen);
                     }),
-              ],
+             ],
             ),
             verticalSpacing(35.h(context)),
             CustomUserMassege(),

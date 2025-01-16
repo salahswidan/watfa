@@ -53,7 +53,7 @@ class _PlatformDetailScreenState extends State<PlatformDetailScreen> {
       appBar: DefaultAppBar(
         isSeller: true,
         hasBackArrow: true,
-        title: widget.title,
+        title: widget.title.tr(context),
       ),
       backgroundColor: ColorsManagers.cultured,
       body: FadeInRight(
@@ -95,9 +95,11 @@ class _PlatformDetailScreenState extends State<PlatformDetailScreen> {
                 Spacer(),
                 GetStartedButton(
                   isSeller: true,
-                  onTap: () {//!
+                  onTap: () {
+                    //!
                     if (_formKey.currentState!.validate()) {
-                      Navigator.pushNamedAndRemoveUntil(context, Routes.sellerHomeScreen, (route) => false);
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, Routes.sellerHomeScreen, (route) => false);
                     }
                   },
                   text: "Send".tr(context),

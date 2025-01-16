@@ -79,8 +79,8 @@ class SignUpBuyerBlocListener extends StatelessWidget {
       context.read<SignUpBuyerCubit>().emitSignUpBuyerState();
     }
   }
-  
-  void setUpSuccessState(BuildContext context, signupResponse)async {
+
+  void setUpSuccessState(BuildContext context, signupResponse) async {
     context.pushNamedAndRemoveUntilNamed(Routes.homeScreen);
   }
 }

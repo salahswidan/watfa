@@ -26,28 +26,15 @@ class WatfaApp extends StatelessWidget {
             builder: DevicePreview.appBuilder,
             title: 'Watfa App',
             theme: ThemeData(
-              // primaryColor: ColorsManagers.mainblue,
               scaffoldBackgroundColor: Colors.white,
             ),
             localizationsDelegates: const [
-              AppLocalizations
-                  .delegate, // Localization basedon mobile defaulte language
+              AppLocalizations.delegate,
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate
             ],
             debugShowCheckedModeBanner: false,
-            //! here
-            initialRoute: setinitialRoute(),
-            // CacheServices.instance.getUserType() != null
-            //     ? Routes.onBoardingScreen
-            //     :
-
-            // initialRoute: CacheServices.instance.getOnBoarding()
-            //     ? CacheServices.instance.getUserModel() != null
-            //         ? Routes.homeScreen
-            //         : Routes.loginScreen
-            //     : Routes.onBoardingScreen,
             onGenerateRoute: appRouter.generateRoute,
           );
         },

@@ -54,7 +54,7 @@ class SettingsScreen extends StatelessWidget {
               delay: Duration(milliseconds: 5 * 150),
               child: SettingsCard(
                 cardModel: CardModel(
-                  title: 'Language'.tr(context),
+                  title: 'Language Switch'.tr(context),
                   image: 'assets/images/lanage.png',
                   onTap: () {
                     final currentLocale = LocalCubit.get(context).state

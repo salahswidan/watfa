@@ -42,8 +42,8 @@ import 'routes.dart';
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     final arguments = settings.arguments;
-    CacheServices.instance.setCurrentRoute(settings.name); 
-    debugPrint('Navigating to: ${settings.name}'); 
+    CacheServices.instance.setCurrentRoute(settings.name);
+    debugPrint('Navigating to: ${settings.name}');
     switch (settings.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(
@@ -190,7 +190,7 @@ class AppRouter {
       //   );
       default:
         return MaterialPageRoute(
-          builder: (_) => GetStartedScreen(),
+          builder: (_) => SellerHomeScreen(),
         );
     }
   }

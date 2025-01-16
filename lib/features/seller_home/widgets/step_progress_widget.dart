@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import '../../../core/theme/colors.dart';
 import '../../../core/helpers/spacing.dart';
@@ -34,7 +35,7 @@ class StepProgressWidget extends StatelessWidget {
             final isActive = steps[(index - 1) ~/ 2].isActive;
             return Column(children: [
               SizedBox(
-                height: 20.h(context),
+                height: 30.h(context),
               ),
               _buildStepConnector(isActive: isActive)
             ]);
@@ -61,7 +62,7 @@ class StepProgressWidget extends StatelessWidget {
               title,
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-            verticalSpacing(8),
+            verticalSpacing(6),
             CircleAvatar(
               backgroundColor: ColorsManagers.purple,
               radius: 17,
@@ -92,14 +93,14 @@ class StepProgressWidget extends StatelessWidget {
       delay: const Duration(milliseconds: 150),
       child: Container(
         width: 60,
-        height: 5,
+        height: 4,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: isActive
                 ? [ColorsManagers.purple, ColorsManagers.paleLavender]
                 : [ColorsManagers.paleLavender, Colors.grey.shade300],
           ),
-          borderRadius: BorderRadius.circular(3),
+          borderRadius: BorderRadius.circular(4),
         ),
       ),
     );
@@ -120,57 +121,103 @@ class StepData {
   });
 }
 
-// //!
+// // //!
 // import 'package:flutter/material.dart';
 
-// class CustomStepper extends StatelessWidget {
+// class StepProgressWidget extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
 //     return Center(
-//       child: Row(
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         children: [
-//           // First Step
-//           buildStepCircle(context, "1", true),
-//           buildStepLine(),
-//           // Second Step
-//           buildStepCircle(context, "2", false),
-//           buildStepLine(),
-//           // Third Step
-//           buildStepCircle(context, "3", false),
-//         ],
-//       ),
-//     );
-//   }
-
-//   // Circle for step
-//   Widget buildStepCircle(BuildContext context, String text, bool isActive) {
-//     return Container(
-//       width: 40,
-//       height: 40,
-//       decoration: BoxDecoration(
-//         color: isActive ? Colors.deepPurple : Colors.white,
-//         border: Border.all(color: Colors.deepPurple, width: 2),
-//         borderRadius: BorderRadius.circular(20),
-//       ),
-//       alignment: Alignment.center,
-//       child: Text(
-//         text,
-//         style: TextStyle(
-//           color: isActive ? Colors.white : Colors.deepPurple,
-//           fontWeight: FontWeight.bold,
+//       child: Container(
+//         // width: 280.w(context),
+//         child: Row(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             buildStepCircle(context, "✔", true, () {}, "Business".tr(context)),
+//             buildStepLine(),
+//             buildStepCircle(context, "2", false, () {}, "Legal".tr(context)),
+//             buildStepLine(),
+//             buildStepCircle(context, "3", false, () {}, "Bank".tr(context)),
+//           ],
 //         ),
 //       ),
 //     );
 //   }
 
-//   // Connecting line between steps
+//   Widget buildStepCircle(BuildContext context, String stepNumber, bool isActive,
+//       GestureTapCallback? onTapNav, String title) {
+//     return Column(
+//       children: [
+//         // GestureDetector(
+//         //   onTap: onTapNav,
+//         //   child: Text(
+//         //     title,
+//         //     style: const TextStyle(fontWeight: FontWeight.bold),
+//         //   ),
+//         // ),
+//         // Row(children: [
+//         //   Text("data"),
+//         // ],),
+//         Titlesd(),
+//         verticalSpacing(40),
+//         GestureDetector(
+//           onTap: onTapNav,
+//           child: Container(
+//             width: 30,
+//             height: 30,
+//             decoration: BoxDecoration(
+//               color: isActive ? ColorsManagers.purple : Colors.white,
+//               border: Border.all(color: Colors.deepPurple, width: 2),
+//               borderRadius: BorderRadius.circular(30),
+//             ),
+//             alignment: Alignment.center,
+//             child: Text(
+//               stepNumber,
+//               style: TextStyle(
+//                 color: isActive ? Colors.white : Colors.deepPurple,
+//                 fontWeight: FontWeight.bold,
+//               ),
+//             ),
+//           ),
+//         ),
+//       ],
+//     );
+//   }
+
 //   Widget buildStepLine() {
 //     return Container(
-//       width: 60,
+//       width: 75,
 //       height: 4,
 //       color: Colors.deepPurple,
 //     );
 //   }
 // }
 
+// class Titlesd extends StatelessWidget {
+//   const Titlesd({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       children: [
+//         Row(
+//           children: [
+//             Text("business"),
+//           ],
+//         ),
+//       ],
+//     );
+
+//     // Text("Business".tr(context)),
+//     // Row(
+//     //   children: [
+//     //     Text("Business".tr(context)),
+//     //     // Text("Legal".tr(context)),
+//     //     // Text("Bank".tr(context)),
+//     //   ],
+//     // ),
+//     // SizedBox(
+//     //   height: 30,
+//     // ),
+//   }
+// }

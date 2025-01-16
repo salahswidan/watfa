@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/helpers/extinsions.dart';
+import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/theme/styles.dart';
 
 import '../../../core/theme/colors.dart';
@@ -12,8 +14,8 @@ class IndicatorBoxes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 186,
-      height: 148,
+      width: 186.w(context),
+      height: 157.h(context),
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: ColorsManagers.pinkLace,
@@ -38,15 +40,14 @@ class IndicatorBoxes extends StatelessWidget {
                 color: ColorsManagers.purple,
                 fontFamily: "Arabic"),
           ),
-          SizedBox(height: 8),
+        //  verticalSpacing(3.h(context)),
           Image.asset("assets/images/line_indicator.png"),
           Text(
             value,
-            style: TextStyles.font16greyLightw400aDLaMDisplay(context),
+            style: TextStyles.font14greyLightw400aDLaMDisplay(context),
           ),
         ],
       ),
     );
   }
 }
-
