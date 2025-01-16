@@ -14,8 +14,8 @@ class DiscountContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Calculate responsive horizontal padding based on screen width
-    double horizontalPadding = MediaQuery.of(context).size.width * 0.02;
+    double horizontalPadding = MediaQuery.of(context).size.width * 0.05;
+    double verticalPadding = MediaQuery.of(context).size.height * 0.05;
 
     return Container(
       width: 170.w(context),
@@ -38,7 +38,8 @@ class DiscountContainer extends StatelessWidget {
               style: TextStyles.font20DarkCharcoalw700Manrope(context)),
           verticalSpacing(25),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 3),
+            padding: EdgeInsets.symmetric(
+                horizontal: horizontalPadding, vertical: verticalPadding),
             child: DiscountButton(
               onTap: () {},
               text: "use discount".tr(context),

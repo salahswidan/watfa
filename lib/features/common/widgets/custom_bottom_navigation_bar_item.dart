@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../core/theme/colors.dart';
 
@@ -11,8 +12,8 @@ class CustomBottomNavigationBarItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 50,
-        height: 50,
+        width: 50.w(context),
+        height: 50.h(context),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: ColorsManagers.purple,

@@ -248,7 +248,7 @@ class TextStyles {
 
   static TextStyle font12OuterSpaceW400Poppins(context) {
     return GoogleFonts.poppins(
-      fontSize: getResponsiveFontSize(context, fontSize: 12),
+      fontSize: getResponsiveFontSize(context, fontSize: 10),
       fontWeight: FontWeightHelper.regular,
       color: ColorsManagers.outerSpace,
     );
@@ -374,9 +374,9 @@ class TextStyles {
     );
   }
 
-  static TextStyle font20BlackOliveW700Manrope(context) {
+  static TextStyle font17BlackOliveW700Manrope(context) {
     return GoogleFonts.manrope(
-      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontSize: getResponsiveFontSize(context, fontSize: 17),
       fontWeight: FontWeightHelper.bold,
       color: ColorsManagers.blackOlive,
     );

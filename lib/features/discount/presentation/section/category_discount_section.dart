@@ -29,7 +29,7 @@ class _CategoryDiscountSectionState extends State<CategoryDiscountSection> {
             padding: const EdgeInsets.symmetric(vertical: 20),
             child: Text(
               "All discounts".tr(context),
-              style: TextStyles.font20BlackOliveW700Manrope(context),
+              style: TextStyles.font17BlackOliveW700Manrope(context),
             ),
           ),
         ),

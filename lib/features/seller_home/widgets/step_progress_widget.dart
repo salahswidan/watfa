@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import '../../../core/theme/colors.dart';
 import '../../../core/helpers/spacing.dart';
@@ -35,7 +34,7 @@ class StepProgressWidget extends StatelessWidget {
             final isActive = steps[(index - 1) ~/ 2].isActive;
             return Column(children: [
               SizedBox(
-                height: 30.h(context),
+                height: 35.h(context),
               ),
               _buildStepConnector(isActive: isActive)
             ]);

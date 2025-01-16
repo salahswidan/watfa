@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:watfa/core/Local/AppLocalizations.dart';
+import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theme/colors.dart';
@@ -22,10 +23,10 @@ class ActiveBottomNavigationBarItem extends StatelessWidget {
       children: [
         Image.asset(
           image,
-          width: 24,
+          width: 24.w(context),
           color: ColorsManagers.purple,
         ),
-        verticalSpacing(5),
+        verticalSpacing(5.h(context)),
         Text(
           text.tr(context),
           style: TextStyles.font12PurpleW500Poppins(context),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
+import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 
@@ -51,7 +52,8 @@ class DefaultProduct extends StatelessWidget {
                 ),
               ],
             ),
-            Expanded(flex: 3, child: SizedBox()),
+            verticalSpacing(10),
+            // Expanded(flex: 3, child: SizedBox()),
             Center(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
@@ -70,7 +72,7 @@ class DefaultProduct extends StatelessWidget {
             Expanded(flex: 3, child: SizedBox()),
             Text(
               "SAR 230.00",
-              style: TextStyles.font20BlackOliveW700Manrope(context),
+              style: TextStyles.font17BlackOliveW700Manrope(context),
             ),
             Expanded(child: SizedBox()),
             Text(

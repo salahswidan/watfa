@@ -13,56 +13,57 @@ class NotificationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+      padding: EdgeInsets.symmetric(
+        horizontal: 20.w(context),
+        vertical: 15.h(context),
+      ),
       decoration: BoxDecoration(
         color: ColorsManagers.magnolia,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Padding(
-        padding: EdgeInsets.only(bottom: 10.h(context)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Image.asset(
-              "assets/images/icon.png",
-              width: 60.w(context),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image.asset(
+            "assets/images/icon.png",
+            width: 60.w(context),
+            height: 60.h(context), // Ensure a fixed height
+            fit: BoxFit.contain,
+          ),
+          horizontalSpacing(15.w(context)),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        "Flipcart Shopping Offer".tr(context),
+                        style: TextStyles.font16GraniteGrayW600Nunito(context),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
+                    ),
+                    horizontalSpacing(10.w(context)),
+                    Text(
+                      "1 min ago".tr(context),
+                      style: TextStyles.font10Blackw400Roboto(context),
+                      textAlign: TextAlign.end,
+                    ),
+                  ],
+                ),
+                verticalSpacing(5.h(context)),
+                Text(
+                  "Shop on Flipcart using our payment system to get upto 50% cashback . T&C appply"
+                      .tr(context),
+                  style: TextStyles.font10GraniteGrayW600Nunito(context),
+                  softWrap: true,
+                ),
+              ],
             ),
-            horizontalSpacing(20),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          "Flipcart Shopping Offer".tr(context),
-                          style:
-                              TextStyles.font16GraniteGrayW600Nunito(context),
-                        ),
-                      ),
-                      //    Expanded(child: SizedBox()),
-                      horizontalSpacing(30.w(context)),
-                      FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text("1 min ago".tr(context),
-                            style: TextStyles.font10Blackw400Roboto(context)),
-                      ),
-                    ],
-                  ),
-                  verticalSpacing(5),
-                  Text(
-                    "Shop on Flipcart using our payment system to get upto 50% cashback . T&C appply"
-                        .tr(context),
-                    style: TextStyles.font10GraniteGrayW600Nunito(context),
-                    softWrap: true,
-                  )
-                ],
-              ),
-            )
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

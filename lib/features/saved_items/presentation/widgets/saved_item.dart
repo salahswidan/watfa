@@ -47,7 +47,7 @@ class SavedItem extends StatelessWidget {
                 Expanded(child: SizedBox()),
                 Text(
                   "${"SAR".tr(context)} 230.00",
-                  style: TextStyles.font20BlackOliveW700Manrope(context),
+                  style: TextStyles.font17BlackOliveW700Manrope(context),
                 ),
                 Text(
                   "${"SAR".tr(context)} 300.00",

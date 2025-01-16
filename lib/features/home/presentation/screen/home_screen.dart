@@ -16,112 +16,118 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HomeBackgroundContainer(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-        ),
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: HomeAppBar(),
-            ),
-            SliverToBoxAdapter(
-              child: AdBannerContainer(),
-            ),
-            SliverList(
-                delegate: SliverChildListDelegate([
-              verticalSpacing(40.h(context)),
-            ])),
-            SliverToBoxAdapter(
-              child: CategoryHomeSection(),
-            ),
-            SliverToBoxAdapter(
-              child: SeeMoreRow(
-                text: "Special Offers".tr(context),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(children: [
+          HomeBackgroundContainer(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+              ),
+              child: CustomScrollView(
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: HomeAppBar(),
+                  ),
+                  SliverToBoxAdapter(
+                    child: AdBannerContainer(),
+                  ),
+                  SliverList(
+                      delegate: SliverChildListDelegate([
+                    verticalSpacing(40.h(context)),
+                  ])),
+                  SliverToBoxAdapter(
+                    child: CategoryHomeSection(),
+                  ),
+                  SliverToBoxAdapter(
+                    child: SeeMoreRow(
+                      text: "Special Offers".tr(context),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: List.generate(
+                            10,
+                            (index) => Padding(
+                                  padding: const EdgeInsets.only(right: 20),
+                                  child: SpecialOffersProduct(),
+                                )),
+                      ),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: SeeMoreRow(
+                      text: "Fashion Offers".tr(context),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: List.generate(
+                            10,
+                            (index) => Padding(
+                                  padding: const EdgeInsets.only(right: 20),
+                                  child: DefaultProduct(
+                                    image: 'assets/images/fashion_image.png',
+                                    text: "baby blue blouse".tr(context),
+                                  ),
+                                )),
+                      ),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: SeeMoreRow(
+                      text: "Bags Offers".tr(context),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: List.generate(
+                            10,
+                            (index) => Padding(
+                                  padding: const EdgeInsets.only(right: 20),
+                                  child: DefaultProduct(
+                                    image: 'assets/images/bag_image.png',
+                                    text: "White bag".tr(context),
+                                  ),
+                                )),
+                      ),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: SeeMoreRow(
+                      text: "SkinCare Offers".tr(context),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: List.generate(
+                            10,
+                            (index) => Padding(
+                                  padding: const EdgeInsets.only(right: 20),
+                                  child: DefaultProduct(
+                                    image: 'assets/images/skincare_image.png',
+                                    text: "Oily skincare".tr(context),
+                                  ),
+                                )),
+                      ),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: verticalSpacing(100.h(context)),
+                  ),
+                ],
               ),
             ),
-            SliverToBoxAdapter(
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(
-                      10,
-                      (index) => Padding(
-                            padding: const EdgeInsets.only(right: 20),
-                            child: SpecialOffersProduct(),
-                          )),
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: SeeMoreRow(
-                text: "Fashion Offers".tr(context),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(
-                      10,
-                      (index) => Padding(
-                            padding: const EdgeInsets.only(right: 20),
-                            child: DefaultProduct(
-                              image: 'assets/images/fashion_image.png',
-                              text: "baby blue blouse".tr(context),
-                            ),
-                          )),
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: SeeMoreRow(
-                text: "Bags Offers".tr(context),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(
-                      10,
-                      (index) => Padding(
-                            padding: const EdgeInsets.only(right: 20),
-                            child: DefaultProduct(
-                              image: 'assets/images/bag_image.png',
-                              text: "White bag".tr(context),
-                            ),
-                          )),
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: SeeMoreRow(
-                text: "SkinCare Offers".tr(context),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(
-                      10,
-                      (index) => Padding(
-                            padding: const EdgeInsets.only(right: 20),
-                            child: DefaultProduct(
-                              image: 'assets/images/skincare_image.png',
-                              text: "Oily skincare".tr(context),
-                            ),
-                          )),
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: verticalSpacing(30.h(context)),
-            ),
-          ],
-        ),
+          )
+        ]),
       ),
     );
   }

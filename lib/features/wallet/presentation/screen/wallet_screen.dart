@@ -5,6 +5,7 @@ import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/features/home/presentation/screen/home_screen.dart';
 
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 import '../../../../core/widgets/default_app_bar.dart';
@@ -39,9 +40,10 @@ class WalletScreen extends StatelessWidget {
             FadeInUp(
               child: GetStartedButton(
                 onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const HomeScreen()),
-                  );
+                  // Navigator.of(context).push(
+                  //   MaterialPageRoute(builder: (context) =>  HomeScreen()),
+                  // );
+                   context.pushNamed(Routes.homeScreen);
                 },
                 text: 'Start Shopping'.tr(context),
               ),
