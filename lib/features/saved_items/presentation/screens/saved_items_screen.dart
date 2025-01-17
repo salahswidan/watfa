@@ -12,6 +12,14 @@ class SavedItemsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final savedItems = [
+      {"image": "assets/images/fashion_image.png"},
+      {"image": "assets/images/dress2.png"},
+      {"image": "assets/images/dress3.png"},
+      {"image": "assets/images/dress4.png"},
+      {"image": "assets/images/dress5.png"},
+    ];
+
     return Scaffold(
       appBar: DefaultAppBar(
         title: "Saved items".tr(context),
@@ -25,12 +33,15 @@ class SavedItemsScreen extends StatelessWidget {
               ListView.separated(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: 5,
+                itemCount: savedItems.length,
                 separatorBuilder: (context, index) => verticalSpacing(20),
                 itemBuilder: (context, index) => FadeInRight(
-                    delay: Duration(milliseconds: index * 200),
-                    child: const SavedItem()),
-              )
+                  delay: Duration(milliseconds: index * 200),
+                  child: SavedItem(
+                    image: savedItems[index]["image"]!,
+                  ),
+                ),
+              ),
             ],
           ),
         ),

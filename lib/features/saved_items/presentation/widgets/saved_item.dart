@@ -6,8 +6,9 @@ import 'package:watfa/core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 
 class SavedItem extends StatelessWidget {
-  const SavedItem({super.key});
+  const SavedItem({super.key, required this.image});
 
+  final String image;
   @override
   Widget build(BuildContext context) {
     return IntrinsicHeight(
@@ -22,7 +23,7 @@ class SavedItem extends StatelessWidget {
               child: AspectRatio(
                 aspectRatio: 110 / 104,
                 child: Image.asset(
-                  "assets/images/fashion_image.png",
+                 image,
                   fit: BoxFit.cover,
                 ),
               ),
