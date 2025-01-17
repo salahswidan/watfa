@@ -21,7 +21,7 @@ class CustomUserMassege extends StatelessWidget {
       delay: const Duration(milliseconds: 300),
       child: Container(
         width: 362.w(context),
-        height: 190.h(context),
+        height: responsiveContainerHeight, // Use responsive height
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           color: ColorsManagers.pink,
@@ -44,16 +44,22 @@ class CustomUserMassege extends StatelessWidget {
                   ),
                 ],
               ),
-              verticalSpacing(8.h(context)),
-              Text(
-                "Your Request Is Currently Awaiting Finalization.We kindly Seek Your Cooperation In Furnishing Your Legal And Bank Information For The Purpose Of Verification."
-                    .tr(context),
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                  color: Colors.black54,
-                  fontSize: 11,
-                  fontFamily: "Arabic",
-                  fontWeight: FontWeight.w400,
+              verticalSpacing(5.h(context)),
+              Flexible(
+                child: Text(
+                  "Your Request Is Currently Awaiting Finalization.We kindly Seek Your Cooperation In Furnishing Your Legal And Bank Information For The Purpose Of Verification."
+                      .tr(context),
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    color: Colors.black54,
+                    fontSize:
+                        responsiveFontSize, // Dynamically adjust font size
+                    fontFamily: "Arabic",
+                    fontWeight: FontWeight.w400,
+                  ),
+                  softWrap: true, // Enable soft wrapping
+                  overflow: TextOverflow.ellipsis, // Add ellipsis for overflow
+                  maxLines: 4, // Limit the number of lines
                 ),
               ),
             ],

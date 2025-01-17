@@ -8,9 +8,11 @@ import '../../../../core/theme/styles.dart';
 
 class CategoryContainer extends StatelessWidget {
   final bool isSelected;
+  final String imageCategory;
+  final String titleCategory;
   const CategoryContainer({
     super.key,
-    required this.isSelected,
+    required this.isSelected, required this.imageCategory, required this.titleCategory,
   });
 
   @override
@@ -31,11 +33,11 @@ class CategoryContainer extends StatelessWidget {
       child: Column(
         children: [
           Image.asset(
-            'assets/images/category_test.png',
+            imageCategory,
             width: 34,
           ),
           verticalSpacing(5.h(context)),
-          Text("Fashion".tr(context), style: TextStyles.font10Blackw500Podkova(context)),
+          Text(titleCategory.tr(context), style: TextStyles.font10Blackw500Podkova(context)),
         ],
       ),
     );

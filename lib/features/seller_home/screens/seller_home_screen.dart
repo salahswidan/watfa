@@ -19,6 +19,8 @@ class SellerHomeScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             verticalSpacing(30.h(context)),
             StepProgressWidget(
@@ -40,7 +42,7 @@ class SellerHomeScreen extends StatelessWidget {
                       // Navigator.of(context)
                       //     .pushNamed(Routes.bankInformationScreen);
                     }),
-             ],
+              ],
             ),
             verticalSpacing(35.h(context)),
             CustomUserMassege(),

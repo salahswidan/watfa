@@ -11,23 +11,45 @@ class CategoryHomeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categories = [
+      {
+        "imageCategory": "assets/images/category_test.png",
+        "titleCategory": "Fashion"
+      },
+      {"imageCategory": "assets/images/Beauty.png", "titleCategory": "Beauty"},
+      {"imageCategory": "assets/images/Bags.png", "titleCategory": "Bags"},
+      {
+        "imageCategory": "assets/images/Accessories.png",
+        "titleCategory": "Accessories"
+      },
+      {
+        "imageCategory": "assets/images/Skincare.png",
+        "titleCategory": "Skincare"
+      },
+    ];
+
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: List.generate(
-            10,
-            (index) => Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: GestureDetector(
-                    onTap: () {
-                      context.pushNamed(Routes.categoryScreen,
-                          arguments: index);
-                    },
-                    child: CategoryContainer(
-                      isSelected: false,
-                    ),
-                  ),
-                )),
+          categories.length,
+          (index) => Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: GestureDetector(
+              onTap: () {
+                context.pushNamed(
+                  Routes.categoryScreen,
+                  arguments: index,
+                );
+              },
+              child: CategoryContainer(
+                imageCategory: categories[index]["imageCategory"]!,
+                titleCategory: categories[index]["titleCategory"]!,
+                isSelected: false,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
+import 'package:watfa/core/helpers/globals.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/colors.dart';
@@ -8,8 +10,11 @@ import '../../../../core/theme/styles.dart';
 class StoreRow extends StatelessWidget {
   const StoreRow({
     super.key,
+    required this.imageStore,
+    required this.storeName,
   });
-
+  final String imageStore;
+  final String storeName;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,7 +33,7 @@ class StoreRow extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: Image.asset(
-                "assets/images/shein.png",
+                imageStore,
                 fit: BoxFit.cover,
               ),
             ),
@@ -38,7 +43,7 @@ class StoreRow extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Shein",
+                storeName,
                 style: TextStyles.font24BlackOliveW700Manrope(context),
               ),
               verticalSpacing(5.h(context)),
@@ -48,9 +53,9 @@ class StoreRow extends StatelessWidget {
                     "assets/images/device_shop.png",
                     width: 22,
                   ),
-                  horizontalSpacing(7),
+                  horizontalSpacing(10.w(context)),
                   Text(
-                    "online",
+                    "online".tr(context),
                     style: TextStyles.font15GraniteGrayw400Manrope(context),
                   ),
                 ],

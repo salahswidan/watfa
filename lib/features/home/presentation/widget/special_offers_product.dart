@@ -77,7 +77,7 @@ class SpecialOffersProduct extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: -16.h(context),
+            top: -6.h(context),
             child: Column(
               children: [
                 Image.asset(

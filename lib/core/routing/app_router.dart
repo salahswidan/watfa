@@ -61,7 +61,7 @@ class AppRouter {
       case Routes.categoryScreen:
         return MaterialPageRoute(
           builder: (_) => CategoryScreen(
-            selectedCategory: arguments as int,
+            selectedCategory: arguments != null ? arguments as int : 0,
           ),
         );
 
@@ -93,7 +93,7 @@ class AppRouter {
       case Routes.verifyScreen:
         return MaterialPageRoute(
           builder: (_) => VerifyScreen(
-            comeFromPayment: arguments as bool,
+         //!  comeFromPayment: arguments as bool,
           ),
         );
 

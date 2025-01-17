@@ -42,36 +42,94 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: List.generate(
-                        10,
-                        (index) => Padding(
-                              padding: const EdgeInsets.only(right: 10),
-                              child: GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    selectedCategory = index;
-                                  });
-                                },
-                                child: CategoryContainer(
-                                  isSelected: index == selectedCategory,
-                                ),
-                              ),
-                            )),
+                      5,
+                      (index) {
+                        final categories = [
+                          {
+                            "imageCategory": "assets/images/category_test.png",
+                            "titleCategory": "Fashion"
+                          },
+                          {
+                            "imageCategory": "assets/images/Beauty.png",
+                            "titleCategory": "Beauty"
+                          },
+                          {
+                            "imageCategory": "assets/images/Bags.png",
+                            "titleCategory": "Bags"
+                          },
+                          {
+                            "imageCategory": "assets/images/Accessories.png",
+                            "titleCategory": "Accessories"
+                          },
+                          {
+                            "imageCategory": "assets/images/Skincare.png",
+                            "titleCategory": "Skincare"
+                          },
+                        ];
+
+                        return Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectedCategory = index;
+                              });
+                            },
+                            child: CategoryContainer(
+                              imageCategory: categories[index]
+                                  ["imageCategory"]!,
+                              titleCategory: categories[index]
+                                  ["titleCategory"]!,
+                              isSelected: index == selectedCategory,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
               ),
               CategoryDivider(),
               ListView.separated(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return FadeInRight(
-                        delay: Duration(milliseconds: index * 100),
-                        child: StoreRow());
-                  },
-                  separatorBuilder: (context, index) {
-                    return CategoryDivider();
-                  },
-                  itemCount: 5)
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  final stores = [
+                    {
+                      "imageStore": "assets/images/shein.png",
+                      "storeName": "Shein"
+                    },
+                    {
+                      "imageStore": "assets/images/hmlogo.png",
+                      "storeName": "H&M"
+                    },
+                    {
+                      "imageStore": "assets/images/nikeLogo.png",
+                      "storeName": "Nike"
+                    },
+                    {
+                      "imageStore": "assets/images/nextLogo.png",
+                      "storeName": "Next"
+                    },
+                    {
+                      "imageStore": "assets/images/levelLogo.png",
+                      "storeName": "Level Shoes"
+                    },
+                  ];
+
+                  return FadeInRight(
+                    delay: Duration(milliseconds: index * 100),
+                    child: StoreRow(
+                      imageStore: stores[index]["imageStore"]!,
+                      storeName: stores[index]["storeName"]!.tr(context),
+                    ),
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return CategoryDivider();
+                },
+                itemCount: 5,
+              ),
             ],
           ),
         ),
