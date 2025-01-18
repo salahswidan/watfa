@@ -29,5 +29,7 @@ class Routes {
   static const String doneSellerHomeScreen = '/doneSellerHomeScreen';
   static const String orderListPage = '/orderListPage';
   static const String payoutsScreen = '/payoutsScreen';
+  static const String productDetails = '/productDetails';
+
 
 }

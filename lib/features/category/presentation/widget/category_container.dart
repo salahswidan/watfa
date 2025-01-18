@@ -12,7 +12,9 @@ class CategoryContainer extends StatelessWidget {
   final String titleCategory;
   const CategoryContainer({
     super.key,
-    required this.isSelected, required this.imageCategory, required this.titleCategory,
+    required this.isSelected,
+    required this.imageCategory,
+    required this.titleCategory,
   });
 
   @override
@@ -34,10 +36,12 @@ class CategoryContainer extends StatelessWidget {
         children: [
           Image.asset(
             imageCategory,
-            width: 34,
+            width: 28.w(context),
+            height: 28.h(context),
           ),
           verticalSpacing(5.h(context)),
-          Text(titleCategory.tr(context), style: TextStyles.font10Blackw500Podkova(context)),
+          Text(titleCategory.tr(context),
+              style: TextStyles.font8Blackw500Podkova(context)),
         ],
       ),
     );

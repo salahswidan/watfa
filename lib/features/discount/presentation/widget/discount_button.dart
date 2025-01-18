@@ -16,7 +16,7 @@ class DiscountButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(20),
       child: Container(
         height: 35.h(context),
-        width: 120.w(context),
+        width: 135.w(context),
         decoration: BoxDecoration(
           color: ColorsManagers.purple,
           borderRadius: BorderRadius.circular(11),

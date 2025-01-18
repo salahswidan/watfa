@@ -7,7 +7,13 @@ class GetStartedButton extends StatelessWidget {
   final void Function() onTap;
   final String text;
   final bool? isSeller;
-  const GetStartedButton({super.key, required this.onTap, required this.text,this.isSeller});
+  final bool? isShop;
+  const GetStartedButton(
+      {super.key,
+      required this.onTap,
+      required this.text,
+      this.isSeller,
+      this.isShop});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +22,11 @@ class GetStartedButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(20),
       child: Container(
         height: 50,
-        width:isSeller==true? 311 : context.screenWidth,
+        width: isSeller == true
+            ? 311
+            : isShop == true
+                ? 257
+                : context.screenWidth,
         decoration: BoxDecoration(
           color: ColorsManagers.purple,
           borderRadius: BorderRadius.circular(20),

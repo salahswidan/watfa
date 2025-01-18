@@ -222,6 +222,14 @@ class TextStyles {
     );
   }
 
+  static TextStyle font16Blackw400Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeightHelper.regular,
+      color: Colors.black,
+    );
+  }
+
   static TextStyle font14BlackW700Poppins(context) {
     return GoogleFonts.poppins(
       fontSize: getResponsiveFontSize(context, fontSize: 14),
@@ -325,6 +333,20 @@ class TextStyles {
       color: ColorsManagers.blackOlive,
     );
   }
+  static TextStyle font18BlackOliverW700Manrope(context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontWeight: FontWeightHelper.bold,
+      color: ColorsManagers.blackOlive,
+    );
+  }
+  static TextStyle font14BlackOliverW400Manrope(context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.blackOlive,
+    );
+  }
 
   static TextStyle font16BlackOliverW400Manrope(context) {
     return GoogleFonts.manrope(
@@ -398,9 +420,45 @@ class TextStyles {
     );
   }
 
-  static TextStyle font10Blackw500Podkova(context) {
+  static TextStyle font20blackOliveW500Manrope(context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.blackOlive,
+    );
+  }
+  static TextStyle font20blackOliveW700Manrope(context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.bold,
+      color: ColorsManagers.blackOlive,
+    );
+  }
+  static TextStyle font24darkBlackW700Manrope(context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      fontWeight: FontWeightHelper.bold,
+      color: ColorsManagers.darkBlack,
+    );
+  }
+  // static TextStyle font10WhiteW600Manrope(context) {
+  //   return GoogleFonts.manrope(
+  //     fontSize: getResponsiveFontSize(context, fontSize: 24),
+  //     fontWeight: FontWeightHelper.bold,
+  //     color: ColorsManagers.darkBlack,
+  //   );
+  // }
+  static TextStyle font16blackOliveW400Manrope(context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManagers.blackOlive,
+    );
+  }
+
+  static TextStyle font8Blackw500Podkova(context) {
     return GoogleFonts.podkova(
-      fontSize: getResponsiveFontSize(context, fontSize: 10),
+      fontSize: getResponsiveFontSize(context, fontSize: 8),
       fontWeight: FontWeightHelper.medium,
       color: Colors.black,
     );

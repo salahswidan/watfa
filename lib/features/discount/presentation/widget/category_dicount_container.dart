@@ -28,7 +28,8 @@ class CategoryDicountContainer extends StatelessWidget {
             width: 34,
           ),
           verticalSpacing(5.h(context)),
-          Text("Fashion".tr(context), style: TextStyles.font10Blackw500Podkova(context)),
+          Text("Fashion".tr(context),
+              style: TextStyles.font8Blackw500Podkova(context)),
         ],
       ),
     );

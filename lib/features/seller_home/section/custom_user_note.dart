@@ -38,7 +38,7 @@ class CustomUserMassege extends StatelessWidget {
                     "The Request is Process".tr(context),
                     style: TextStyles.font20BlackW700Manropes(context),
                   ),
-                  Spacer(),
+                  horizontalSpacing(65.w(context)),
                   UserImage(
                     isUploaded: true,
                   ),

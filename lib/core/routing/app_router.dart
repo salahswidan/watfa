@@ -24,6 +24,7 @@ import '../../features/auth/sign_up_seller/presentation/section/third_sign_up_se
 import '../../features/auth/verify/presentation/screens/verify_screen.dart';
 import '../../features/bank_information/screen/bank_information_screen.dart';
 import '../../features/home/presentation/screen/home_screen.dart';
+import '../../features/home/presentation/section/product_details.dart';
 import '../../features/onboarding/logic/on_boarding_data.dart';
 import '../../features/onboarding/presentation/screen/on_boarding_screen.dart';
 import '../../features/orders_and_payouts/screens/order_screen.dart';
@@ -93,8 +94,8 @@ class AppRouter {
       case Routes.verifyScreen:
         return MaterialPageRoute(
           builder: (_) => VerifyScreen(
-         //!  comeFromPayment: arguments as bool,
-          ),
+              //!  comeFromPayment: arguments as bool,
+              ),
         );
 
       case Routes.signUpSellerScreen:
@@ -190,7 +191,7 @@ class AppRouter {
       //   );
       default:
         return MaterialPageRoute(
-          builder: (_) => const GetStartedScreen(),
+          builder: (_) => const ProductDetails(),
         );
     }
   }
