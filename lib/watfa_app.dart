@@ -38,7 +38,7 @@ class WatfaApp extends StatelessWidget {
             ],
             debugShowCheckedModeBanner: false,
             //! here
-           // initialRoute: setinitialRoute(),
+            initialRoute: setinitialRoute(),
             // CacheServices.instance.getUserType() != null
             //     ? Routes.onBoardingScreen
             //     :

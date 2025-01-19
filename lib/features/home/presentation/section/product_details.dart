@@ -12,8 +12,9 @@ import '../../../../core/theme/styles.dart';
 
 class ProductDetails extends StatelessWidget {
   final bool? hasAppBar;
+  final String image;
 
-  const ProductDetails({super.key, this.hasAppBar = true});
+  const ProductDetails({super.key, this.hasAppBar = true, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class ProductDetails extends StatelessWidget {
               delay: Duration(milliseconds: 150),
               child: Center(
                 child: Image.asset(
-                  "assets/images/product.png",
+                  image,
                   height: 260.h(context),
                 ),
               ),
@@ -168,14 +169,14 @@ class ProductDetails extends StatelessWidget {
                 style: TextStyles.font16Blackw400Roboto(context),
               ),
             ),
-            const Spacer(),
+            verticalSpacing(85.h(context)),
             FadeInLeft(
               delay: Duration(milliseconds: 150),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                      height: 50.h(context),
+                      height: 55.h(context),
                       width: 64.w(context),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
@@ -187,6 +188,7 @@ class ProductDetails extends StatelessWidget {
                           color: ColorsManagers.blackOlive,
                         ),
                       )),
+                  horizontalSpacing(15.w(context)),
                   GetStartedButton(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(

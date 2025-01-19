@@ -191,7 +191,7 @@ class AppRouter {
       //   );
       default:
         return MaterialPageRoute(
-          builder: (_) => const ProductDetails(),
+          builder: (_) =>  GetStartedScreen(),
         );
     }
   }

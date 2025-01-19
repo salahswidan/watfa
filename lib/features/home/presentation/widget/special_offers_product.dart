@@ -25,7 +25,9 @@ class SpecialOffersProduct extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => ProductDetails()));
+              .push(MaterialPageRoute(builder: (context) => ProductDetails(
+                image:  "assets/images/product.png",
+              )));
         },
         child: Stack(
           alignment: Alignment.bottomCenter,

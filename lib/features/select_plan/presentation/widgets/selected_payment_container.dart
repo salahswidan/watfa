@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 
-
 class SelectedPaymentContainer extends StatelessWidget {
   final String text;
-  final void Function () onTap;
-  const SelectedPaymentContainer({
-    super.key,
-    required this.text,
-    required this.onTap
-  });
+  final void Function() onTap;
+  const SelectedPaymentContainer(
+      {super.key, required this.text, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap:onTap,
+      onTap: onTap,
       child: Container(
           decoration: BoxDecoration(
               color: ColorsManagers.pinkLace,
@@ -26,11 +23,11 @@ class SelectedPaymentContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                height: 25,
-                width: 25,
+                height: 27.h(context),
+                width: 27.w(context),
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    border: Border.all(color: Colors.white, width: 2)),
+                    border: Border.all(color: Colors.white, width: 1)),
                 child: Center(
                   child: Icon(
                     Icons.check_circle,
@@ -39,7 +36,7 @@ class SelectedPaymentContainer extends StatelessWidget {
                 ),
               ),
               Text(
-              text  ,
+                text,
                 style: TextStyles.font14BlackW400Ralway(context),
               ),
               Container()
