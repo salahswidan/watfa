@@ -1,13 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:watfa/core/Local/AppLocalizations.dart';
-import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/theme/colors.dart';
 import 'package:watfa/features/auth/get_started/presentation/widgets/get_started_button.dart';
+import 'package:watfa/features/home/presentation/widget/verify_shop_screen.dart';
 import 'package:watfa/features/payment/logic/model/container_model.dart';
-
-import '../../../../core/routing/routes.dart';
 import '../../../../core/widgets/default_app_bar.dart';
 import '../section/payment_form.dart';
 import '../widgets/payment_container.dart';
@@ -26,20 +24,23 @@ class _PaymentScreenState extends State<PaymentScreen> {
   Widget build(BuildContext context) {
     final List<ContainerModel> data = [
       ContainerModel(
-          title: "Equal Installments Over 2 Months".tr(context),
-          description: "${"The total amount of".tr(context)}${"\$336"
-                  "is divided into two equal payments of".tr(context)} ${"\$84 "
-                  "each.".tr(context)}"),
+        title: "Equal Installments Over 2 Months".tr(context),
+        description:
+            r"The total amount of $336 is divided into two equal payments of $84 each."
+                .tr(context),
+      ),
       ContainerModel(
-          title: "Equal Installments Over 3 Months".tr(context),
-          description: "${"The total amount of".tr(context)}${"\$336"
-                  "is divided into two equal payments of".tr(context)} ${"\$84 "
-                  "each.".tr(context)}"),
+        title: "Equal Installments Over 3 Months".tr(context),
+        description:
+            r"The total amount of $336 is divided into three equal payments of $84 each."
+                .tr(context),
+      ),
       ContainerModel(
-          title: "Equal Installments Over 6 Months".tr(context),
-          description: "${"The total amount of".tr(context)}${"\$336"
-                  "is divided into two equal payments of".tr(context)} ${"\$84 "
-                  "each.".tr(context)}"),
+        title: "Equal Installments Over 6 Months".tr(context),
+        description:
+            r"The total amount of $336 is divided into six equal payments of $84 each."
+                .tr(context),
+      ),
     ];
     return Scaffold(
       appBar: DefaultAppBar(
@@ -79,16 +80,18 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     : PaymentForm(),
                 GetStartedButton(
                     onTap: () {
-                      selectedIndexSection == 0
-                          ? setState(() {
-                              selectedIndexSection = 1;
-                            })
-                          : context.pushNamed(Routes.verifyScreen,
-                              arguments: true);
+                      if (selectedIndexSection == 0) {
+                        setState(() {
+                          selectedIndexSection = 1;
+                        });
+                      } else {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => VerifyShopScreen()));
+                      }
                     },
                     text: selectedIndexSection == 0
-                        ? "Continue"
-                        : "Verification"),
+                        ? "Continue".tr(context)
+                        : "Verification".tr(context)),
                 verticalSpacing(1)
               ]),
         ),

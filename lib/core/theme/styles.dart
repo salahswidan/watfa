@@ -124,6 +124,13 @@ class TextStyles {
       color: ColorsManagers.philippineGray,
     );
   }
+  static TextStyle font14blackOliveW500Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeightHelper.medium,
+      color: ColorsManagers.blackOlive,
+    );
+  }
 
   static TextStyle font16Purplew600Roboto(context) {
     return GoogleFonts.roboto(
@@ -278,6 +285,14 @@ class TextStyles {
     );
   }
 
+  static TextStyle font20raisinBlackW600Poppins(context) {
+    return GoogleFonts.poppins(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.semiBold,
+      color: ColorsManagers.lightWhite,
+    );
+  }
+
   static TextStyle font20Blackw500Poppins(context) {
     return GoogleFonts.poppins(
       fontSize: getResponsiveFontSize(context, fontSize: 20),
@@ -325,6 +340,13 @@ class TextStyles {
       color: Colors.white,
     );
   }
+  static TextStyle font13BlackW600Roboto(context) {
+    return GoogleFonts.roboto(
+      fontSize: getResponsiveFontSize(context, fontSize: 13),
+      fontWeight: FontWeightHelper.semiBold,
+      color: Colors.black,
+    );
+  }
 
   static TextStyle font16BlackOliverW700Manrope(context) {
     return GoogleFonts.manrope(
@@ -333,6 +355,7 @@ class TextStyles {
       color: ColorsManagers.blackOlive,
     );
   }
+
   static TextStyle font18BlackOliverW700Manrope(context) {
     return GoogleFonts.manrope(
       fontSize: getResponsiveFontSize(context, fontSize: 18),
@@ -340,6 +363,7 @@ class TextStyles {
       color: ColorsManagers.blackOlive,
     );
   }
+
   static TextStyle font14BlackOliverW400Manrope(context) {
     return GoogleFonts.manrope(
       fontSize: getResponsiveFontSize(context, fontSize: 14),
@@ -427,6 +451,7 @@ class TextStyles {
       color: ColorsManagers.blackOlive,
     );
   }
+
   static TextStyle font20blackOliveW700Manrope(context) {
     return GoogleFonts.manrope(
       fontSize: getResponsiveFontSize(context, fontSize: 20),
@@ -434,6 +459,7 @@ class TextStyles {
       color: ColorsManagers.blackOlive,
     );
   }
+
   static TextStyle font24darkBlackW700Manrope(context) {
     return GoogleFonts.manrope(
       fontSize: getResponsiveFontSize(context, fontSize: 24),
@@ -441,6 +467,7 @@ class TextStyles {
       color: ColorsManagers.darkBlack,
     );
   }
+
   // static TextStyle font10WhiteW600Manrope(context) {
   //   return GoogleFonts.manrope(
   //     fontSize: getResponsiveFontSize(context, fontSize: 24),

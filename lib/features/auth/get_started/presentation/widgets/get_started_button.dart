@@ -8,8 +8,10 @@ class GetStartedButton extends StatelessWidget {
   final String text;
   final bool? isSeller;
   final bool? isShop;
+  final bool? isComplated;
   const GetStartedButton(
       {super.key,
+      this.isComplated,
       required this.onTap,
       required this.text,
       this.isSeller,
@@ -28,7 +30,9 @@ class GetStartedButton extends StatelessWidget {
                 ? 257
                 : context.screenWidth,
         decoration: BoxDecoration(
-          color: ColorsManagers.purple,
+          color: isComplated == true
+              ? ColorsManagers.blackOlive
+              : ColorsManagers.purple,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Center(

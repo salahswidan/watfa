@@ -41,6 +41,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
+                  //  mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: List.generate(
                       5,
                       (index) {
@@ -92,6 +93,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
               CategoryDivider(),
               ListView.separated(
                 shrinkWrap: true,
+                
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
                   final stores = [

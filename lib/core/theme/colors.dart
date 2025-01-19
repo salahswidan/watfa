@@ -34,9 +34,11 @@ class ColorsManagers {
   static const Color magnolia = Color(0xffF4E7FC);
   static const Color blackOlive = Color(0xff404040);
   static const Color grey1 = Color(0xff949393);
+  static const Color lightgrey = Color(0xffF8F8FA);
   static const Color lavenderBlush = Color(0xffFCE7F3);
   static const Color sunRay = Color(0xffEBB65B);
   static const Color antiFlashWhite = Color(0xffF2F0F1);
+  static const Color lightWhite = Color(0xffEBEBEB);
   static const Color wisteria = Color(0xffC49DDA);
   static const Color russianViolet=Color(0xff351547);
   static const Color sonicSilver=Color(0xff757575);

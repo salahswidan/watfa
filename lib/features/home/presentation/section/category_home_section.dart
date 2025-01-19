@@ -31,6 +31,7 @@ class CategoryHomeSection extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
+       // mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: List.generate(
           categories.length,
           (index) => Padding(
