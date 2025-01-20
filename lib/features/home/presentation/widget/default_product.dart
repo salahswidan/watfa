@@ -4,13 +4,21 @@ import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 
-class DefaultProduct extends StatelessWidget {
+class DefaultProduct extends StatefulWidget {
   final String image, text;
+
   const DefaultProduct({
     super.key,
     required this.image,
     required this.text,
   });
+
+  @override
+  _DefaultProductState createState() => _DefaultProductState();
+}
+
+class _DefaultProductState extends State<DefaultProduct> {
+  bool isBookmarked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -46,19 +54,29 @@ class DefaultProduct extends StatelessWidget {
                     ),
                   ),
                 ),
-                Icon(
-                  Icons.bookmark_border_outlined,
-                  color: ColorsManagers.blackOlive,
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isBookmarked = !isBookmarked;
+                    });
+                  },
+                  child: Icon(
+                    isBookmarked
+                        ? Icons.bookmark
+                        : Icons.bookmark_border_outlined,
+                    color: isBookmarked
+                        ? ColorsManagers.purple
+                        : ColorsManagers.blackOlive,
+                  ),
                 ),
               ],
             ),
             verticalSpacing(10),
-            // Expanded(flex: 3, child: SizedBox()),
             Center(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
-                  image,
+                  widget.image,
                   height: 100.h(context),
                   width: 140.w(context),
                   fit: BoxFit.cover,
@@ -67,8 +85,9 @@ class DefaultProduct extends StatelessWidget {
             ),
             Expanded(flex: 3, child: SizedBox()),
             Center(
-                child: Text(text,
-                    style: TextStyles.font14BlackwOliveW400Manrope(context))),
+              child: Text(widget.text,
+                  style: TextStyles.font14BlackwOliveW400Manrope(context)),
+            ),
             Expanded(flex: 3, child: SizedBox()),
             Text(
               "SAR 230.00",
@@ -93,7 +112,7 @@ class DefaultProduct extends StatelessWidget {
                 Text("4.9",
                     style: TextStyles.font12BlackOliveW400Manrope(context)),
               ],
-            )
+            ),
           ],
         ),
       ),

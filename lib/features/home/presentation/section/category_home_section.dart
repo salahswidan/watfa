@@ -20,7 +20,7 @@ class CategoryHomeSection extends StatelessWidget {
       {"imageCategory": "assets/images/Bags.png", "titleCategory": "Bags"},
       {
         "imageCategory": "assets/images/Accessories.png",
-        "titleCategory": "Accessories"
+        "titleCategory": "Accessor"
       },
       {
         "imageCategory": "assets/images/Skincare.png",

@@ -8,10 +8,17 @@ import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 
-class SpecialOffersProduct extends StatelessWidget {
+class SpecialOffersProduct extends StatefulWidget {
   const SpecialOffersProduct({
     super.key,
   });
+
+  @override
+  _SpecialOffersProductState createState() => _SpecialOffersProductState();
+}
+
+class _SpecialOffersProductState extends State<SpecialOffersProduct> {
+  bool isBookmarked = false; 
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +31,14 @@ class SpecialOffersProduct extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => ProductDetails(
-                image:  "assets/images/product.png",
-              )));
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => ProductDetails(
+                title: "lip gloss",
+                image: "assets/images/product.png",
+              ),
+            ),
+          );
         },
         child: Stack(
           alignment: Alignment.bottomCenter,
@@ -44,21 +55,36 @@ class SpecialOffersProduct extends StatelessWidget {
                         padding:
                             EdgeInsets.symmetric(horizontal: 6, vertical: 3),
                         decoration: BoxDecoration(
-                            color: ColorsManagers.purple,
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10),
-                              bottomRight: Radius.circular(10),
-                            )),
-                        child: Text("45% OFF".tr(context),
-                            style: TextStyles.font10WhiteW600Manrope(context)),
+                          color: ColorsManagers.purple,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
+                          ),
+                        ),
+                        child: Text(
+                          "45% OFF".tr(context),
+                          style: TextStyles.font10WhiteW600Manrope(context),
+                        ),
                       ),
-                      Icon(
-                        Icons.bookmark_border_outlined,
-                        color: ColorsManagers.blackOlive,
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            isBookmarked =
+                                !isBookmarked; 
+                          });
+                        },
+                        child: Icon(
+                          isBookmarked
+                              ? Icons.bookmark 
+                              : Icons
+                                  .bookmark_border_outlined, 
+                          color: isBookmarked
+                              ? ColorsManagers.purple 
+                              : ColorsManagers.blackOlive, 
+                        ),
                       ),
                     ],
                   ),
-                  // Spacer(),
                   verticalSpacing(150.h(context)),
                   Text(
                     "${"SAR".tr(context)} 230.00",
@@ -83,7 +109,7 @@ class SpecialOffersProduct extends StatelessWidget {
                           style:
                               TextStyles.font12BlackOliveW400Manrope(context)),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -99,7 +125,7 @@ class SpecialOffersProduct extends StatelessWidget {
                       style: TextStyles.font14BlackwOliveW400Manrope(context)),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

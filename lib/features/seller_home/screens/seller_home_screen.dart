@@ -16,14 +16,13 @@ class SellerHomeScreen extends StatelessWidget {
       appBar: SellerHomeAppBar(
         isDone: false,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            verticalSpacing(30.h(context)),
-            StepProgressWidget(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          verticalSpacing(52.h(context)),
+          Center(
+            child: StepProgressWidget(
               steps: [
                 StepData(title: "Business".tr(context), isActive: true),
                 StepData(
@@ -44,10 +43,10 @@ class SellerHomeScreen extends StatelessWidget {
                     }),
               ],
             ),
-            verticalSpacing(41.h(context)),
-            CustomUserMassege(),
-          ],
-        ),
+          ),
+          verticalSpacing(41.h(context)),
+          Center(child: CustomUserMassege())
+        ],
       ),
     );
   }

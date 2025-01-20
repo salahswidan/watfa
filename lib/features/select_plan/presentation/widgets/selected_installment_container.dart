@@ -5,7 +5,6 @@ import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 
-
 class SelectedInstallmentContainer extends StatelessWidget {
   const SelectedInstallmentContainer({
     super.key,
@@ -18,12 +17,16 @@ class SelectedInstallmentContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(6),
-        border:
-            Border.all(color: ColorsManagers.africanViolet, width: 3),
+        border: Border.all(color: ColorsManagers.africanViolet, width: 3),
       ),
       child: Row(
         children: [
-          Icon(Icons.check_circle, color: ColorsManagers.africanViolet),
+          Icon(
+            Icons.check_circle,
+            color: ColorsManagers.africanViolet,
+            //!
+            size: 26,
+          ),
           horizontalSpacing(15),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

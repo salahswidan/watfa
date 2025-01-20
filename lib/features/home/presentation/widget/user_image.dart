@@ -14,8 +14,8 @@ class UserImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: isUploaded == true ? 52 : 56,
-      height: isUploaded == true ? 52 : 56,
+      width: isUploaded == true ? 63 : 56,
+      height: isUploaded == true ? 63 : 56,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(

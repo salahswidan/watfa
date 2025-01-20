@@ -6,6 +6,7 @@ import '../../../../core/helpers/spacing.dart';
 import '../../../../core/routing/routes.dart';
 import '../section/category_home_section.dart';
 import '../section/home_app_bar.dart';
+import '../section/product_details.dart';
 import '../widget/ad_banner_container.dart';
 import '../widget/default_product.dart';
 import '../widget/home_background_container.dart';
@@ -69,11 +70,23 @@ class HomeScreen extends StatelessWidget {
                       child: Row(
                         children: List.generate(
                             10,
-                            (index) => Padding(
-                                  padding: const EdgeInsets.only(right: 20),
-                                  child: DefaultProduct(
-                                    image: 'assets/images/fashion_image.png',
-                                    text: "baby blue blouse".tr(context),
+                            (index) => GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ProductDetails(
+                                                  title: "baby blue blouse",
+                                                  image:
+                                                      "assets/images/fashion_image.png",
+                                                )));
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 20),
+                                    child: DefaultProduct(
+                                      image: 'assets/images/fashion_image.png',
+                                      text: "baby blue blouse".tr(context),
+                                    ),
                                   ),
                                 )),
                       ),
@@ -90,11 +103,23 @@ class HomeScreen extends StatelessWidget {
                       child: Row(
                         children: List.generate(
                             10,
-                            (index) => Padding(
-                                  padding: const EdgeInsets.only(right: 20),
-                                  child: DefaultProduct(
-                                    image: 'assets/images/bag_image.png',
-                                    text: "White bag".tr(context),
+                            (index) => GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ProductDetails(
+                                                  title: "White bag",
+                                                  image:
+                                                      "assets/images/bag_image.png",
+                                                )));
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 20),
+                                    child: DefaultProduct(
+                                      image: 'assets/images/bag_image.png',
+                                      text: "White bag".tr(context),
+                                    ),
                                   ),
                                 )),
                       ),
@@ -111,11 +136,23 @@ class HomeScreen extends StatelessWidget {
                       child: Row(
                         children: List.generate(
                             10,
-                            (index) => Padding(
-                                  padding: const EdgeInsets.only(right: 20),
-                                  child: DefaultProduct(
-                                    image: 'assets/images/skincare_image.png',
-                                    text: "Oily skincare".tr(context),
+                            (index) => GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ProductDetails(
+                                                  title: "Oily skincare",
+                                                  image:
+                                                      "assets/images/skincare_image.png",
+                                                )));
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 20),
+                                    child: DefaultProduct(
+                                      image: 'assets/images/skincare_image.png',
+                                      text: "Oily skincare".tr(context),
+                                    ),
                                   ),
                                 )),
                       ),

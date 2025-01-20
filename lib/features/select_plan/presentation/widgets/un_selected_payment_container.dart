@@ -23,12 +23,14 @@ class UnSelectedPaymentContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-           //!
+                //!
                 height: 26.h(context),
                 width: 26.w(context),
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    border: Border.all(color: Colors.white, width: 2)),
+                    border: Border.all(
+                      color: Colors.white,
+                    )),
               ),
               Text(
                 text,

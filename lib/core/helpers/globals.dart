@@ -7,13 +7,13 @@ import '../Local/local_cubit.dart';
 import '../routing/routes.dart';
 
 List<CardModel> settingsCardList(BuildContext context) => [
-      CardModel(
-        title: 'Wallet'.tr(context),
-        image: 'assets/images/Wallet.png',
-        onTap: () {
-          context.pushNamed(Routes.walletScreen);
-        },
-      ),
+      // CardModel(
+      //   title: 'Wallet'.tr(context),
+      //   image: 'assets/images/Wallet.png',
+      //   onTap: () {
+      //     context.pushNamed(Routes.walletScreen);
+      //   },
+      // ),
       CardModel(
         title: 'Payment Methods'.tr(context),
         image: 'assets/images/Bank Cards.png',

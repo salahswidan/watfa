@@ -1,8 +1,10 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:watfa/core/Local/AppLocalizations.dart';
+import 'package:watfa/features/home/presentation/section/product_details.dart';
 
 import '../../../../core/helpers/spacing.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/widgets/default_app_bar.dart';
 import '../widgets/saved_item.dart';
@@ -37,8 +39,17 @@ class SavedItemsScreen extends StatelessWidget {
                 separatorBuilder: (context, index) => verticalSpacing(20),
                 itemBuilder: (context, index) => FadeInRight(
                   delay: Duration(milliseconds: index * 200),
-                  child: SavedItem(
-                    image: savedItems[index]["image"]!,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ProductDetails(
+                                title: "dress",
+                                image: savedItems[index]["image"]!,
+                              )));
+                    },
+                    child: SavedItem(
+                      image: savedItems[index]["image"]!,
+                    ),
                   ),
                 ),
               ),
