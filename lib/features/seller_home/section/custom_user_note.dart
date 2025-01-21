@@ -36,13 +36,13 @@ class CustomUserMassege extends StatelessWidget {
                     "The Request is Process".tr(context),
                     style: TextStyles.font18BlackW500Manropes(context),
                   ),
-                  horizontalSpacing(65.w(context)),
+                  horizontalSpacing(130.w(context)),
                   UserImage(
                     isUploaded: true,
                   ),
                 ],
               ),
-              verticalSpacing(10.h(context)),
+              verticalSpacing(18.h(context)),
               Flexible(
                 child: Text(
                   "Your Request Is Currently Awaiting Finalization.We kindly Seek Your Cooperation In Furnishing Your Legal And Bank Information For The Purpose Of Verification."
@@ -50,9 +50,9 @@ class CustomUserMassege extends StatelessWidget {
                   textAlign: TextAlign.start,
                   style: TextStyle(
                     color: Colors.black54,
-                    fontSize: 11,
+                    fontSize: 12,
                     fontFamily: "Arabic",
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w600,
                   ),
                   softWrap: true,
                   overflow: TextOverflow.ellipsis,

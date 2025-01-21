@@ -36,10 +36,10 @@ class CategoryContainer extends StatelessWidget {
         children: [
           Image.asset(
             imageCategory,
-            width: 28.w(context),
-            height: 28.h(context),
+            width: 34.w(context),
+            height: 34.h(context),
           ),
-          verticalSpacing(5.h(context)),
+          verticalSpacing(3.h(context)),
           Text(titleCategory.tr(context),
               style: TextStyles.font8Blackw500Podkova(context)),
         ],

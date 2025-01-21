@@ -26,6 +26,6 @@ class InActiveBottomNavigationBarItem extends StatelessWidget {
           style: TextStyles.font10OuterSpaceW400Poppins(context),
         ),
       ],
-    );
+    ); 
   }
 }

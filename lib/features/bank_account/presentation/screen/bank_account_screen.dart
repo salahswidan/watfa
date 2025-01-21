@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/widgets/default_app_bar.dart';
+import 'package:watfa/features/home/presentation/screen/home_screen.dart';
 
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../auth/get_started/presentation/widgets/get_started_button.dart';
 import '../section/bank_account_form.dart';
@@ -26,7 +28,9 @@ class BankAccountScreen extends StatelessWidget {
             Expanded(child: verticalSpacing(20)),
             GetStartedButton(
               text: "Add Bank information".tr(context),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed(Routes.homeScreen);
+              },
             ),
           ],
         ),

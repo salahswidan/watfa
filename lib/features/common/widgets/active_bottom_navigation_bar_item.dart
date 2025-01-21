@@ -21,7 +21,7 @@ class ActiveBottomNavigationBarItem extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(
+        Image.asset( 
           image,
           width: 24.w(context),
           color: ColorsManagers.purple,

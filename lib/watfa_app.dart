@@ -1,7 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'core/Local/AppLocalizations.dart';
 import 'core/Local/local_cubit.dart';
 import 'core/helpers/shared_pref_helper.dart';
@@ -58,7 +57,7 @@ class WatfaApp extends StatelessWidget {
 
 String setinitialRoute() {
   final currentRoute = CacheServices.instance.getCurrentRoute();
-  debugPrint('Initial route: $currentRoute'); // Add debug log
+  debugPrint('Initial route: $currentRoute'); 
   if (currentRoute != null && currentRoute.isNotEmpty) {
     return currentRoute;
   }

@@ -13,10 +13,10 @@ class DiscountButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(11),
       child: Container(
         height: 35.h(context),
-        width: 135.w(context),
+        width: 150.w(context),
         decoration: BoxDecoration(
           color: ColorsManagers.purple,
           borderRadius: BorderRadius.circular(11),

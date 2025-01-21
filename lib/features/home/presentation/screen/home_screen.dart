@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
-
 import '../../../../core/helpers/spacing.dart';
-import '../../../../core/routing/routes.dart';
 import '../section/category_home_section.dart';
 import '../section/home_app_bar.dart';
 import '../section/product_details.dart';

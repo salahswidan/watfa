@@ -26,30 +26,32 @@ class LoginScreen extends StatelessWidget {
       body: CustomGradientContainer(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            children: [
-              FixedLoginData(),
-              LoginForm(),
-              ForgetPassword(),
-              LoginBlocListener(),
-              FingerPrintAccess(),
-              BiometricAuth(
-                onTapFingerPrint: () {
-                  LocalAuthApi.authenticateWithFingerprint();
-                },
-              ),
-              const CustomDivider(),
-              Text(
-                "sign in using".tr(context),
-                style: TextStyles.font15CharlestonGreenw400Roboto(context),
-              ),
-              SocialAuth(
-                onTapGoogle: () {},
-                onTapApple: () {},
-                onTapFaceBook: () {},
-              ),
-              const DontHaveAcc(),
-            ],
+          child: SafeArea(
+            child: Column(
+              children: [
+                FixedLoginData(),
+                LoginForm(),
+                ForgetPassword(),
+                LoginBlocListener(),
+                FingerPrintAccess(),
+                BiometricAuth(
+                  onTapFingerPrint: () {
+                    LocalAuthApi.authenticateWithFingerprint();
+                  },
+                ),
+                const CustomDivider(),
+                Text(
+                  "sign in using".tr(context),
+                  style: TextStyles.font15CharlestonGreenw400Roboto(context),
+                ),
+                SocialAuth(
+                  onTapGoogle: () {},
+                  onTapApple: () {},
+                  onTapFaceBook: () {},
+                ),
+                const DontHaveAcc(),
+              ],
+            ),
           ),
         ),
       ),

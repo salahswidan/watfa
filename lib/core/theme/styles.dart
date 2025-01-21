@@ -112,7 +112,7 @@ class TextStyles {
   static TextStyle font18BlackW500Manropes(context) {
     return GoogleFonts.manrope(
       fontSize: getResponsiveFontSize(context, fontSize: 18),
-      fontWeight: FontWeightHelper.medium,
+      fontWeight: FontWeightHelper.bold,
       color: Colors.black,
     );
   }

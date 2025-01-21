@@ -3,7 +3,6 @@ import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/routing/routes.dart';
 import 'package:watfa/features/auth/get_started/presentation/widgets/get_started_button.dart';
-
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../../../../core/widgets/custom_gradient_container.dart';

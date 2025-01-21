@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
@@ -8,8 +7,9 @@ import 'package:watfa/core/Local/local_cubit.dart';
 import '../../home/presentation/widget/user_image.dart';
 
 class SellerHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const SellerHomeAppBar({super.key, this.isDone});
+  const SellerHomeAppBar({super.key, this.isDone, this.onLanguageChanged});
   final bool? isDone;
+  final VoidCallback? onLanguageChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +37,9 @@ class SellerHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                     String newLocale = currentLocale == 'ar' ? 'en' : 'ar';
 
                     LocalCubit.get(context).changeLanguage(newLocale);
+                    if (onLanguageChanged != null) {
+                      onLanguageChanged!();
+                    }
                   },
                   child: Text(
                     "العربية".tr(context),

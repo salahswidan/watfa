@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:watfa/core/helpers/extinsions.dart';
-import 'package:watfa/core/routing/routes.dart';
-
 import '../../../../core/theme/colors.dart';
 
 class UserImage extends StatelessWidget {

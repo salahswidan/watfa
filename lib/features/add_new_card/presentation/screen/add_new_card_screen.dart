@@ -8,6 +8,7 @@ import 'package:watfa/core/widgets/default_app_bar.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../auth/get_started/presentation/widgets/get_started_button.dart';
+import '../../../home/presentation/screen/home_screen.dart';
 import '../section/add_new_card_form.dart';
 
 class AddNewCardScreen extends StatelessWidget {
@@ -56,7 +57,10 @@ class AddNewCardScreen extends StatelessWidget {
             Expanded(child: verticalSpacing(20)),
             GetStartedButton(
               text: "Add Card".tr(context),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => HomeScreen()));
+              },
             ),
           ],
         ),

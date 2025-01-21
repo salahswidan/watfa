@@ -5,6 +5,7 @@ import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/widgets/default_app_bar.dart';
 import 'package:watfa/features/auth/get_started/presentation/widgets/get_started_button.dart';
+import 'package:watfa/features/common/main_screen.dart';
 import 'package:watfa/features/payment/presentation/screen/payment_screen.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
@@ -13,7 +14,11 @@ class ProductDetails extends StatelessWidget {
   final bool? hasAppBar;
   final String image;
   final String title;
-  const ProductDetails({super.key, this.hasAppBar = true, required this.image, required this.title});
+  const ProductDetails(
+      {super.key,
+      this.hasAppBar = true,
+      required this.image,
+      required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -92,8 +97,8 @@ class ProductDetails extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      width: 64.w(context),
-                      height: 25.h(context),
+                      width: 76.w(context),
+                      height: 30.h(context),
                       padding: const EdgeInsets.symmetric(
                           horizontal: 12, vertical: 6),
                       decoration: BoxDecoration(
@@ -103,9 +108,11 @@ class ProductDetails extends StatelessWidget {
                           bottomRight: Radius.circular(10),
                         ),
                       ),
-                      child: Text(
-                        "45% OFF".tr(context),
-                        style: TextStyles.font10WhiteW600Manrope(context),
+                      child: Center(
+                        child: Text(
+                          "45% OFF".tr(context),
+                          style: TextStyles.font10WhiteW600Manrope(context),
+                        ),
                       ),
                     ),
                   ],

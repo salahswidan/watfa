@@ -3,8 +3,6 @@ import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/features/home/presentation/section/product_details.dart';
-
-import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 
@@ -18,13 +16,13 @@ class SpecialOffersProduct extends StatefulWidget {
 }
 
 class _SpecialOffersProductState extends State<SpecialOffersProduct> {
-  bool isBookmarked = false; 
+  bool isBookmarked = false;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 265.h(context),
-      width: 185.w(context),
+      height: 300.h(context),
+      width: 198.w(context),
       decoration: BoxDecoration(
         color: ColorsManagers.lavenderBlush,
         borderRadius: BorderRadius.circular(20),
@@ -69,23 +67,21 @@ class _SpecialOffersProductState extends State<SpecialOffersProduct> {
                       GestureDetector(
                         onTap: () {
                           setState(() {
-                            isBookmarked =
-                                !isBookmarked; 
+                            isBookmarked = !isBookmarked;
                           });
                         },
                         child: Icon(
                           isBookmarked
-                              ? Icons.bookmark 
-                              : Icons
-                                  .bookmark_border_outlined, 
+                              ? Icons.bookmark
+                              : Icons.bookmark_border_outlined,
                           color: isBookmarked
-                              ? ColorsManagers.purple 
-                              : ColorsManagers.blackOlive, 
+                              ? ColorsManagers.purple
+                              : ColorsManagers.blackOlive,
                         ),
                       ),
                     ],
                   ),
-                  verticalSpacing(150.h(context)),
+                  verticalSpacing(160.h(context)),
                   Text(
                     "${"SAR".tr(context)} 230.00",
                     style: TextStyles.font17BlackOliveW700Manrope(context),
