@@ -34,7 +34,7 @@ class StepProgressWidget extends StatelessWidget {
             final isActive = steps[(index - 1) ~/ 2].isActive;
             return Column(children: [
               SizedBox(
-                height: 3.h(context),
+                height: 15.h(context),
               ),
               _buildStepConnector(isActive: isActive)
             ]);
@@ -59,7 +59,7 @@ class StepProgressWidget extends StatelessWidget {
           children: [
             Text(
               title,
-              style: const TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 8),
             ),
             verticalSpacing(6),
             CircleAvatar(

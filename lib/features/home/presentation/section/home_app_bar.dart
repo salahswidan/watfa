@@ -18,7 +18,11 @@ class HomeAppBar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-        UserImage(),
+        GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, Routes.profileScreen);
+            },
+            child: UserImage()),
         horizontalSpacing(5),
         Expanded(
           child: FittedBox(
@@ -35,8 +39,7 @@ class HomeAppBar extends StatelessWidget {
         AppBarActionCircle(
           icon: 'assets/svgs/notification.svg',
           onTap: () {
-                        context.pushNamed(Routes.notificationsScreen);
-
+            context.pushNamed(Routes.notificationsScreen);
           },
         ),
         horizontalSpacing(5),
