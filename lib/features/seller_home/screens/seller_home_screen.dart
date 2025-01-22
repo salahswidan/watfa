@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
@@ -19,7 +20,7 @@ class _SellerHomeScreenState extends State<SellerHomeScreen> {
   void _handleLanguageChange() {
     setState(() {
       imagePath = imagePath == "assets/images/user_note.png"
-          ? "assets/images/ar2.png"
+          ? "assets/images/ar3.jpg"
           : "assets/images/user_note.png";
     });
   }
@@ -37,43 +38,49 @@ class _SellerHomeScreenState extends State<SellerHomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           verticalSpacing(52.h(context)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Center(
-                child: StepProgressWidget(
-                  steps: [
-                    StepData(title: "Business".tr(context), isActive: true),
-                    StepData(
-                      title: "Legal".tr(context),
-                      isActive: false,
-                      stepNumber: 2,
-                      onTapNav: () {
-                        Navigator.of(context).pushNamed(Routes.legalScreen);
-                      },
-                    ),
-                    StepData(
-                        title: "Bank".tr(context),
+          FadeInRight(
+            delay: const Duration(milliseconds: 300),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(
+                  child: StepProgressWidget(
+                    steps: [
+                      StepData(title: "Business".tr(context), isActive: true),
+                      StepData(
+                        title: "Legal".tr(context),
                         isActive: false,
-                        stepNumber: 3,
+                        stepNumber: 2,
                         onTapNav: () {
-                          // Navigator.of(context)
-                          //     .pushNamed(Routes.bankInformationScreen);
-                        }),
-                  ],
+                          Navigator.of(context).pushNamed(Routes.legalScreen);
+                        },
+                      ),
+                      StepData(
+                          title: "Bank".tr(context),
+                          isActive: false,
+                          stepNumber: 3,
+                          onTapNav: () {
+                            // Navigator.of(context)
+                            //     .pushNamed(Routes.bankInformationScreen);
+                          }),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           verticalSpacing(41.h(context)),
           //  Center(child: CustomUserMassege())
-          Center(
-              child: Image.asset(
-            imagePath,
-            height: 160.h(context),
-            width: 362.w(context),
-            fit: BoxFit.cover,
-          )),
+          FadeInRight(
+            delay: const Duration(milliseconds: 150),
+            child: Center(
+                child: Image.asset(
+              imagePath,
+              height: 160.h(context),
+              width: 362.w(context),
+              fit: BoxFit.cover,
+            )),
+          ),
         ],
       ),
     );

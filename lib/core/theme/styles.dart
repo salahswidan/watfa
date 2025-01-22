@@ -717,9 +717,9 @@ class TextStyles {
     );
   }
 
-  static TextStyle font16WhiteW500Poppins(context) {
+  static TextStyle font14WhiteW500Poppins(context) {
     return GoogleFonts.poppins(
-      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontWeight: FontWeightHelper.medium,
       color: Colors.white,
     );

@@ -19,6 +19,7 @@ class PaymentHomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: DefaultAppBar(
         hasBackArrow: true,
+        isRoute: true,
         title: "Payment Method".tr(context),
       ),
       backgroundColor: ColorsManagers.cultured,

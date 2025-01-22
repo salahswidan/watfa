@@ -8,12 +8,14 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? titleWidget;
   final bool? hasBackArrow;
   final bool? isSeller;
+  final bool? isRoute;
   const DefaultAppBar({
     super.key,
     this.title,
     this.hasBackArrow,
     this.titleWidget,
     this.isSeller,
+    this.isRoute,
   });
 
   @override
@@ -46,7 +48,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
                       ? 20
                       : 0,
                 ),
-                child: FadeInLeft(child: DefaultBackArrow()),
+                child: FadeInLeft(child:isRoute == true ? DefaultBackArrow(isRoute: true,) : DefaultBackArrow()),
               )
             : null,
       ),

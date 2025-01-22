@@ -32,7 +32,7 @@ class OrderComplateScreen extends StatelessWidget {
               child: GetStartedButton(
                   isComplated: true,
                   onTap: () {
-                    Navigator.pushNamed(context, Routes.homeScreen);
+                    Navigator.pushNamed(context, Routes.mainScreen);
                   },
                   text: "Go To Home Page".tr(context)),
             ),

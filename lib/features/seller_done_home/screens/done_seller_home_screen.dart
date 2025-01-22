@@ -21,16 +21,22 @@ class DoneSellerHomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             verticalSpacing(30.h(context)),
             FadeInRight(
               delay: const Duration(milliseconds: 300),
-              child: StepProgressWidget(
-                steps: [
-                  StepData(title: "Business".tr(context), isActive: true),
-                  StepData(title: "Legal".tr(context), isActive: true),
-                  StepData(title: "Bank".tr(context), isActive: true),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  StepProgressWidget(
+                    steps: [
+                      StepData(title: "Business".tr(context), isActive: true),
+                      StepData(title: "Legal".tr(context), isActive: true),
+                      StepData(title: "Bank".tr(context), isActive: true),
+                    ],
+                  ),
                 ],
               ),
             ),

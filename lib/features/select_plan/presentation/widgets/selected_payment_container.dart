@@ -34,7 +34,7 @@ class SelectedPaymentContainer extends StatelessWidget {
                   child: Icon(
                     Icons.check_circle,
                     color: ColorsManagers.purple,
-                    size: 26,
+                    size: 22.w(context),
                   ),
                 ),
               ),

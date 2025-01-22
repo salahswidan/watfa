@@ -16,6 +16,7 @@ class PurchasesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DefaultAppBar(
+        isRoute: true,
         title: "Purchases".tr(context),
         hasBackArrow: true,
       ),

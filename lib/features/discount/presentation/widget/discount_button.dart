@@ -15,8 +15,9 @@ class DiscountButton extends StatelessWidget {
       onTap: onTap,
       borderRadius: BorderRadius.circular(11),
       child: Container(
+        padding: const EdgeInsets.all(8),
         height: 35.h(context),
-        width: 150.w(context),
+        width: 170.w(context),
         decoration: BoxDecoration(
           color: ColorsManagers.purple,
           borderRadius: BorderRadius.circular(11),
@@ -26,7 +27,7 @@ class DiscountButton extends StatelessWidget {
             fit: BoxFit.scaleDown,
             child: Text(
               text,
-              style: TextStyles.font16WhiteW500Poppins(context),
+              style: TextStyles.font14WhiteW500Poppins(context),
             ),
           ),
         ),
