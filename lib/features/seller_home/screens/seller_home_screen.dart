@@ -15,15 +15,15 @@ class SellerHomeScreen extends StatefulWidget {
 }
 
 class _SellerHomeScreenState extends State<SellerHomeScreen> {
-  String imagePath = "assets/images/user_note.png";
+  // String imagePath = "assets/images/user_note.png";
 
-  void _handleLanguageChange() {
-    setState(() {
-      imagePath = imagePath == "assets/images/user_note.png"
-          ? "assets/images/ar3.jpg"
-          : "assets/images/user_note.png";
-    });
-  }
+  // void _handleLanguageChange() {
+  //   setState(() {
+  //     imagePath = imagePath == "assets/images/user_note.png"
+  //         ? "assets/images/ar3.jpg"
+  //         : "assets/images/user_note.png";
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class _SellerHomeScreenState extends State<SellerHomeScreen> {
       backgroundColor: ColorsManagers.cultured,
       appBar: SellerHomeAppBar(
         isDone: false,
-        onLanguageChanged: _handleLanguageChange,
+      //  onLanguageChanged: _handleLanguageChange,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -75,7 +75,7 @@ class _SellerHomeScreenState extends State<SellerHomeScreen> {
             delay: const Duration(milliseconds: 150),
             child: Center(
                 child: Image.asset(
-              imagePath,
+              "assets/images/user_note.png".tr(context),
               height: 160.h(context),
               width: 362.w(context),
               fit: BoxFit.cover,

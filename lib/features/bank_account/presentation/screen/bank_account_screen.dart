@@ -27,9 +27,10 @@ class BankAccountScreen extends StatelessWidget {
             BankAccountForm(),
             Expanded(child: verticalSpacing(20)),
             GetStartedButton(
+             // isComplated: true,
               text: "Add Bank information".tr(context),
               onTap: () {
-                Navigator.of(context).pushNamed(Routes.homeScreen);
+                Navigator.of(context).pushNamed(Routes.mainScreen);
               },
             ),
           ],

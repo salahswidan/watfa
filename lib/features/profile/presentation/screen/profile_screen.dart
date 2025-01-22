@@ -3,6 +3,7 @@ import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/theme/colors.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/widgets/default_app_bar.dart';
 import '../../../auth/get_started/presentation/widgets/get_started_button.dart';
 import '../section/profile_form.dart';
@@ -29,7 +30,7 @@ class ProfileScreen extends StatelessWidget {
               verticalSpacing(70.h(context)),
               GetStartedButton(
                 onTap: () {
-                  hasAppBar! ? context.pop() : null;
+                  Navigator.of(context).pushNamed(Routes.mainScreen);
                 },
                 text: 'Save Changes'.tr(context),
               )

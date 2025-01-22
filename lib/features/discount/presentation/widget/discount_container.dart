@@ -3,6 +3,7 @@ import 'package:watfa/core/Local/AppLocalizations.dart';
 import 'package:watfa/core/helpers/extinsions.dart';
 
 import '../../../../core/helpers/spacing.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 import 'discount_button.dart';
@@ -37,9 +38,12 @@ class DiscountContainer extends StatelessWidget {
               style: TextStyles.font20DarkCharcoalw700Manrope(context)),
           verticalSpacing(25),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 3),
+            padding: EdgeInsets.symmetric(
+                horizontal: horizontalPadding, vertical: 3),
             child: DiscountButton(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed(Routes.paymentHomeScreen);
+              },
               text: "use discount".tr(context),
             ),
           ),

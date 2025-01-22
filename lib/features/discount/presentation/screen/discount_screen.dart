@@ -6,9 +6,14 @@ import '../section/category_discount_section.dart';
 import '../widget/animated_lottie.dart';
 import '../widget/discount_app_bar.dart';
 
-class DiscountScreen extends StatelessWidget {
+class DiscountScreen extends StatefulWidget {
   const DiscountScreen({super.key});
 
+  @override
+  State<DiscountScreen> createState() => _DiscountScreenState();
+}
+
+class _DiscountScreenState extends State<DiscountScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,7 +37,9 @@ class DiscountScreen extends StatelessWidget {
                 children: [
                   DiscountAppBar(),
                   AnimatedLottie(),
-                  CategoryDiscountSection(),
+                  CategoryDiscountSection(
+                    selectedCategory: 0,
+                  ),
                   verticalSpacing(20)
                 ],
               ),

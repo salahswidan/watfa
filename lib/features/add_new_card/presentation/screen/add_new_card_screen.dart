@@ -5,6 +5,7 @@ import 'package:watfa/core/helpers/extinsions.dart';
 import 'package:watfa/core/helpers/spacing.dart';
 import 'package:watfa/core/theme/styles.dart';
 import 'package:watfa/core/widgets/default_app_bar.dart';
+import 'package:watfa/features/common/main_screen.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../auth/get_started/presentation/widgets/get_started_button.dart';
@@ -56,10 +57,11 @@ class AddNewCardScreen extends StatelessWidget {
             AddNewCardForm(),
             Expanded(child: verticalSpacing(20)),
             GetStartedButton(
+             // isComplated: true,
               text: "Add Card".tr(context),
               onTap: () {
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
+                    MaterialPageRoute(builder: (context) => MainScreen()));
               },
             ),
           ],
