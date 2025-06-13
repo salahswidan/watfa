@@ -55,5 +55,7 @@ dartz: Provides functional types that aid in writing more robust and safe code, 
 
 equatable: Used for comparing Dart objects based on their property values rather than references. This is highly beneficial when working with bloc or cubit to ensure correct state change detection and reactions.
 
-get_it: A simple service locator package used for dependency injection. It simplifies managing and accessing object instances across di![لقطة شاشة 2025-06-13 203444](https://github.com/user-attachments/assets/d98e0a7e-a0e9-44d5-b834-43d34dd1bdf9)
-fferent parts of the application without manual passing, improving code organization.
+get_it: A simple service locator package used for dependency injection. It simplifies managing and accessing object instances across different parts of the application without manual passing, improving code organization.
+
+
+[لقطة شاشة 2025-06-13 203444](https://github.com/user-attachments/assets/d98e0a7e-a0e9-44d5-b834-43d34dd1bdf9)
