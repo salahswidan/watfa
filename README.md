@@ -1,4 +1,4 @@
-Watfa: An Exceptional E-commerce Experience Tailored for the Gulf Market 🛍️✨
+Watfa: An Exceptional E-commerce Experience Tailored for the Gulf Market 🛍️✨ -- The demo video of project -- : https://drive.google.com/file/d/1LzNOwqEJrGgZQSUyoeI-nNXBlIxBjKSG/view?usp=drive_link 
 Watfa is more than just an e-commerce application; it's a comprehensive and flexible platform specifically designed to meet the unique needs and preferences of the thriving Gulf market. Watfa aims to redefine the online shopping experience by offering a unique blend of elegance, efficiency, and localized support.
 
 The Essence of the Watfa Experience
@@ -22,9 +22,8 @@ Seamless Order Tracking 🚚: A comprehensive order tracking system that gives s
 Real-time Sales Performance Analytics 📊📈: An intuitive dashboard featuring real-time analytics empowers sellers to monitor their sales performance, identify trends, and gain valuable, actionable insights to make informed decisions.
 
 
-Advanced Technologies for Flawless Performance
-Watfa leverages advanced state management techniques using Bloc/Cubit. This ensures seamless functionality and optimal interaction within the application, providing a smooth and responsive user experience free from delays or glitches.
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Underlying Technologies & Key Packages
 Watfa's robust architecture is built upon a carefully selected set of modern technologies and Flutter packages, each chosen to ensure high performance, scalability, and maintainability.
 
@@ -58,4 +57,25 @@ equatable: Used for comparing Dart objects based on their property values rather
 get_it: A simple service locator package used for dependency injection. It simplifies managing and accessing object instances across different parts of the application without manual passing, improving code organization.
 
 
-[لقطة شاشة 2025-06-13 203444](https://github.com/user-attachments/assets/d98e0a7e-a0e9-44d5-b834-43d34dd1bdf9)
+![photo_2025-06-13_22-57-06](https://github.com/user-attachments/assets/8679353f-96d5-49cc-9271-661253452b35)
+![photo_2025-06-13_22-57-08](https://github.com/user-attachments/assets/b4e4fd04-0f75-46bf-a35f-87bb9f445c7a)
+![photo_2025-06-13_22-57-10](https://github.com/user-attachments/assets/9844d20a-f25b-46c6-8a88-8bb42a6ec9aa)
+![photo_2025-06-13_22-57-13](https://github.com/user-attachments/assets/5b94ec29-5e1d-4ec0-a748-3c309b21a164)
+![photo_2025-06-13_22-57-18](https://github.com/user-attachments/assets/b47fc9e9-429a-4477-8f3b-c5f5fc018c04)
+![photo_2025-06-13_22-57-22](https://github.com/user-attachments/assets/f7207f58-531e-491d-b838-c26c728d1ee6)
+![photo_2025-06-13_22-57-27](https://github.com/user-attachments/assets/9f87e43c-d947-4453-845d-7e1f073e5733)
+![photo_2025-06-13_22-57-31](https://github.com/user-attachments/assets/a77b85e5-973d-4d6f-9da1-b1cca1ceb3f8)
+![photo_2025-06-13_22-57-34](https://github.com/user-attachments/assets/414d9335-c527-4a60-a9ee-acb4877010a7)
+![photo_2025-06-13_22-57-38](https://github.com/user-attachments/assets/9e6e6baa-0cf0-437b-a850-e93a4b62439e)
+![photo_2025-06-13_22-57-42](https://github.com/user-attachments/assets/2f75f188-5285-4dad-9a4a-00152cd88fac)
+![photo_2025-06-13_22-57-46](https://github.com/user-attachments/assets/5da5482f-62c0-47fc-b546-5c63f6239cbb)
+![photo_2025-06-13_22-57-51](https://github.com/user-attachments/assets/7972db0f-e892-46b3-82b1-320b3afd01df)
+![photo_2025-06-13_22-57-57](https://github.com/user-attachments/assets/f72b2611-1932-4b7c-90fd-ed25bf532844)
+![photo_2025-06-13_22-58-02](https://github.com/user-attachments/assets/d8bd667b-93ca-4b25-88b4-e768c92871a2)
+![photo_2025-06-13_22-58-07](https://github.com/user-attachments/assets/a8649f4a-8838-44a3-82f0-94ef604a6d38)
+![photo_2025-06-13_22-58-11](https://github.com/user-attachments/assets/1ae80dbf-cfa4-43de-936c-54e2d015ee92)
+![photo_2025-06-13_22-58-16](https://github.com/user-attachments/assets/27db9023-6588-421e-9155-47505fb2bfe8)
+![photo_2025-06-13_22-58-21](https://github.com/user-attachments/assets/ac101ec1-5308-420e-bb4d-ce7215d9b5d5)
+![photo_2025-06-13_22-58-26](https://github.com/user-attachments/assets/05db87ee-530b-43b0-adf8-550b89cd14ce)
+![photo_2025-06-13_22-58-35](https://github.com/user-attachments/assets/e031fbac-6e22-4eb0-92cd-c4660f15de87)
+![photo_2025-06-13_22-58-41](https://github.com/user-attachments/assets/0528b03d-7208-4421-8ab3-4d97ade9de53)
